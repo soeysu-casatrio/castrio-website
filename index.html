@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CASA TRIO — Your Private Home &amp; Interior Partner in China</title>
+<meta name="description" content="CASA TRIO is your private home and interior project partner based in Foshan, China. Design, sourcing, custom production, quality control and global delivery for residential projects worldwide.">
+<meta property="og:title" content="CASA TRIO — Your Private Home &amp; Interior Partner in China">
+<meta property="og:description" content="A curated project partner — not a catalogue, not a marketplace. Design, sourcing, custom production, QC and global delivery from Foshan, China.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.casatriohome.com">
+<meta property="og:image" content="https://aka.doubaocdn.com/s/ygmVXkOvAr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#22201C">
+<link rel="icon" type="image/png" href="https://aka.doubaocdn.com/s/6JUjtE4tgm">
+<link rel="apple-touch-icon" href="https://aka.doubaocdn.com/s/6JUjtE4tgm">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
+  --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
+  --charcoal:#22201C;--cream:#F2EDE4;
+  --serif:'Playfair Display',Georgia,"Times New Roman",serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --max:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+h1,h2,h3,h4{font-weight:400}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+/* Nav */
+.nav{position:fixed;z-index:50;top:0;left:0;right:0;padding:16px 0;color:#fff;background:linear-gradient(#111a,transparent);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(247,243,236,.96);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo img{height:34px;width:auto;display:block}
+.logo .logo-onscroll{display:none}
+.nav.scrolled .logo .logo-onhero{display:none}
+.nav.scrolled .logo .logo-onscroll{display:block}
+.links{display:flex;gap:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.links a{position:relative;padding:4px 0;transition:color .2s}
+.links a:hover{color:var(--gold)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.links a:hover::after{width:100%}
+.nav-home,.nav-divider,.nav-m-start,.nav-m-wa{display:none}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .wa-btn{border:1px solid currentColor;padding:10px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .wa-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+.burger{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:6px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:5px 0;transition:transform .3s,opacity .3s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Hero */
+.hero{min-height:100vh;position:relative;color:#fff;display:flex;align-items:flex-end}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.74) 0%,rgba(18,16,14,.38) 50%,rgba(18,16,14,.15) 100%),url("https://aka.doubaocdn.com/s/ygmVXkOvAr") center/cover}
+.hero .container{position:relative;padding-bottom:80px;padding-top:120px}
+.eyebrow{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{font:400 clamp(50px,7vw,92px)/.92 var(--serif);letter-spacing:-.04em;max-width:900px;margin:0}
+.hero .sub{font:400 italic clamp(18px,2vw,24px)/1.4 var(--serif);color:#e8e2d6;max-width:640px;margin:22px 0 14px}
+.hero .tags{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#c9c2b5;margin-bottom:26px}
+.hero .desc{max-width:560px;color:#d4cdbf;font-size:14.5px;line-height:1.75;margin:0 0 32px}
+.btn{display:inline-block;border:1px solid currentColor;padding:14px 22px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:46px;line-height:1.2}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.fill{background:#fff;color:var(--ink);border-color:#fff}
+.btn.fill:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#8e7658;border-color:#8e7658}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold)}
+
+/* Manifesto strip */
+.manifesto{background:var(--charcoal);color:var(--cream);padding:48px 0;text-align:center}
+.manifesto p{font:400 italic clamp(22px,3vw,34px)/1.4 var(--serif);margin:0;max-width:800px;margin:0 auto;color:var(--cream)}
+.manifesto em{color:var(--gold-light);font-style:italic}
+
+/* Sections */
+section{padding:100px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:52px}
+.display{font:400 clamp(34px,4.6vw,56px)/1.04 var(--serif);letter-spacing:-.03em;margin:0}
+.lead{max-width:520px;color:var(--muted);font-size:14.5px;line-height:1.7}
+
+/* Why */
+.why{background:var(--offwhite)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.why-item{padding:40px 36px 40px 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-item:nth-child(3n){border-right:0;padding-right:0}
+.why-item:nth-child(n+4){border-bottom:0}
+.why-item:nth-child(3n+1){padding-left:0}
+.why-num{font:400 13px var(--serif);color:var(--gold);letter-spacing:.1em;margin-bottom:16px;display:block}
+.why-item h3{font:400 21px/1.25 var(--serif);margin:0 0 10px}
+.why-item p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.65}
+
+/* Solutions */
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--paper);min-height:250px;padding:28px 22px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
+.card:hover{background:var(--offwhite)}
+.card h3{font:400 20px/1.15 var(--serif);margin:0}
+.card p{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.6}
+.num{font:400 11px var(--serif);letter-spacing:.15em;color:var(--gold)}
+
+/* Two ways */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.way{padding:52px 44px;min-height:440px;display:flex;flex-direction:column}
+.way.light{background:var(--offwhite);border:1px solid var(--line)}
+.way.dark{background:var(--charcoal);color:var(--cream)}
+.way .num{margin-bottom:18px}
+.way h3{font:400 28px/1.15 var(--serif);margin:0 0 10px}
+.way .tagline{font:400 italic 16px/1.4 var(--serif);color:var(--gold);margin:0 0 16px}
+.way.dark .tagline{color:var(--gold-light)}
+.way .desc{color:var(--muted);font-size:14px;line-height:1.7;margin:0 0 24px;max-width:440px}
+.way.dark .desc{color:#b5ad9f}
+.way .coord-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.way.dark .coord-label{color:#9a9285}
+.flow{font-size:12px;letter-spacing:.04em;line-height:2;color:var(--ink);margin-top:auto;padding-top:20px;border-top:1px solid var(--line)}
+.way.dark .flow{color:var(--gold-light);border-top-color:#3a372f}
+
+/* Projects */
+.project-sub{margin-bottom:28px}
+.project-sub h3{font:400 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 6px}
+.project-sub p{font-size:13px;color:var(--muted);margin:0}
+.projects{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+.project{position:relative;min-height:560px;overflow:hidden;background:#ddd}
+.project img{transition:transform 1s ease}
+.project:hover img{transform:scale(1.04)}
+.stack{display:grid;gap:16px}
+.stack .project{min-height:272px}
+.overlay{position:absolute;left:0;right:0;bottom:0;padding:28px;color:#fff;background:linear-gradient(transparent,rgba(18,16,14,.75))}
+.overlay h3{font:400 28px var(--serif);margin:6px 0}
+.overlay span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
+.overlay .loc{font-size:11px;color:#cfc8ba;letter-spacing:.08em;margin-top:4px;display:block}
+.real-note{background:var(--charcoal);color:var(--cream);padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.real-note p{font:400 italic 18px/1.5 var(--serif);margin:0;color:var(--cream);max-width:600px}
+.real-note .btn{border-color:var(--gold);color:var(--gold-light);min-height:42px;padding:12px 20px}
+.real-note .btn:hover{background:var(--gold);color:#fff}
+
+/* Pieces */
+.pieces{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.piece{background:var(--offwhite);border:1px solid var(--line);transition:box-shadow .3s,transform .3s;cursor:pointer}
+.piece:hover{box-shadow:0 18px 40px -20px rgba(34,32,28,.25);transform:translateY(-3px)}
+.piece.highlight{box-shadow:0 0 0 2px var(--gold),0 18px 40px -20px rgba(34,32,28,.25)}
+.pic{aspect-ratio:1/1.05;overflow:hidden}
+.pic img{transition:transform .8s}
+.piece:hover .pic img{transform:scale(1.05)}
+.pi{padding:22px}
+.pi h3{font:400 22px/1.1 var(--serif);margin:0}
+.meta{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:10px 0 14px;line-height:1.7}
+.price{font:400 24px var(--serif);color:var(--ink);display:block;margin-bottom:16px}
+.price small{font:400 12px var(--sans);color:var(--muted);letter-spacing:.05em}
+.piece-btns{display:flex;flex-direction:column;gap:8px}
+.p-btn{display:block;width:100%;text-align:center;padding:12px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;cursor:pointer;border:1px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--sans);min-height:44px;line-height:1.2}
+.p-btn:hover{background:var(--ink);color:var(--cream)}
+.p-btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.p-btn.gold:hover{background:#8e7658;border-color:#8e7658}
+
+/* Piece modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(18,16,14,.72);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--offwhite);max-width:880px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.modal .m-img{min-height:420px}
+.modal .m-info{padding:40px}
+.modal-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border:0;background:rgba(247,243,236,.9);color:var(--ink);font-size:22px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;line-height:1}
+.modal-close:hover{background:var(--gold);color:#fff}
+.m-info h2{font:400 30px/1.1 var(--serif);margin:8px 0 20px}
+.m-specs{margin:0 0 24px;padding:0}
+.m-specs dt{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:14px 0 4px}
+.m-specs dd{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+.m-price{font:400 28px var(--serif);margin:0 0 20px}
+.m-price small{font:400 12px var(--sans);color:var(--muted)}
+.m-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.m-note{font-size:13px;color:var(--muted);line-height:1.7;margin:0;padding-top:18px;border-top:1px solid var(--line)}
+.m-note b{color:var(--ink);font-weight:500}
+
+/* Foshan band */
+.foshan{position:relative;min-height:540px;display:flex;align-items:center;color:#fff;overflow:hidden}
+.foshan:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.82),rgba(18,16,14,.35)),url("https://aka.doubaocdn.com/s/bmKUtEJVit") center/cover}
+.foshan .container{position:relative;padding:70px 0}
+.foshan h2{font:400 clamp(34px,4.8vw,54px)/1.05 var(--serif);max-width:700px;margin:14px 0 18px;color:var(--cream)}
+.foshan p.lead{color:#d4cdbf;max-width:520px}
+.foshan-tags{display:flex;flex-wrap:wrap;gap:8px 26px;margin:30px 0 26px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light)}
+.foshan-note{font:400 italic 20px/1.4 var(--serif);color:var(--cream);margin:0}
+
+/* How we work 8 steps */
+.process8{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.step8{background:var(--paper);padding:32px 28px;min-height:190px;display:flex;flex-direction:column}
+.step8 b{font:400 12px var(--serif);color:var(--gold);letter-spacing:.15em}
+.step8 h3{font:400 19px/1.2 var(--serif);margin:22px 0 8px}
+.step8 p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.6}
+
+/* Transparency */
+.transparency{background:var(--soft)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.t-item{padding:36px 32px;background:var(--paper);border:1px solid var(--line)}
+.t-item .n{font:400 13px var(--serif);color:var(--gold);letter-spacing:.1em;margin-bottom:16px;display:block}
+.t-item h3{font:400 22px var(--serif);margin:0 0 10px}
+.t-item p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.65}
+
+/* After-sales */
+.after-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.after-item{background:var(--paper);padding:36px 28px;min-height:200px}
+.after-item .n{font:400 12px var(--serif);color:var(--gold);letter-spacing:.1em;margin-bottom:18px;display:block}
+.after-item h3{font:400 20px/1.2 var(--serif);margin:0 0 10px}
+.after-item p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+/* CTA form */
+.cta{background:var(--charcoal);color:var(--cream)}
+.cta .display{color:var(--cream)}
+.cta .lead{color:#a89f91}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px;max-width:820px}
+.form label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#a89f91;margin-bottom:6px}
+.form .field{display:flex;flex-direction:column}
+.form input,.form select,.form textarea{width:100%;padding:13px 14px;background:transparent;border:1px solid #4a473f;color:var(--cream);font:400 13px var(--sans);border-radius:0;outline:none;transition:border-color .2s;min-height:46px}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold)}
+.form select option{background:var(--charcoal);color:var(--cream)}
+.form textarea{min-height:110px;resize:vertical}
+.full{grid-column:1/-1}
+.check-group{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.check-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--cream);cursor:pointer;line-height:1.4}
+.check-item input{width:18px;height:18px;accent-color:var(--gold);min-height:auto}
+.form-actions{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.form-actions .btn{min-height:48px}
+.thanks{display:none;grid-column:1/-1;margin-top:16px;padding:20px;border:1px solid var(--gold);color:var(--gold-light);font-size:14px}
+.thanks.show{display:block}
+
+/* Deposit */
+.deposit{background:var(--soft)}
+.depositbox{background:var(--offwhite);max-width:1000px;margin:auto;padding:56px;border:1px solid var(--line)}
+.deposits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0}
+.dep{border:1px solid var(--line);padding:32px 26px;background:var(--paper);text-align:center;display:flex;flex-direction:column;align-items:center}
+.dep .eyebrow{margin-bottom:8px}
+.dep strong{display:block;font:400 38px var(--serif);margin:6px 0 6px;color:var(--ink)}
+.dep .for{font-size:12px;color:var(--muted);margin-bottom:20px;min-height:32px}
+.dep .btn{width:100%;margin-top:auto;min-height:46px}
+.deposit-note{font-size:12.5px;color:var(--muted);text-align:center;max-width:640px;margin:0 auto;line-height:1.7}
+.deposit-note b{color:var(--ink);font-weight:500}
+
+/* Footer */
+footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;margin-bottom:44px}
+.foot-brand img{height:40px;margin-bottom:16px}
+.foot-brand p{color:#9a9285;font-size:13px;max-width:320px;line-height:1.7;margin:0}
+.foot-col h4{font:400 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
+.foot-col a{display:block;font-size:13px;color:#b5ad9f;padding:5px 0;transition:color .2s}
+.foot-col a:hover{color:var(--cream)}
+.foot-col p{font-size:13px;color:#b5ad9f;margin:0 0 8px;line-height:1.6}
+.foot-cta .btn{display:block;margin-bottom:10px;width:100%;min-height:44px}
+.foot-bottom{border-top:1px solid #33302a;padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-bottom small{color:#7a7468;font-size:10.5px;letter-spacing:.1em}
+
+/* Floating WhatsApp (desktop) */
+.float-wa{position:fixed;right:24px;bottom:24px;z-index:40;width:54px;height:54px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px -6px rgba(169,142,107,.5);transition:transform .25s,background .25s}
+.float-wa:hover{transform:scale(1.08);background:#8e7658}
+.float-wa svg{width:26px;height:26px;fill:#fff}
+
+/* Mobile fixed bottom bar */
+.mobile-bar{display:none}
+
+/* Scroll animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1024px){
+  .links{gap:16px;font-size:10px}
+  .nav-cta .wa-btn{display:none}
+}
+@media(max-width:900px){
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);color:var(--ink);padding:8px 24px 16px;gap:0;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.1em;min-height:48px;display:flex;align-items:center}
+  .links .nav-home{display:flex}
+  .links .nav-divider{display:block;border:0;border-top:1px solid var(--line);margin:6px 0;padding:0;height:0;min-height:0}
+  .links .nav-m-start{display:flex;background:var(--gold);color:#fff;border:0;justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-top:8px;padding:14px;min-height:48px}
+  .links .nav-m-wa{display:flex;border:1px solid var(--ink);justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:14px;min-height:48px}
+  .links a:last-child{border-bottom:0}
+  .burger{display:flex}
+  .nav-cta .start-btn{display:none}
+  .nav-cta .wa-btn{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-item{border-right:1px solid var(--line)!important;padding:32px 24px!important}
+  .why-item:nth-child(3n){border-right:1px solid var(--line)!important}
+  .why-item:nth-child(2n){border-right:0}
+  .why-item:nth-child(n+5){border-bottom:0}
+  .grid5{grid-template-columns:1fr 1fr 1fr}
+  .ways{grid-template-columns:1fr}
+  .process8{grid-template-columns:repeat(2,1fr)}
+  .t-grid{grid-template-columns:1fr}
+  .after-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .modal{grid-template-columns:1fr}
+  .modal .m-img{min-height:300px}
+}
+@media(max-width:640px){
+  .container{width:calc(100% - 32px)}
+  section{padding:64px 0}
+  .head{display:block}
+  .lead{margin-top:14px}
+  .why-grid{grid-template-columns:1fr}
+  .why-item{border-right:0!important;border-bottom:1px solid var(--line)!important;padding:28px 0!important}
+  .why-item:last-child{border-bottom:0!important}
+  .grid5{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .project{min-height:340px}
+  .stack .project{min-height:240px}
+  .pieces{grid-template-columns:1fr}
+  .process8{grid-template-columns:1fr}
+  .step8{min-height:auto;padding:28px 24px}
+  .after-grid{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .check-group{grid-template-columns:1fr}
+  .form-actions{flex-direction:column}
+  .form-actions .btn{width:100%}
+  .deposits{grid-template-columns:1fr}
+  .depositbox{padding:32px 22px}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .hero h1{font-size:44px}
+  .way{padding:40px 28px;min-height:auto}
+  .real-note{flex-direction:column;align-items:flex-start;padding:28px 24px}
+  .float-wa{display:none}
+  /* Mobile fixed bottom WhatsApp bar */
+  .mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:45;background:var(--gold);color:#fff;padding:0 16px;min-height:56px;align-items:center;justify-content:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;box-shadow:0 -4px 20px -8px rgba(0,0,0,.3)}
+  .mobile-bar svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+  body{padding-bottom:56px}
+  .modal-overlay{padding:0;align-items:flex-end}
+  .modal{max-height:92vh;border-radius:16px 16px 0 0}
+  .modal .m-info{padding:32px 24px}
+  .foshan-tags{gap:6px 18px}
+}
+</style>
+
+<!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CASA TRIO",
+  "url": "https://www.casatriohome.com",
+  "logo": "https://aka.doubaocdn.com/s/Myj5vOnap6",
+  "description": "Private home and interior project partner based in Foshan, China. Design, sourcing, custom production, quality control and global delivery for residential projects.",
+  "email": "contact@casatriohome.com",
+  "telephone": "+8615017434683",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Foshan",
+    "addressRegion": "Guangdong",
+    "addressCountry": "CN"
+  },
+  "sameAs": []
+}
+</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="logo" href="#home"><img class="logo-onhero" src="https://aka.doubaocdn.com/s/9ufMdUAsPU" alt="CASA TRIO"><img class="logo-onscroll" src="https://aka.doubaocdn.com/s/Myj5vOnAp6" alt="CASA TRIO"></a>
+    <nav class="links" id="navlinks">
+      <a class="nav-home" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#projects">Projects</a>
+      <a href="#pieces">Selected Pieces</a>
+      <a href="#process">How We Work</a>
+      <span class="nav-divider"></span>
+      <a class="nav-m-start" href="#start">Start Your Project</a>
+      <a class="nav-m-wa" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="wa-btn" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="start-btn" href="#start">Start Your Project</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- 01 Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Foshan · China</div>
+    <h1>CASA TRIO</h1>
+    <p class="sub">Your Private Home &amp; Interior Partner in China</p>
+    <div class="tags">Design · Sourcing · Custom Production · Quality Control · Global Delivery</div>
+    <p class="desc">From furniture and custom solutions to building materials and bathroom essentials, CASA TRIO coordinates the resources behind your residential project — with one dedicated point of contact.</p>
+    <a class="btn fill" href="#start">Start Your Project</a>
+    <a class="btn" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
+  </div>
+</section>
+
+<!-- Manifesto -->
+<section class="manifesto">
+  <div class="container">
+    <p>Not a catalogue. Not a marketplace. <em>A curated project partner.</em></p>
+  </div>
+</section>
+
+<!-- 02 Why CASA TRIO -->
+<section class="why" id="about">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">Why CASA TRIO</div><h2 class="display">One Partner for<br>Your Entire Home.</h2></div>
+      <p class="lead">Private. Curated. Project-focused. Coordinated. China-based.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><span class="why-num">01</span><h3>Direct Access to China's Ecosystem</h3><p>Direct access to selected manufacturing resources in Foshan and across China's furniture and interior supply chain.</p></div>
+      <div class="why-item reveal"><span class="why-num">02</span><h3>One Coordinated Partner</h3><p>One dedicated team coordinating sourcing, customization, production, QC and delivery.</p></div>
+      <div class="why-item reveal"><span class="why-num">03</span><h3>Curated, Not Catalogue-Driven</h3><p>We select around your project — not simply around what happens to be in a catalogue.</p></div>
+      <div class="why-item reveal"><span class="why-num">04</span><h3>Made for Your Space</h3><p>Custom dimensions, materials, finishes and built-in solutions can be developed around your requirements.</p></div>
+      <div class="why-item reveal"><span class="why-num">05</span><h3>Project-Level Quality Control</h3><p>Production monitoring, inspection and documentation before shipment.</p></div>
+      <div class="why-item reveal"><span class="why-num">06</span><h3>International Project Support</h3><p>From China to your destination, we coordinate the journey with clear communication throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Solutions -->
+<section id="solutions">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">01 — Solutions</div><h2 class="display">Beyond Furniture.</h2></div>
+      <p class="lead">From individual pieces to complete residential requirements, CASA TRIO coordinates the resources needed to create a coherent home environment.</p>
+    </div>
+    <div class="grid5 reveal">
+      <article class="card"><span class="num">01</span><div><h3>Furniture &amp; Soft Furnishing</h3><p>Living, dining, bedroom, outdoor and decorative pieces.</p></div></article>
+      <article class="card"><span class="num">02</span><div><h3>Custom &amp; Built-in</h3><p>Kitchens, wardrobes, TV walls, vanities and tailored solutions.</p></div></article>
+      <article class="card"><span class="num">03</span><div><h3>Building Materials</h3><p>Doors, windows, stone, flooring, wall panels and hardware.</p></div></article>
+      <article class="card"><span class="num">04</span><div><h3>Bathroom &amp; Sanitary</h3><p>Vanities, basins, bathtubs, showers, faucets and accessories.</p></div></article>
+      <article class="card"><span class="num">05</span><div><h3>Design Support</h3><p>3D visualization, material direction, space planning and project coordination.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 Two Ways -->
+<section id="ways">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">How We Work</div><h2 class="display">Two Ways to Work<br>With CASA TRIO.</h2></div>
+    </div>
+    <div class="ways">
+      <div class="way light reveal">
+        <span class="num">Option 01</span>
+        <h3>Execution Partner</h3>
+        <p class="tagline">Already have a design? We execute it.</p>
+        <p class="desc">Your architect or designer provides the drawings and specifications. CASA TRIO coordinates the rest.</p>
+        <div class="coord-label">CASA TRIO coordinates</div>
+        <div class="flow">Specification Review → Sourcing → Custom Production → QC → Delivery</div>
+      </div>
+      <div class="way dark reveal">
+        <span class="num">Option 02</span>
+        <h3>Design + Execution</h3>
+        <p class="tagline">Need design support? We coordinate it with our design partners.</p>
+        <p class="desc">Based on your brief, we work with independent design partners to develop the direction — then execute and deliver.</p>
+        <div class="coord-label">We coordinate</div>
+        <div class="flow">Space Analysis → Design → 3D Visualization → Material &amp; Product Selection → Production → QC → Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Projects -->
+<section id="projects">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">02 — Projects</div><h2 class="display">Spaces, Not Just Products.</h2></div>
+      <p class="lead">Design references and project directions. Completed project references are available on request.</p>
+    </div>
+
+    <div class="real-note reveal">
+      <p>Our completed project portfolio is available on request — chat with us for the latest references.</p>
+      <a class="btn" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20could%20you%20share%20your%20completed%20project%20portfolio%3F" target="_blank" rel="noopener">Discuss Your Project</a>
+    </div>
+
+    <div class="project-sub reveal"><h3>Design Concepts</h3><p>Design directions and material references for residential projects.</p></div>
+    <div class="projects reveal">
+      <article class="project">
+        <img loading="lazy" src="https://aka.doubaocdn.com/s/qDm92ju0ct" alt="Residential concept">
+        <div class="overlay"><span>Residential Concept</span><h3>Warm Contemporary Villa</h3><span class="loc">Full-home direction · Custom furniture · Wall paneling</span></div>
+      </article>
+      <div class="stack">
+        <article class="project">
+          <img loading="lazy" src="https://aka.doubaocdn.com/s/XVBGNvjelT" alt="Design reference">
+          <div class="overlay"><span>Design Reference</span><h3>Urban Apartment Direction</h3></div>
+        </article>
+        <article class="project">
+          <img loading="lazy" src="https://aka.doubaocdn.com/s/VeuHSMrhCq" alt="Conceptual project">
+          <div class="overlay"><span>Conceptual Project</span><h3>Quiet Luxury Interior</h3></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Selected Pieces -->
+<section id="pieces">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">03 — Selected Pieces</div><h2 class="display">A Curated Few.</h2></div>
+      <p class="lead">Selected pieces from our social channels — available to order directly, or as a starting point for a larger project.</p>
+    </div>
+    <!-- Pieces are rendered from piecesData in JS. To add a piece, add an object to the piecesData array below. -->
+    <div class="pieces" id="piecesGrid"></div>
+  </div>
+</section>
+
+<!-- 07 From Foshan -->
+<section class="foshan" id="foshan">
+  <div class="container">
+    <div class="eyebrow">From Foshan to Your Home</div>
+    <h2>See. Touch. Compare. Decide.</h2>
+    <p class="lead">Visit our partner workshops in Foshan — view craftsmanship, compare materials and finishes, and meet the makers before production begins.</p>
+    <div class="foshan-tags"><span>Factory Visits</span><span>Material Selection</span><span>Production</span><span>QC</span><span>Packaging</span><span>Loading</span><span>Shipping</span></div>
+    <p class="foshan-note">A closer connection to the source.</p>
+  </div>
+</section>
+
+<!-- 08 How We Work -->
+<section id="process" style="background:var(--soft)">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">04 — How We Work</div><h2 class="display">From Vision to Delivery.</h2></div>
+      <p class="lead">A clear eight-step path — from the first conversation to your door.</p>
+    </div>
+    <div class="process8 reveal">
+      <div class="step8"><b>01</b><h3>Project Understanding</h3><p>We understand your property, scope, style, timeline and requirements.</p></div>
+      <div class="step8"><b>02</b><h3>Intent Confirmation</h3><p>An Intent Deposit confirms your project and allows us to allocate resources for the next stage.</p></div>
+      <div class="step8"><b>03</b><h3>Analysis &amp; Proposal</h3><p>We assess the project and prepare the appropriate proposal.</p></div>
+      <div class="step8"><b>04</b><h3>Design &amp; Selection</h3><p>Design support where required, or product selection based on your existing design.</p></div>
+      <div class="step8"><b>05</b><h3>Quotation &amp; Contract</h3><p>Final selections, pricing, lead times and commercial terms are confirmed.</p></div>
+      <div class="step8"><b>06</b><h3>Production</h3><p>Production is coordinated with selected manufacturing partners.</p></div>
+      <div class="step8"><b>07</b><h3>Quality Control</h3><p>Products are inspected before shipment.</p></div>
+      <div class="step8"><b>08</b><h3>Global Delivery</h3><p>Packaging, logistics and delivery are coordinated to your destination.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 Transparency -->
+<section class="transparency" id="transparency">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">05 — Transparency</div><h2 class="display">Stay Informed.</h2></div>
+      <p class="lead">From production to quality control and shipment, we keep you updated with photos and progress information throughout the process.</p>
+    </div>
+    <div class="t-grid reveal">
+      <div class="t-item"><span class="n">01</span><h3>Production Updates</h3><p>Regular photo updates from the workshop as your pieces are made.</p></div>
+      <div class="t-item"><span class="n">02</span><h3>Quality Control</h3><p>Inspection results and documentation shared before shipment.</p></div>
+      <div class="t-item"><span class="n">03</span><h3>Shipping Updates</h3><p>Loading, container and transit information through to delivery.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 After-Sales -->
+<section id="after">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">06 — After-Sales</div><h2 class="display">Support Beyond Delivery.</h2></div>
+      <p class="lead">Our relationship does not end when your order arrives.</p>
+    </div>
+    <div class="after-grid reveal">
+      <div class="after-item"><span class="n">01</span><h3>Assembly Guidance</h3><p>Clear guidance for installation and assembly on site.</p></div>
+      <div class="after-item"><span class="n">02</span><h3>Follow-up Support</h3><p>We remain available for questions after delivery.</p></div>
+      <div class="after-item"><span class="n">03</span><h3>Minor Adjustments</h3><p>Support for small adjustments and finishing details.</p></div>
+      <div class="after-item"><span class="n">04</span><h3>Project Coordination</h3><p>Ongoing coordination for phased or continuing projects.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 Start Your Project -->
+<section class="cta" id="start">
+  <div class="container">
+    <div class="head reveal">
+      <div><div class="eyebrow">07 — Start Your Project</div><h2 class="display">Let's Start With Your Space.</h2></div>
+      <p class="lead">Tell us about your property, current stage and what you need. Floor plans, CAD files, 3D files and reference images are welcome.</p>
+    </div>
+    <!-- ============================================================
+         FORM BACKEND: Basin (free tier, 250 submissions/month).
+         Endpoint: https://usebasin.com/f/3c44e279efe0
+         ============================================================ -->
+    <form class="form reveal" id="projForm" action="https://usebasin.com/f/3c44e279efe0" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New Project Inquiry — CASA TRIO Website">
+      <div class="field"><label>Name</label><input required name="name" placeholder="Your name"></div>
+      <div class="field"><label>WhatsApp</label><input name="whatsapp" placeholder="+1 ..."></div>
+      <div class="field"><label>Email</label><input required type="email" name="email" placeholder="you@email.com"></div>
+      <div class="field"><label>Country</label><input name="country" placeholder="Country / Region"></div>
+      <div class="field"><label>Project Type</label>
+        <select name="type"><option>Apartment</option><option>Villa</option><option>Residence</option><option>Other</option></select>
+      </div>
+      <div class="field"><label>Approx. Property Size</label><input name="size" placeholder="e.g. 300 sqm"></div>
+      <div class="field"><label>Project Stage</label>
+        <select name="stage"><option>Planning</option><option>Design in Progress</option><option>Renovation</option><option>Procurement</option></select>
+      </div>
+      <div class="field"><label>Do you already have a design?</label>
+        <select name="design"><option>Yes</option><option>No</option><option>Partially</option></select>
+      </div>
+      <div class="field full">
+        <label>What are you looking for?</label>
+        <div class="check-group">
+          <label class="check-item"><input type="checkbox" name="looking" value="furniture">Furniture &amp; Soft Furnishing</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="custom">Custom &amp; Built-in</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="materials">Building Materials</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="bathroom">Bathroom &amp; Sanitary</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="design">Design + Execution</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="complete">Complete Home Solution</label>
+          <label class="check-item"><input type="checkbox" name="looking" value="single">Single Item</label>
+        </div>
+      </div>
+      <div class="field full"><label>Upload floor plans / CAD / 3D / reference images / material specifications</label><input type="file" name="attachments" multiple></div>
+      <div class="form-actions">
+        <button class="btn gold" type="submit">Submit Project</button>
+        <a class="btn" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <div class="thanks" id="thanks">Thank you. Your project brief has been received — our team will contact you within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<!-- 12 Intent Deposit -->
+<section class="deposit" id="deposit">
+  <div class="depositbox reveal">
+    <div class="eyebrow" style="text-align:center">Project Initiation</div>
+    <h2 class="display" style="text-align:center">Start Your Project With<br>an Intent Deposit</h2>
+    <p class="deposit-note" style="margin-top:18px">The Intent Deposit confirms your project and allows CASA TRIO to allocate resources for project assessment, sourcing and proposal preparation.</p>
+    <div class="deposits">
+      <div class="dep">
+        <div class="eyebrow">Apartment</div>
+        <strong>USD 200</strong>
+        <div class="for">For apartment and single-room projects</div>
+        <!-- PRE-LAUNCH: Replace href="#" with payment link from 万里汇 WorldTrade / 空中云汇 Airwallex. Create a fixed-amount payment link for each tier. -->
+        <a class="btn" href="#" target="_blank" rel="noopener">Pay USD 200</a>
+      </div>
+      <div class="dep">
+        <div class="eyebrow">Standard Villa</div>
+        <strong>USD 500</strong>
+        <div class="for">For standard villa and full-home projects</div>
+        <!-- PRE-LAUNCH: Replace href="#" with payment link from 万里汇 WorldTrade / 空中云汇 Airwallex. Create a fixed-amount payment link for each tier. -->
+        <a class="btn" href="#" target="_blank" rel="noopener">Pay USD 500</a>
+      </div>
+      <div class="dep">
+        <div class="eyebrow">Premium Residence</div>
+        <strong>USD 1,000</strong>
+        <div class="for">For luxury and large-scale residences</div>
+        <!-- PRE-LAUNCH: Replace href="#" with payment link from 万里汇 WorldTrade / 空中云汇 Airwallex. Create a fixed-amount payment link for each tier. -->
+        <a class="btn gold" href="#" target="_blank" rel="noopener">Pay USD 1,000</a>
+      </div>
+    </div>
+    <p class="deposit-note">The Intent Deposit is separate from the Design Fee and will be credited toward the agreed procurement order according to the applicable project terms.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- 13 Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://aka.doubaocdn.com/s/9ufMdUAsPU" alt="CASA TRIO" style="height:36px">
+        <p>Premium Home &amp; Interior Solutions from China. Your private project partner in Foshan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#solutions">Solutions</a>
+        <a href="#projects">Projects</a>
+        <a href="#pieces">Selected Pieces</a>
+        <a href="#process">How We Work</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <h4>Contact</h4>
+        <a class="btn gold" href="#start">Start Your Project</a>
+        <p><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp +86 15017434683</a></p>
+        <!-- PRE-LAUNCH: Confirm contact@casatriohome.com is active and monitored. Replace if using a different mailbox. -->
+        <p><a href="mailto:contact@casatriohome.com">contact@casatriohome.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>© 2026 CASA TRIO. All Rights Reserved.</small>
+      <small>Foshan · Guangdong · China</small>
+    </div>
+  </div>
+</footer>
+
+<!-- Desktop floating WhatsApp -->
+<a class="float-wa" href="https://wa.me/8615017434683" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.42 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<!-- Mobile fixed bottom bar -->
+<a class="mobile-bar" href="https://wa.me/8615017434683" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.42 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  WhatsApp CASA TRIO
+</a>
+
+<!-- Piece detail modal -->
+<div class="modal-overlay" id="pieceModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="m-img"><img id="mImg" src="" alt=""></div>
+    <div class="m-info">
+      <div class="eyebrow">Selected Piece</div>
+      <h2 id="mName"></h2>
+      <dl class="m-specs">
+        <dt>Material</dt><dd id="mMaterial"></dd>
+        <dt>Dimensions</dt><dd id="mDimensions"></dd>
+        <dt>Available Finishes</dt><dd id="mFinishes"></dd>
+        <dt>Customization</dt><dd id="mCustom"></dd>
+      </dl>
+      <div class="m-price" id="mPrice"></div>
+      <div class="m-btns">
+        <a class="btn gold" id="mOrder" target="_blank" rel="noopener">Order This Piece</a>
+        <a class="btn dark" id="mProject" target="_blank" rel="noopener">Discuss a Complete Project</a>
+      </div>
+      <p class="m-note"><b>Need this piece for a larger project?</b><br>Talk to CASA TRIO about a complete furniture or interior solution.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Piece data
+// ============================================================
+// PIECES DATA — Add a new piece by copying one object below.
+// buyLink: replace "#" with the 万里汇 WorldTrade / 空中云汇 Airwallex payment URL.
+// id: must be unique, used for shareable links (#piece-04, etc.)
+// ============================================================
+var piecesData = [
+  {
+    id:'piece-01',
+    name:'Soft Form Sofa',
+    img:'https://aka.doubaocdn.com/s/K5GzUZzFCo',
+    meta:'Fabric upholstery · Custom sizes & finishes',
+    price:'From USD 1,980',
+    material:'Fabric upholstery on a solid wood frame',
+    dimensions:'Custom sizes available',
+    finishes:'Multiple fabric and leather options',
+    custom:'Dimensions, fill and finish can be adapted',
+    buyLink:'#',
+    orderMsg:"Hi CASA TRIO, I'd like to order the Soft Form Sofa (From USD 1,980). Could you share more details?",
+    projectMsg:"Hi CASA TRIO, I'm interested in the Soft Form Sofa for a larger project. I'd like to discuss a complete furniture solution."
+  },
+  {
+    id:'piece-02',
+    name:'Cloud Bed',
+    img:'https://aka.doubaocdn.com/s/FbQPv9L9Cx',
+    meta:'Upholstered frame · Custom sizes & fabrics',
+    price:'From USD 1,650',
+    material:'Upholstered frame with solid wood structure',
+    dimensions:'Custom sizes available',
+    finishes:'Multiple fabric options',
+    custom:'Headboard, dimensions and fabric can be adapted',
+    buyLink:'#',
+    orderMsg:"Hi CASA TRIO, I'd like to order the Cloud Bed (From USD 1,650). Could you share more details?",
+    projectMsg:"Hi CASA TRIO, I'm interested in the Cloud Bed for a larger project. I'd like to discuss a complete furniture solution."
+  },
+  {
+    id:'piece-03',
+    name:'Travertine Dining Table',
+    img:'https://aka.doubaocdn.com/s/B9VDdxUSW2',
+    meta:'Travertine top · Solid wood base',
+    price:'From USD 1,280',
+    material:'Travertine top with solid wood base',
+    dimensions:'Custom dimensions available',
+    finishes:'Stone and base finish options',
+    custom:'Size, edge profile and base can be adapted',
+    buyLink:'#',
+    orderMsg:"Hi CASA TRIO, I'd like to order the Travertine Dining Table (From USD 1,280). Could you share more details?",
+    projectMsg:"Hi CASA TRIO, I'm interested in the Travertine Dining Table for a larger project. I'd like to discuss a complete furniture solution."
+  }
+];
+
+// Render piece cards from data
+function renderPieces(){
+  var grid = document.getElementById('piecesGrid');
+  var html = '';
+  piecesData.forEach(function(p, i){
+    var waProject = 'https://wa.me/8615017434683?text=' + encodeURIComponent(p.projectMsg);
+    var buyBtn = p.buyLink && p.buyLink !== '#'
+      ? '<a class="p-btn gold" href="' + p.buyLink + '" target="_blank" rel="noopener">Order This Piece</a>'
+      : '<a class="p-btn gold" href="https://wa.me/8615017434683?text=' + encodeURIComponent(p.orderMsg) + '" target="_blank" rel="noopener">Order This Piece</a>';
+    html += '<article class="piece reveal" id="' + p.id + '" data-piece="' + i + '">' +
+      '<div class="pic"><img loading="lazy" src="' + p.img + '" alt="' + p.name + '"></div>' +
+      '<div class="pi">' +
+      '<h3>' + p.name + '</h3>' +
+      '<div class="meta">' + p.meta + '</div>' +
+      '<span class="price">' + p.price + '</span>' +
+      '<div class="piece-btns">' + buyBtn +
+      '<a class="p-btn" href="' + waProject + '" target="_blank" rel="noopener">Discuss a Complete Project</a>' +
+      '</div></div></article>';
+  });
+  grid.innerHTML = html;
+}
+renderPieces();
+
+// Nav scroll
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+var burger = document.getElementById('burger');
+var links = document.getElementById('navlinks');
+burger.addEventListener('click', function(){
+  links.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+links.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){
+    links.classList.remove('open');
+    burger.classList.remove('open');
+  });
+});
+
+// Scroll reveal
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+// Form
+document.getElementById('projForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var form = this;
+  var btn = form.querySelector('.btn.gold');
+  var origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {'Accept': 'application/json'}
+  }).then(function(res){
+    return res.json().then(function(data){
+      if(res.ok && (data.success === true || data.success === 'true')){
+        document.getElementById('thanks').classList.add('show');
+        form.reset();
+        btn.textContent = 'Submitted';
+      } else {
+        btn.textContent = origText;
+        btn.disabled = false;
+        alert('Submission failed. Please try again or message us on WhatsApp.');
+      }
+    });
+  }).catch(function(){
+    btn.textContent = origText;
+    btn.disabled = false;
+    alert('Network error. Please check your connection or message us on WhatsApp.');
+  });
+});
+
+// Piece modal
+var modal = document.getElementById('pieceModal');
+function openPiece(i){
+  var p = piecesData[i];
+  document.getElementById('mImg').src = p.img;
+  document.getElementById('mImg').alt = p.name;
+  document.getElementById('mName').textContent = p.name;
+  document.getElementById('mMaterial').textContent = p.material;
+  document.getElementById('mDimensions').textContent = p.dimensions;
+  document.getElementById('mFinishes').textContent = p.finishes;
+  document.getElementById('mCustom').textContent = p.custom;
+  document.getElementById('mPrice').textContent = p.price;
+  document.getElementById('mOrder').href = (p.buyLink && p.buyLink !== '#') ? p.buyLink : 'https://wa.me/8615017434683?text=' + encodeURIComponent(p.orderMsg);
+  document.getElementById('mProject').href = 'https://wa.me/8615017434683?text=' + encodeURIComponent(p.projectMsg);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePiece(){
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  if(history.replaceState){ history.replaceState(null,'',location.pathname); }
+}
+document.querySelectorAll('.piece').forEach(function(el){
+  el.addEventListener('click', function(e){
+    if(e.target.closest('.p-btn')) return;
+    openPiece(parseInt(el.dataset.piece));
+    if(history.replaceState){ history.replaceState(null,'','#' + el.id); }
+  });
+});
+document.getElementById('modalClose').addEventListener('click', closePiece);
+modal.addEventListener('click', function(e){ if(e.target === modal) closePiece(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePiece(); });
+
+// Open from shared link
+if(location.hash && location.hash.indexOf('#piece-') === 0){
+  var idx = parseInt(location.hash.replace('#piece-','')) - 1;
+  if(idx >= 0 && idx < piecesData.length){
+    setTimeout(function(){ openPiece(idx); }, 300);
+  }
+}
+</script>
+</body>
+</html>
