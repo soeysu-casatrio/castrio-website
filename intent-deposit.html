@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intent Deposit — CASA TRIO | Secure Your Project</title>
+<meta name="description" content="Secure your CASA TRIO project with an Intent Deposit. Choose your tier based on project size and scope. 100% creditable towards your final order.">
+<meta property="og:title" content="Intent Deposit — CASA TRIO">
+<meta property="og:description" content="Secure your project with a refundable intent deposit. Choose from three tiers based on your project size.">
+<meta property="og:url" content="https://www.casatriohome.com/intent-deposit.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65DKM46DH7');
+</script>
+<style>
+:root {
+  --ink: #22201C;
+  --paper: #F7F3EC;
+  --offwhite: #FAF8F3;
+  --soft: #EFE9DD;
+  --line: #D8CFBF;
+  --muted: #6E675C;
+  --gold: #A98E6B;
+  --gold-light: #C0A57E;
+  --gold-dark: #8a7355;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --max: 1200px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.container { width: min(calc(100% - 48px), var(--max)); margin: auto; }
+
+/* Nav */
+.nav { position: fixed; z-index: 9999; top: 0; left: 0; right: 0; padding: 16px 0; color: #fff; background: linear-gradient(#111a, transparent); transition: background .3s, padding .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.nav.scrolled { background: rgba(247,243,236,.96); color: var(--ink); padding: 10px 0; border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.navin { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo img { height: 34px; width: auto; display: block; }
+.logo .logo-onscroll { display: none; }
+.nav.scrolled .logo .logo-onhero { display: none; }
+.nav.scrolled .logo .logo-onscroll { display: block; }
+.links { display: flex; gap: 24px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; }
+.links a { position: relative; padding: 4px 0; transition: color .2s; text-decoration: none; color: inherit; }
+.links a:hover { color: var(--gold); }
+.links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+.links a:hover::after { width: 100%; }
+.nav-home, .nav-divider, .nav-m-start, .nav-m-wa { display: none; }
+.nav-cta { display: flex; gap: 10px; align-items: center; }
+.nav-cta .wa-btn { border: 1px solid currentColor; padding: 10px 14px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; transition: all .25s; white-space: nowrap; text-decoration: none; color: inherit; }
+.nav-cta .wa-btn:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+.nav-cta .start-btn { background: var(--gold); border: 1px solid var(--gold); color: #fff; padding: 10px 16px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; transition: all .25s; white-space: nowrap; text-decoration: none; }
+.nav-cta .start-btn:hover { background: #8e7658; border-color: #8e7658; }
+.burger { display: none; background: none; border: 0; cursor: pointer; color: inherit; padding: 8px 12px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 8px; z-index: 10000; position: relative; }
+.burger .burger-lines { display: flex; flex-direction: column; gap: 5px; }
+.burger .burger-lines span { display: block; width: 24px; height: 1.5px; background: currentColor; transition: transform .3s, opacity .3s; }
+.burger-text { font-size: 10px; letter-spacing: .14em; font-weight: 500; text-transform: uppercase; }
+.burger.open .burger-lines span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open .burger-lines span:nth-child(2) { opacity: 0; }
+.burger.open .burger-lines span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Hero */
+.hero {
+  min-height: 50vh;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18,16,14,.8) 0%, rgba(18,16,14,.6) 100%), url("images/ygmVXkOvAr.jpg") center/cover;
+}
+.hero .container { position: relative; z-index: 1; }
+.eyebrow { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; font-weight: 500; }
+.hero h1 { font: 400 clamp(36px, 5vw, 56px)/1.1 var(--serif); margin: 0 0 16px; }
+.hero h1 em { font-style: italic; color: var(--gold-light); }
+.hero .sub { font: 400 16px/1.7 var(--sans); color: rgba(255,255,255,.8); max-width: 600px; margin: 0 auto; font-weight: 300; }
+
+/* Deposit Section */
+.deposit-section {
+  padding: 80px 20px 60px;
+}
+.deposit-section .container {
+  max-width: 1000px;
+}
+.section-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-intro h2 {
+  font: 400 clamp(28px, 4vw, 40px)/1.2 var(--serif);
+  margin-bottom: 16px;
+}
+.section-intro p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.deposit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.deposit-card {
+  background: var(--offwhite);
+  border: 1px solid var(--line);
+  padding: 36px 28px;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.deposit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px -20px rgba(34,32,28,.2);
+  border-color: var(--gold);
+}
+.deposit-card.featured {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.deposit-card.featured:hover {
+  border-color: var(--gold);
+}
+.deposit-card .badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  font-weight: 500;
+}
+.deposit-card .tier {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.deposit-card.featured .tier {
+  color: var(--gold-light);
+}
+.deposit-card .area {
+  font: 400 22px/1.2 var(--serif);
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.deposit-card.featured .area {
+  color: #fff;
+}
+.price-option {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.price-option:first-of-type {
+  border-top: none;
+}
+.deposit-card.featured .price-option {
+  border-top-color: rgba(255,255,255,.15);
+}
+.price-option .label {
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.deposit-card.featured .price-option .label {
+  color: rgba(255,255,255,.6);
+}
+.price-option .amount {
+  font: 400 36px/1 var(--serif);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.deposit-card.featured .price-option .amount {
+  color: #fff;
+}
+.price-option .amount span {
+  font-size: 16px;
+  color: var(--muted);
+}
+.deposit-card.featured .price-option .amount span {
+  color: rgba(255,255,255,.5);
+}
+.deposit-card .desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 20px 0;
+  flex: 1;
+}
+.deposit-card.featured .desc {
+  color: rgba(255,255,255,.7);
+}
+.pay-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  transition: all .25s;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: auto;
+}
+.pay-btn:hover {
+  background: var(--ink);
+  color: #fff;
+}
+.deposit-card.featured .pay-btn {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+.deposit-card.featured .pay-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+/* Note */
+.deposit-note {
+  text-align: center;
+  padding: 24px;
+  background: var(--soft);
+  border-radius: 2px;
+  margin-bottom: 60px;
+}
+.deposit-note p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.deposit-note strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 60px 20px 80px;
+  background: var(--offwhite);
+}
+.faq-section .container {
+  max-width: 800px;
+}
+.faq-section h2 {
+  font: 400 clamp(28px, 4vw, 36px)/1.2 var(--serif);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--line);
+}
+.faq-question {
+  font: 500 16px/1.5 var(--sans);
+  color: var(--ink);
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question::after {
+  content: '+';
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 300;
+  transition: transform .3s;
+}
+.faq-item.open .faq-question::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18,16,14,.8);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal {
+  background: var(--paper);
+  max-width: 480px;
+  width: 100%;
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--muted);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+}
+.modal h3 {
+  font: 400 24px/1.3 var(--serif);
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.modal p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .25s;
+}
+.modal-btn.primary {
+  background: #25D366;
+  color: #fff;
+  border: 1px solid #25D366;
+}
+.modal-btn.primary:hover {
+  background: #128C7E;
+  border-color: #128C7E;
+}
+.modal-btn.secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.modal-btn.secondary:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,.7);
+  padding: 60px 0 30px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.foot-brand img {
+  height: 36px;
+  margin-bottom: 16px;
+}
+.foot-brand p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.6);
+  font-weight: 300;
+}
+.foot-col h4 {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.foot-col a {
+  display: block;
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color .2s;
+  font-weight: 300;
+}
+.foot-col a:hover {
+  color: var(--gold-light);
+}
+.foot-col p {
+  font-size: 13px;
+  padding: 6px 0;
+  font-weight: 300;
+}
+.foot-col .btn {
+  display: inline-block;
+  margin: 10px 0 16px;
+  padding: 12px 24px;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+}
+.foot-col .btn.gold {
+  background: var(--gold);
+  color: #fff;
+  border: 1px solid var(--gold);
+}
+.foot-col .btn.gold:hover {
+  background: var(--gold-light);
+}
+.foot-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foot-bottom a {
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+}
+
+/* Float WA */
+.float-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  transition: transform .3s;
+}
+.float-wa:hover {
+  transform: scale(1.1);
+}
+.float-wa svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* Mobile Nav */
+@media(max-width:1024px){
+  .links{gap:16px;font-size:10px}
+  .nav-cta .wa-btn{display:none}
+}
+@media(max-width:900px){
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);color:var(--ink);padding:16px 24px 24px;gap:0;border-bottom:1px solid var(--line);z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+  .links.open{display:flex!important}
+  .nav-m-start,.nav-m-wa{display:flex!important}
+  .links a{padding:14px 0;font-size:14px;border-bottom:1px solid var(--line);min-height:48px;display:flex;align-items:center}
+  .links a:last-child{border-bottom:none}
+  .nav-divider{display:none}
+  .links .nav-home{display:flex}
+  .links .nav-divider{display:block;border:0;border-top:1px solid var(--line);margin:6px 0;padding:0;height:0;min-height:0}
+  .links .nav-m-start{display:flex;background:var(--gold);color:#fff;border:0;justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-top:8px;padding:14px;min-height:48px}
+  .links .nav-m-wa{display:flex;border:1px solid var(--ink);justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding:14px;min-height:48px}
+  .burger{display:flex}
+  .nav-cta .start-btn{display:none}
+  .nav-cta .wa-btn{display:none}
+  .deposit-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto 48px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .hero{min-height:45vh;padding:100px 20px 60px}
+  .hero h1{font-size:32px}
+  .hero .sub{font-size:14px}
+  .deposit-section{padding:60px 16px 40px}
+  .deposit-card{padding:28px 24px}
+  .price-option .amount{font-size:30px}
+  .faq-section{padding:40px 16px 60px}
+  .modal{padding:36px 24px}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .foot-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="logo" href="index.html"><img class="logo-onhero" src="images/9ufMdUAsPU.png" alt="CASA TRIO"><img class="logo-onscroll" src="images/Myj5vOnAp6.png" alt="CASA TRIO"></a>
+    <nav class="links" id="navlinks">
+      <a class="nav-home" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="projects.html">Projects</a>
+      <a href="selected-pieces.html">Selected Pieces</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="intent-deposit.html">Intent Deposit</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="wa-btn" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="start-btn" href="contact.html">Start Your Project</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open');this.classList.toggle('open');"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Secure Your Project</div>
+    <h1>Intent <em>Deposit</em></h1>
+    <p class="sub">A small commitment to begin your journey. Your deposit is 100% creditable towards your final order.</p>
+  </div>
+</section>
+
+<!-- Deposit Cards -->
+<section class="deposit-section">
+  <div class="container">
+    <div class="section-intro">
+      <h2>Choose Your Tier</h2>
+      <p>Select the deposit that matches your project size and scope. All deposits are fully creditable towards your final invoice.</p>
+    </div>
+    
+    <div class="deposit-grid">
+      <!-- Card 1 -->
+      <div class="deposit-card">
+        <div class="tier">Tier 1</div>
+        <div class="area">Under 150m²</div>
+        <div class="price-option">
+          <div class="label">Furniture & Decor Only</div>
+          <div class="amount">$300 <span>USD</span></div>
+        </div>
+        <div class="price-option">
+          <div class="label">Including Building Materials</div>
+          <div class="amount">$500 <span>USD</span></div>
+        </div>
+        <p class="desc">Perfect for apartments and small homes. Includes initial concept proposal with space planning and styling direction.</p>
+        <a href="#" class="pay-btn" onclick="openModal('Under 150m²', '$300 / $500'); return false;">Pay Deposit</a>
+      </div>
+      
+      <!-- Card 2 (Featured) -->
+      <div class="deposit-card featured">
+        <div class="badge">Most Popular</div>
+        <div class="tier">Tier 2</div>
+        <div class="area">150 – 300m²</div>
+        <div class="price-option">
+          <div class="label">Furniture & Decor Only</div>
+          <div class="amount">$600 <span>USD</span></div>
+        </div>
+        <div class="price-option">
+          <div class="label">Including Building Materials</div>
+          <div class="amount">$800 <span>USD</span></div>
+        </div>
+        <p class="desc">Ideal for family homes and villas. Comprehensive initial proposal with detailed space planning and curated selections.</p>
+        <a href="#" class="pay-btn" onclick="openModal('150–300m²', '$600 / $800'); return false;">Pay Deposit</a>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="deposit-card">
+        <div class="tier">Tier 3</div>
+        <div class="area">300 – 500m²</div>
+        <div class="price-option">
+          <div class="label">Furniture & Decor Only</div>
+          <div class="amount">$1,000 <span>USD</span></div>
+        </div>
+        <div class="price-option">
+          <div class="label">Including Building Materials</div>
+          <div class="amount">$1,200 <span>USD</span></div>
+        </div>
+        <p class="desc">For large residences and estates. Full initial proposal with extensive space planning, 3D concept, and premium curation.</p>
+        <a href="#" class="pay-btn" onclick="openModal('300–500m²', '$1,000 / $1,200'); return false;">Pay Deposit</a>
+      </div>
+    </div>
+    
+    <div class="deposit-note">
+      <p><strong>Projects over 500m²:</strong> Custom deposit from $1,500 (furniture only) / $1,800 (including materials).<br>
+      <strong>Single items (under 5 pieces):</strong> No deposit required — contact us directly for a quote.<br>
+      <strong>All deposits are 100% creditable</strong> towards your final product payment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">What does the intent deposit include?</div>
+      <div class="faq-answer">Your deposit secures our team for your project and includes an initial concept proposal with space planning, styling direction, and preliminary product selections. For clients opting for full design services, the first concept includes a 3D rendering of one space.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Is the deposit refundable?</div>
+      <div class="faq-answer">The intent deposit is fully creditable towards your final product payment. If you decide not to proceed before we begin work on your concept, the deposit can be refunded minus any incurred costs. Once concept work has started, the deposit covers our design and planning time.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">How do I choose between "Furniture Only" and "Including Materials"?</div>
+      <div class="faq-answer">Choose "Furniture & Decor Only" if you already have your building materials and finishes sorted, or only need help with furniture and soft furnishings. Choose "Including Building Materials" if you need us to source tiles, flooring, cabinetry, bathroom fixtures, and other hard finishes as well.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">What happens after I pay the deposit?</div>
+      <div class="faq-answer">After payment, you'll be connected directly with our project manager via WhatsApp. We'll schedule a discovery call to understand your needs, then begin working on your initial concept proposal. Typical turnaround is 5-7 business days.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Can I upgrade my tier later?</div>
+      <div class="faq-answer">Absolutely. If your project scope expands, you can upgrade to a higher tier at any time. The difference will be added to your deposit and remains fully creditable towards your final order.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="images/9ufMdUAsPU.png" alt="CASA TRIO">
+        <p>Premium Home & Interior Solutions from China. Your private project partner in Foshan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="selected-pieces.html">Selected Pieces</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="intent-deposit.html">Intent Deposit</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <h4>Contact</h4>
+        <a class="btn gold" href="contact.html">Start Your Project</a>
+        <p><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp +86 15017434683</a></p>
+        <p><a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; 2026 CASA TRIO. All Rights Reserved.</p>
+      <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a> &middot; Foshan &middot; Guangdong &middot; China</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Float WA -->
+<a class="float-wa" href="https://wa.me/8615017434683" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.42 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<!-- Payment Modal -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    </div>
+    <h3 id="modalTitle">Almost There!</h3>
+    <p id="modalText">You've selected the <strong>Under 150m²</strong> tier (<strong>$300 / $500</strong>).<br><br>After completing your payment, please connect with us on WhatsApp so we can immediately start your project. You can also email us if you prefer.</p>
+    <div class="modal-buttons">
+      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20intent%20deposit%20for%20my%20project.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener" class="modal-btn primary">Continue on WhatsApp</a>
+      <a href="mailto:soey@casatriohome.com?subject=Intent%20Deposit%20Paid&body=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20intent%20deposit.%20Please%20help%20me%20get%20started." class="modal-btn secondary">Email Us Instead</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Burger menu
+const burger = document.getElementById('burger');
+const navlinks = document.getElementById('navlinks');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navlinks.classList.toggle('open');
+});
+document.querySelectorAll('#navlinks a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navlinks.classList.remove('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+// Payment modal
+function openModal(tier, price) {
+  document.getElementById('modalTitle').textContent = 'Thank You!';
+  document.getElementById('modalText').innerHTML = `You've selected the <strong>${tier}</strong> tier (<strong>${price}</strong>).<br><br>After completing your payment, please connect with us on WhatsApp so we can immediately start your project. You can also email us if you prefer.`;
+  document.getElementById('paymentModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('paymentModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.getElementById('paymentModal').addEventListener('click', (e) => {
+  if (e.target.id === 'paymentModal') closeModal();
+});
+</script>
+
+</body>
+</html>
