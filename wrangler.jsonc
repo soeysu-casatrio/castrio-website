@@ -1,0 +1,8 @@
+{
+  "name": "castrio-website",
+  "compatibility_date": "2026-08-15",
+  "assets": {
+    "directory": ".",
+    "exclude": [".git/**", ".wrangler/**", "node_modules/**"]
+  }
+}
