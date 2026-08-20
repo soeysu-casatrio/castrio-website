@@ -102,6 +102,9 @@ section{padding:100px 0}
 .why-num{font:400 13px var(--serif);color:var(--gold);letter-spacing:.14em;margin-bottom:16px;display:block}
 .why-item h3{font:400 21px/1.25 var(--serif);margin:0 0 10px}
 .why-item p{font-size:13px;color:var(--muted);margin:0;line-height:1.65}
+.why-item-img{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:20px;border-radius:2px}
+.why-item-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.why-item:hover .why-item-img img{transform:scale(1.05)}
 .trust{background:var(--ink);color:#fff;padding:90px 0}
 .trust .head{text-align:center;margin-bottom:56px}
 .trust .eyebrow{color:var(--gold-light)}
@@ -571,12 +574,12 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       <p class="lead">We work with workshops chosen for quality and capability — not volume. Each partner is vetted for specific product categories.</p>
     </div>
     <div class="why-grid" style="margin-top:0">
-      <div class="why-item reveal"><span class="why-num">01</span><h3>Upholstery</h3><p>Sofas, chairs, beds — solid wood frames, high-density foam and premium fabrics.</p></div>
-      <div class="why-item reveal"><span class="why-num">02</span><h3>Solid Wood</h3><p>Tables, cabinets and custom woodwork in walnut, oak and engineered veneers.</p></div>
-      <div class="why-item reveal"><span class="why-num">03</span><h3>Stone &amp; Tile</h3><p>Marble, travertine, sintered stone — cut-to-size and custom fabrications.</p></div>
-      <div class="why-item reveal"><span class="why-num">04</span><h3>Metal &amp; Hardware</h3><p>Stainless steel, brass and aluminium — frames, trims and handles.</p></div>
-      <div class="why-item reveal"><span class="why-num">05</span><h3>Bathroom</h3><p>Vanities, bathtubs, showers and faucets — complete bathroom solutions.</p></div>
-      <div class="why-item reveal"><span class="why-num">06</span><h3>Custom &amp; Built-in</h3><p>Kitchens, TV walls, walk-in closets and tailored joinery.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_upholstery.jpg" alt="Upholstery furniture"></div><span class="why-num">01</span><h3>Upholstery</h3><p>Sofas, chairs, beds — solid wood frames, high-density foam and premium fabrics.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_solidwood.jpg" alt="Solid wood furniture"></div><span class="why-num">02</span><h3>Solid Wood</h3><p>Tables, cabinets and custom woodwork in walnut, oak and engineered veneers.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_stonetile.jpg" alt="Stone and tile materials"></div><span class="why-num">03</span><h3>Stone &amp; Tile</h3><p>Marble, travertine, sintered stone — cut-to-size and custom fabrications.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_metalhardware.jpg" alt="Metal and hardware"></div><span class="why-num">04</span><h3>Metal &amp; Hardware</h3><p>Stainless steel, brass and aluminium — frames, trims and handles.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_bathroom.jpg" alt="Bathroom solutions"></div><span class="why-num">05</span><h3>Bathroom</h3><p>Vanities, bathtubs, showers and faucets — complete bathroom solutions.</p></div>
+      <div class="why-item reveal"><div class="why-item-img"><img src="images/category_custombuiltin.jpg" alt="Custom built-in furniture"></div><span class="why-num">06</span><h3>Custom &amp; Built-in</h3><p>Kitchens, TV walls, walk-in closets and tailored joinery.</p></div>
     </div>
   </div>
 </section>
