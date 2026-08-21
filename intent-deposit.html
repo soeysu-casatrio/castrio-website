@@ -584,6 +584,43 @@ footer {
   fill: #fff;
 }
 
+/* Mobile fixed bottom WhatsApp bar */
+.mobile-bar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background: #25D366;
+    color: #fff;
+    padding: 0 16px;
+    min-height: 56px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 -4px 20px -8px rgba(0,0,0,.3);
+  }
+  .mobile-bar svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    flex-shrink: 0;
+  }
+  body {
+    padding-bottom: 56px;
+  }
+}
+
 /* Mobile Nav */
 @media(max-width:1024px){
   .links{gap:16px;font-size:10px}
@@ -880,7 +917,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-});
 });
 
 // FAQ accordion
