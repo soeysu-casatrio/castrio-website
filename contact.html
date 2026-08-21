@@ -753,17 +753,23 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 60) nav.classList.add('scrolled');
   else nav.classList.remove('scrolled');
 });
-const burger = document.getElementById('burger');
-const navlinks = document.getElementById('navlinks');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  navlinks.classList.toggle('open');
+// Burger menu - protected by DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navlinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
 });
-document.querySelectorAll('#navlinks a').forEach(a => {
-  a.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navlinks.classList.remove('open');
-  });
 });
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
