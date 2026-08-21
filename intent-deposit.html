@@ -95,6 +95,52 @@ body {
 .hero h1 em { font-style: italic; color: var(--gold-light); }
 .hero .sub { font: 400 16px/1.7 var(--sans); color: rgba(255,255,255,.8); max-width: 600px; margin: 0 auto; font-weight: 300; }
 
+/* Why Deposit Section */
+.why-deposit {
+  padding: 80px 20px 40px;
+  background: var(--offwhite);
+}
+.why-deposit .container {
+  max-width: 1000px;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.why-card {
+  text-align: center;
+  padding: 32px 20px;
+}
+.why-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  background: var(--soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+.why-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.why-card h3 {
+  font: 500 16px/1.4 var(--sans);
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: .02em;
+}
+.why-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
 /* Deposit Section */
 .deposit-section {
   padding: 80px 20px 60px;
@@ -557,6 +603,8 @@ footer {
   .burger{display:flex}
   .nav-cta .start-btn{display:none}
   .nav-cta .wa-btn{display:none}
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .why-card{padding:24px 12px}
   .deposit-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto 48px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
@@ -604,8 +652,48 @@ footer {
 <section class="hero">
   <div class="container">
     <div class="eyebrow">Secure Your Project</div>
-    <h1>Intent <em>Deposit</em></h1>
+    <h1>Commitment <em>Deposit</em></h1>
     <p class="sub">A small commitment to begin your journey. Includes a First Concept Package — 100% creditable towards your final order.</p>
+  </div>
+</section>
+
+<!-- Why Commitment Deposit -->
+<section class="why-deposit">
+  <div class="container">
+    <div class="section-intro">
+      <h2>Why a Commitment Deposit?</h2>
+      <p>Your deposit is not a fee — it is a commitment that unlocks dedicated service and tangible deliverables. Here is what you receive in return.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>100% Creditable</h3>
+        <p>Every dollar of your deposit is fully credited towards your final product payment. It is an advance, not an extra cost.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>First Concept Package</h3>
+        <p>Receive a 2D soft furnishing plan and a photorealistic 3D rendering of one main space — see your vision come to life before committing further.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Dedicated Team</h3>
+        <p>A dedicated project manager and designer are assigned to your project, ensuring personalized attention and clear communication from day one.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Priority Scheduling</h3>
+        <p>Your deposit secures your place in our production schedule, ensuring timely delivery and avoiding delays during peak seasons.</p>
+      </div>
+    </div>
   </div>
 </section>
 
