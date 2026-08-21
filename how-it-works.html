@@ -149,11 +149,30 @@ body {
 .step-content {
   width: calc(50% - 50px);
   background: var(--offwhite);
-  padding: 36px 32px;
+  padding: 0;
   border-radius: 2px;
   border: 1px solid var(--line);
   position: relative;
   transition: all 0.4s ease;
+  overflow: hidden;
+}
+.step-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.step-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.step:hover .step-image img {
+  transform: scale(1.05);
+}
+.step-body {
+  padding: 28px 28px 32px;
 }
 .step:hover .step-content {
   border-color: var(--gold);
@@ -399,7 +418,12 @@ body {
   }
   .step-content {
     width: 100%;
-    padding: 24px 20px;
+  }
+  .step-image {
+    height: 160px;
+  }
+  .step-body {
+    padding: 20px 20px 24px;
   }
   .step-content::before {
     display: none;
@@ -599,13 +623,15 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 1 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 01</div>
-        <h2 class="step-title">Discovery & Consultation</h2>
-        <p class="step-desc">We begin with a thoughtful conversation about your lifestyle, aesthetic preferences, and practical needs. Whether you're starting from scratch or have existing plans, we take the time to understand your vision and define the scope of our partnership.</p>
-        <div class="step-tags">
-          <span class="tag">Needs Assessment</span>
-          <span class="tag">Budget Alignment</span>
-          <span class="tag">Scope Definition</span>
+        <div class="step-body">
+          <div class="step-number">STEP 01</div>
+          <h2 class="step-title">Discovery & Consultation</h2>
+          <p class="step-desc">We begin with a thoughtful conversation about your lifestyle, aesthetic preferences, and practical needs. Whether starting from scratch or with existing plans, we define the scope of our partnership.</p>
+          <div class="step-tags">
+            <span class="tag">Needs Assessment</span>
+            <span class="tag">Budget Alignment</span>
+            <span class="tag">Scope Definition</span>
+          </div>
         </div>
       </div>
       <div class="step-icon">
@@ -616,16 +642,21 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 2 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 02</div>
-        <h2 class="step-title">Partnership & Initial Concept</h2>
-        <p class="step-desc">With an intent deposit, we formalize our collaboration and deliver your <strong>First Concept Package</strong> — a 2D soft furnishing plan and a photorealistic 3D rendering of one main space, plus space planning and styling direction. Delivered in 5–7 business days.</p>
-        <div class="note-box">
-          <strong>For full-service design clients:</strong> Once you approve the initial concept, the design fee is collected separately (50% to start, 50% upon main design direction approval). A Design Fee Credit of up to 30% of the design fee applies when your procurement reaches agreed thresholds — credited against your final product balance.
+        <div class="step-image">
+          <img loading="lazy" src="images/step_initial_concept.jpg" alt="3D rendering initial concept">
         </div>
-        <div class="step-tags" style="margin-top:16px;">
-          <span class="tag">Intent Deposit</span>
-          <span class="tag">Initial Concept</span>
-          <span class="tag">3 Revisions</span>
+        <div class="step-body">
+          <div class="step-number">STEP 02</div>
+          <h2 class="step-title">Partnership & Initial Concept</h2>
+          <p class="step-desc">With an intent deposit, we deliver your <strong>First Concept Package</strong> — a 2D soft furnishing plan and a photorealistic 3D rendering of one main space, plus space planning and styling direction. Delivered in 5–7 business days.</p>
+          <div class="note-box">
+            <strong>For full-service design clients:</strong> Design fee is collected separately (50% to start, 50% upon design direction approval). Up to 30% design fee credit applies at agreed procurement thresholds.
+          </div>
+          <div class="step-tags" style="margin-top:16px;">
+            <span class="tag">Intent Deposit</span>
+            <span class="tag">Initial Concept</span>
+            <span class="tag">3 Revisions</span>
+          </div>
         </div>
       </div>
       <div class="step-icon">
@@ -636,23 +667,25 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 3 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 03</div>
-        <h2 class="step-title">Design Development & Curation</h2>
-        <p class="step-desc">Your project takes definitive form. We refine every detail and curate selections tailored to your taste and budget.</p>
-        <div class="two-paths">
-          <div class="path-card">
-            <span class="path-label">Full Service</span>
-            <h4>Design & Procurement</h4>
-            <p>Photorealistic 3D renderings, immersive VR walkthroughs, and detailed construction drawings — followed by curated product selections.</p>
+        <div class="step-body">
+          <div class="step-number">STEP 03</div>
+          <h2 class="step-title">Design Development & Curation</h2>
+          <p class="step-desc">Your project takes definitive form. We refine every detail and curate selections tailored to your taste and budget.</p>
+          <div class="two-paths">
+            <div class="path-card">
+              <span class="path-label">Full Service</span>
+              <h4>Design & Procurement</h4>
+              <p>Photorealistic 3D renderings, VR walkthroughs, and construction drawings — followed by curated product selections.</p>
+            </div>
+            <div class="path-card">
+              <span class="path-label">Procurement</span>
+              <h4>You Have Designs</h4>
+              <p>We work from your existing drawings to source and specify furniture, materials, and finishes.</p>
+            </div>
           </div>
-          <div class="path-card">
-            <span class="path-label">Procurement</span>
-            <h4>You Have Designs</h4>
-            <p>We work from your existing drawings to source and specify furniture, materials, and finishes that bring your plan to life.</p>
+          <div class="note-box" style="margin-top:16px;">
+            <strong>Visit option:</strong> Experience our factories and showrooms in person — we handle the entire itinerary. Or collaborate fully remotely.
           </div>
-        </div>
-        <div class="note-box" style="margin-top:16px;">
-          <strong>Visit option:</strong> Experience our factories and showrooms in person — we handle the entire itinerary. Or collaborate fully remotely with regular virtual updates.
         </div>
       </div>
       <div class="step-icon">
@@ -663,13 +696,18 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 4 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 04</div>
-        <h2 class="step-title">Production & Project Management</h2>
-        <p class="step-desc">Once your product list is finalized, production begins at our vetted manufacturing partners. A dedicated project manager oversees every milestone, keeping you informed with regular progress updates.</p>
-        <div class="step-tags">
-          <span class="tag">Final Quotation</span>
-          <span class="tag">Production Deposit</span>
-          <span class="tag">Progress Tracking</span>
+        <div class="step-image">
+          <img loading="lazy" src="images/step_production.jpg" alt="Factory production and manufacturing">
+        </div>
+        <div class="step-body">
+          <div class="step-number">STEP 04</div>
+          <h2 class="step-title">Production & Project Management</h2>
+          <p class="step-desc">Once your product list is finalized, production begins at our vetted manufacturing partners. A dedicated project manager oversees every milestone with regular progress updates.</p>
+          <div class="step-tags">
+            <span class="tag">Final Quotation</span>
+            <span class="tag">Production Deposit</span>
+            <span class="tag">Progress Tracking</span>
+          </div>
         </div>
       </div>
       <div class="step-icon">
@@ -680,13 +718,18 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 5 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 05</div>
-        <h2 class="step-title">Quality Assurance & Sign-off</h2>
-        <p class="step-desc">Before anything leaves our facility, each piece undergoes rigorous inspection. We share comprehensive video and photo documentation for your review. Only after your approval do we proceed to final settlement.</p>
-        <div class="step-tags">
-          <span class="tag">Inspection Media</span>
-          <span class="tag">Client Approval</span>
-          <span class="tag">Final Settlement</span>
+        <div class="step-image">
+          <img loading="lazy" src="images/step_qa.jpg" alt="Quality control and inspection">
+        </div>
+        <div class="step-body">
+          <div class="step-number">STEP 05</div>
+          <h2 class="step-title">Quality Assurance & Sign-off</h2>
+          <p class="step-desc">Before shipment, each piece undergoes rigorous inspection. We share comprehensive video and photo documentation for your review. Only after your approval do we proceed to final settlement.</p>
+          <div class="step-tags">
+            <span class="tag">Inspection Media</span>
+            <span class="tag">Client Approval</span>
+            <span class="tag">Final Settlement</span>
+          </div>
         </div>
       </div>
       <div class="step-icon">
@@ -697,13 +740,18 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <!-- Step 6 -->
     <div class="step">
       <div class="step-content">
-        <div class="step-number">STEP 06</div>
-        <h2 class="step-title">Global Delivery & Installation</h2>
-        <p class="step-desc">Your order is professionally packaged and dispatched with trusted logistics partners. We offer door-to-door delivery worldwide, with white-glove installation available in select regions.</p>
-        <div class="step-tags">
-          <span class="tag">Expert Packaging</span>
-          <span class="tag">Door-to-Door</span>
-          <span class="tag">Installation (Select Areas)</span>
+        <div class="step-image">
+          <img loading="lazy" src="images/step_delivery.jpg" alt="Global delivery and logistics">
+        </div>
+        <div class="step-body">
+          <div class="step-number">STEP 06</div>
+          <h2 class="step-title">Global Delivery & Installation</h2>
+          <p class="step-desc">Your order is professionally packaged and dispatched with trusted logistics partners. Door-to-door delivery worldwide, with white-glove installation available in select regions.</p>
+          <div class="step-tags">
+            <span class="tag">Expert Packaging</span>
+            <span class="tag">Door-to-Door</span>
+            <span class="tag">Installation (Select Areas)</span>
+          </div>
         </div>
       </div>
       <div class="step-icon">
