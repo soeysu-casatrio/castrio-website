@@ -176,7 +176,9 @@ section{padding:100px 0}
 .gallery-overlay.open{display:flex;opacity:1}
 .gallery-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#1a1815;border-bottom:1px solid #333;position:relative;z-index:2}
 .gallery-bar span{font-size:13px;letter-spacing:.14em;color:var(--cream)}
-.gallery-bar .gallery-close{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:12px 24px;background:rgba(255,255,255,.12);cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:10px;border-radius:4px;font-weight:500}
+.gallery-close-float{position:fixed;top:20px;right:20px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;z-index:10002;backdrop-filter:blur(8px);font-weight:300}
+.gallery-close-float:hover{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
+.gallery-bar .gallery-close{display:none}
 .gallery-bar .gallery-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 .gallery-bar .gallery-close .close-x{font-size:22px;line-height:1;font-weight:400}
 .gallery-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:20px}
@@ -620,9 +622,9 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 
 <!-- Gallery Lightbox -->
 <div class="gallery-overlay" id="galleryOverlay">
+  <button class="gallery-close-float" id="galleryClose" aria-label="Close gallery">×</button>
   <div class="gallery-bar">
     <span id="galleryTitle">Case Study</span>
-    <button class="gallery-close" id="galleryClose"><span class="close-x">×</span> Close</button>
   </div>
   <div class="gallery-stage">
     <button class="gallery-nav prev" id="galleryPrev">&#8249;</button>
@@ -805,10 +807,14 @@ function openGallery(idx) {
   buildThumbs();
   document.getElementById('galleryOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  var nav = document.getElementById('nav');
+  if (nav) nav.style.display = 'none';
 }
 function closeGallery() {
   document.getElementById('galleryOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  var nav = document.getElementById('nav');
+  if (nav) nav.style.display = '';
 }
 function updateGalleryImage() {
   var g = galleryData[currentGallery];
