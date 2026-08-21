@@ -480,6 +480,19 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .contact-block .cb-icon{width:40px;height:40px;background:var(--soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:14px}
 .contact-block .cb-icon svg{width:20px;height:20px}
 .contact-block .cb-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+/* FAQ Accordion */
+.faq-accordion{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;transition:color .2s}
+.acc-header:hover{color:var(--gold)}
+.acc-header h3{font:400 17px/1.4 var(--serif);margin:0;padding-right:20px}
+.acc-icon{font-size:24px;color:var(--gold);font-weight:300;transition:transform .3s;flex-shrink:0;line-height:1}
+.acc-item.open .acc-icon{transform:rotate(45deg)}
+.acc-content{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+.acc-item.open .acc-content{max-height:2000px;padding-bottom:24px}
+.acc-content p{font-size:13px;color:var(--muted);line-height:1.8;margin:0 0 12px}
+.acc-content p:last-child{margin-bottom:0}
+.acc-content strong{color:var(--ink);font-weight:500}
 .contact-cta{margin-top:8px}
 .contact-cta .btn{width:100%;margin-bottom:12px}
 .contact-note{font-size:12px;color:var(--muted);text-align:center;margin:0}
@@ -619,48 +632,79 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <div class="head reveal">
       <div><div class="eyebrow">FAQ</div><h2 class="display">Common Questions.</h2></div>
     </div>
-    <div class="reveal" style="display:flex;flex-direction:column;gap:0">
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">How quickly do you respond?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">We respond to all inquiries within 24 hours. WhatsApp is the fastest way to reach us — most messages get a reply within a few hours during business days.</p>
+    <div class="reveal faq-accordion">
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>How quickly do you respond?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>We respond to all inquiries within 24 hours. WhatsApp is the fastest way to reach us — most messages get a reply within a few hours during business days.</p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Which countries do you serve?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">We serve residential clients worldwide, with a focus on Southeast Asia, the Middle East, and Central Asia. All communication is in English via WhatsApp and email. We handle international shipping and customs documentation.</p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>Do I need to visit China to work with you?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>Not at all. Most of our clients work with us entirely remotely — via WhatsApp, email, and video calls. We share detailed photos, videos, and 3D renderings at every stage. If you do wish to visit, we welcome you to our Foshan showrooms and partner factories by appointment.</p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Do I need to visit China to work with you?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">Not at all. Most of our clients work with us entirely remotely — via WhatsApp, email, and video calls. We share detailed photos, videos, and 3D renderings at every stage. If you do wish to visit, we welcome you to our Foshan showrooms and partner factories by appointment.</p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>What information should I include in my inquiry?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>To help us respond effectively, please include: your project location, property size (m²), project stage (planning / construction / furnishing), what you need (furniture / materials / design / full solution), budget range, and timeline. Floor plans or reference images are always helpful.</p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">What information should I include in my inquiry?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">To help us respond effectively, please include: your project location, property size (m²), project stage (planning / construction / furnishing), what you need (furniture / materials / design / full solution), budget range, and timeline. Floor plans or reference images are always helpful.</p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>What are the payment terms?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>Our payment process is transparent and structured in four stages:</p>
+          <p><strong>1. Commitment Deposit</strong> — Paid to secure your project and begin the initial concept. This deposit is <strong>100% credited</strong> toward your final product order.</p>
+          <p><strong>2. Design Fee (if required)</strong> — Paid separately only if you require full interior design services (complete 3D renderings, VR, construction drawings). Design fee follows its own schedule: 50% to start, 50% upon design direction approval.</p>
+          <p><strong>3. Production Deposit (70%)</strong> — Paid after you approve the final product list and quotation, to begin manufacturing. The commitment deposit is credited toward this amount.</p>
+          <p><strong>4. Final Balance (30%)</strong> — Paid after production is complete and you have reviewed and approved the quality inspection photos and videos. <strong>Full payment must be received before shipment.</strong></p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">What are the payment terms?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.8;margin:0">
-          Our payment process is transparent and structured in four stages:<br><br>
-          <strong style="color:var(--ink)">1. Commitment Deposit</strong> — Paid to secure your project and begin the initial concept. This deposit is <strong style="color:var(--ink)">100% credited</strong> toward your final product order.<br><br>
-          <strong style="color:var(--ink)">2. Design Fee (if required)</strong> — Paid separately only if you require full interior design services (complete 3D renderings, VR, construction drawings). Design fee follows its own schedule: 50% to start, 50% upon design direction approval.<br><br>
-          <strong style="color:var(--ink)">3. Production Deposit (70%)</strong> — Paid after you approve the final product list and quotation, to begin manufacturing. The commitment deposit is credited toward this amount.<br><br>
-          <strong style="color:var(--ink)">4. Final Balance (30%)</strong> — Paid after production is complete and you have reviewed and approved the quality inspection photos and videos. <strong style="color:var(--ink)">Full payment must be received before shipment.</strong>
-        </p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>How are shipping and logistics handled?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>We offer complete logistics support through our established shipping partners.</p>
+          <p><strong>When is the shipping cost quoted?</strong><br>Shipping costs are quoted separately after all products are produced and packed, based on the actual volume and weight of your shipment.</p>
+          <p><strong>Our logistics network:</strong><br>We work with <strong>3–5 stable shipping partners</strong>, each specializing in different trade routes. We compare options and recommend the best solution for your destination — balancing cost, transit time, and reliability.</p>
+          <p><strong>How is the shipping fee paid?</strong><br>Shipping costs are <strong>calculated separately</strong> from product costs. You can pay the shipping fee directly to the logistics company — we do not mark up or collect shipping charges. We coordinate the entire process and handle all export documentation.</p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">How are shipping and logistics handled?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.8;margin:0">
-          We offer complete logistics support through our established shipping partners.<br><br>
-          <strong style="color:var(--ink)">When is the shipping cost quoted?</strong><br>
-          Shipping costs are quoted separately after all products are produced and packed, based on the actual volume and weight of your shipment.<br><br>
-          <strong style="color:var(--ink)">Our logistics network:</strong><br>
-          We work with <strong style="color:var(--ink)">3–5 stable shipping partners</strong>, each specializing in different trade routes. We compare options and recommend the best solution for your destination — balancing cost, transit time, and reliability.<br><br>
-          <strong style="color:var(--ink)">How is the shipping fee paid?</strong><br>
-          Shipping costs are <strong style="color:var(--ink)">calculated separately</strong> from product costs. You can pay the shipping fee directly to the logistics company — we do not mark up or collect shipping charges. We coordinate the entire process and handle all export documentation.
-        </p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>What if products get damaged during shipping?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>We take several measures to minimize shipping damage and support you if it occurs:</p>
+          <p><strong>Reinforced packaging:</strong><br>Most of our products are packed in wooden crates with reinforced protection, significantly reducing the risk of damage during transit.</p>
+          <p><strong>Cargo insurance (recommended):</strong><br>We strongly recommend purchasing cargo insurance for your shipment to cover any potential damage or loss. We can help arrange this through our logistics partners.</p>
+          <p><strong>Our commitment:</strong><br>In the rare event of damage, we actively communicate and cooperate with you to find the best solution — whether that involves replacement, repair, or a refund. We stand behind our products and work with you until the issue is resolved.</p>
+        </div>
       </div>
-      <div class="faq-item" style="padding:24px 0">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">What is the typical project timeline?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">It depends on scope. Initial concept takes 5–7 business days after commitment deposit. Custom furniture production typically takes 6–10 weeks, plus international shipping (4–8 weeks by sea). Full-home projects with design support may take 3–6 months from start to delivery.</p>
+      <div class="acc-item">
+        <div class="acc-header">
+          <h3>What is the typical project timeline?</h3>
+          <span class="acc-icon">+</span>
+        </div>
+        <div class="acc-content">
+          <p>It depends on scope. Initial concept takes 5–7 business days after commitment deposit. Custom furniture production typically takes 6–10 weeks, plus international shipping (4–8 weeks by sea). Full-home projects with design support may take 3–6 months from start to delivery.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -734,6 +778,20 @@ document.querySelectorAll('.reveal').forEach(el => {
   el.style.transform = 'translateY(28px)';
   el.style.transition = 'opacity .8s ease, transform .8s ease';
   revealObserver.observe(el);
+});
+
+// FAQ Accordion
+document.querySelectorAll('.acc-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all items
+    document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+    // Toggle current item
+    if (!isOpen) {
+      item.classList.add('open');
+    }
+  });
 });
 </script>
 <script>
