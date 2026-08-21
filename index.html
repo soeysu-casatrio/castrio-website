@@ -306,13 +306,7 @@ section{padding:100px 0}
 .foshan-cta{margin-top:28px;display:inline-block}
 
 /* How we work 8 steps */
-.process8{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
-.step8{background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:8px;position:relative;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s ease}
-.step8.visible{opacity:1;transform:translateY(0)}
-.step8:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);border-color:var(--gold)}
-.step8 .step-num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;font:400 14px var(--serif);margin-bottom:14px;letter-spacing:.05em}
-.step8 h3{font:400 18px/1.25 var(--serif);margin:0 0 8px;color:var(--charcoal)}
-.step8 p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.65}
+
 
 /* Transparency */
 .transparency{background:var(--soft)}
@@ -426,7 +420,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .trust-grid{grid-template-columns:1fr 1fr}
   .grid5{grid-template-columns:1fr 1fr 1fr}
   .ways{grid-template-columns:1fr}
-  .process8{grid-template-columns:repeat(2,1fr)}
+
   .t-grid{grid-template-columns:1fr}
   .t-gallery{grid-template-columns:1fr 1fr}
   .after-grid{grid-template-columns:1fr 1fr}
@@ -457,8 +451,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .project{min-height:340px}
   .stack .project{min-height:240px}
   .pieces{grid-template-columns:1fr}
-  .process8{grid-template-columns:1fr;gap:16px}
-  .step8{padding:24px 20px}
+
   .after-grid{grid-template-columns:1fr}
   .form{grid-template-columns:1fr}
   .full{grid-column:auto}
@@ -873,16 +866,6 @@ textarea:focus{outline:none;border-color:var(--gold)}
     </div>
     </div>
 
-    <div class="process8" id="processTimeline">
-      <div class="step8"><span class="step-num">01</span><h3>Project Understanding</h3><p>We understand your property, scope, style, timeline and requirements.</p></div>
-      <div class="step8"><span class="step-num">02</span><h3>Commitment Confirmation</h3><p>A Commitment Deposit confirms your project and includes a First Concept Package — 2D plan + 3D rendering of one space.</p></div>
-      <div class="step8"><span class="step-num">03</span><h3>Analysis &amp; Proposal</h3><p>We assess the project and prepare the appropriate proposal.</p></div>
-      <div class="step8"><span class="step-num">04</span><h3>Design &amp; Selection</h3><p>Design support where required, or product selection based on your existing design.</p></div>
-      <div class="step8"><span class="step-num">05</span><h3>Quotation &amp; Contract</h3><p>Final selections, pricing, lead times and commercial terms are confirmed.</p></div>
-      <div class="step8"><span class="step-num">06</span><h3>Production</h3><p>Production is coordinated with selected manufacturing partners.</p></div>
-      <div class="step8"><span class="step-num">07</span><h3>Quality Control</h3><p>Products are inspected before shipment.</p></div>
-      <div class="step8"><span class="step-num">08</span><h3>Global Delivery</h3><p>Packaging, logistics and delivery are coordinated to your destination.</p></div>
-    </div>
   </div>
 </section>
 
@@ -1489,23 +1472,6 @@ document.addEventListener('keydown', function(e){
 </script>
 
 <script>
-
-// Process timeline scroll animation
-var processTimeline = document.getElementById('processTimeline');
-if (processTimeline) {
-  var steps = processTimeline.querySelectorAll('.step8');
-  var timelineObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        steps.forEach(function(step, index) {
-          setTimeout(function() { step.classList.add('visible'); }, index * 120);
-        });
-        timelineObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  timelineObserver.observe(processTimeline);
-}
 </script>
 
 </body>
