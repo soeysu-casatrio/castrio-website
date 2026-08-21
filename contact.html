@@ -477,7 +477,12 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .contact-info a:hover{border-color:var(--gold)}
 .contact-block{margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid var(--line)}
 .contact-block:last-child{border-bottom:none;margin-bottom:0}
+.contact-block .cb-icon{width:40px;height:40px;background:var(--soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:14px}
+.contact-block .cb-icon svg{width:20px;height:20px}
 .contact-block .cb-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.contact-cta{margin-top:8px}
+.contact-cta .btn{width:100%;margin-bottom:12px}
+.contact-note{font-size:12px;color:var(--muted);text-align:center;margin:0}
 .contact-block .cb-value{font:400 18px var(--serif);color:var(--ink);margin:0 0 4px}
 .contact-block .cb-desc{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
 /* Form on light bg */
@@ -523,11 +528,11 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 </header>
 <main>
 <!-- Page Header -->
-<section class="page-header" style="--page-bg:url('images/bmKUtEJVit.jpg')">
+<section class="page-header" style="--page-bg:url('images/contact_hero.jpg')">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
-    <h1>Contact</h1>
-    <p class="sub">Tell us about your project. We respond within 24 hours.</p>
+    <h1>Let's Build Something <em style="color:var(--gold-light);font-style:italic">Beautiful</em></h1>
+    <p class="sub">Share your project details — our team responds within 24 hours.</p>
   </div>
 </section>
 
@@ -538,27 +543,32 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       <!-- Left: Contact Info -->
       <div class="contact-info reveal">
         <div class="contact-block">
+          <div class="cb-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.42 5.83c0 4.54-3.7 8.23-8.25 8.23z"/></svg></div>
           <div class="cb-label">WhatsApp</div>
           <p class="cb-value"><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">+86 150 1743 4683</a></p>
-          <p class="cb-desc">Fastest response. Mon–Sat, 9:00–19:00 (GMT+8).</p>
+          <p class="cb-desc">Fastest response. Mon–Sat, 9:00–19:00 (GMT+8). Preferred for project discussions and quick questions.</p>
         </div>
         <div class="contact-block">
+          <div class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div class="cb-label">Email</div>
           <p class="cb-value"><a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a></p>
-          <p class="cb-desc">For project briefs, quotations and general inquiries.</p>
+          <p class="cb-desc">For detailed project briefs, quotations, floor plans and formal inquiries.</p>
         </div>
         <div class="contact-block">
+          <div class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="cb-label">Location</div>
           <p class="cb-value">Foshan, Guangdong, China</p>
-          <p class="cb-desc">Based in China's furniture manufacturing hub. Factory visits available by appointment.</p>
+          <p class="cb-desc">Based in China's furniture manufacturing hub — minutes from hundreds of factories and showrooms.</p>
         </div>
         <div class="contact-block">
-          <div class="cb-label">Factory Visit</div>
+          <div class="cb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="cb-label">Factory & Showroom Visit</div>
           <p class="cb-value">By Appointment</p>
-          <p class="cb-desc">Visit our partner workshops in Foshan — view craftsmanship, compare materials and meet the makers. Contact us to arrange.</p>
+          <p class="cb-desc">Experience our partner workshops and showrooms in person. View craftsmanship, compare materials, and meet the makers. We handle the full itinerary.</p>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-          <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <div class="contact-cta">
+          <a class="btn gold" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener">Start on WhatsApp</a>
+          <p class="contact-note">Prefer email? Use the form on the right →</p>
         </div>
       </div>
       <!-- Right: Form -->
@@ -570,15 +580,20 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
           <div class="field"><label>Email *</label><input required type="email" name="email" placeholder="you@email.com"></div>
           <div class="field"><label>Country</label><input name="country" placeholder="Country / Region"></div>
           <div class="field"><label>Project Type</label>
-            <select name="type"><option>Apartment</option><option>Villa</option><option>Residence</option><option>Other</option></select>
+            <select name="type"><option>Apartment / Condo</option><option>Villa</option><option>Residence / House</option><option>Commercial / Office</option><option>Other</option></select>
+          </div>
+          <div class="field"><label>Project Size (m²)</label><input name="size" placeholder="e.g. 180"></div>
+          <div class="field"><label>Budget Range (USD)</label>
+            <select name="budget"><option>Under $10,000</option><option>$10,000 – $30,000</option><option>$30,000 – $50,000</option><option>$50,000 – $100,000</option><option>$100,000+</option><option>Not sure yet</option></select>
           </div>
           <div class="field full">
-            <label>What are you looking for?</label>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:10px">
+            <label>What are you looking for? (Select all that apply)</label>
+            <div class="check-group">
               <label class="check-item"><input type="checkbox" name="looking" value="furniture">Furniture &amp; Soft Furnishing</label>
               <label class="check-item"><input type="checkbox" name="looking" value="custom">Custom &amp; Built-in</label>
               <label class="check-item"><input type="checkbox" name="looking" value="materials">Building Materials</label>
               <label class="check-item"><input type="checkbox" name="looking" value="bathroom">Bathroom &amp; Sanitary</label>
+              <label class="check-item"><input type="checkbox" name="looking" value="design">Interior Design Service</label>
               <label class="check-item"><input type="checkbox" name="looking" value="complete">Complete Home Solution</label>
             </div>
           </div>
@@ -604,22 +619,26 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <div class="head reveal">
       <div><div class="eyebrow">FAQ</div><h2 class="display">Common Questions.</h2></div>
     </div>
-    <div class="reveal" style="display:flex;flex-direction:column;gap:20px">
-      <div style="padding:24px 0;border-bottom:1px solid var(--line)">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:0">
+      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
         <h3 style="font:400 18px var(--serif);margin:0 0 8px">How quickly do you respond?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">We respond to all inquiries within 24 hours. WhatsApp is the fastest way to reach us.</p>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">We respond to all inquiries within 24 hours. WhatsApp is the fastest way to reach us — most messages get a reply within a few hours during business days.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Do you work with clients outside China?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">Yes. We serve residential clients across the Philippines, UK, Saudi Arabia, UAE, Malaysia and beyond. All communication is in English via WhatsApp and email.</p>
+      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
+        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Which countries do you serve?</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">We serve residential clients worldwide, with a focus on Southeast Asia, the Middle East, and Central Asia. All communication is in English via WhatsApp and email. We handle international shipping and customs documentation.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid var(--line)">
-        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Can I visit your factory?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">Yes. Factory visits in Foshan are available by appointment. Contact us to arrange a tour of our partner workshops, material showrooms and production facilities.</p>
+      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
+        <h3 style="font:400 18px var(--serif);margin:0 0 8px">Do I need to visit China to work with you?</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">Not at all. Most of our clients work with us entirely remotely — via WhatsApp, email, and video calls. We share detailed photos, videos, and 3D renderings at every stage. If you do wish to visit, we welcome you to our Foshan showrooms and partner factories by appointment.</p>
       </div>
-      <div style="padding:24px 0">
+      <div class="faq-item" style="padding:24px 0;border-bottom:1px solid var(--line)">
+        <h3 style="font:400 18px var(--serif);margin:0 0 8px">What information should I include in my inquiry?</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">To help us respond effectively, please include: your project location, property size (m²), project stage (planning / construction / furnishing), what you need (furniture / materials / design / full solution), budget range, and timeline. Floor plans or reference images are always helpful.</p>
+      </div>
+      <div class="faq-item" style="padding:24px 0">
         <h3 style="font:400 18px var(--serif);margin:0 0 8px">What is the typical project timeline?</h3>
-        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">It depends on scope. Custom furniture typically takes 6–10 weeks for production, plus shipping. Full-home projects with design support may take 3–6 months from start to delivery.</p>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin:0">It depends on scope. Initial concept takes 5–7 business days after commitment deposit. Custom furniture production typically takes 6–10 weeks, plus international shipping (4–8 weeks by sea). Full-home projects with design support may take 3–6 months from start to delivery.</p>
       </div>
     </div>
   </div>
