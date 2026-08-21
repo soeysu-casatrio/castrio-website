@@ -82,6 +82,19 @@ h1,h2,h3,h4{font-weight:400}
 .btn.dark:hover{background:var(--gold);border-color:var(--gold)}
 
 /* Manifesto strip */
+.trust-bar{background:var(--offwhite);border-bottom:1px solid var(--line);padding:24px 0}
+.trust-items{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.trust-num{font:500 28px/1 var(--serif);color:var(--gold)}
+.trust-icon{font-size:24px}
+.trust-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.trust-divider{width:1px;height:36px;background:var(--line)}
+@media(max-width:768px){
+  .trust-items{gap:16px}
+  .trust-divider{display:none}
+  .trust-num{font-size:22px}
+  .trust-label{font-size:10px}
+}
 .manifesto{background:var(--charcoal);color:var(--cream);padding:48px 0;text-align:center}
 .manifesto p{font:400 italic clamp(22px,3vw,34px)/1.4 var(--serif);margin:0;max-width:800px;margin:0 auto;color:var(--cream)}
 .manifesto em{color:var(--gold-light);font-style:italic}
@@ -561,9 +574,36 @@ textarea:focus{outline:none;border-color:var(--gold)}
     <div class="eyebrow">Foshan · China</div>
     <h1>CASA TRIO</h1>
     <p class="tags">Sourcing.Designing.Creating</p>
-    <p class="sub">Premium Interior and Furniture Solutions from China</p>
+    <p class="sub">Full-home interior — from design to delivery. Premium interior and furniture solutions sourced from China.</p>
     <a class="btn fill" href="contact.html">Start Your Project</a>
     <a class="btn" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <span class="trust-num">5+</span>
+        <span class="trust-label">Years Experience</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">50+</span>
+        <span class="trust-label">Countries Served</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">100%</span>
+        <span class="trust-label">QC Before Shipment</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">🏭</span>
+        <span class="trust-label">Direct Factory Access</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -791,6 +831,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       <div class="way light reveal">
         <span class="num">Option 01</span>
         <h3>Furniture &amp; Soft Furnishings</h3>
+        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0">Best for: You already have design</p>
         <p class="tagline">For clients with existing design plans who require furniture and soft furnishing procurement.</p>
         <p class="desc">For clients who already have their own design or simply need furniture and soft furnishings. CASA TRIO handles selection, customization and delivery.</p>
         <div class="coord-label">CASA TRIO coordinates</div>
@@ -800,6 +841,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       <div class="way dark reveal">
         <span class="num">Option 02</span>
         <h3>Design + Selective Sourcing</h3>
+        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0">Best for: You need design + furniture sourcing</p>
         <p class="tagline">For clients requiring interior design combined with selective product sourcing.</p>
         <p class="desc">For clients who need interior design plus sourcing for selected categories — furniture, building materials or soft furnishings. You choose what to include; we design and coordinate each piece.</p>
         <div class="coord-label">You choose the scope</div>
@@ -809,6 +851,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       <div class="way gold reveal">
         <span class="num">Option 03</span>
         <h3>Full Project Solution</h3>
+        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0">Best for: Full home solution from scratch</p>
         <p class="tagline">For clients seeking a complete turnkey solution from design to final delivery.</p>
         <p class="desc">For clients who want a complete turnkey solution — design, furniture, soft furnishings, building materials and full project coordination, all managed from concept to delivery by CASA TRIO.</p>
         <div class="coord-label">We manage everything</div>
