@@ -640,33 +640,22 @@ window.addEventListener('scroll', () => {
   else nav.classList.remove('scrolled');
 });
 // Burger menu
-const burger = document.getElementById('burger');
-const navlinks = document.getElementById('navlinks');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  navlinks.classList.toggle('open');
-});
-// Close mobile menu on link click
-document.querySelectorAll('#navlinks a').forEach(a => {
-  a.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navlinks.classList.remove('open');
-  });
-});
-// Reveal on scroll
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(28px)';
-  el.style.transition = 'opacity .8s ease, transform .8s ease';
-  revealObserver.observe(el);
+// Burger menu - protected by DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navlinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
 });
 </script>
 
