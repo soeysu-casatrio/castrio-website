@@ -37,7 +37,7 @@ h1,h2,h3,h4{font-weight:400}
 /* Nav */
 .nav{position:fixed;z-index:9999;top:0;left:0;right:0;padding:16px 0;color:#fff;background:linear-gradient(#111a,transparent);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
 .nav.scrolled{background:rgba(247,243,236,.96);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.navin{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
 .logo img{height:34px;width:auto;display:block}
 .logo .logo-onscroll{display:none}
 .nav.scrolled .logo .logo-onhero{display:none}
@@ -139,6 +139,9 @@ section{padding:100px 0}
 .card-img.scroll-gallery::-webkit-scrollbar-track{background:transparent}
 .card-img.scroll-gallery::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}
 .card-img.scroll-gallery:hover::-webkit-scrollbar-thumb{background:rgba(0,0,0,.3)}
+.scroll-hint{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--cream)}
+.scroll-hint .arrow{animation:scrollHint 1.5s ease-in-out infinite}
+@keyframes scrollHint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 .card-body{padding:24px 22px 28px;display:flex;flex-direction:column;flex:1}
 .card h3{font:400 18px/1.2 var(--serif);margin:0}
 .card p{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.6}
@@ -402,10 +405,8 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .nav-cta .start-btn{display:none}
   .nav-cta .wa-btn{display:none}
   .why-grid{grid-template-columns:1fr 1fr}
-  .why-item{border-right:1px solid var(--line)!important;padding:32px 24px!important}
-  .why-item:nth-child(3n){border-right:1px solid var(--line)!important}
-  .why-item:nth-child(2n){border-right:0}
-  .why-item:nth-child(n+5){border-bottom:0}
+  .why-item{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;padding:32px 24px!important}
+  .why-item:nth-child(2n){border-right:0!important}
   .trust-grid{grid-template-columns:1fr 1fr}
   .grid5{grid-template-columns:1fr 1fr 1fr}
   .ways{grid-template-columns:1fr}
@@ -631,6 +632,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
           <img loading="lazy" src="images/showroom_living_01.jpg" alt="Living room furniture">
           <img loading="lazy" src="images/showroom_living_02.jpg" alt="Sofa and decor">
         </div>
+    <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">01</span><h3>Furniture &amp; Soft Furnishing</h3><p>Sofas, dining sets, beds, outdoor furniture and curated decor — tailored to your space.</p></div>
       </article>
       <article class="card">
