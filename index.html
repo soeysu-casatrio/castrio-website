@@ -139,9 +139,8 @@ section{padding:100px 0}
 .card-img.scroll-gallery::-webkit-scrollbar-track{background:transparent}
 .card-img.scroll-gallery::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}
 .card-img.scroll-gallery:hover::-webkit-scrollbar-thumb{background:rgba(0,0,0,.3)}
-.scroll-hint{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--cream)}
-.scroll-hint .arrow{animation:scrollHint 1.5s ease-in-out infinite}
-@keyframes scrollHint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+
+.scroll-hint{display:none}
 .card-body{padding:24px 22px 28px;display:flex;flex-direction:column;flex:1}
 .card h3{font:400 18px/1.2 var(--serif);margin:0}
 .card p{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.6}
@@ -422,6 +421,9 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 @media(max-width:640px){
   .container{width:calc(100% - 32px)}
   .form{grid-template-columns:1fr}
+  .scroll-hint{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--cream)}
+  .scroll-hint .arrow{animation:scrollHint 1.5s ease-in-out infinite}
+  @keyframes scrollHint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
   .foshan-videos video{max-width:160px}
   .why-grid{grid-template-columns:1fr}
   section{padding:64px 0}
