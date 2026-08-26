@@ -1078,6 +1078,7 @@ var piecesData = [
 // Render piece cards from data
 function renderPieces(){
   var grid = document.getElementById('piecesGrid');
+  if (!grid) return;
   var html = '';
   piecesData.forEach(function(p, i){
     var waProject = 'https://wa.me/8615017434683?text=' + encodeURIComponent(p.projectMsg);

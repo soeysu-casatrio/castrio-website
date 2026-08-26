@@ -742,18 +742,22 @@ window.addEventListener('scroll', function(){
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Mobile menu
-var burger = document.getElementById('burger');
-var links = document.getElementById('navlinks');
-burger.addEventListener('click', function(){
-  links.classList.toggle('open');
-  burger.classList.toggle('open');
-});
-links.querySelectorAll('a').forEach(function(a){
-  a.addEventListener('click', function(){
-    links.classList.remove('open');
-    burger.classList.remove('open');
-  });
+// Mobile menu - protected by DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  if (burger && links) {
+    burger.addEventListener('click', function(){
+      links.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        burger.classList.remove('open');
+      });
+    });
+  }
 });
 
 // Scroll reveal
