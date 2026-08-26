@@ -443,6 +443,50 @@ body {
   margin-bottom: 28px;
   font-weight: 300;
 }
+.modal-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.modal-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-step .step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.modal-step .step-text {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.step-arrow {
+  color: var(--line);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.modal-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 16px;
+  line-height: 1.6;
+  font-weight: 300;
+}
 .modal-buttons {
   display: flex;
   flex-direction: column;
@@ -843,6 +887,31 @@ footer {
       <div class="faq-question">What if I'm not satisfied with the initial concept?</div>
       <div class="faq-answer">After receiving your commitment deposit, we schedule a dedicated discovery call or video consultation where our designer communicates directly with you to fully understand your vision, preferences, and requirements before beginning the initial concept. This ensures the first proposal aligns with your expectations. You also receive <strong>1 complimentary revision</strong> to refine the direction. The commitment deposit is <strong>100% creditable</strong> towards your final product order — it's an investment in your project, not a separate fee.</div>
     </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">What payment methods do you accept?</div>
+      <div class="faq-answer">We accept <strong>bank transfer (T/T)</strong>, <strong>PayPal</strong>, and <strong>Western Union</strong> for commitment deposits. For larger orders, we primarily use bank transfer. Payment details and instructions will be provided after you select your tier and connect with our team. All payments are securely processed and we'll send you a confirmation receipt once payment is received.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Can I pay in my local currency?</div>
+      <div class="faq-answer">Our prices are listed in <strong>USD</strong> for consistency across all international clients. However, you can pay in your local currency — the amount will be converted at the prevailing exchange rate on the day of payment. We'll confirm the exact amount in your currency before you make the payment, so there are no surprises.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">How long does it take to receive the First Concept Package?</div>
+      <div class="faq-answer">After your discovery call and payment confirmation, we typically deliver your <strong>First Concept Package</strong> within <strong>5–7 business days</strong>. This includes the 2D soft furnishing plan, 3D rendering of one main space, space planning, and styling direction. For larger or more complex projects, we'll provide a specific timeline during your discovery call. You'll receive regular updates throughout the process.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">What if I already have my own designer or design?</div>
+      <div class="faq-answer">That's completely fine! If you already have a designer or completed design, we can work directly from your drawings and provide <strong>furniture and material procurement services</strong> only. In this case, the commitment deposit still applies — it secures our sourcing team and includes preliminary product selections and budget planning based on your existing design. You won't be charged a separate design fee since you're providing the design.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Is the commitment deposit refundable?</div>
+      <div class="faq-answer">The commitment deposit is <strong>100% creditable</strong> towards your final product order — it's an advance payment for your project, not a separate fee. Once we commence work on your First Concept Package (after the discovery call), the deposit is applied to your project. If you decide not to proceed before we begin any concept work, please contact us to discuss your situation. We evaluate refund requests on a case-by-case basis, but our goal is always to find a solution that works for both parties.</div>
+    </div>
   </div>
 </section>
 
@@ -891,10 +960,18 @@ footer {
     </div>
     <h3 id="modalTitle">Almost There!</h3>
     <p id="modalText">You've selected the <strong>Under 150m²</strong> tier (<strong>300 / 500 USD</strong>).<br><br>After completing your payment, please connect with us on WhatsApp so we can immediately start your project. You can also email us if you prefer.</p>
-    <div class="modal-buttons">
-      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20intent%20deposit%20for%20my%20project.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener" class="modal-btn primary">Continue on WhatsApp</a>
-      <a href="mailto:soey@casatriohome.com?subject=Intent%20Deposit%20Paid&body=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20intent%20deposit.%20Please%20help%20me%20get%20started." class="modal-btn secondary">Email Us Instead</a>
+    <div class="modal-steps">
+      <div class="modal-step"><span class="step-num">1</span><span class="step-text">Complete your payment</span></div>
+      <div class="step-arrow">→</div>
+      <div class="modal-step"><span class="step-num">2</span><span class="step-text">Contact our team</span></div>
+      <div class="step-arrow">→</div>
+      <div class="modal-step"><span class="step-num">3</span><span class="step-text">Project starts</span></div>
     </div>
+    <div class="modal-buttons">
+      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener" class="modal-btn primary">Continue on WhatsApp</a>
+      <a href="mailto:soey@casatriohome.com?subject=Commitment%20Deposit%20Paid%20-%20Project%20Start&body=Hi%20CASA%20TRIO!%0A%0AI%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20[please%20fill%20in]%0AAmount%20paid%3A%20[please%20fill%20in]%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.%0A%0AThank%20you!" class="modal-btn secondary">Email Us Instead</a>
+    </div>
+    <p class="modal-note">We typically respond within 24 hours on business days (Mon–Fri, 9am–6pm Beijing Time).</p>
   </div>
 </div>
 
@@ -934,7 +1011,16 @@ document.querySelectorAll('.faq-question').forEach(q => {
 // Payment modal
 function openModal(tier, price) {
   document.getElementById('modalTitle').textContent = 'Thank You!';
-  document.getElementById('modalText').innerHTML = `You've selected the <strong>${tier}</strong> tier (<strong>${price}</strong>).<br><br>After completing your payment, please connect with us on WhatsApp so we can immediately start your project. You can also email us if you prefer.`;
+  document.getElementById('modalText').innerHTML = `You've selected the <strong>${tier}</strong> tier (<strong>${price}</strong>).<br><br>After completing your payment, please connect with our team so we can immediately start your project. Choose your preferred contact method below.`;
+  
+  // Update WhatsApp link with tier info
+  const waLink = document.querySelector('.modal-btn.primary');
+  waLink.href = `https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20${encodeURIComponent(tier)}%0AAmount%3A%20${encodeURIComponent(price)}%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.`;
+  
+  // Update Email link with tier info
+  const emailLink = document.querySelector('.modal-btn.secondary');
+  emailLink.href = `mailto:soey@casatriohome.com?subject=Commitment%20Deposit%20Paid%20-%20${encodeURIComponent(tier)}&body=Hi%20CASA%20TRIO!%0A%0AI%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20${encodeURIComponent(tier)}%0AAmount%20paid%3A%20${encodeURIComponent(price)}%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.%0A%0AThank%20you!`;
+  
   document.getElementById('paymentModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
