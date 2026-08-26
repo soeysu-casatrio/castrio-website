@@ -16,8 +16,30 @@
   --sans: 'Inter', -apple-system, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
 .container { max-width: 800px; margin: 0 auto; padding: 80px 24px; }
+
+/* Mobile Navigation */
+.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; background: var(--cream); border-bottom: 1px solid var(--line); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.site-nav .nav-logo { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+.site-nav .burger { display: none; background: none; border: 0; cursor: pointer; color: var(--ink); padding: 8px 12px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 8px; }
+.site-nav .burger .burger-lines { display: flex; flex-direction: column; gap: 5px; }
+.site-nav .burger .burger-lines span { display: block; width: 24px; height: 1.5px; background: currentColor; transition: transform .3s, opacity .3s; }
+.site-nav .burger-text { font-size: 10px; letter-spacing: .14em; font-weight: 500; text-transform: uppercase; }
+.site-nav .burger.open .burger-lines span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.site-nav .burger.open .burger-lines span:nth-child(2) { opacity: 0; }
+.site-nav .burger.open .burger-lines span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.site-nav .nav-links { display: flex; gap: 24px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; }
+.site-nav .nav-links a { position: relative; padding: 4px 0; color: var(--ink); text-decoration: none; transition: color .2s; }
+.site-nav .nav-links a:hover { color: var(--gold); }
+@media (max-width: 900px) {
+  .site-nav .burger { display: flex; }
+  .site-nav .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--cream); color: var(--ink); padding: 16px 24px 24px; gap: 0; border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(0,0,0,.15); }
+  .site-nav .nav-links.open { display: flex !important; }
+  .site-nav .nav-links a { padding: 14px 0; font-size: 14px; border-bottom: 1px solid var(--line); min-height: 48px; display: flex; align-items: center; }
+  .site-nav .nav-links a:last-child { border-bottom: none; }
+  .container { padding-top: 100px; }
+}
 h1 { font-family: var(--serif); font-size: 36px; font-weight: 400; margin-bottom: 12px; }
 .updated { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
 h2 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 32px 0 12px; }
@@ -26,10 +48,16 @@ a { color: var(--gold); }
 .back { display: inline-block; margin-top: 40px; color: var(--gold); text-decoration: none; font-size: 14px; letter-spacing: .05em; }
 .back:hover { text-decoration: underline; }
 @media (max-width: 640px) {
-  .container { padding: 48px 20px; }
+  .container { padding: 48px 20px; padding-top: 90px; }
   h1 { font-size: 28px; }
   h2 { font-size: 19px; }
   p { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .container { padding: 36px 16px; padding-top: 84px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 17px; }
+  p { font-size: 13px; }
 }
 </style>
   <meta name="description" content="CASA TRIO Privacy Policy. Learn how we collect, use and protect your personal information when you use our website and services.">
@@ -42,6 +70,18 @@ a { color: var(--gold); }
 </script>
 </head>
 <body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">CASA TRIO</a>
+  <div class="nav-links" id="navlinks">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+</nav>
 <div class="container">
   <h1>Privacy Policy</h1>
   <p class="updated">Last updated: August 2026</p>
@@ -76,5 +116,23 @@ a { color: var(--gold); }
 
   <a href="index.html" class="back">&larr; Back to Home</a>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.getElementById('burger');
+  var navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    navlinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>

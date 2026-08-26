@@ -16,8 +16,34 @@
   --sans: 'Inter', -apple-system, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
 .container { max-width: 800px; margin: 0 auto; padding: 80px 24px; }
+
+/* Mobile Navigation */
+.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; background: var(--cream); border-bottom: 1px solid var(--line); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.site-nav .nav-logo { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+.site-nav .burger { display: none; background: none; border: 0; cursor: pointer; color: var(--ink); padding: 8px 12px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 8px; }
+.site-nav .burger .burger-lines { display: flex; flex-direction: column; gap: 5px; }
+.site-nav .burger .burger-lines span { display: block; width: 24px; height: 1.5px; background: currentColor; transition: transform .3s, opacity .3s; }
+.site-nav .burger-text { font-size: 10px; letter-spacing: .14em; font-weight: 500; text-transform: uppercase; }
+.site-nav .burger.open .burger-lines span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.site-nav .burger.open .burger-lines span:nth-child(2) { opacity: 0; }
+.site-nav .burger.open .burger-lines span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.site-nav .nav-links { display: flex; gap: 24px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; }
+.site-nav .nav-links a { position: relative; padding: 4px 0; color: var(--ink); text-decoration: none; transition: color .2s; }
+.site-nav .nav-links a:hover { color: var(--gold); }
+@media (max-width: 900px) {
+  .site-nav .burger { display: flex; }
+  .site-nav .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--cream); color: var(--ink); padding: 16px 24px 24px; gap: 0; border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(0,0,0,.15); }
+  .site-nav .nav-links.open { display: flex !important; }
+  .site-nav .nav-links a { padding: 14px 0; font-size: 14px; border-bottom: 1px solid var(--line); min-height: 48px; display: flex; align-items: center; }
+  .site-nav .nav-links a:last-child { border-bottom: none; }
+  .container { padding-top: 100px; }
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+.table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0 20px; }
+.table-wrapper table { margin: 0; min-width: 480px; }
 h1 { font-family: var(--serif); font-size: 36px; font-weight: 400; margin-bottom: 12px; }
 .updated { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
 h2 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 32px 0 12px; }
@@ -34,12 +60,22 @@ a { color: var(--gold); }
 .back { display: inline-block; margin-top: 40px; color: var(--gold); text-decoration: none; font-size: 14px; letter-spacing: .05em; }
 .back:hover { text-decoration: underline; }
 @media (max-width: 640px) {
-  .container { padding: 48px 20px; }
+  .container { padding: 48px 20px; padding-top: 90px; }
   h1 { font-size: 28px; }
   h2 { font-size: 19px; }
   p, li { font-size: 14px; }
   table { font-size: 13px; }
   th, td { padding: 8px 10px; }
+}
+@media (max-width: 480px) {
+  .container { padding: 36px 16px; padding-top: 84px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 17px; }
+  h3 { font-size: 14px; }
+  p, li { font-size: 13px; }
+  .note { font-size: 13px; padding: 12px 14px; }
+  .table-wrapper table { min-width: 420px; font-size: 12px; }
+  th, td { padding: 7px 8px; }
 }
 </style>
   <meta name="description" content="CASA TRIO Terms of Service. Read our service terms, design fees, commitment deposit policy, payment terms, QC, shipping, returns and intellectual property.">
@@ -52,6 +88,18 @@ a { color: var(--gold); }
 </script>
 </head>
 <body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">CASA TRIO</a>
+  <div class="nav-links" id="navlinks">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+</nav>
 <div class="container">
   <h1>Terms of Service</h1>
   <p class="updated">Last updated: August 2026</p>
@@ -67,6 +115,7 @@ a { color: var(--gold); }
   <p>A Commitment Deposit is required to officially begin your project. It is not a design fee — it is a project commitment payment that is <strong>100% credited toward your final product order</strong> (applied to the 30% final balance).</p>
 
   <h3>3.1 Deposit Amount</h3>
+  <div class="table-wrapper">
   <table>
     <thead>
       <tr><th>Interior Area</th><th>Furniture &amp; Soft Furnishings</th><th>Furniture + Building Materials</th></tr>
@@ -78,6 +127,7 @@ a { color: var(--gold); }
       <tr><td>Over 500m²</td><td>From USD 1,500</td><td>From USD 1,800</td></tr>
     </tbody>
   </table>
+  </div>
 
   <h3>3.2 What's Included</h3>
   <p>After receiving your Commitment Deposit, we provide a <strong>First Concept Package</strong> within 3–5 working days, including:</p>
@@ -99,6 +149,7 @@ a { color: var(--gold); }
   <p>Full interior design service is optional and charged separately from the Commitment Deposit. We offer two tiers:</p>
 
   <h3>4.1 Design Tiers</h3>
+  <div class="table-wrapper">
   <table>
     <thead>
       <tr><th>Tier</th><th>Rate</th><th>Minimum</th><th>Best For</th></tr>
@@ -108,6 +159,7 @@ a { color: var(--gold); }
       <tr><td>Premium</td><td>USD 70 / m²</td><td>USD 5,000</td><td>Larger, luxury or high-complexity projects</td></tr>
     </tbody>
   </table>
+  </div>
   <p>Both tiers include full-house space planning, furniture layout, full-house 3D renderings, VR panorama, material coordination, furniture &amp; soft furnishing planning, and construction drawings. Standard includes 3 consolidated revision rounds; Premium includes 5 consolidated revision rounds.</p>
 
   <h3>4.2 Design Payment</h3>
@@ -118,6 +170,7 @@ a { color: var(--gold); }
 
   <h3>4.3 Design Fee Credit</h3>
   <p>When you continue your procurement with CASA TRIO, part of your design fee can be credited toward your final product order:</p>
+  <div class="table-wrapper">
   <table>
     <thead>
       <tr><th>Final Procurement Value</th><th>Design Fee Credit</th></tr>
@@ -128,6 +181,7 @@ a { color: var(--gold); }
       <tr><td>RMB 300,000+</td><td>30% of Design Fee</td></tr>
     </tbody>
   </table>
+  </div>
   <div class="note">The credit is applied once to the final confirmed procurement order and cannot be exchanged for cash. The Commitment Deposit and Design Fee are separate payments and are not interchangeable.</div>
 
   <h3>4.4 Design Fee Policy</h3>
@@ -173,6 +227,7 @@ a { color: var(--gold); }
   <p>All furniture is custom-made to client specifications (size, color, material, fabric). Custom products are <strong>non-returnable and non-refundable</strong> unless there is a verified manufacturing defect that cannot be resolved through repair or replacement. Clients must confirm all specifications in writing before production begins. Quality inspection videos and photos are provided before shipment.</p>
 
   <h2>10. Returns &amp; Refunds</h2>
+  <div class="table-wrapper">
   <table>
     <thead>
       <tr><th>Item</th><th>Refund Policy</th></tr>
@@ -185,6 +240,7 @@ a { color: var(--gold); }
       <tr><td>Shipping Damage</td><td>Handled via cargo insurance claim; we assist with replacement parts</td></tr>
     </tbody>
   </table>
+  </div>
 
   <h2>11. Installation Service</h2>
   <p>CASA TRIO primarily provides sourcing and logistics services. Installation is not included in standard product pricing. For certain destinations, we may be able to coordinate installation through local partners — this is quoted separately and confirmed before order placement. For all other locations, clients arrange installation locally, and we provide assembly instructions and remote guidance where needed.</p>
@@ -209,5 +265,23 @@ a { color: var(--gold); }
 
   <a href="index.html" class="back">&larr; Back to Home</a>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.getElementById('burger');
+  var navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    navlinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
