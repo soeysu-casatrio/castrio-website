@@ -487,6 +487,137 @@ body {
   line-height: 1.6;
   font-weight: 300;
 }
+.modal-wide {
+  max-width: 560px;
+}
+.payment-section {
+  margin-bottom: 24px;
+  text-align: left;
+}
+.payment-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.payment-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.paypal-badge {
+  background: #003087;
+  color: #fff;
+}
+.bank-badge {
+  background: var(--ink);
+  color: #fff;
+}
+.payment-recommend {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.paypal-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.paypal-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background: #fff;
+  border: 2px solid #003087;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all .25s;
+  text-align: center;
+}
+.paypal-btn:hover {
+  background: #003087;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -8px rgba(0,48,135,.4);
+}
+.paypal-btn:hover .paypal-amount,
+.paypal-btn:hover .paypal-label {
+  color: #fff;
+}
+.paypal-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 4px;
+  transition: color .25s;
+}
+.paypal-label {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  transition: color .25s;
+}
+.bank-toggle-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .25s;
+}
+.bank-toggle-btn:hover {
+  border-color: var(--ink);
+  background: var(--soft);
+}
+.bank-details {
+  margin-top: 12px;
+  padding: 16px;
+  background: var(--offwhite);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.bank-info-placeholder p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.bank-info-placeholder p:last-child {
+  margin-bottom: 0;
+}
+.bank-info-placeholder strong {
+  color: var(--ink);
+}
+.after-payment {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.after-payment-text {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+@media (max-width: 640px) {
+  .modal-wide {
+    max-width: 100%;
+  }
+  .paypal-buttons {
+    grid-template-columns: 1fr;
+  }
+}
 .modal-buttons {
   display: flex;
   flex-direction: column;
@@ -800,7 +931,7 @@ footer {
           <div class="amount">500 <span>USD</span></div>
         </div>
         <p class="desc">Perfect for apartments and small homes. Includes First Concept Package — 1× 2D soft furnishing plan + 1× 3D rendering of a main space, with space planning and styling direction.</p>
-        <a href="#" class="pay-btn" onclick="openModal('Under 150m²', '300 / 500 USD'); return false;">Pay Deposit</a>
+        <a href="#" class="pay-btn" onclick="openModal('Under 150m²', '300', '500'); return false;">Pay Deposit</a>
       </div>
       
       <!-- Card 2 (Featured) -->
@@ -817,7 +948,7 @@ footer {
           <div class="amount">800 <span>USD</span></div>
         </div>
         <p class="desc">Ideal for family homes and villas. Includes First Concept Package — 1× 2D soft furnishing plan + 1× 3D rendering of a main space, with detailed space planning and preliminary product selections.</p>
-        <a href="#" class="pay-btn" onclick="openModal('150–300m²', '600 / 800 USD'); return false;">Pay Deposit</a>
+        <a href="#" class="pay-btn" onclick="openModal('150–300m²', '600', '800'); return false;">Pay Deposit</a>
       </div>
       
       <!-- Card 3 -->
@@ -833,7 +964,7 @@ footer {
           <div class="amount">1,200 <span>USD</span></div>
         </div>
         <p class="desc">For large residences and estates. Includes First Concept Package — 1× 2D soft furnishing plan + 1× 3D rendering of a main space, with premium curation and extensive space planning.</p>
-        <a href="#" class="pay-btn" onclick="openModal('300–500m²', '1,000 / 1,200 USD'); return false;">Pay Deposit</a>
+        <a href="#" class="pay-btn" onclick="openModal('300–500m²', '1,000', '1,200'); return false;">Pay Deposit</a>
       </div>
     </div>
     
@@ -953,24 +1084,56 @@ footer {
 
 <!-- Payment Modal -->
 <div class="modal-overlay" id="paymentModal">
-  <div class="modal">
+  <div class="modal modal-wide">
     <button class="modal-close" onclick="closeModal()">&times;</button>
     <div class="modal-icon">
       <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
     </div>
-    <h3 id="modalTitle">Almost There!</h3>
-    <p id="modalText">You've selected the <strong>Under 150m²</strong> tier (<strong>300 / 500 USD</strong>).<br><br>After completing your payment, please connect with us on WhatsApp so we can immediately start your project. You can also email us if you prefer.</p>
-    <div class="modal-steps">
-      <div class="modal-step"><span class="step-num">1</span><span class="step-text">Complete your payment</span></div>
-      <div class="step-arrow">→</div>
-      <div class="modal-step"><span class="step-num">2</span><span class="step-text">Contact our team</span></div>
-      <div class="step-arrow">→</div>
-      <div class="modal-step"><span class="step-num">3</span><span class="step-text">Project starts</span></div>
+    <h3 id="modalTitle">Choose Your Payment Method</h3>
+    <p id="modalText">You've selected the <strong>Under 150m²</strong> tier. Choose your preferred payment method below.</p>
+    
+    <!-- PayPal Section -->
+    <div class="payment-section">
+      <div class="payment-section-title">
+        <span class="payment-badge paypal-badge">PayPal</span>
+        <span class="payment-recommend">Recommended - Credit Card Accepted</span>
+      </div>
+      <div class="paypal-buttons">
+        <a href="#" id="paypalBtn1" target="_blank" rel="noopener" class="paypal-btn">
+          <span class="paypal-amount">$300</span>
+          <span class="paypal-label">Furniture & Decor Only</span>
+        </a>
+        <a href="#" id="paypalBtn2" target="_blank" rel="noopener" class="paypal-btn">
+          <span class="paypal-amount">$500</span>
+          <span class="paypal-label">Including Building Materials</span>
+        </a>
+      </div>
     </div>
-    <div class="modal-buttons">
-      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener" class="modal-btn primary">Continue on WhatsApp</a>
-      <a href="mailto:soey@casatriohome.com?subject=Commitment%20Deposit%20Paid%20-%20Project%20Start&body=Hi%20CASA%20TRIO!%0A%0AI%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20[please%20fill%20in]%0AAmount%20paid%3A%20[please%20fill%20in]%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.%0A%0AThank%20you!" class="modal-btn secondary">Email Us Instead</a>
+    
+    <!-- Bank Transfer Section -->
+    <div class="payment-section">
+      <div class="payment-section-title">
+        <span class="payment-badge bank-badge">Bank Transfer (TT)</span>
+        <span class="payment-recommend">For Larger Orders - Lower Fees</span>
+      </div>
+      <button class="bank-toggle-btn" onclick="toggleBankDetails()">View Bank Transfer Details</button>
+      <div class="bank-details" id="bankDetails" style="display:none;">
+        <div class="bank-info-placeholder">
+          <p><strong>Bank transfer details will be available soon.</strong></p>
+          <p>Our corporate bank account is currently being set up. For now, please contact us on WhatsApp and we'll provide our bank details directly.</p>
+        </div>
+      </div>
     </div>
+    
+    <!-- After Payment Section -->
+    <div class="after-payment">
+      <p class="after-payment-text">After completing your payment, please connect with our team to confirm and start your project.</p>
+      <div class="modal-buttons">
+        <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener" class="modal-btn primary">I've Paid - Contact Us on WhatsApp</a>
+        <a href="mailto:soey@casatriohome.com?subject=Commitment%20Deposit%20Paid%20-%20Project%20Start&body=Hi%20CASA%20TRIO!%0A%0AI%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20[please%20fill%20in]%0AAmount%20paid%3A%20[please%20fill%20in]%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.%0A%0AThank%20you!" class="modal-btn secondary">Email Us Instead</a>
+      </div>
+    </div>
+    
     <p class="modal-note">We typically respond within 24 hours on business days (Mon–Fri, 9am–6pm Beijing Time).</p>
   </div>
 </div>
@@ -1009,20 +1172,42 @@ document.querySelectorAll('.faq-question').forEach(q => {
 });
 
 // Payment modal
-function openModal(tier, price) {
-  document.getElementById('modalTitle').textContent = 'Thank You!';
-  document.getElementById('modalText').innerHTML = `You've selected the <strong>${tier}</strong> tier (<strong>${price}</strong>).<br><br>After completing your payment, please connect with our team so we can immediately start your project. Choose your preferred contact method below.`;
+function openModal(tier, price1, price2) {
+  document.getElementById('modalTitle').textContent = 'Choose Your Payment Method';
+  document.getElementById('modalText').innerHTML = `You've selected the <strong>${tier}</strong> tier. Choose your preferred payment method below.`;
   
-  // Update WhatsApp link with tier info
-  const waLink = document.querySelector('.modal-btn.primary');
-  waLink.href = `https://wa.me/8615017434683?text=Hi%20CASA%20TRIO!%20I%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20${encodeURIComponent(tier)}%0AAmount%3A%20${encodeURIComponent(price)}%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.`;
+  // Update PayPal buttons with dynamic amounts
+  const paypalBase = 'https://paypal.me/casatrioey/';
+  const paypalBtn1 = document.getElementById('paypalBtn1');
+  const paypalBtn2 = document.getElementById('paypalBtn2');
   
-  // Update Email link with tier info
-  const emailLink = document.querySelector('.modal-btn.secondary');
-  emailLink.href = `mailto:soey@casatriohome.com?subject=Commitment%20Deposit%20Paid%20-%20${encodeURIComponent(tier)}&body=Hi%20CASA%20TRIO!%0A%0AI%27ve%20just%20paid%20the%20Commitment%20Deposit%20for%20my%20project.%0A%0ASelected%20tier%3A%20${encodeURIComponent(tier)}%0AAmount%20paid%3A%20${encodeURIComponent(price)}%0A%0APlease%20help%20me%20get%20started%20with%20my%20First%20Concept%20Package.%0A%0AThank%20you!`;
+  if (paypalBtn1 && price1) {
+    paypalBtn1.href = paypalBase + price1.replace(/[^0-9]/g, '');
+    paypalBtn1.querySelector('.paypal-amount').textContent = '$' + price1;
+  }
+  if (paypalBtn2 && price2) {
+    paypalBtn2.href = paypalBase + price2.replace(/[^0-9]/g, '');
+    paypalBtn2.querySelector('.paypal-amount').textContent = '$' + price2;
+  }
+  
+  // Hide bank details by default
+  document.getElementById('bankDetails').style.display = 'none';
   
   document.getElementById('paymentModal').classList.add('active');
   document.body.style.overflow = 'hidden';
+}
+
+// Toggle bank details visibility
+function toggleBankDetails() {
+  const bankDetails = document.getElementById('bankDetails');
+  const toggleBtn = document.querySelector('.bank-toggle-btn');
+  if (bankDetails.style.display === 'none') {
+    bankDetails.style.display = 'block';
+    toggleBtn.textContent = 'Hide Bank Transfer Details';
+  } else {
+    bankDetails.style.display = 'none';
+    toggleBtn.textContent = 'View Bank Transfer Details';
+  }
 }
 
 function closeModal() {
