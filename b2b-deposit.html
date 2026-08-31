@@ -1205,6 +1205,34 @@ document.querySelectorAll('.faq-question').forEach(q => {
 });
 </script>
 <script>
+// FAQ Accordion Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      const isOpen = faqItem.classList.contains('open');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(function(item) {
+        item.classList.remove('open');
+      });
+      
+      // Open clicked item if it was closed
+      if (!isOpen) {
+        faqItem.classList.add('open');
+      }
+    });
+  });
+  
+  // Open first FAQ by default
+  const firstFaq = document.querySelector('.faq-item');
+  if (firstFaq) {
+    firstFaq.classList.add('open');
+  }
+});
+</script>
+<script>
 // Mobile dropdown toggle
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
