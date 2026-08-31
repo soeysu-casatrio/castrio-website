@@ -76,10 +76,12 @@ a { color: var(--gold); }
   <a href="index.html" class="nav-logo">CASA TRIO</a>
   <div class="nav-links" id="navlinks">
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="solutions.html">Solutions</a>
     <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="how-it-works.html">How It Works</a>
+    <a href="b2b.html">B2B Sourcing</a>
+    <a href="how-it-works.html">How We Work</a>
+    <a href="intent-deposit.html">Deposit</a>
     <a href="contact.html">Contact</a>
   </div>
   <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
@@ -224,22 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('CASA TRIO Conversion Tracking loaded');
 });
 </script>
-<script>
-// Mobile dropdown toggle
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
-    dropdownToggle.addEventListener('click', function(e) {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        var parent = this.parentElement;
-        var menu = parent.querySelector('.dropdown-menu');
-        if (menu) {
-          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-      }
-    });
-  });
-});
-</script>
+
 </body>
 </html>
