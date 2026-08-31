@@ -409,7 +409,7 @@ body {
   .hero-eyebrow::after {
     width: 20px;
   }
-  
+
   .process-section {
     padding: 50px 16px 70px;
   }
@@ -472,7 +472,7 @@ body {
     font-size: 9px;
     padding: 4px 10px;
   }
-  
+
   .cta-section {
     padding: 60px 20px;
   }
@@ -514,7 +514,6 @@ body {
 .burger.open .burger-lines span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.open .burger-lines span:nth-child(2){opacity:0}
 .burger.open .burger-lines span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
 
 footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;margin-bottom:44px}
@@ -761,8 +760,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </header>
 
-
-<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">The CASA TRIO Way</div>
@@ -771,11 +768,10 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- Process -->
 <section class="process-section">
   <div class="process-container">
 
-    <!-- Step 1 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -797,7 +793,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       </div>
     </div>
 
-    <!-- Step 2 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -822,7 +818,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       </div>
     </div>
 
-    <!-- Step 3 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -854,7 +850,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       </div>
     </div>
 
-    <!-- Step 4 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -876,7 +872,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       </div>
     </div>
 
-    <!-- Step 5 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -898,7 +894,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       </div>
     </div>
 
-    <!-- Step 6 -->
+
     <div class="step">
       <div class="step-content">
         <div class="step-image">
@@ -923,7 +919,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-content">
     <h2>Ready to Begin Your Project?</h2>
@@ -1006,5 +1001,93 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// CASA TRIO Conversion Tracking
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Track WhatsApp clicks
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var linkText = this.textContent.trim() || 'WhatsApp Link';
+      var pagePath = window.location.pathname;
+      gtag('event', 'whatsapp_click', {
+        'event_category': 'Contact',
+        'event_label': linkText + ' | ' + pagePath,
+        'page_path': pagePath
+      });
+    });
+  });
+  
+  // 2. Track CTA button clicks (Start Your Project, Get Started, etc.)
+  var ctaKeywords = ['start your project', 'get started', 'start on whatsapp', 'learn more', 
+                      'contact us', 'book a', 'request', 'pay', 'commitment deposit'];
+  document.querySelectorAll('a, button').forEach(function(el) {
+    var text = el.textContent.trim().toLowerCase();
+    var isCTA = ctaKeywords.some(function(keyword) {
+      return text.indexOf(keyword) !== -1;
+    });
+    if (isCTA) {
+      el.addEventListener('click', function() {
+        gtag('event', 'cta_click', {
+          'event_category': 'CTA',
+          'event_label': this.textContent.trim() + ' | ' + window.location.pathname,
+          'button_text': this.textContent.trim(),
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  // 3. Track form submissions
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      gtag('event', 'form_submit', {
+        'event_category': 'Form',
+        'event_label': form.id || form.name || 'Unnamed Form',
+        'page_path': window.location.pathname
+      });
+    });
+  });
+  
+  // 4. Track scroll depth (25%, 50%, 75%, 100%)
+  var scrollDepths = [25, 50, 75, 100];
+  var scrollTracked = {};
+  
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = Math.round((scrollTop / docHeight) * 100);
+    
+    scrollDepths.forEach(function(depth) {
+      if (scrollPercent >= depth && !scrollTracked[depth]) {
+        scrollTracked[depth] = true;
+        gtag('event', 'scroll_depth', {
+          'event_category': 'Engagement',
+          'event_label': depth + '%',
+          'scroll_percent': depth,
+          'page_path': window.location.pathname
+        });
+      }
+    });
+  });
+  
+  // 5. Track outbound links (external links)
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname) && 
+        !link.href.includes('wa.me') && 
+        !link.href.includes('whatsapp')) {
+      link.addEventListener('click', function() {
+        gtag('event', 'outbound_click', {
+          'event_category': 'Outbound',
+          'event_label': this.href,
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  console.log('CASA TRIO Conversion Tracking loaded');
+});
+</script>
 </body>
 </html>

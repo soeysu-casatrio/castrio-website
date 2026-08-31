@@ -543,7 +543,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </header>
 <main>
-<!-- Page Header -->
+
 <section class="page-header" style="--page-bg:url('images/contact_hero.jpg')">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
@@ -552,11 +552,10 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- Contact + Form -->
 <section>
   <div class="container">
     <div class="contact-grid">
-      <!-- Left: Contact Info -->
+
       <div class="contact-info reveal">
         <div class="contact-block">
           <div class="cb-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.42 5.83c0 4.54-3.7 8.23-8.25 8.23z"/></svg></div>
@@ -587,7 +586,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
           <p class="contact-note">Prefer email? Use the form on the right →</p>
         </div>
       </div>
-      <!-- Right: Form -->
+
       <div class="form-light reveal">
         <form class="form" id="projForm" action="https://usebasin.com/f/3c44e279efe0" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="New Project Inquiry — CASA TRIO Website">
@@ -629,7 +628,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- FAQ -->
 <section style="background:var(--offwhite)">
   <div class="container" style="max-width:820px">
     <div class="head reveal">
@@ -841,6 +839,94 @@ document.getElementById('projForm').addEventListener('submit', function(e){
     btn.disabled = false;
     alert('Network error. Please check your connection or message us on WhatsApp.');
   });
+});
+</script>
+<script>
+// CASA TRIO Conversion Tracking
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Track WhatsApp clicks
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var linkText = this.textContent.trim() || 'WhatsApp Link';
+      var pagePath = window.location.pathname;
+      gtag('event', 'whatsapp_click', {
+        'event_category': 'Contact',
+        'event_label': linkText + ' | ' + pagePath,
+        'page_path': pagePath
+      });
+    });
+  });
+  
+  // 2. Track CTA button clicks (Start Your Project, Get Started, etc.)
+  var ctaKeywords = ['start your project', 'get started', 'start on whatsapp', 'learn more', 
+                      'contact us', 'book a', 'request', 'pay', 'commitment deposit'];
+  document.querySelectorAll('a, button').forEach(function(el) {
+    var text = el.textContent.trim().toLowerCase();
+    var isCTA = ctaKeywords.some(function(keyword) {
+      return text.indexOf(keyword) !== -1;
+    });
+    if (isCTA) {
+      el.addEventListener('click', function() {
+        gtag('event', 'cta_click', {
+          'event_category': 'CTA',
+          'event_label': this.textContent.trim() + ' | ' + window.location.pathname,
+          'button_text': this.textContent.trim(),
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  // 3. Track form submissions
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      gtag('event', 'form_submit', {
+        'event_category': 'Form',
+        'event_label': form.id || form.name || 'Unnamed Form',
+        'page_path': window.location.pathname
+      });
+    });
+  });
+  
+  // 4. Track scroll depth (25%, 50%, 75%, 100%)
+  var scrollDepths = [25, 50, 75, 100];
+  var scrollTracked = {};
+  
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = Math.round((scrollTop / docHeight) * 100);
+    
+    scrollDepths.forEach(function(depth) {
+      if (scrollPercent >= depth && !scrollTracked[depth]) {
+        scrollTracked[depth] = true;
+        gtag('event', 'scroll_depth', {
+          'event_category': 'Engagement',
+          'event_label': depth + '%',
+          'scroll_percent': depth,
+          'page_path': window.location.pathname
+        });
+      }
+    });
+  });
+  
+  // 5. Track outbound links (external links)
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname) && 
+        !link.href.includes('wa.me') && 
+        !link.href.includes('whatsapp')) {
+      link.addEventListener('click', function() {
+        gtag('event', 'outbound_click', {
+          'event_category': 'Outbound',
+          'event_label': this.href,
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  console.log('CASA TRIO Conversion Tracking loaded');
 });
 </script>
 </body>

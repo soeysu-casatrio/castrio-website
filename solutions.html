@@ -506,7 +506,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </header>
 <main>
-<!-- Page Header -->
+
 <section class="page-header" style="--page-bg:url('images/showroom_living_03.jpg')">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Solutions</div>
@@ -515,7 +515,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- Intro -->
 <section>
   <div class="container">
     <div class="head reveal">
@@ -525,7 +524,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- 01 Furniture & Soft Furnishing -->
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
@@ -548,7 +546,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- 02 Custom & Built-in -->
 <section style="padding:80px 0">
   <div class="container">
     <div class="two-col reverse reveal">
@@ -571,7 +568,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- 03 Building Materials -->
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
@@ -594,7 +590,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- 04 Bathroom & Sanitary -->
 <section style="padding:80px 0">
   <div class="container">
     <div class="two-col reverse reveal">
@@ -617,7 +612,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- 05 Design Support -->
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
@@ -640,7 +634,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-strip">
   <div class="container">
     <h2 class="reveal">Not Sure Where to Start?</h2>
@@ -717,7 +710,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Reveal Animation -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var reveals = document.querySelectorAll('.reveal');
@@ -737,5 +729,93 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// CASA TRIO Conversion Tracking
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Track WhatsApp clicks
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var linkText = this.textContent.trim() || 'WhatsApp Link';
+      var pagePath = window.location.pathname;
+      gtag('event', 'whatsapp_click', {
+        'event_category': 'Contact',
+        'event_label': linkText + ' | ' + pagePath,
+        'page_path': pagePath
+      });
+    });
+  });
+  
+  // 2. Track CTA button clicks (Start Your Project, Get Started, etc.)
+  var ctaKeywords = ['start your project', 'get started', 'start on whatsapp', 'learn more', 
+                      'contact us', 'book a', 'request', 'pay', 'commitment deposit'];
+  document.querySelectorAll('a, button').forEach(function(el) {
+    var text = el.textContent.trim().toLowerCase();
+    var isCTA = ctaKeywords.some(function(keyword) {
+      return text.indexOf(keyword) !== -1;
+    });
+    if (isCTA) {
+      el.addEventListener('click', function() {
+        gtag('event', 'cta_click', {
+          'event_category': 'CTA',
+          'event_label': this.textContent.trim() + ' | ' + window.location.pathname,
+          'button_text': this.textContent.trim(),
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  // 3. Track form submissions
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      gtag('event', 'form_submit', {
+        'event_category': 'Form',
+        'event_label': form.id || form.name || 'Unnamed Form',
+        'page_path': window.location.pathname
+      });
+    });
+  });
+  
+  // 4. Track scroll depth (25%, 50%, 75%, 100%)
+  var scrollDepths = [25, 50, 75, 100];
+  var scrollTracked = {};
+  
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = Math.round((scrollTop / docHeight) * 100);
+    
+    scrollDepths.forEach(function(depth) {
+      if (scrollPercent >= depth && !scrollTracked[depth]) {
+        scrollTracked[depth] = true;
+        gtag('event', 'scroll_depth', {
+          'event_category': 'Engagement',
+          'event_label': depth + '%',
+          'scroll_percent': depth,
+          'page_path': window.location.pathname
+        });
+      }
+    });
+  });
+  
+  // 5. Track outbound links (external links)
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname) && 
+        !link.href.includes('wa.me') && 
+        !link.href.includes('whatsapp')) {
+      link.addEventListener('click', function() {
+        gtag('event', 'outbound_click', {
+          'event_category': 'Outbound',
+          'event_label': this.href,
+          'page_path': window.location.pathname
+        });
+      });
+    }
+  });
+  
+  console.log('CASA TRIO Conversion Tracking loaded');
+});
+</script>
 </body>
 </html>
