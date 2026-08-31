@@ -373,5 +373,22 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('CASA TRIO Conversion Tracking loaded');
 });
 </script>
+<script>
+// Mobile dropdown toggle
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
+    dropdownToggle.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        var parent = this.parentElement;
+        var menu = parent.querySelector('.dropdown-menu');
+        if (menu) {
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

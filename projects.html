@@ -54,6 +54,18 @@ h1,h2,h3,h4{font-weight:400}
 .nav-cta .wa-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 .nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:10px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
 .nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+/* Dropdown Navigation */
+.nav-dropdown{position:relative}
+.nav-dropdown > a{display:flex;align-items:center;gap:4px;cursor:pointer}
+.nav-dropdown > a::after{content:"▾";font-size:8px;opacity:.6;transition:transform .25s}
+.nav-dropdown:hover > a::after{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--paper);min-width:220px;padding:8px 0;border:1px solid var(--line);border-radius:4px;box-shadow:0 12px 32px rgba(0,0,0,.12);opacity:0;visibility:hidden;transition:all .25s ease;z-index:10001}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown-menu a{display:block;padding:12px 20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;transition:all .2s;white-space:nowrap}
+.dropdown-menu a:hover{background:var(--soft);color:var(--gold);padding-left:24px}
+.dropdown-menu .dropdown-label{padding:8px 20px 4px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.dropdown-divider{height:1px;background:var(--line);margin:6px 12px}
+
 .burger{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:8px 12px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:8px;z-index:10000;position:relative}
 .burger .burger-lines{display:flex;flex-direction:column;gap:5px}
 .burger .burger-lines span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
@@ -519,12 +531,28 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <nav class="links" id="navlinks">
       <a class="nav-home" href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="solutions.html">Solutions</a>
+      <div class="nav-dropdown">
+        <a href="solutions.html">Solutions</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-label">What We Offer</div>
+          <a href="solutions.html">Interior Solutions</a>
+          <a href="selected-pieces.html">Selected Pieces</a>
+          <div class="dropdown-divider"></div>
+          <a href="b2b.html">B2B Sourcing Agent</a>
+        </div>
+      </div>
       <a href="projects.html">Projects</a>
-      <a href="selected-pieces.html">Selected Pieces</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="b2b.html">B2B Sourcing</a>
-      <a href="intent-deposit.html">Commitment Deposit</a>
+      <div class="nav-dropdown">
+        <a href="how-it-works.html">How We Work</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-label">Our Process</div>
+          <a href="how-it-works.html">6-Step Process</a>
+          <a href="intent-deposit.html">Commitment Deposit</a>
+        </div>
+      </div>
+      <hr class="nav-divider">
+      <a class="nav-m-start" href="contact.html">Start Your Project</a>
+      <a class="nav-m-wa" href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp Us</a>
 
     </nav>
     <div class="nav-cta">
@@ -986,6 +1014,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   console.log('CASA TRIO Conversion Tracking loaded');
+});
+</script>
+<script>
+// Mobile dropdown toggle
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
+    dropdownToggle.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        var parent = this.parentElement;
+        var menu = parent.querySelector('.dropdown-menu');
+        if (menu) {
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+      }
+    });
+  });
 });
 </script>
 </body>
