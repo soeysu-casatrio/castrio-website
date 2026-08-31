@@ -16,13 +16,13 @@
 <link rel="apple-touch-icon" href="images/6JUjtE4tgm.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
   --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
   --charcoal:#22201C;--cream:#F2EDE4;
-  --serif:'Playfair Display',Georgia,"Times New Roman",serif;
+  --serif:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
   --max:1280px;
 }
@@ -69,7 +69,7 @@ h1,h2,h3,h4{font-weight:400}
 .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
 .hero .eyebrow{color:var(--gold-light)}
 .hero h1{font:400 clamp(36px,5vw,72px)/1.05 var(--serif);letter-spacing:0;max-width:1000px;margin:0}
-.hero .sub{font:400 italic clamp(18px,2vw,24px)/1.4 var(--serif);color:#e8e2d6;max-width:640px;margin:22px 0 14px}
+.hero .sub{font:400 clamp(18px,2vw,24px)/1.4 var(--serif);color:#e8e2d6;max-width:640px;margin:22px 0 14px}
 .hero .tags{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#c9c2b5;margin-bottom:26px}
 .hero .desc{max-width:560px;color:#d4cdbf;font-size:14px;line-height:1.75;margin:0 0 32px}
 .btn{display:inline-block;border:1px solid currentColor;padding:14px 22px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:46px;line-height:1.2}
@@ -96,8 +96,8 @@ h1,h2,h3,h4{font-weight:400}
   .trust-label{font-size:10px}
 }
 .manifesto{background:var(--charcoal);color:var(--cream);padding:48px 0;text-align:center}
-.manifesto p{font:400 italic clamp(22px,3vw,34px)/1.4 var(--serif);margin:0;max-width:800px;margin:0 auto;color:var(--cream)}
-.manifesto em{color:var(--gold-light);font-style:italic}
+.manifesto p{font:400 clamp(22px,3vw,34px)/1.4 var(--serif);margin:0;max-width:800px;margin:0 auto;color:var(--cream)}
+.manifesto em{color:var(--gold-light);}
 
 /* Sections */
 section{padding:100px 0}
@@ -293,7 +293,7 @@ section{padding:100px 0}
 .foshan h2{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:14px 0 18px;color:var(--cream)}
 .foshan p.lead{color:#d4cdbf;max-width:480px}
 .foshan-tags{display:flex;flex-wrap:wrap;gap:8px 26px;margin:30px 0 26px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
-.foshan-note{font:400 italic 20px/1.4 var(--serif);color:var(--cream);margin:0}
+.foshan-note{font:400 20px/1.4 var(--serif);color:var(--cream);margin:0}
 .foshan-media{display:flex;flex-direction:column;gap:16px;align-items:center}
 .foshan-videos{display:flex;gap:16px;justify-content:center;width:100%}
 .foshan-videos{display:flex;gap:16px;justify-content:center;width:100%}
@@ -880,7 +880,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
     <div class="testimonial-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto">
       <div class="testimonial-card reveal" style="background:var(--paper);padding:36px 32px;border:1px solid var(--line);border-radius:4px">
         <div style="color:var(--gold);font-size:32px;font-family:var(--serif);line-height:1;margin-bottom:16px">"</div>
-        <p style="font-size:15px;line-height:1.7;color:var(--charcoal);margin-bottom:24px;font-style:italic">Everything works fine and looks good. Thanks for checking in — will definitely recommend you to anyone looking for furniture.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--charcoal);margin-bottom:24px;">Everything works fine and looks good. Thanks for checking in — will definitely recommend you to anyone looking for furniture.</p>
         <div style="display:flex;align-items:center;gap:12px">
           <div style="width:40px;height:40px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;color:var(--cream);font-size:14px;font-weight:600">PH</div>
           <div>
@@ -891,7 +891,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       </div>
       <div class="testimonial-card reveal" style="background:var(--paper);padding:36px 32px;border:1px solid var(--line);border-radius:4px">
         <div style="color:var(--gold);font-size:32px;font-family:var(--serif);line-height:1;margin-bottom:16px">"</div>
-        <p style="font-size:15px;line-height:1.7;color:var(--charcoal);margin-bottom:24px;font-style:italic">Awesome, thanks again. No rush at all — they can take their time, quality matters more than speed. Great communication throughout.</p>
+        <p style="font-size:15px;line-height:1.7;color:var(--charcoal);margin-bottom:24px;">Awesome, thanks again. No rush at all — they can take their time, quality matters more than speed. Great communication throughout.</p>
         <div style="display:flex;align-items:center;gap:12px">
           <div style="width:40px;height:40px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;color:var(--cream);font-size:14px;font-weight:600">PH</div>
           <div>
