@@ -237,6 +237,14 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
   .anim-detail p{font-size:13px}
 }
 
+
+/* Fix dropdown navigation - ensure desktop hidden by default */
+.nav-dropdown .dropdown-menu{opacity:0!important;visibility:hidden!important;position:absolute!important;display:block!important}
+.nav-dropdown:hover .dropdown-menu{opacity:1!important;visibility:visible!important}
+@media(max-width:900px){
+  .nav-dropdown .dropdown-menu{position:static!important;display:none!important;opacity:1!important;visibility:visible!important}
+  .nav-dropdown .dropdown-menu.open{display:block!important}
+}
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/b2b.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>

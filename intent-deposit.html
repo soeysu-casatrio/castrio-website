@@ -833,6 +833,14 @@ footer {
   .foot-grid{grid-template-columns:1fr;gap:32px}
   .foot-bottom{flex-direction:column;text-align:center}
 }
+
+/* Fix dropdown navigation - ensure desktop hidden by default */
+.nav-dropdown .dropdown-menu{opacity:0!important;visibility:hidden!important;position:absolute!important;display:block!important}
+.nav-dropdown:hover .dropdown-menu{opacity:1!important;visibility:visible!important}
+@media(max-width:900px){
+  .nav-dropdown .dropdown-menu{position:static!important;display:none!important;opacity:1!important;visibility:visible!important}
+  .nav-dropdown .dropdown-menu.open{display:block!important}
+}
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/intent-deposit.html">
 
@@ -928,24 +936,43 @@ footer {
   </div>
 </section>
 
-<!-- Client Type Selector -->
-<section class="client-type-selector" style="background:var(--paper);padding:40px 20px;border-bottom:1px solid var(--line)">
-  <div class="container" style="max-width:800px">
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-bottom:20px;letter-spacing:.05em">I am a...</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;margin:0 auto">
-      <button class="client-type-btn active" data-type="c-end" style="padding:20px;border:2px solid var(--gold);background:var(--gold);color:#fff;border-radius:4px;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;transition:all .25s;text-align:center">
-        <div style="font-size:16px;margin-bottom:4px">🏠 Residential Client</div>
-        <div style="font-size:11px;font-weight:400;opacity:.9">Homeowner · Full-home interior project</div>
-      </button>
-      <button class="client-type-btn" data-type="b-end" style="padding:20px;border:2px solid var(--line);background:transparent;color:var(--charcoal);border-radius:4px;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;transition:all .25s;text-align:center">
-        <div style="font-size:16px;margin-bottom:4px">🏢 Business / B2B</div>
-        <div style="font-size:11px;font-weight:400;color:var(--muted)">Retailer · Bulk buyer · Sourcing agent</div>
-      </button>
+<!-- Client Type Card Selector (Accordion) -->
+<section class="client-type-cards" style="background:var(--offwhite);padding:60px 20px">
+  <div class="container" style="max-width:900px">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="eyebrow" style="color:var(--gold)">Choose Your Path</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,36px);margin:12px 0 8px;color:var(--charcoal)">Which Best Describes You?</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:500px;margin:0 auto">Select your client type to view the appropriate deposit options.</p>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <!-- C端卡片 -->
+      <div class="client-card c-end-card active" data-type="c-end" style="background:var(--paper);border:2px solid var(--gold);border-radius:8px;padding:32px 28px;cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold)"></div>
+        <div style="font-size:36px;margin-bottom:16px">🏠</div>
+        <h3 style="font-family:var(--serif);font-size:20px;margin:0 0 8px;color:var(--charcoal)">Residential Client</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px">Homeowner looking for full-home interior design, furniture sourcing and end-to-end project management.</p>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">
+          <span>View Deposit Tiers</span>
+          <span class="card-arrow" style="transition:transform .3s">↓</span>
+        </div>
+      </div>
+      
+      <!-- B端卡片 -->
+      <div class="client-card b-end-card" data-type="b-end" style="background:var(--paper);border:2px solid var(--line);border-radius:8px;padding:32px 28px;cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden">
+        <div style="font-size:36px;margin-bottom:16px">🏢</div>
+        <h3 style="font-family:var(--serif);font-size:20px;margin:0 0 8px;color:var(--charcoal)">Business / B2B</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px">Retailer, bulk buyer or sourcing agent looking for factory sourcing, price comparison and procurement support.</p>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">
+          <span>View Sourcing Deposit</span>
+          <span class="card-arrow" style="transition:transform .3s">↓</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="deposit-section c-end-section" id="c-end-deposit">
+<section class="deposit-section c-end-section" id="c-end-deposit" style="display:block">
   <div class="container">
     <div class="section-intro">
       <h2>Choose Your Tier</h2>
@@ -1315,22 +1342,56 @@ document.getElementById('paymentModal').addEventListener('click', (e) => {
 </a>
 <script>
 // Client type selector toggle
+// Client type card accordion toggle
 document.addEventListener('DOMContentLoaded', function() {
-  const buttons = document.querySelectorAll('.client-type-btn');
+  const cards = document.querySelectorAll('.client-card');
   const cEndSection = document.getElementById('c-end-deposit');
   const bEndSection = document.getElementById('b-end-deposit');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', function() {
+  
+  function updateCardStyles(activeType) {
+    cards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const arrow = card.querySelector('.card-arrow');
+      if (type === activeType) {
+        card.classList.add('active');
+        card.style.borderColor = 'var(--gold)';
+        card.style.boxShadow = '0 8px 32px rgba(184,149,106,.15)';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+        const title = card.querySelector('h3');
+        if (title) title.style.color = 'var(--gold)';
+      } else {
+        card.classList.remove('active');
+        card.style.borderColor = 'var(--line)';
+        card.style.boxShadow = 'none';
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+        const title = card.querySelector('h3');
+        if (title) title.style.color = 'var(--charcoal)';
+      }
+    });
+  }
+  
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
       const type = this.getAttribute('data-type');
-
-      // Update button styles
-      buttons.forEach(b => {
-        b.classList.remove('active');
-        b.style.background = 'transparent';
-        b.style.color = 'var(--charcoal)';
-        b.style.borderColor = 'var(--line)';
-      });
+      updateCardStyles(type);
+      
+      if (type === 'c-end') {
+        cEndSection.style.display = 'block';
+        bEndSection.style.display = 'none';
+      } else {
+        cEndSection.style.display = 'none';
+        bEndSection.style.display = 'block';
+      }
+      
+      setTimeout(() => {
+        const targetSection = type === 'c-end' ? cEndSection : bEndSection;
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    });
+  });
+  
+  updateCardStyles('c-end');
+});
       this.classList.add('active');
       this.style.background = 'var(--gold)';
       this.style.color = '#fff';

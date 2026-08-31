@@ -514,6 +514,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .gallery-nav.prev{left:8px}
   .gallery-nav.next{right:8px}
 }
+
+/* Fix dropdown navigation - ensure desktop hidden by default */
+.nav-dropdown .dropdown-menu{opacity:0!important;visibility:hidden!important;position:absolute!important;display:block!important}
+.nav-dropdown:hover .dropdown-menu{opacity:1!important;visibility:visible!important}
+@media(max-width:900px){
+  .nav-dropdown .dropdown-menu{position:static!important;display:none!important;opacity:1!important;visibility:visible!important}
+  .nav-dropdown .dropdown-menu.open{display:block!important}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
 <script>
