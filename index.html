@@ -153,6 +153,15 @@ section{padding:100px 0}
 .card-img.scroll-gallery::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}
 .card-img.scroll-gallery:hover::-webkit-scrollbar-thumb{background:rgba(0,0,0,.3)}
 
+/* Carousel with dot navigation */
+.carousel{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#f5f3f0}
+.carousel-slide{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease;pointer-events:none;display:block}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.carousel-dots .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s;border:none;padding:0}
+.carousel-dots .dot.active{background:#fff;width:20px;border-radius:4px}
+
+
 .scroll-hint{display:none}
 .card-body{padding:24px 22px 28px;display:flex;flex-direction:column;flex:1}
 .card h3{font:400 18px/1.2 var(--serif);margin:0}
@@ -646,53 +655,78 @@ textarea:focus{outline:none;border-color:var(--gold)}
     </div>
     <div class="grid5 reveal">
       <article class="card">
-        <div class="card-img scroll-gallery">
-          <img loading="lazy" src="images/new_01.jpg" alt="Furniture and soft furnishing">
-          <img loading="lazy" src="images/new_04.jpg" alt="Modern living room">
-          <img loading="lazy" src="images/showroom_living_01.jpg" alt="Living room furniture">
-          <img loading="lazy" src="images/showroom_living_02.jpg" alt="Sofa and decor">
+        <div class="card-img carousel">
+          <img class="carousel-slide active" loading="lazy" src="images/new_01.jpg" alt="Furniture and soft furnishing">
+          <img class="carousel-slide" loading="lazy" src="images/new_04.jpg" alt="Modern living room">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_living_01.jpg" alt="Living room furniture">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_living_02.jpg" alt="Sofa and decor">
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+          </div>
         </div>
-        <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">01</span><h3>Furniture &amp; Soft Furnishing</h3><p>Sofas, dining sets, beds, outdoor furniture and curated decor — tailored to your space.</p></div>
       </article>
       <article class="card">
-        <div class="card-img scroll-gallery">
-          <img loading="lazy" src="images/new_05.jpg" alt="Custom built-in cabinetry">
-          <img loading="lazy" src="images/new_07.jpg" alt="Modern kitchen island">
-          <img loading="lazy" src="images/new_08.jpg" alt="Kitchen and dining">
-          <img loading="lazy" src="images/new_11.jpg" alt="Walk-in closet">
-          <img loading="lazy" src="images/showroom_dining_02.jpg" alt="Dining area">
+        <div class="card-img carousel">
+          <img class="carousel-slide active" loading="lazy" src="images/new_05.jpg" alt="Custom built-in cabinetry">
+          <img class="carousel-slide" loading="lazy" src="images/new_07.jpg" alt="Modern kitchen island">
+          <img class="carousel-slide" loading="lazy" src="images/new_08.jpg" alt="Kitchen and dining">
+          <img class="carousel-slide" loading="lazy" src="images/new_11.jpg" alt="Walk-in closet">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_dining_02.jpg" alt="Dining area">
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+          </div>
         </div>
-        <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">02</span><h3>Custom &amp; Built-in</h3><p>Custom kitchens, wardrobes, TV walls, vanities and built-in storage — made to measure.</p></div>
       </article>
       <article class="card">
-        <div class="card-img scroll-gallery">
-          <img loading="lazy" src="images/new_23.jpg" alt="Marble and stone slabs">
-          <img loading="lazy" src="images/new_19.jpg" alt="Luxury tile collection">
-          <img loading="lazy" src="images/new_22.jpg" alt="Wood flooring samples">
-          <img loading="lazy" src="images/new_18.jpg" alt="Tile and material samples">
-          <img loading="lazy" src="images/showroom_materials.jpg" alt="Building materials">
+        <div class="card-img carousel">
+          <img class="carousel-slide active" loading="lazy" src="images/new_23.jpg" alt="Marble and stone slabs">
+          <img class="carousel-slide" loading="lazy" src="images/new_19.jpg" alt="Luxury tile collection">
+          <img class="carousel-slide" loading="lazy" src="images/new_22.jpg" alt="Wood flooring samples">
+          <img class="carousel-slide" loading="lazy" src="images/new_18.jpg" alt="Tile and material samples">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_materials.jpg" alt="Building materials">
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+          </div>
         </div>
-        <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">03</span><h3>Building Materials</h3><p>Interior doors, windows, stone, flooring, wall panels and hardware — sourced directly from factories.</p></div>
       </article>
       <article class="card">
-        <div class="card-img scroll-gallery">
-          <img loading="lazy" src="images/bathroom_gold_fluted_double_vanity.jpg" alt="Gold fluted double bathroom vanity">
-          <img loading="lazy" src="images/bathroom_walnut_led_vanity.jpg" alt="Walnut LED bathroom vanity">
-          <img loading="lazy" src="images/bathroom_modern_full_space.jpg" alt="Modern minimalist bathroom">
+        <div class="card-img carousel">
+          <img class="carousel-slide active" loading="lazy" src="images/bathroom_gold_fluted_double_vanity.jpg" alt="Gold fluted double bathroom vanity">
+          <img class="carousel-slide" loading="lazy" src="images/bathroom_walnut_led_vanity.jpg" alt="Walnut LED bathroom vanity">
+          <img class="carousel-slide" loading="lazy" src="images/bathroom_modern_full_space.jpg" alt="Modern minimalist bathroom">
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
         </div>
-        <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">04</span><h3>Bathroom &amp; Sanitary</h3><p>Vanities, basins, bathtubs, showers, faucets and accessories.</p></div>
       </article>
       <article class="card">
-        <div class="card-img scroll-gallery">
-          <img loading="lazy" src="images/new_06.jpg" alt="Modern bedroom design">
-          <img loading="lazy" src="images/showroom_bedroom_01.jpg" alt="Bedroom interior">
-          <img loading="lazy" src="images/showroom_bedroom_02.jpg" alt="Bed design">
+        <div class="card-img carousel">
+          <img class="carousel-slide active" loading="lazy" src="images/new_06.jpg" alt="Modern bedroom design">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_bedroom_01.jpg" alt="Bedroom interior">
+          <img class="carousel-slide" loading="lazy" src="images/showroom_bedroom_02.jpg" alt="Bed design">
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
         </div>
-        <div class="scroll-hint"><span>Swipe to explore</span><span class="arrow">→</span></div>
         <div class="card-body"><span class="num">05</span><h3>Design & Coordination</h3><p>3D renderings, material direction, space planning and full project coordination — from concept to delivery.</p></div>
       </article>
     </div>
@@ -1462,6 +1496,55 @@ document.addEventListener('keydown', function(e){
 </script>
 
 <script>
+
+  // Carousel with dot navigation and auto-play
+  document.querySelectorAll('.carousel').forEach(function(carousel) {
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var dots = carousel.querySelectorAll('.dot');
+    var currentIndex = 0;
+    var autoPlayInterval;
+
+    function showSlide(index) {
+      slides.forEach(function(slide, i) {
+        slide.classList.toggle('active', i === index);
+      });
+      dots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
+
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showSlide(index);
+        resetAutoPlay();
+      });
+    });
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(function() {
+        showSlide((currentIndex + 1) % slides.length);
+      }, 3500);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    carousel.addEventListener('mouseenter', function() {
+      clearInterval(autoPlayInterval);
+    });
+    carousel.addEventListener('mouseleave', function() {
+      startAutoPlay();
+    });
+
+    startAutoPlay();
+  });
+
+  </script>
+  <script>
 </script>
 
 </body>
