@@ -515,6 +515,30 @@ textarea:focus{outline:none;border-color:var(--gold)}
   .showrooms-media video { aspect-ratio: 3/4 !important; }
 }
 
+
+/* 04 How We Work - 3 Options Cards */
+.options-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;align-items:stretch}
+.option-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:40px 32px;display:flex;flex-direction:column;transition:all .3s;position:relative}
+.option-card:hover{box-shadow:0 20px 50px rgba(0,0,0,.08);transform:translateY(-4px)}
+.option-card.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+.option-card.featured::before{content:"Most Popular";position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 16px;border-radius:0 0 4px 4px}
+.option-card.b2b{border:2px solid var(--gold);background:linear-gradient(135deg, var(--offwhite) 0%, rgba(169,142,107,.08) 100%)}
+.option-card.b2b::before{content:"B2B Exclusive";position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 16px;border-radius:0 0 4px 4px}
+.option-card .card-num{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;margin-top:8px}
+.option-card h3{font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:12px;line-height:1.3}
+.option-card .best-for{display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:20px;width:fit-content}
+.option-card.featured .best-for{background:rgba(169,142,107,.2);color:var(--gold-light)}
+.option-card .card-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px;flex-grow:1}
+.option-card.featured .card-desc{color:#c9c2b5}
+.option-card .btn-get-started{display:inline-block;background:var(--gold);color:#fff;border:1px solid var(--gold);padding:14px 20px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:all .25s;text-decoration:none;font-weight:500;text-align:center;margin-top:auto}
+.option-card .btn-get-started:hover{background:transparent;color:var(--gold)}
+.option-card.featured .btn-get-started:hover{background:transparent;color:var(--gold-light);border-color:var(--gold-light)}
+.all-options-included{text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.all-options-included span{color:var(--gold);font-weight:600}
+@media(max-width:900px){
+  .options-cards-grid{grid-template-columns:1fr;gap:24px;max-width:480px}
+}
+
 </style>
 
 <!-- Google Analytics 4 -->
@@ -837,69 +861,45 @@ textarea:focus{outline:none;border-color:var(--gold)}
   </div>
 </section>
 
-<!-- 08 How We Work -->
+<!-- 04 How We Work -->
 <section id="process" style="background:var(--soft)">
   <div class="container">
     <div class="head reveal">
-      <div><div class="eyebrow">04 — How We Work</div><h2 class="display">From Vision to Delivery.</h2></div>
-      <p class="lead">A structured eight-step process from initial consultation to final delivery.</p>
+      <div><div class="eyebrow">04 — How We Work</div><h2 class="display">Three Ways to Work.</h2></div>
+      <p class="lead">For homeowners and businesses. Sourcing scope flexible — furniture, decor, materials, or bulk orders.</p>
     </div>
     
-    <div class="ways-in-process" style="margin-bottom:48px">
-      <div style="text-align:center;margin-bottom:32px">
-        <div class="eyebrow" style="color:var(--gold)">Three Ways to Work</div>
-        <h3 style="font-family:var(--serif);font-size:28px;color:var(--charcoal);margin:12px 0 0">Choose the approach that fits your project.</h3>
-      </div>
-      <div class="ways">
-      <div class="way light reveal">
-        <span class="num">Option 01</span>
-        <h3>Furniture &amp; Soft Furnishings</h3>
-        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0 16px">Best for: You already have design</p>
-        <p class="desc">You have your own design or only need furniture and soft furnishings. We handle selection, customization and delivery.</p>
-        <div class="includes-label">What's included</div>
-        <ul class="includes-list">
-          <li>Furniture selection &amp; customization</li>
-          <li>Soft furnishing sourcing</li>
-          <li>Factory production coordination</li>
-          <li>Quality control before shipment</li>
-          <li>Global delivery arrangement</li>
-        </ul>
-        <div class="flow">Specification Review → Sourcing → Production → QC → Delivery</div>
-        <a class="way-btn" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20Furniture%20%26%20Soft%20Furnishings.%20Could%20you%20help%20me%20with%20sourcing%3F" target="_blank" rel="noopener">Get Started</a>
-      </div>
-      <div class="way dark reveal">
-        <span class="num">Option 02</span>
-        <h3>Design + Selective Sourcing</h3>
-        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0 16px">Best for: You need design + furniture sourcing</p>
-        <p class="desc">You need interior design plus sourcing for selected categories. You choose what to include; we design and coordinate each piece.</p>
-        <div class="includes-label">What's included</div>
-        <ul class="includes-list">
-          <li>Interior design &amp; space planning</li>
-          <li>3D visualization of main spaces</li>
-          <li>Selected category sourcing (furniture / materials / decor)</li>
-          <li>Material &amp; finish coordination</li>
-          <li>QC &amp; global delivery</li>
-        </ul>
-        <div class="flow">Space Analysis → Design → 3D → Sourcing → QC → Delivery</div>
-        <a class="way-btn" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20Design%20%2B%20Selective%20Sourcing.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener">Get Started</a>
-      </div>
-      <div class="way gold reveal">
-        <span class="num">Option 03</span>
-        <h3>Full Project Solution</h3>
-        <p class="best-for" style="display:inline-block;background:rgba(169,142,107,.12);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin:8px 0 16px">Best for: Full home solution from scratch</p>
-        <p class="desc">A complete turnkey solution — design, furniture, soft furnishings, building materials and full project coordination, all managed from concept to delivery.</p>
-        <div class="includes-label">What's included</div>
-        <ul class="includes-list">
-          <li>Full interior design &amp; 3D visualization</li>
-          <li>Furniture, building materials &amp; decor</li>
-          <li>Custom furniture coordination</li>
-          <li>Full project management</li>
-          <li>QC, delivery &amp; installation support</li>
-        </ul>
-        <div class="flow">Full Assessment → Design → All Categories → Production → QC → Delivery</div>
-        <a class="way-btn" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20a%20Full%20Project%20Solution.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener">Get Started</a>
-      </div>
+    <div class="all-options-included reveal">
+      All options include <span>Quality Control</span> + <span>Global Delivery</span> + <span>End-to-End Coordination</span>
     </div>
+
+    <div class="options-cards-grid">
+      <!-- Option 01: Sourcing Only -->
+      <div class="option-card reveal">
+        <div class="card-num">Option 01</div>
+        <h3>Sourcing Only</h3>
+        <span class="best-for">Best for: You already have design</span>
+        <p class="card-desc">You have your own design or drawings — we source, customize and deliver furniture, decor and/or building materials directly from China.</p>
+        <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20Sourcing%20Only.%20Could%20you%20help%20me%20with%20sourcing%3F" class="btn-get-started" target="_blank" rel="noopener">Get Started</a>
+      </div>
+
+      <!-- Option 02: Design + Sourcing (Featured) -->
+      <div class="option-card featured reveal">
+        <div class="card-num">Option 02</div>
+        <h3>Design + Sourcing</h3>
+        <span class="best-for">Best for: You need design + sourcing</span>
+        <p class="card-desc">A complete solution — interior design, 3D visualization, material coordination, plus furniture, decor and material sourcing from China.</p>
+        <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20Design%20%2B%20Sourcing.%20Could%20you%20share%20more%20details%3F" class="btn-get-started" target="_blank" rel="noopener">Get Started</a>
+      </div>
+
+      <!-- Option 03: B2B Sourcing Agent -->
+      <div class="option-card b2b reveal">
+        <div class="card-num">Option 03</div>
+        <h3>B2B Sourcing Agent</h3>
+        <span class="best-for">Best for: Bulk buyers & businesses</span>
+        <p class="card-desc">For retailers, projects and bulk buyers — end-to-end sourcing agent service from China. Pricing and terms negotiated based on your order volume.</p>
+        <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20B2B%20Sourcing%20Agent%20service.%20Could%20we%20discuss%20my%20bulk%20order%3F" class="btn-get-started" target="_blank" rel="noopener">Contact on WhatsApp</a>
+      </div>
     </div>
 
   </div>
