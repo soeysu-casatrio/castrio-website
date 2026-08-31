@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>B2B Sourcing Agent | CASA TRIO — China Home & Commercial Interiors Sourcing</title>
 <meta name="description" content="Foshan-based B2B sourcing agent for home & commercial interiors. Pure agency model — transparent fees, you pay factories directly, we manage sourcing, QC and logistics.">
-<meta property="og:title" content="B2B Sourcing Agent | CASA TRIO — China Sourcing for Home & Commercial Interiors">
+<meta property="og:title" content="B2B Sourcing Agent | CASA TRIO — China Sourcing">
 <meta property="og:description" content="Pure sourcing agency — you pay factories directly, we charge a transparent fee. Sourcing, QC and logistics from Foshan, China.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.casatriohome.com/b2b.html">
 <meta property="og:image" content="images/new_01.jpg">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#22201C">
 <link rel="icon" type="image/png" href="images/6JUjtE4tgm.png">
 <link rel="apple-touch-icon" href="images/6JUjtE4tgm.png">
@@ -21,7 +20,7 @@
 :root{
   --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
   --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
-  --charcoal:#22201C;--cream:#F2EDE4;--b2b-dark:#1A1815;--b2b-card:#24211D;
+  --charcoal:#22201C;--cream:#F2EDE4;
   --serif:'Lora',Georgia,'Times New Roman',serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
   --max:1280px;
@@ -63,167 +62,126 @@ h1,h2,h3,h4{font-weight:400}
 .burger.open .burger-lines span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* Hero */
-.hero{min-height:85vh;position:relative;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero{min-height:70vh;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;background:url("images/new_16.jpg") center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.82) 0%,rgba(18,16,14,.55) 50%,rgba(18,16,14,.25) 100%);z-index:1;pointer-events:none}
-.hero .container{position:relative;z-index:2;padding-bottom:60px;padding-top:120px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.85) 0%,rgba(18,16,14,.55) 60%,rgba(18,16,14,.25) 100%);z-index:1;pointer-events:none}
+.hero .container{position:relative;z-index:2;padding:120px 0 60px}
 .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
 .hero .eyebrow{color:var(--gold-light)}
-.hero h1{font:400 clamp(32px,4.5vw,60px)/1.08 var(--serif);letter-spacing:0;max-width:900px;margin:0}
-.hero .sub{font:400 clamp(16px,1.8vw,20px)/1.5 var(--sans);color:#e8e2d6;max-width:640px;margin:20px 0 14px}
-.hero .tags{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-.hero .tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#c9c2b5;border:1px solid rgba(201,194,181,.3);padding:6px 14px;border-radius:20px;background:rgba(0,0,0,.2)}
-.hero .desc{max-width:560px;color:#d4cdbf;font-size:14px;line-height:1.75;margin:0 0 32px}
+.hero h1{font:400 clamp(30px,4vw,52px)/1.1 var(--serif);max-width:800px;margin:0 0 16px}
+.hero .sub{font:400 clamp(15px,1.6vw,18px)/1.5 var(--sans);color:#e8e2d6;max-width:600px;margin:0 0 24px}
+.hero .tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero .tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c9c2b5;border:1px solid rgba(201,194,181,.3);padding:6px 12px;border-radius:20px;background:rgba(0,0,0,.2)}
 .btn{display:inline-block;border:1px solid currentColor;padding:14px 22px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:46px;line-height:1.2}
 .btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
-.btn.fill{background:#fff;color:var(--ink);border-color:#fff}
-.btn.fill:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 .btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
 .btn.gold:hover{background:#8e7658;border-color:#8e7658}
-.btn.dark{background:var(--ink);border-color:var(--ink);color:var(--cream)}
-.btn.dark:hover{background:var(--gold);border-color:var(--gold)}
 
 /* Section base */
-section{padding:80px 0}
-.section-head{text-align:center;margin-bottom:56px}
-.section-head .eyebrow{margin-bottom:12px}
-.section-head h2{font:400 clamp(28px,3.5vw,44px)/1.15 var(--serif);margin:0 0 16px}
-.section-head p{max-width:640px;margin:0 auto;color:var(--muted);font-size:15px;line-height:1.7}
+section{padding:64px 0}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head .eyebrow{margin-bottom:10px}
+.section-head h2{font:400 clamp(26px,3vw,38px)/1.2 var(--serif);margin:0 0 12px}
+.section-head p{max-width:600px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.6}
 
-/* Service Model Section */
-.service-model{background:var(--offwhite)}
-.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.model-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:36px}
-.model-card h3{font:500 22px/1.3 var(--serif);margin:0 0 20px;color:var(--ink)}
-.model-card.do h3{color:var(--gold)}
-.model-card.dont h3{color:#8B5A5A}
-.model-list{list-style:none;padding:0;margin:0}
-.model-list li{padding:10px 0 10px 32px;position:relative;font-size:14px;line-height:1.6;color:var(--ink);border-bottom:1px solid var(--line)}
-.model-list li:last-child{border-bottom:none}
-.model-list li::before{position:absolute;left:0;top:10px;font-size:16px;font-weight:700}
-.model-card.do .model-list li::before{content:"✓";color:var(--gold)}
-.model-card.dont .model-list li::before{content:"✕";color:#8B5A5A}
-.fee-note{margin-top:32px;background:var(--charcoal);color:var(--cream);padding:28px 32px;border-radius:4px;text-align:center}
-.fee-note p{margin:0;font-size:15px;line-height:1.7}
-.fee-note strong{color:var(--gold-light)}
-
-/* Sourcing Scope */
-.scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.scope-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:32px;transition:all .3s}
-.scope-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.08);transform:translateY(-4px)}
-.scope-icon{font-size:32px;margin-bottom:16px}
-.scope-card h3{font:500 18px/1.3 var(--serif);margin:0 0 12px;color:var(--ink)}
+/* What We Source */
+.scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.scope-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:28px;transition:all .3s}
+.scope-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-3px)}
+.scope-icon{font-size:28px;margin-bottom:12px}
+.scope-card h3{font:500 17px/1.3 var(--serif);margin:0 0 10px}
 .scope-card ul{list-style:none;padding:0;margin:0}
-.scope-card ul li{padding:4px 0;font-size:13px;color:var(--muted);line-height:1.5}
+.scope-card ul li{padding:3px 0;font-size:13px;color:var(--muted);line-height:1.5}
 .scope-card ul li::before{content:"— ";color:var(--gold)}
-.scope-more{margin-top:32px;text-align:center;font:400 18px/1.5 var(--serif);color:var(--muted);font-style:italic}
-.scope-more strong{color:var(--gold);font-style:normal}
+.scope-note{margin-top:24px;text-align:center;font:400 16px/1.5 var(--serif);color:var(--muted);font-style:italic}
+.scope-note strong{color:var(--gold);font-style:normal}
 
-/* Process Section */
+/* How It Works */
 .process-section{background:var(--charcoal);color:var(--cream)}
 .process-section .section-head h2{color:var(--cream)}
 .process-section .section-head p{color:#a8a094}
-.process-timeline{position:relative;max-width:900px;margin:0 auto}
-.process-step{display:flex;gap:24px;margin-bottom:32px;position:relative}
-.process-step:last-child{margin-bottom:0}
-.step-num{flex-shrink:0;width:48px;height:48px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 16px var(--sans);position:relative;z-index:2}
-.step-content{flex:1;background:var(--b2b-card);border:1px solid rgba(169,142,107,.2);border-radius:4px;padding:20px 24px}
-.step-content h4{font:500 17px/1.3 var(--serif);margin:0 0 8px;color:var(--cream)}
-.step-content p{margin:0 0 8px;font-size:13px;line-height:1.6;color:#b8b0a4}
-.step-content .step-output{font-size:12px;color:var(--gold-light);font-style:italic}
-.process-timeline::before{content:"";position:absolute;left:24px;top:48px;bottom:32px;width:2px;background:rgba(169,142,107,.3)}
-.factory-visit-note{margin-top:40px;background:rgba(169,142,107,.1);border:1px solid rgba(169,142,107,.3);border-radius:4px;padding:24px 28px;display:flex;align-items:center;gap:20px}
-.factory-visit-note .visit-icon{font-size:32px;flex-shrink:0}
-.factory-visit-note h4{font:500 16px var(--serif);margin:0 0 4px;color:var(--gold-light)}
-.factory-visit-note p{margin:0;font-size:13px;color:#b8b0a4;line-height:1.6}
-
-/* Why Choose Us */
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.why-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:32px;text-align:center;transition:all .3s}
-.why-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.08);transform:translateY(-4px)}
-.why-icon{font-size:36px;margin-bottom:16px}
-.why-card h3{font:500 18px/1.3 var(--serif);margin:0 0 10px;color:var(--ink)}
-.why-card p{margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.process-step{background:rgba(255,255,255,.04);border:1px solid rgba(169,142,107,.2);border-radius:4px;padding:24px;position:relative}
+.step-num{display:inline-block;width:32px;height:32px;background:var(--gold);color:#fff;border-radius:50%;text-align:center;line-height:32px;font:600 14px var(--sans);margin-bottom:12px}
+.process-step h4{font:500 16px/1.3 var(--serif);margin:0 0 8px;color:var(--cream)}
+.process-step p{margin:0;font-size:13px;line-height:1.6;color:#b8b0a4}
+.process-note{margin-top:32px;text-align:center;font-size:13px;color:#a8a094}
+.process-note strong{color:var(--gold-light)}
 
 /* Fee Structure */
-.fee-section{background:var(--offwhite)}
-.fee-table-wrap{max-width:900px;margin:0 auto 40px}
-.fee-table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
-.fee-table th{background:var(--charcoal);color:var(--cream);padding:16px 20px;text-align:left;font:500 13px var(--sans);letter-spacing:.05em;text-transform:uppercase}
-.fee-table td{padding:14px 20px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink)}
+.fee-table-wrap{max-width:800px;margin:0 auto 32px}
+.fee-table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:4px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.fee-table th{background:var(--charcoal);color:var(--cream);padding:14px 16px;text-align:left;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase}
+.fee-table td{padding:12px 16px;border-bottom:1px solid var(--line);font-size:13px}
 .fee-table tr:last-child td{border-bottom:none}
 .fee-table .fee-range{color:var(--gold);font-weight:600}
-.fee-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
-.fee-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:28px}
-.fee-card h4{font:500 18px var(--serif);margin:0 0 12px;color:var(--ink)}
-.fee-card p{margin:0 0 8px;font-size:13px;line-height:1.6;color:var(--muted)}
-.fee-card .price{font:600 24px var(--serif);color:var(--gold);margin:8px 0}
+.fee-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}
+.fee-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:24px}
+.fee-card h4{font:500 16px var(--serif);margin:0 0 8px}
+.fee-card p{margin:0 0 6px;font-size:13px;line-height:1.6;color:var(--muted)}
+.fee-card .price{font:600 22px var(--serif);color:var(--gold);margin:6px 0}
 
 /* FAQ */
 .faq-section{background:var(--charcoal);color:var(--cream)}
 .faq-section .section-head h2{color:var(--cream)}
 .faq-section .section-head p{color:#a8a094}
-.faq-list{max-width:800px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(169,142,107,.2);margin-bottom:8px}
-.faq-question{width:100%;background:none;border:none;color:var(--cream);padding:20px 0;font:500 16px/1.4 var(--serif);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-list{max-width:750px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(169,142,107,.2);margin-bottom:6px}
+.faq-question{width:100%;background:none;border:none;color:var(--cream);padding:16px 0;font:500 15px/1.4 var(--serif);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
 .faq-question:hover{color:var(--gold-light)}
-.faq-question .faq-icon{flex-shrink:0;width:24px;height:24px;border:1px solid rgba(169,142,107,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gold-light);transition:transform .3s}
+.faq-question .faq-icon{flex-shrink:0;width:22px;height:22px;border:1px solid rgba(169,142,107,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold-light);transition:transform .3s}
 .faq-item.open .faq-question .faq-icon{transform:rotate(45deg)}
 .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.faq-item.open .faq-answer{max-height:400px}
-.faq-answer-inner{padding:0 0 20px;font-size:14px;line-height:1.7;color:#b8b0a4}
+.faq-item.open .faq-answer{max-height:300px}
+.faq-answer-inner{padding:0 0 16px;font-size:13px;line-height:1.7;color:#b8b0a4}
 
 /* CTA */
-.cta-section{background:var(--ink);color:var(--cream);text-align:center;padding:100px 0}
-.cta-section h2{font:400 clamp(28px,3.5vw,44px)/1.2 var(--serif);margin:0 0 16px;color:var(--cream)}
-.cta-section p{max-width:600px;margin:0 auto 32px;color:#a8a094;font-size:16px;line-height:1.7}
-.cta-contact{margin-top:32px;font-size:14px;color:#8a8278}
+.cta-section{background:var(--ink);color:var(--cream);text-align:center;padding:80px 0}
+.cta-section h2{font:400 clamp(26px,3vw,40px)/1.2 var(--serif);margin:0 0 12px;color:var(--cream)}
+.cta-section p{max-width:550px;margin:0 auto 28px;color:#a8a094;font-size:15px;line-height:1.6}
+.cta-contact{margin-top:24px;font-size:13px;color:#8a8278}
 .cta-contact a{color:var(--gold-light)}
 
 /* Footer */
-footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.foot-brand img{height:36px;margin-bottom:16px}
-.foot-brand p{font-size:13px;line-height:1.7;color:#a8a094;margin:0;max-width:320px}
-.foot-col h4{font:500 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
-.foot-col a{display:block;padding:5px 0;font-size:13px;color:#a8a094;transition:color .2s}
+footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.foot-brand img{height:32px;margin-bottom:12px}
+.foot-brand p{font-size:12px;line-height:1.7;color:#a8a094;margin:0;max-width:300px}
+.foot-col h4{font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 12px}
+.foot-col a{display:block;padding:4px 0;font-size:12px;color:#a8a094;transition:color .2s}
 .foot-col a:hover{color:var(--gold-light)}
-.foot-cta .btn{margin-bottom:12px}
-.foot-cta p{font-size:13px;color:#a8a094;margin:6px 0}
-.foot-bottom{border-top:1px solid rgba(169,142,107,.2);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.foot-bottom small{font-size:11px;color:#6e675c}
+.foot-cta .btn{margin-bottom:10px;font-size:10px;padding:10px 16px}
+.foot-cta p{font-size:12px;color:#a8a094;margin:5px 0}
+.foot-bottom{border-top:1px solid rgba(169,142,107,.2);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom small{font-size:10px;color:#6e675c}
 .foot-links a{color:#8a8278}
 .foot-links a:hover{color:var(--gold-light)}
 
 /* Reveal animation */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
 .reveal.visible{opacity:1;transform:none}
 
 /* Responsive */
 @media(max-width:1024px){
-  .links{gap:16px;font-size:10px}
-  .scope-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .links{gap:14px;font-size:10px}
+  .scope-grid,.process-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
   .burger{display:flex}
-  .links{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:var(--charcoal);flex-direction:column;padding:80px 32px 32px;gap:0;transition:right .35s;z-index:9998;overflow-y:auto}
+  .links{position:fixed;top:0;right:-100%;width:min(300px,85vw);height:100vh;background:var(--charcoal);flex-direction:column;padding:80px 28px 28px;gap:0;transition:right .35s;z-index:9998;overflow-y:auto}
   .links.open{right:0}
-  .links a{padding:14px 0;border-bottom:1px solid rgba(169,142,107,.15);font-size:12px}
+  .links a{padding:12px 0;border-bottom:1px solid rgba(169,142,107,.15);font-size:11px}
   .links a::after{display:none}
   .nav-home,.nav-divider,.nav-m-start{display:block}
-  .nav-divider{border:none;height:1px;background:rgba(169,142,107,.2);margin:12px 0}
+  .nav-divider{border:none;height:1px;background:rgba(169,142,107,.2);margin:10px 0}
   .nav-cta .start-btn{display:none}
-  .hero{min-height:80vh}
-  .hero h1{font-size:clamp(28px,7vw,42px)}
-  section{padding:56px 0}
-  .model-grid,.scope-grid,.why-grid,.fee-cards{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .hero{min-height:65vh}
+  .hero h1{font-size:clamp(26px,7vw,38px)}
+  section{padding:48px 0}
+  .scope-grid,.process-grid,.fee-cards{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
   .foot-bottom{flex-direction:column;text-align:center}
-  .process-step{gap:16px}
-  .step-num{width:40px;height:40px;font-size:14px}
-  .process-timeline::before{left:20px}
-  .factory-visit-note{flex-direction:column;text-align:center}
-  .fee-table{font-size:12px}
+  .fee-table{font-size:11px}
   .fee-table th,.fee-table td{padding:10px 12px}
 }
 </style>
@@ -260,79 +218,36 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="eyebrow">B2B Sourcing Agent · Foshan, China</div>
-    <h1>China Sourcing Agent for Home & Commercial Interiors</h1>
-    <p class="sub">Pure sourcing agency — share your requirements, we source the right factories, oversee quality and manage delivery. Transparent fees, no hidden markups.</p>
+    <h1>Your Sourcing Agent for Home & Commercial Interiors</h1>
+    <p class="sub">Pure agency model — you pay factories directly, we charge a transparent service fee. We source, QC and deliver.</p>
     <div class="tags">
       <span class="tag">You Pay Factories Directly</span>
       <span class="tag">Transparent Service Fee</span>
       <span class="tag">3–5 Factory Options</span>
     </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn gold" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20your%20B2B%20sourcing%20agent%20service." target="_blank" rel="noopener">Contact on WhatsApp</a>
-      <a class="btn" href="#process">How It Works</a>
-    </div>
+    <a class="btn gold" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20your%20B2B%20sourcing%20agent%20service." target="_blank" rel="noopener">Contact on WhatsApp</a>
   </div>
 </section>
 
-<!-- Service Model -->
-<section class="service-model" id="model">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Our Service Model</div>
-      <h2>Pure Sourcing Agency. Transparent & Simple.</h2>
-      <p>We don't sell products — we represent you. You pay factories directly and sign contracts with them directly. We charge only a transparent service fee for expertise and project management.</p>
-    </div>
-    <div class="model-grid">
-      <div class="model-card do reveal">
-        <h3>What We Do</h3>
-        <ul class="model-list">
-          <li>Review your sourcing requirements</li>
-          <li>Shortlist 3–5 best-fit factories</li>
-          <li>Compare pricing, quality & lead times</li>
-          <li>Coordinate sample review</li>
-          <li>Set up group chat for direct factory communication</li>
-          <li>Monitor production progress</li>
-          <li>100% quality inspection before shipment</li>
-          <li>Arrange logistics & shipping docs</li>
-        </ul>
-      </div>
-      <div class="model-card dont reveal">
-        <h3>What We Don't Do</h3>
-        <ul class="model-list">
-          <li>No product price markups</li>
-          <li>No product payment collection — you pay factories directly</li>
-          <li>No signing product contracts on your behalf</li>
-          <li>No pressure to choose specific factories</li>
-          <li>No hidden fees or commissions</li>
-          <li>No design or requirement research — you provide specs</li>
-        </ul>
-      </div>
-    </div>
-    <div class="fee-note reveal">
-      <p><strong>You only pay a transparent sourcing agency fee.</strong> Upfront deposit is 100% deductible from your final fee. All costs confirmed upfront — no surprises.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Sourcing Scope -->
+<!-- What We Source -->
 <section id="scope">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">What We Can Source</div>
+      <div class="eyebrow">What We Source</div>
       <h2>Home & Commercial Interiors — Full Range</h2>
-      <p>From residential furniture to commercial contract pieces — if it relates to home or commercial interiors, we can source it from China's manufacturing hubs.</p>
+      <p>From residential furniture to commercial contract pieces, all sourced from China's manufacturing hubs.</p>
     </div>
     <div class="scope-grid">
       <div class="scope-card reveal">
         <div class="scope-icon">🏠</div>
-        <h3>Residential Home Products</h3>
+        <h3>Residential Home</h3>
         <ul>
-          <li>Furniture: sofas, dining, beds, seating, cabinetry</li>
-          <li>Soft furnishings: curtains, rugs, bedding, lighting, décor</li>
+          <li>Furniture: sofas, dining, beds, seating</li>
+          <li>Soft furnishings: curtains, rugs, bedding, lighting</li>
           <li>Custom built-in: kitchens, wardrobes, TV walls</li>
-          <li>Building materials: tiles, flooring, stone, doors, hardware</li>
+          <li>Building materials: tiles, flooring, stone, doors</li>
           <li>Bathroom: sanitary ware, taps, showers</li>
-          <li>Outdoor & garden furniture and décor</li>
+          <li>Outdoor & garden furniture</li>
         </ul>
       </div>
       <div class="scope-card reveal">
@@ -343,7 +258,7 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
           <li>Office: desks, seating, conference tables</li>
           <li>Restaurant & café furniture and fixtures</li>
           <li>Retail: display racks, counters, shopfittings</li>
-          <li>Clubhouses & villas: high-end bespoke furniture</li>
+          <li>Clubhouses & villas: high-end bespoke</li>
           <li>Commercial lighting and décor</li>
         </ul>
       </div>
@@ -360,128 +275,61 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
         </ul>
       </div>
     </div>
-    <p class="scope-more reveal">And more — <strong>if it relates to home or commercial interiors, we can source it.</strong></p>
+    <p class="scope-note reveal">And more — <strong>if it relates to home or commercial interiors, we can source it.</strong></p>
   </div>
 </section>
 
-<!-- Process -->
+<!-- How It Works -->
 <section class="process-section" id="process">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Our Sourcing Process</div>
-      <h2>Six Steps from Inquiry to Delivery</h2>
-      <p>A clear, transparent process designed to minimise risk and maximise efficiency.</p>
+      <div class="eyebrow">How It Works</div>
+      <h2>Simple 6-Step Process</h2>
+      <p>Clear, transparent process from inquiry to delivery.</p>
     </div>
-    <div class="process-timeline">
+    <div class="process-grid">
       <div class="process-step reveal">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>Submit Your Requirements</h4>
-          <p>Provide detailed requirements: products, quantities, budget, lead time, quality standards. You must provide clear specifications — we do not offer design or requirement research.</p>
-          <p class="step-output">Output: Requirements confirmation & feasibility assessment</p>
-        </div>
+        <span class="step-num">1</span>
+        <h4>Submit Requirements</h4>
+        <p>Provide detailed requirements: products, quantities, budget, lead time, quality standards.</p>
       </div>
       <div class="process-step reveal">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>Deposit & Agreement</h4>
-          <p>Sign the sourcing agency agreement. Pay upfront deposit (covers factory screening and supply chain matching). Deposit is 100% deductible from your final fee.</p>
-          <p class="step-output">Output: Signed service agreement & deposit receipt</p>
-        </div>
+        <span class="step-num">2</span>
+        <h4>Deposit & Agreement</h4>
+        <p>Sign agency agreement. Pay upfront deposit (covers factory screening). 100% deductible from final fee.</p>
       </div>
       <div class="process-step reveal">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Factory Sourcing & Comparison</h4>
-          <p>We shortlist 3–5 best-fit factories from our verified network. Obtain quotations, compare pricing, quality and lead times. Provide factory profiles and samples. You choose the best fit — we never push a particular factory.</p>
-          <p class="step-output">Output: Factory comparison table, quotations, samples</p>
-        </div>
+        <span class="step-num">3</span>
+        <h4>Factory Sourcing</h4>
+        <p>We shortlist 3–5 best-fit factories. Compare pricing, quality and lead times. You choose the best fit.</p>
       </div>
       <div class="process-step reveal">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h4>Confirm Factory & Group Chat</h4>
-          <p>You confirm the final factory. We set up a group chat for direct factory communication. You sign the purchase contract directly with the factory. You pay product deposit directly to the factory (typically 30%).</p>
-          <p class="step-output">Output: Final order confirmation, group chat, factory proforma invoice</p>
-        </div>
+        <span class="step-num">4</span>
+        <h4>Confirm & Order</h4>
+        <p>You confirm the factory. We set up group chat for direct communication. You sign contract and pay factory directly.</p>
       </div>
       <div class="process-step reveal">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <h4>Production Follow-up & QC</h4>
-          <p>We monitor production progress and provide regular updates. 100% quality inspection before shipment (or sampling per your request). Provide detailed QC reports, photos and videos. Defective items require factory rework or replacement.</p>
-          <p class="step-output">Output: Production progress reports, QC reports, photos/videos</p>
-        </div>
+        <span class="step-num">5</span>
+        <h4>Production & QC</h4>
+        <p>We monitor production and provide updates. 100% quality inspection before shipment. QC reports with photos/videos.</p>
       </div>
       <div class="process-step reveal">
-        <div class="step-num">6</div>
-        <div class="step-content">
-          <h4>Logistics & Delivery</h4>
-          <p>Arrange packaging, freight booking and customs declaration. Provide logistics options (sea/air/rail). Assist with customs docs. Track shipment until delivery.</p>
-          <p class="step-output">Output: Bill of lading, commercial invoice, packing list, tracking</p>
-        </div>
+        <span class="step-num">6</span>
+        <h4>Logistics & Delivery</h4>
+        <p>Arrange packaging, freight booking and customs. Provide logistics options. Track shipment until delivery.</p>
       </div>
     </div>
-    <div class="factory-visit-note reveal">
-      <div class="visit-icon">🚗</div>
-      <div>
-        <h4>Optional: Factory Visit Concierge</h4>
-        <p>Planning to visit factories? We offer factory visit accompaniment at USD 150/day, including car transfer, translation and itinerary arrangement. Client accommodation and meals self-managed. Minimum 3 days advance booking.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Choose Us -->
-<section id="why">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Why Choose CASA TRIO</div>
-      <h2>Your Trusted Sourcing Partner in Foshan</h2>
-      <p>Located at the heart of China's furniture industry, with a verified factory network and rigorous QC.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-icon">📍</div>
-        <h3>Located in Foshan</h3>
-        <p>China's furniture capital. Thousands of furniture, building material and home goods factories nearby. Close proximity enables efficient management and communication.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">🏭</div>
-        <h3>200+ Verified Factories</h3>
-        <p>Over 200 verified partner factories covering furniture, custom cabinetry, building materials, bathroom, soft furnishings and more. Various tiers to match your needs.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">💰</div>
-        <h3>Transparent Pricing</h3>
-        <p>No product markups, no hidden commissions. Factory quotations passed to you exactly as received. You pay factories directly. We only charge the agreed service fee.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">✅</div>
-        <h3>100% QC Before Shipment</h3>
-        <p>Every item inspected before shipment. Detailed QC reports with photos and videos. Defective products require factory rework or replacement before shipping.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">🤝</div>
-        <h3>You Deal Directly with Factories</h3>
-        <p>You sign contracts directly with factories. You pay factories directly. Lower risk, better pricing, direct communication. We facilitate and manage — never take control.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">🌍</div>
-        <h3>5+ Years Foreign Trade</h3>
-        <p>Over 5 years of international trade experience. Served clients in 50+ countries. Familiar with trade procedures, logistics and customs.</p>
-      </div>
-    </div>
+    <p class="process-note reveal"><strong>Optional:</strong> Factory visit accompaniment — USD 150/day (car transfer, translation, itinerary). Client accommodation & meals self-managed.</p>
   </div>
 </section>
 
 <!-- Fee Structure -->
-<section class="fee-section" id="fees">
+<section id="fees">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Service Fee Structure</div>
+      <div class="eyebrow">Fee Structure</div>
       <h2>Transparent Fees, No Surprises</h2>
-      <p>Service fee based on project size and complexity. Larger projects qualify for lower rates. Contact us for a tailored quotation.</p>
+      <p>Service fee based on project size. Larger projects qualify for lower rates.</p>
     </div>
     <div class="fee-table-wrap reveal">
       <table class="fee-table">
@@ -493,36 +341,12 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Under USD 5,000</td>
-            <td class="fee-range">10% or minimum USD 500</td>
-            <td>USD 300</td>
-          </tr>
-          <tr>
-            <td>USD 5,000 – 20,000</td>
-            <td class="fee-range">8% – 10%</td>
-            <td>USD 300 – 500</td>
-          </tr>
-          <tr>
-            <td>USD 20,000 – 50,000</td>
-            <td class="fee-range">5% – 8%</td>
-            <td>USD 500 – 1,000</td>
-          </tr>
-          <tr>
-            <td>USD 50,000 – 100,000</td>
-            <td class="fee-range">4% – 6%</td>
-            <td>USD 1,000</td>
-          </tr>
-          <tr>
-            <td>USD 100,000 – 500,000</td>
-            <td class="fee-range">3% – 5%</td>
-            <td>USD 1,000 – 2,000</td>
-          </tr>
-          <tr>
-            <td>Over USD 500,000</td>
-            <td class="fee-range">2% – 3% / Negotiable</td>
-            <td>Negotiable</td>
-          </tr>
+          <tr><td>Under USD 5,000</td><td class="fee-range">10% or min USD 500</td><td>USD 300</td></tr>
+          <tr><td>USD 5,000 – 20,000</td><td class="fee-range">8% – 10%</td><td>USD 300 – 500</td></tr>
+          <tr><td>USD 20,000 – 50,000</td><td class="fee-range">5% – 8%</td><td>USD 500 – 1,000</td></tr>
+          <tr><td>USD 50,000 – 100,000</td><td class="fee-range">4% – 6%</td><td>USD 1,000</td></tr>
+          <tr><td>USD 100,000 – 500,000</td><td class="fee-range">3% – 5%</td><td>USD 1,000 – 2,000</td></tr>
+          <tr><td>Over USD 500,000</td><td class="fee-range">2% – 3% / Negotiable</td><td>Negotiable</td></tr>
         </tbody>
       </table>
     </div>
@@ -531,13 +355,13 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
         <h4>Upfront Deposit</h4>
         <p>Covers factory screening, supply chain matching and quotation labour.</p>
         <div class="price">USD 300 – 2,000</div>
-        <p><strong>100% deductible</strong> from your final fee. Refundable if project cannot proceed due to our reasons.</p>
+        <p><strong>100% deductible</strong> from final fee. Refundable if project cannot proceed due to our reasons.</p>
       </div>
       <div class="fee-card reveal">
         <h4>Factory Visit Concierge</h4>
         <p>Optional service for clients visiting Foshan factories.</p>
         <div class="price">USD 150 / day</div>
-        <p>Includes car transfer, translation and itinerary arrangement. Client accommodation and meals self-managed.</p>
+        <p>Includes car transfer, translation and itinerary. Client accommodation & meals self-managed.</p>
       </div>
     </div>
   </div>
@@ -547,8 +371,8 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Frequently Asked Questions</div>
-      <h2>B2B Sourcing FAQ</h2>
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
       <p>Everything you need to know about our sourcing agent service.</p>
     </div>
     <div class="faq-list">
@@ -557,12 +381,12 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
         <div class="faq-answer"><div class="faq-answer-inner">A sourcing agent represents you in China to find suppliers, negotiate pricing, manage quality and handle logistics. We charge a transparent service fee, no product markups. Factory quotations passed to you exactly as received, you pay factories directly.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">How much do you charge for sourcing agent services?<span class="faq-icon">+</span></button>
+        <button class="faq-question">How much do you charge?<span class="faq-icon">+</span></button>
         <div class="faq-answer"><div class="faq-answer-inner">Service fee based on project size, typically 2–10% of purchase value. Larger projects qualify for lower rates. Upfront deposit (USD 300–2,000) is 100% deductible from final fee. Contact us for a tailored quotation.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-question">Why do I need to pay a deposit upfront?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Upfront deposit covers labour costs for factory screening, supply chain matching and quotations. Ensures commitment from both sides. 100% deductible from final fee. Refundable if project cannot proceed due to our reasons.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">The deposit covers labour costs for factory screening, supply chain matching and quotations. It ensures commitment from both sides. 100% deductible from final fee. Refundable if project cannot proceed due to our reasons.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-question">Do you mark up factory prices?<span class="faq-icon">+</span></button>
@@ -573,24 +397,16 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
         <div class="faq-answer"><div class="faq-answer-inner">Yes. We only work with verified factories. You sign a formal purchase contract directly with the factory. Standard terms: 30% deposit to start production, 70% balance before shipment after QC approval. We verify credentials and monitor production throughout.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">I sign contracts directly with factories — what are your responsibilities?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Our responsibility: professional sourcing management — factory screening, price comparison, sample coordination, production follow-up, quality inspection and logistics. We do not assume product liability (that rests between you and the factory), but we actively manage quality and resolve issues on your behalf.</div></div>
+        <button class="faq-question">What are your responsibilities?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Professional sourcing management: factory screening, price comparison, sample coordination, production follow-up, quality inspection and logistics. We do not assume product liability (that rests between you and the factory), but we actively manage quality and resolve issues on your behalf.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-question">What is your minimum order value?<span class="faq-icon">+</span></button>
         <div class="faq-answer"><div class="faq-answer-inner">We recommend projects of USD 5,000+ for service fee and logistics costs to be efficient. Smaller projects can be discussed — minimum service fee USD 500 for very small orders.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">Can you source products outside home furniture?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. Our scope includes all home-related products, plus commercial and contract furniture for hotels, offices, restaurants and retail spaces. If it relates to home or commercial interiors, we can source it. For unrelated categories, please ask.</div></div>
-      </div>
-      <div class="faq-item reveal">
         <button class="faq-question">How do you ensure product quality?<span class="faq-icon">+</span></button>
         <div class="faq-answer"><div class="faq-answer-inner">We conduct 100% quality inspection before shipment (or sampling per request). QC includes material verification, dimensions, functionality, finish quality and packaging. Detailed QC reports with photos and videos. Defective items require factory rework or replacement.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">Can I visit the factories before placing an order?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We welcome clients to visit Foshan and tour factories and showrooms. Factory visit concierge at USD 150/day, including car transfer, translation and itinerary arrangement. Book at least 3 days in advance. Accommodation and meals self-managed.</div></div>
       </div>
     </div>
   </div>
@@ -641,13 +457,11 @@ footer{background:var(--charcoal);color:var(--cream);padding:56px 0 24px}
 </footer>
 
 <script>
-// Nav scroll
 var nav = document.getElementById('nav');
 window.addEventListener('scroll', function(){
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Mobile menu
 document.addEventListener('DOMContentLoaded', function() {
   var burger = document.getElementById('burger');
   var links = document.getElementById('navlinks');
@@ -665,7 +479,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Scroll reveal
 var io = new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -673,7 +486,6 @@ var io = new IntersectionObserver(function(entries){
 }, {threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-// FAQ accordion
 document.querySelectorAll('.faq-question').forEach(function(btn){
   btn.addEventListener('click', function(){
     var item = this.closest('.faq-item');
