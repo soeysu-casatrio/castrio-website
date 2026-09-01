@@ -618,7 +618,10 @@ textarea:focus{outline:none;border-color:var(--gold)}
 <style>
 .welcome-gate{position:fixed;inset:0;z-index:100000;background:rgba(18,16,14,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:all .4s ease}
 .welcome-gate.active{opacity:1;visibility:visible}
-.welcome-gate .gate-container{max-width:900px;width:100%;text-align:center;animation:gateFadeUp .6s ease}
+.welcome-gate .gate-container{max-width:900px;width:100%;text-align:center;animation:gateFadeUp .6s ease;max-height:85vh;overflow-y:auto;padding:20px 10px 30px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+.welcome-gate .gate-container::-webkit-scrollbar{width:6px}
+.welcome-gate .gate-container::-webkit-scrollbar-track{background:transparent}
+.welcome-gate .gate-container::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
 @keyframes gateFadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .welcome-gate .gate-logo{font-size:28px;font-weight:600;letter-spacing:.12em;color:var(--gold-light);margin-bottom:8px;font-family:var(--serif)}
 .welcome-gate .gate-tagline{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#a89f8f;margin-bottom:40px}
@@ -637,13 +640,22 @@ textarea:focus{outline:none;border-color:var(--gold)}
 .welcome-gate .gate-card .card-cta{margin-top:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);font-weight:600;display:flex;align-items:center;gap:8px}
 .welcome-gate .gate-card .card-cta::after{content:"→";transition:transform .2s}
 .welcome-gate .gate-card:hover .card-cta::after{transform:translateX(4px)}
-.welcome-gate .gate-skip{font-size:13px;color:#6a6252;cursor:pointer;transition:color .2s;text-decoration:underline;text-underline-offset:4px}
+.welcome-gate .gate-skip{font-size:13px;color:#6a6252;cursor:pointer;transition:color .2s;text-decoration:underline;text-underline-offset:4px;display:inline-block;margin-top:10px;position:sticky;bottom:0;background:rgba(18,16,14,.92);padding:12px 20px;border-radius:4px;backdrop-filter:blur(4px)}
 .welcome-gate .gate-skip:hover{color:#a89f8f}
 @media(max-width:768px){
   .welcome-gate .gate-cards{grid-template-columns:1fr;gap:16px}
-  .welcome-gate .gate-card{padding:24px 20px}
-  .welcome-gate .gate-subtitle{margin-bottom:32px}
-  .welcome-gate{padding:16px;overflow-y:auto}
+  .welcome-gate .gate-card{padding:20px 18px}
+  .welcome-gate .gate-card .card-icon{font-size:28px;margin-bottom:12px}
+  .welcome-gate .gate-card .card-title{font-size:18px;margin-bottom:8px}
+  .welcome-gate .gate-card .card-desc{font-size:12px;margin-bottom:14px}
+  .welcome-gate .gate-card .card-features li{font-size:11px;padding:3px 0}
+  .welcome-gate .gate-card .card-cta{margin-top:16px;font-size:11px}
+  .welcome-gate .gate-subtitle{margin-bottom:24px;font-size:13px}
+  .welcome-gate .gate-title{font-size:22px;margin-bottom:8px}
+  .welcome-gate .gate-tagline{font-size:11px;margin-bottom:24px}
+  .welcome-gate .gate-logo{font-size:22px;margin-bottom:4px}
+  .welcome-gate{padding:12px;overflow-y:auto}
+  .welcome-gate .gate-container{max-height:90vh;padding:10px 8px 20px}
 }
 /* Choose Your Path Section */
 .choose-path{padding:80px 0;background:var(--paper);border-bottom:1px solid var(--line)}
