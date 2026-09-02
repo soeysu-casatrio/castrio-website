@@ -93,7 +93,7 @@ body {
 .hero .container { position: relative; z-index: 1; }
 .eyebrow { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; font-weight: 500; }
 .hero h1 { font: 400 clamp(36px, 5vw, 56px)/1.1 var(--serif); margin: 0 0 16px; }
-.hero h1 em { font-style: ; color: var(--gold-light); }
+.hero h1 em { font-style: italic; color: var(--gold-light); }
 .hero .sub { font: 400 16px/1.7 var(--sans); color: rgba(255,255,255,.8); max-width: 600px; margin: 0 auto; font-weight: 300; }
 
 /* Why Deposit Section */
@@ -1028,9 +1028,10 @@ footer {
 
     <div style="text-align:center">
       <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Ready to start your B2B sourcing project?</p>
-      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20your%20B2B%20sourcing%20agent%20service.%20Could%20we%20discuss%20my%20bulk%20order%20and%20sourcing%20deposit%3F"
-         style="display:inline-block;background:var(--gold);color:#fff;padding:16px 32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600;border-radius:2px;transition:all .25s"
-         target="_blank" rel="noopener">Contact Us for B2B Deposit</a>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn gold" href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27m%20interested%20in%20your%20B2B%20sourcing%20agent%20service%20and%20sourcing%20deposit.%20Could%20we%20discuss%3F" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <button class="btn" onclick="openRfqModal()" style="background:transparent;color:var(--charcoal);border:1px solid var(--charcoal);cursor:pointer;padding:12px 24px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:4px;transition:all .25s;" onmouseover="this.style.background='var(--charcoal)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--charcoal)'">Submit RFQ Form</button>
+    </div>
       <p style="font-size:12px;color:var(--muted);margin-top:16px">We will provide a customized deposit amount and payment instructions after understanding your project</p>
     </div>
   </div>
@@ -1233,5 +1234,116 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<!-- RFQ Form Modal -->
+<div class="modal-overlay" id="rfqModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeRfqModal()">&times;</button>
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    <h3>Request for Quotation (RFQ)</h3>
+    <p>Fill in your sourcing requirements and we'll respond with factory quotes within 24–48 hours.</p>
+    
+    <form id="rfqForm" onsubmit="submitRfqForm(event); return false;" style="margin:20px 0;">
+      <div style="display:grid;gap:14px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Company Name *</label>
+            <input type="text" id="rfqCompany" required placeholder="Your company" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Contact Person *</label>
+            <input type="text" id="rfqName" required placeholder="Your name" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);box-sizing:border-box;">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Email *</label>
+            <input type="email" id="rfqEmail" required placeholder="you@company.com" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">WhatsApp</label>
+            <input type="tel" id="rfqWhatsapp" placeholder="+1 234 567 8900" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);box-sizing:border-box;">
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Product Categories *</label>
+          <select id="rfqCategory" required style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);">
+            <option value="">Select category</option>
+            <option value="furniture">Furniture (sofa, dining, bedroom)</option>
+            <option value="custom">Custom Built-in / Millwork</option>
+            <option value="materials">Building Materials</option>
+            <option value="lighting">Lighting</option>
+            <option value="soft">Soft Furnishings</option>
+            <option value="bathroom">Bathroom & Sanitary</option>
+            <option value="mixed">Mixed / Full Project</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Estimated Order Value</label>
+            <select id="rfqBudget" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);">
+              <option value="">Select range</option>
+              <option value="<50k">Under $50,000</option>
+              <option value="50k-100k">$50,000 – $100,000</option>
+              <option value="100k-500k">$100,000 – $500,000</option>
+              <option value="500k+">$500,000+</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Target Market</label>
+            <input type="text" id="rfqMarket" placeholder="e.g. UAE, USA, Europe" style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);box-sizing:border-box;">
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;">Project Details *</label>
+          <textarea id="rfqDetails" required rows="4" placeholder="Describe your project, product specifications, quantities, timeline, and any special requirements..." style="width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:13px;background:var(--paper);resize:vertical;box-sizing:border-box;"></textarea>
+        </div>
+      </div>
+      <button type="submit" style="width:100%;margin-top:16px;padding:14px;background:var(--gold);color:#fff;border:none;border-radius:4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .25s;" onmouseover="this.style.background='#8e7658'" onmouseout="this.style.background='var(--gold)'">Submit RFQ & Get Quotes</button>
+    </form>
+    
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin:0;">We typically respond within 24–48 hours on business days. Your information is kept strictly confidential.</p>
+  </div>
+</div>
+
+<script>
+function openRfqModal() {
+  document.getElementById('rfqModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRfqModal() {
+  document.getElementById('rfqModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function submitRfqForm(event) {
+  event.preventDefault();
+  const company = document.getElementById('rfqCompany').value;
+  const name = document.getElementById('rfqName').value;
+  const email = document.getElementById('rfqEmail').value;
+  const whatsapp = document.getElementById('rfqWhatsapp').value;
+  const category = document.getElementById('rfqCategory').value;
+  const budget = document.getElementById('rfqBudget').value;
+  const market = document.getElementById('rfqMarket').value;
+  const details = document.getElementById('rfqDetails').value;
+  
+  const whatsappText = 'Hi CASA TRIO, I would like to submit an RFQ.\n\nCompany: ' + company + '\nContact: ' + name + '\nEmail: ' + email + (whatsapp ? '\nWhatsApp: ' + whatsapp : '') + '\nCategory: ' + category + (budget ? '\nBudget: ' + budget : '') + (market ? '\nMarket: ' + market : '') + '\n\nDetails: ' + details;
+  const whatsappUrl = 'https://wa.me/8615017434683?text=' + encodeURIComponent(whatsappText);
+  
+  closeRfqModal();
+  window.open(whatsappUrl, '_blank');
+}
+
+// 点击遮罩层关闭弹窗
+document.getElementById('rfqModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeRfqModal();
+  }
+});
+</script>
+
 </body>
 </html>
