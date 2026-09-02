@@ -384,9 +384,11 @@ body {
   backdrop-filter: blur(8px);
   z-index: 10000;
   display: none;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .modal-overlay.active {
   display: flex;
@@ -399,6 +401,10 @@ body {
   text-align: center;
   position: relative;
   border-radius: 2px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
 }
 .modal-close {
   position: absolute;
@@ -883,6 +889,25 @@ footer {
   font-size: 10px !important;
   padding: 10px 24px 6px !important;
 }
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(169,142,107,.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--gold-light);
+  transition: transform .3s;
+  font-weight: 400;
+}
+
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/intent-deposit.html">
 
@@ -1086,28 +1111,28 @@ footer {
   <div class="container">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
-      <div class="faq-question">What does the commitment deposit include?</div>
-      <div class="faq-answer">Your deposit secures our team for your project and includes a <strong>First Concept Package</strong> — a 2D soft furnishing plan and a photorealistic 3D rendering of one main space, plus space planning, styling direction, and preliminary product selections. Delivered in 5–7 business days with 1 complimentary revision. The deposit is 100% credited toward your final 30% balance payment.</div>
+      <div class="faq-question" onclick="toggleFaq(this)">What does the commitment deposit include?</div>
+      <div class="faq-answer"><div class="faq-answer-inner">Your deposit secures our team for your project and includes a <strong>First Concept Package</strong> — a 2D soft furnishing plan and a photorealistic 3D rendering of one main space, plus space planning, styling direction, and preliminary product selections. Delivered in 5–7 business days with 1 complimentary revision. The deposit is 100% credited toward your final 30% balance payment.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">What happens to my deposit?</div>
-      <div class="faq-answer">Every dollar of your deposit is fully credited towards your <strong>final 30% balance payment</strong>. It is an advance, not an extra cost. Once concept work has commenced, the deposit is applied to your project and remains fully credited toward your final order.</div>
+      <div class="faq-question" onclick="toggleFaq(this)">What happens to my deposit?</div>
+      <div class="faq-answer"><div class="faq-answer-inner">Every dollar of your deposit is fully credited towards your <strong>final 30% balance payment</strong>. It is an advance, not an extra cost. Once concept work has commenced, the deposit is applied to your project and remains fully credited toward your final order.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Is the commitment deposit the same as the design fee or production deposit?</div>
-      <div class="faq-answer"><strong>No, they are separate:</strong><br><br><strong>Commitment Deposit:</strong> Secures your project and includes the First Concept Package (2D plan + 3D rendering). 100% credited toward your final 30% balance payment.<br><br><strong>Design Fee:</strong> For full interior design service (if needed). Paid in full before the full design process begins. Separate from the commitment deposit.<br><br><strong>Production Deposit (70%):</strong> Paid after you approve the final product list and quotation, to begin manufacturing. Separate from the commitment deposit.</div>
+      <div class="faq-question" onclick="toggleFaq(this)">Is the commitment deposit the same as the design fee or production deposit?</div>
+      <div class="faq-answer"><div class="faq-answer-inner"><strong>No, they are separate:</strong><br><br><strong>Commitment Deposit:</strong> Secures your project and includes the First Concept Package (2D plan + 3D rendering). 100% credited toward your final 30% balance payment.<br><br><strong>Design Fee:</strong> For full interior design service (if needed). Paid in full before the full design process begins. Separate from the commitment deposit.<br><br><strong>Production Deposit (70%):</strong> Paid after you approve the final product list and quotation, to begin manufacturing. Separate from the commitment deposit.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">What if I'm not satisfied with the initial concept?</div>
-      <div class="faq-answer">After receiving your commitment deposit, we schedule a dedicated discovery call or video consultation where our designer communicates directly with you to fully understand your vision, preferences, and requirements before beginning the initial concept. You also receive <strong>1 complimentary revision</strong> to refine the direction. If you require additional revisions beyond the first, we can discuss an additional revision package based on the scope of changes.</div>
+      <div class="faq-question" onclick="toggleFaq(this)">What if I'm not satisfied with the initial concept?</div>
+      <div class="faq-answer"><div class="faq-answer-inner">After receiving your commitment deposit, we schedule a dedicated discovery call or video consultation where our designer communicates directly with you to fully understand your vision, preferences, and requirements before beginning the initial concept. You also receive <strong>1 complimentary revision</strong> to refine the direction. If you require additional revisions beyond the first, we can discuss an additional revision package based on the scope of changes.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">How long does it take to receive the First Concept Package?</div>
-      <div class="faq-answer">After the discovery call and requirement confirmation, the First Concept Package is typically delivered within <strong>5–7 business days</strong>. This includes the 2D soft furnishing plan, 3D rendering, space planning, styling direction, and preliminary product selections for one main space (default: living room).</div>
+      <div class="faq-question" onclick="toggleFaq(this)">How long does it take to receive the First Concept Package?</div>
+      <div class="faq-answer"><div class="faq-answer-inner">After the discovery call and requirement confirmation, the First Concept Package is typically delivered within <strong>5–7 business days</strong>. This includes the 2D soft furnishing plan, 3D rendering, space planning, styling direction, and preliminary product selections for one main space (default: living room).</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Is the commitment deposit refundable?</div>
-      <div class="faq-answer">The commitment deposit is <strong>100% credited</strong> toward your final 30% balance payment — it's an investment in your project, not a separate fee. Once we commence work on your First Concept Package (after the discovery call), the deposit is applied to your project. If you decide not to proceed before we begin any concept work, please contact us to discuss your situation. We evaluate refund requests on a case-by-case basis, but our goal is always to find a solution that works for both parties.</div>
+      <div class="faq-question" onclick="toggleFaq(this)">Is the commitment deposit refundable?</div>
+      <div class="faq-answer"><div class="faq-answer-inner">The commitment deposit is <strong>100% credited</strong> toward your final 30% balance payment — it's an investment in your project, not a separate fee. Once we commence work on your First Concept Package (after the discovery call), the deposit is applied to your project. If you decide not to proceed before we begin any concept work, please contact us to discuss your situation. We evaluate refund requests on a case-by-case basis, but our goal is always to find a solution that works for both parties.</div></div>
     </div>
   </div>
 </section>
@@ -1401,6 +1426,28 @@ document.getElementById('paymentModal').addEventListener('click', function(e) {
     closeModal();
   }
 });
+</script>
+
+
+<script>
+function toggleFaq(element) {
+  const faqItem = element.closest('.faq-item');
+  const isOpen = faqItem.classList.contains('open');
+  
+  // 关闭所有其他FAQ
+  document.querySelectorAll('.faq-item.open').forEach(item => {
+    if (item !== faqItem) {
+      item.classList.remove('open');
+    }
+  });
+  
+  // 切换当前FAQ
+  if (isOpen) {
+    faqItem.classList.remove('open');
+  } else {
+    faqItem.classList.add('open');
+  }
+}
 </script>
 
 </body>
