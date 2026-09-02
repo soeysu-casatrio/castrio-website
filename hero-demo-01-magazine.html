@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero Demo 01 — Magazine Style | CASA TRIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
+  --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
+  --charcoal:#22201C;--cream:#F2EDE4;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+h1,h2,h3,h4{font-weight:400}
+.container{width:min(calc(100% - 80px),1280px);margin:auto}
+
+/* Demo Label */
+.demo-label{position:fixed;top:20px;right:20px;z-index:99999;background:rgba(34,32,28,.9);color:#fff;padding:10px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;backdrop-filter:blur(10px)}
+.demo-label span{color:var(--gold-light)}
+
+/* Nav */
+.nav{position:fixed;z-index:9999;top:0;left:0;right:0;padding:20px 0;color:#fff;transition:all .3s}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:600 18px/1 var(--serif);letter-spacing:.08em;color:#fff}
+.links{display:flex;gap:28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.links a{position:relative;padding:4px 0;transition:color .2s}
+.links a:hover{color:var(--gold-light)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:12px 20px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+.burger{display:none;background:none;border:0;cursor:pointer;color:inherit}
+
+/* Hero — Magazine Style */
+.hero{min-height:100vh;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url("images/new_01.webp") center/cover}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(18,16,14,.55) 0%,rgba(18,16,14,.35) 40%,rgba(18,16,14,.75) 100%);
+  pointer-events:none}
+.hero .container{position:relative;z-index:2;padding-top:100px;padding-bottom:80px}
+
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:60px}
+.hero-chapter{display:flex;align-items:center;gap:16px}
+.hero-chapter-num{font:400 12px/1 var(--sans);color:var(--gold-light);letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.hero-chapter-line{width:60px;height:1px;background:var(--gold-light);opacity:.6}
+.hero-chapter-label{font:400 11px/1 var(--sans);color:rgba(255,255,255,.7);letter-spacing:.18em;text-transform:uppercase}
+
+.hero-location{text-align:right}
+.hero-location-label{font:400 10px/1 var(--sans);color:rgba(255,255,255,.5);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.hero-location-text{font:400 13px/1.4 var(--serif);color:rgba(255,255,255,.85);font-style:italic}
+
+.hero h1{font:400 clamp(48px,7vw,96px)/1.02 var(--serif);letter-spacing:-.02em;max-width:900px;margin:0 0 32px}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:48px}
+.hero-left{flex:1;max-width:520px}
+.hero-sub{font:400 17px/1.6 var(--serif);color:rgba(255,255,255,.8);margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid currentColor;padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.fill{background:#fff;color:var(--ink);border-color:#fff}
+.btn.fill:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+.hero-right{flex:0 0 auto;text-align:right}
+.hero-stats{display:flex;gap:40px}
+.hero-stat{text-align:left}
+.hero-stat-num{font:400 36px/1 var(--serif);color:var(--gold-light);margin-bottom:6px}
+.hero-stat-label{font:400 10px/1.4 var(--sans);color:rgba(255,255,255,.6);letter-spacing:.14em;text-transform:uppercase;max-width:100px}
+
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.5)}
+.hero-scroll-text{font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll-line{width:1px;height:40px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.hero-scroll-line::after{content:'';position:absolute;top:-40px;left:0;width:100%;height:40px;background:var(--gold-light);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{top:-40px}100%{top:40px}}
+
+/* Next section preview */
+.next-section{padding:100px 0;background:var(--paper);text-align:center}
+.next-section h2{font:400 32px/1.2 var(--serif);color:var(--ink);margin-bottom:16px}
+.next-section p{font-size:14px;color:var(--muted);max-width:500px;margin:0 auto}
+
+@media(max-width:900px){
+  .container{width:min(calc(100% - 40px),1280px)}
+  .links{display:none}
+  .hero-bottom{flex-direction:column;align-items:flex-start}
+  .hero-right{text-align:left}
+  .hero-stats{gap:24px}
+  .hero-stat-num{font-size:28px}
+  .hero-top{flex-direction:column;gap:16px;margin-bottom:40px}
+  .hero-location{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-label">Demo <span>01 — Magazine Style</span></div>
+
+<nav class="nav">
+  <div class="container">
+    <div class="navin">
+      <a href="#" class="logo">CASA TRIO</a>
+      <div class="links">
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Solutions</a>
+        <a href="#">B2B</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="start-btn">Start a Project</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-top">
+      <div class="hero-chapter">
+        <span class="hero-chapter-num">01</span>
+        <span class="hero-chapter-line"></span>
+        <span class="hero-chapter-label">Private Residences</span>
+      </div>
+      <div class="hero-location">
+        <div class="hero-location-label">Based in</div>
+        <div class="hero-location-text">Foshan, China</div>
+      </div>
+    </div>
+
+    <h1>Your Home,<br>Curated <em>from China.</em></h1>
+
+    <div class="hero-bottom">
+      <div class="hero-left">
+        <p class="hero-sub">From interior direction and furniture selection to custom production, quality control and international delivery — we manage the details behind your home, so you don't have to.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn fill">Start a Private Consultation</a>
+          <a href="#" class="btn">Explore Our Projects</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">300+</div>
+            <div class="hero-stat-label">Partner Factories</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">50+</div>
+            <div class="hero-stat-label">Countries Served</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">QC Inspection</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<section class="next-section">
+  <div class="container">
+    <h2>Content continues below...</h2>
+    <p>This is a demo of the hero section only. The rest of the page would follow the existing site structure.</p>
+  </div>
+</section>
+
+</body>
+</html>
