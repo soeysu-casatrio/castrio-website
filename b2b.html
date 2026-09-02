@@ -501,54 +501,48 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
     </div>
     
     <!-- 阶梯计费卡片 -->
-    <div class="pricing-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto 40px;">
-      <!-- Standard Project -->
-      <div class="pricing-card reveal" style="background:var(--offwhite);border:1px solid var(--line);border-radius:8px;padding:32px 24px;text-align:center;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;">Standard Project</div>
-        <div style="font-size:28px;font-weight:600;color:var(--charcoal);font-family:var(--serif);margin-bottom:4px;">&lt; $100K</div>
-        <div style="font-size:36px;font-weight:700;color:var(--gold);font-family:var(--serif);margin:16px 0;">8–10%</div>
-        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
-        <ul style="text-align:left;font-size:13px;color:var(--muted);line-height:2;list-style:none;padding:0;margin:0;">
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> 3–5 factory quotes per item</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Free pre-shipment QC</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Production supervision</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Logistics coordination</li>
-        </ul>
-      </div>
-      
-      <!-- Large Commercial -->
-      <div class="pricing-card reveal" style="background:var(--charcoal);border:2px solid var(--gold);border-radius:8px;padding:32px 24px;text-align:center;position:relative;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:4px 16px;border-radius:12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;">Most Popular</div>
-        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:8px;">Large Commercial</div>
-        <div style="font-size:28px;font-weight:600;color:var(--cream);font-family:var(--serif);margin-bottom:4px;">$100K – $500K</div>
-        <div style="font-size:36px;font-weight:700;color:var(--gold-light);font-family:var(--serif);margin:16px 0;">5–8%</div>
-        <div style="font-size:12px;color:#a8a094;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
-        <ul style="text-align:left;font-size:13px;color:#b8b0a4;line-height:2;list-style:none;padding:0;margin:0;">
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Everything in Standard</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Dedicated project manager</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Weekly progress reports</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Multi-factory coordination</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Priority QC scheduling</li>
-        </ul>
-      </div>
-      
-      <!-- Mega Procurement -->
-      <div class="pricing-card reveal" style="background:var(--offwhite);border:1px solid var(--line);border-radius:8px;padding:32px 24px;text-align:center;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;">Mega Procurement</div>
-        <div style="font-size:28px;font-weight:600;color:var(--charcoal);font-family:var(--serif);margin-bottom:4px;">$500K+</div>
-        <div style="font-size:36px;font-weight:700;color:var(--gold);font-family:var(--serif);margin:16px 0;">2.5–5%</div>
-        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
-        <ul style="text-align:left;font-size:13px;color:var(--muted);line-height:2;list-style:none;padding:0;margin:0;">
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Everything in Large</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Custom pricing structure</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> On-site QC visits</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Executive review calls</li>
-          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Dedicated sourcing team</li>
-        </ul>
-      </div>
+    <!-- 5档精细佣金比例表格 -->
+    <div style="max-width:900px;margin:0 auto 40px;overflow-x:auto;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.05);">
+      <table style="width:100%;border-collapse:collapse;background:var(--paper);">
+        <thead>
+          <tr style="background:var(--charcoal);">
+            <th style="padding:16px 20px;text-align:left;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--cream);">Project Size</th>
+            <th style="padding:16px 20px;text-align:center;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--gold-light);">Commission Rate</th>
+            <th style="padding:16px 20px;text-align:left;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--cream);">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--charcoal);">&lt; $20,000</td>
+            <td style="padding:14px 20px;text-align:center;font-size:18px;font-weight:700;color:var(--gold);font-family:var(--serif);">8–10%</td>
+            <td style="padding:14px 20px;font-size:13px;color:var(--muted);">Small orders — higher relative workload</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);background:var(--offwhite);">
+            <td style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--charcoal);">$20,000 – $50,000</td>
+            <td style="padding:14px 20px;text-align:center;font-size:18px;font-weight:700;color:var(--gold);font-family:var(--serif);">6–8%</td>
+            <td style="padding:14px 20px;font-size:13px;color:var(--muted);">Small-medium scale — standard service</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--charcoal);">$50,000 – $100,000</td>
+            <td style="padding:14px 20px;text-align:center;font-size:18px;font-weight:700;color:var(--gold);font-family:var(--serif);">5–7%</td>
+            <td style="padding:14px 20px;font-size:13px;color:var(--muted);">Medium scale — higher efficiency</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);background:var(--offwhite);">
+            <td style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--charcoal);">$100,000 – $300,000</td>
+            <td style="padding:14px 20px;text-align:center;font-size:18px;font-weight:700;color:var(--gold);font-family:var(--serif);">3.5–5%</td>
+            <td style="padding:14px 20px;font-size:13px;color:var(--muted);">Large scale — economies of scale</td>
+          </tr>
+          <tr style="background:var(--offwhite);">
+            <td style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--charcoal);">&gt; $300,000</td>
+            <td style="padding:14px 20px;text-align:center;font-size:18px;font-weight:700;color:var(--gold);font-family:var(--serif);">2.5–4%</td>
+            <td style="padding:14px 20px;font-size:13px;color:var(--muted);">Mega projects — negotiable</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p style="text-align:center;font-size:12px;color:var(--muted);max-width:700px;margin:0 auto 40px;line-height:1.7;">Rates are indicative and may vary based on product complexity, SKU count, customization level, number of suppliers, QC requirements, and development difficulty. Final rate confirmed after project assessment.</p>
     
-    <!-- Sourcing Initiation Fee -->
+<!-- Sourcing Initiation Fee -->
     <div style="max-width:800px;margin:0 auto 40px;padding:24px;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 4px 4px 0;">
       <h4 style="font:500 18px var(--serif);margin:0 0 8px;color:var(--charcoal);">Sourcing Initiation Fee</h4>
       <p style="margin:0 0 8px;font-size:14px;color:var(--muted);line-height:1.7;">Covers factory screening, supply chain matching and quotation labour. <strong>100% deductible</strong> from final commission.</p>
@@ -615,10 +609,12 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
         <div>
           <label style="display:block;font-size:11px;color:#a8a094;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Project Tier</label>
           <select id="projectTier" style="width:100%;padding:12px 16px;border:1px solid #4a4540;border-radius:4px;font-size:14px;background:#2a2724;color:var(--cream);box-sizing:border-box;" onchange="calculateCommission()">
-            <option value="auto">Auto-calculate by value</option>
-            <option value="standard">Standard (&lt;$100K) — 8–10%</option>
-            <option value="large">Large ($100K–$500K) — 5–8%</option>
-            <option value="mega">Mega ($500K+) — 2.5–5%</option>
+            <option value="auto">Auto-calculate by order value</option>
+            <option value="t1">Tier 1: &lt;$20K — 8–10%</option>
+            <option value="t2">Tier 2: $20K–$50K — 6–8%</option>
+            <option value="t3">Tier 3: $50K–$100K — 5–7%</option>
+            <option value="t4">Tier 4: $100K–$300K — 3.5–5%</option>
+            <option value="t5">Tier 5: $300K+ — 2.5–4%</option>
           </select>
         </div>
       </div>
@@ -645,7 +641,6 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
 <script>
 function calculateCommission() {
   const value = parseFloat(document.getElementById('orderValue').value) || 0;
-  const tier = document.getElementById('projectTier').value;
   const resultDiv = document.getElementById('calculatorResult');
   
   if (value <= 0) {
@@ -655,27 +650,24 @@ function calculateCommission() {
   
   let minRate, maxRate, tierName;
   
-  if (tier === 'auto') {
-    if (value < 100000) {
-      minRate = 0.08; maxRate = 0.10; tierName = 'Standard';
-    } else if (value < 500000) {
-      minRate = 0.05; maxRate = 0.08; tierName = 'Large Commercial';
-    } else {
-      minRate = 0.025; maxRate = 0.05; tierName = 'Mega Procurement';
-    }
-  } else if (tier === 'standard') {
-    minRate = 0.08; maxRate = 0.10; tierName = 'Standard';
-  } else if (tier === 'large') {
-    minRate = 0.05; maxRate = 0.08; tierName = 'Large Commercial';
+  // 5档精细佣金比例
+  if (value < 20000) {
+    minRate = 0.08; maxRate = 0.10; tierName = 'Small (<$20K)';
+  } else if (value < 50000) {
+    minRate = 0.06; maxRate = 0.08; tierName = 'Small-Medium ($20K–$50K)';
+  } else if (value < 100000) {
+    minRate = 0.05; maxRate = 0.07; tierName = 'Medium ($50K–$100K)';
+  } else if (value < 300000) {
+    minRate = 0.035; maxRate = 0.05; tierName = 'Large ($100K–$300K)';
   } else {
-    minRate = 0.025; maxRate = 0.05; tierName = 'Mega Procurement';
+    minRate = 0.025; maxRate = 0.04; tierName = 'Mega ($300K+)';
   }
   
   const minCommission = value * minRate;
   const maxCommission = value * maxRate;
   
-  document.getElementById('commissionRange').textContent = '$' + minCommission.toLocaleString() + ' – $' + maxCommission.toLocaleString();
-  document.getElementById('commissionNote').textContent = 'Based on $' + value.toLocaleString() + ' order value at ' + (minRate*100) + '–' + (maxRate*100) + '% rate (' + tierName + ' tier)';
+  document.getElementById('commissionRange').textContent = '$' + Math.round(minCommission).toLocaleString() + ' – $' + Math.round(maxCommission).toLocaleString();
+  document.getElementById('commissionNote').textContent = 'Based on $' + value.toLocaleString() + ' order value at ' + (minRate*100) + '–' + (maxRate*100) + '% rate (' + tierName + ')';
   resultDiv.style.display = 'block';
 }
 
