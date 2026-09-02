@@ -497,22 +497,195 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
     <div class="section-head reveal">
       <div class="eyebrow">Fee Structure</div>
       <h2>Transparent Fees, No Surprises</h2>
-      <p>Service fee based on project size. Larger projects qualify for lower rates.</p>
+      <p>Clear tiered pricing based on project size. Larger projects qualify for lower rates. Zero product markup — you pay factories directly.</p>
     </div>
-    <div class="fee-cards">
-      <div class="fee-card reveal">
-        <h4>Sourcing Initiation Fee</h4>
-        <p>Covers factory screening, supply chain matching and quotation labour.</p>
-        <div class="price">USD 200 – 2,000+</div>
-        <p><strong>100% deductible</strong> from final commission. Full refund if we cannot provide any quotations. We assess feasibility before starting. Free re-screening if you're not satisfied. <a href="b2b-deposit.html" style="color:var(--gold);text-decoration:underline">See full refund policy →</a></p>
+    
+    <!-- 阶梯计费卡片 -->
+    <div class="pricing-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto 40px;">
+      <!-- Standard Project -->
+      <div class="pricing-card reveal" style="background:var(--offwhite);border:1px solid var(--line);border-radius:8px;padding:32px 24px;text-align:center;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;">Standard Project</div>
+        <div style="font-size:28px;font-weight:600;color:var(--charcoal);font-family:var(--serif);margin-bottom:4px;">&lt; $100K</div>
+        <div style="font-size:36px;font-weight:700;color:var(--gold);font-family:var(--serif);margin:16px 0;">8–10%</div>
+        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
+        <ul style="text-align:left;font-size:13px;color:var(--muted);line-height:2;list-style:none;padding:0;margin:0;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> 3–5 factory quotes per item</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Free pre-shipment QC</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Production supervision</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Logistics coordination</li>
+        </ul>
       </div>
-      <div class="fee-card reveal">
-        <h4>Procurement Commission</h4>
-        <p>Our only charge for the full sourcing service — no product markups.</p>
-        <div class="price">2.5% – 10% of order value</div>
-        <p><strong>Payment in two installments:</strong><br>• <strong>50%</strong> — after you confirm the supplier and sign the purchase contract<br>• <strong>50%</strong> — before shipment, after pre-shipment QC is completed<br>You pay factories directly for products. We never handle product funds.</p>
+      
+      <!-- Large Commercial -->
+      <div class="pricing-card reveal" style="background:var(--charcoal);border:2px solid var(--gold);border-radius:8px;padding:32px 24px;text-align:center;position:relative;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:4px 16px;border-radius:12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;">Most Popular</div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:8px;">Large Commercial</div>
+        <div style="font-size:28px;font-weight:600;color:var(--cream);font-family:var(--serif);margin-bottom:4px;">$100K – $500K</div>
+        <div style="font-size:36px;font-weight:700;color:var(--gold-light);font-family:var(--serif);margin:16px 0;">5–8%</div>
+        <div style="font-size:12px;color:#a8a094;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
+        <ul style="text-align:left;font-size:13px;color:#b8b0a4;line-height:2;list-style:none;padding:0;margin:0;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Everything in Standard</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Dedicated project manager</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Weekly progress reports</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Multi-factory coordination</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">✓</span> Priority QC scheduling</li>
+        </ul>
       </div>
+      
+      <!-- Mega Procurement -->
+      <div class="pricing-card reveal" style="background:var(--offwhite);border:1px solid var(--line);border-radius:8px;padding:32px 24px;text-align:center;transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;">Mega Procurement</div>
+        <div style="font-size:28px;font-weight:600;color:var(--charcoal);font-family:var(--serif);margin-bottom:4px;">$500K+</div>
+        <div style="font-size:36px;font-weight:700;color:var(--gold);font-family:var(--serif);margin:16px 0;">2.5–5%</div>
+        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Commission Rate</div>
+        <ul style="text-align:left;font-size:13px;color:var(--muted);line-height:2;list-style:none;padding:0;margin:0;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Everything in Large</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Custom pricing structure</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> On-site QC visits</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Executive review calls</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Dedicated sourcing team</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Sourcing Initiation Fee -->
+    <div style="max-width:800px;margin:0 auto 40px;padding:24px;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 4px 4px 0;">
+      <h4 style="font:500 18px var(--serif);margin:0 0 8px;color:var(--charcoal);">Sourcing Initiation Fee</h4>
+      <p style="margin:0 0 8px;font-size:14px;color:var(--muted);line-height:1.7;">Covers factory screening, supply chain matching and quotation labour. <strong>100% deductible</strong> from final commission.</p>
+      <p style="margin:0;font-size:13px;color:var(--muted);line-height:1.7;">Full refund if we cannot provide any quotations. Free re-screening if you're not satisfied. <a href="b2b-deposit.html" style="color:var(--gold);text-decoration:underline;">See full refund policy →</a></p>
+    </div>
+    
+    <!-- 纯代理 vs 传统贸易商对比表格 -->
+    <div class="comparison-section" style="max-width:900px;margin:0 auto 40px;">
+      <h3 style="text-align:center;font:400 24px var(--serif);color:var(--charcoal);margin:0 0 24px;">Pure Agency vs. Traditional Trading Company</h3>
+      <div style="overflow-x:auto;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.05);">
+        <table style="width:100%;border-collapse:collapse;background:var(--paper);">
+          <thead>
+            <tr style="background:var(--charcoal);">
+              <th style="padding:16px;text-align:left;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--cream);">Comparison Point</th>
+              <th style="padding:16px;text-align:center;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--gold-light);">CASA TRIO (Pure Agency)</th>
+              <th style="padding:16px;text-align:center;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:#a8a094;">Traditional Trader / Middleman</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Product Pricing</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">0% Markup — You pay factory price</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">15–40% Hidden markup</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);background:var(--offwhite);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Payment Flow</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">You pay factory directly</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">You pay trader, trader pays factory</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Factory Transparency</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">3–5 quotes, you choose factory</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">Single factory, no comparison</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);background:var(--offwhite);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Quality Control</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">100% Free pre-shipment QC</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">Often skipped or charged extra</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Risk Exposure</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">Low — We coordinate, you control funds</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">High — Trader holds your money</td>
+            </tr>
+            <tr style="background:var(--offwhite);">
+              <td style="padding:14px 16px;font-size:13px;font-weight:600;color:var(--charcoal);">Long-term Cost</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--gold);font-weight:600;">Lower — Transparent 2.5–10% fee</td>
+              <td style="padding:14px 16px;font-size:13px;text-align:center;color:var(--muted);">Higher — Hidden markups add up</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- 佣金计算器 -->
+    <div class="calculator-section" style="max-width:700px;margin:0 auto 40px;padding:32px;background:var(--charcoal);border-radius:8px;">
+      <h3 style="text-align:center;font:400 22px var(--serif);color:var(--cream);margin:0 0 8px;">Calculate Your Sourcing Cost</h3>
+      <p style="text-align:center;font-size:13px;color:#a8a094;margin:0 0 24px;">Enter your estimated order value to see our transparent commission</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div>
+          <label style="display:block;font-size:11px;color:#a8a094;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Order Value (USD)</label>
+          <input type="number" id="orderValue" placeholder="e.g. 50000" style="width:100%;padding:12px 16px;border:1px solid #4a4540;border-radius:4px;font-size:14px;background:#2a2724;color:var(--cream);box-sizing:border-box;" oninput="calculateCommission()">
+        </div>
+        <div>
+          <label style="display:block;font-size:11px;color:#a8a094;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Project Tier</label>
+          <select id="projectTier" style="width:100%;padding:12px 16px;border:1px solid #4a4540;border-radius:4px;font-size:14px;background:#2a2724;color:var(--cream);box-sizing:border-box;" onchange="calculateCommission()">
+            <option value="auto">Auto-calculate by value</option>
+            <option value="standard">Standard (&lt;$100K) — 8–10%</option>
+            <option value="large">Large ($100K–$500K) — 5–8%</option>
+            <option value="mega">Mega ($500K+) — 2.5–5%</option>
+          </select>
+        </div>
+      </div>
+      <div id="calculatorResult" style="display:none;padding:20px;background:rgba(169,142,107,.1);border-radius:6px;text-align:center;">
+        <div style="font-size:12px;color:#a8a094;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Estimated Commission Range</div>
+        <div style="font-size:32px;font-weight:700;color:var(--gold-light);font-family:var(--serif);" id="commissionRange">$4,000 – $5,000</div>
+        <div style="font-size:12px;color:#a8a094;margin-top:8px;" id="commissionNote">Based on $50,000 order value at 8–10% rate</div>
+      </div>
+    </div>
+    
+    <!-- 资料下载入口 -->
+    <div class="download-section" style="max-width:700px;margin:0 auto;padding:32px;background:linear-gradient(135deg,var(--gold) 0%,#8e7658 100%);border-radius:8px;text-align:center;">
+      <h3 style="font:400 22px var(--serif);color:#fff;margin:0 0 8px;">Download B2B Sourcing Guidebook</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,.9);margin:0 0 20px;line-height:1.6;">Get our complete Supplier Checklist & Factory Evaluation Guide. Learn how we vet factories, negotiate prices, and ensure quality.</p>
+      <form onsubmit="downloadGuidebook(event); return false;" style="display:flex;gap:12px;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+        <input type="email" id="guidebookEmail" required placeholder="Your business email" style="flex:1;min-width:200px;padding:12px 16px;border:none;border-radius:4px;font-size:14px;background:rgba(255,255,255,.95);color:var(--charcoal);">
+        <button type="submit" style="padding:12px 24px;background:var(--charcoal);color:#fff;border:none;border-radius:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .25s;" onmouseover="this.style.background='#1a1815'" onmouseout="this.style.background='var(--charcoal)'">Download Free</button>
+      </form>
+      <p style="font-size:11px;color:rgba(255,255,255,.7);margin:12px 0 0;">We respect your privacy. No spam, ever.</p>
+    </div>
+  </div>
 </section>
+
+<script>
+function calculateCommission() {
+  const value = parseFloat(document.getElementById('orderValue').value) || 0;
+  const tier = document.getElementById('projectTier').value;
+  const resultDiv = document.getElementById('calculatorResult');
+  
+  if (value <= 0) {
+    resultDiv.style.display = 'none';
+    return;
+  }
+  
+  let minRate, maxRate, tierName;
+  
+  if (tier === 'auto') {
+    if (value < 100000) {
+      minRate = 0.08; maxRate = 0.10; tierName = 'Standard';
+    } else if (value < 500000) {
+      minRate = 0.05; maxRate = 0.08; tierName = 'Large Commercial';
+    } else {
+      minRate = 0.025; maxRate = 0.05; tierName = 'Mega Procurement';
+    }
+  } else if (tier === 'standard') {
+    minRate = 0.08; maxRate = 0.10; tierName = 'Standard';
+  } else if (tier === 'large') {
+    minRate = 0.05; maxRate = 0.08; tierName = 'Large Commercial';
+  } else {
+    minRate = 0.025; maxRate = 0.05; tierName = 'Mega Procurement';
+  }
+  
+  const minCommission = value * minRate;
+  const maxCommission = value * maxRate;
+  
+  document.getElementById('commissionRange').textContent = '$' + minCommission.toLocaleString() + ' – $' + maxCommission.toLocaleString();
+  document.getElementById('commissionNote').textContent = 'Based on $' + value.toLocaleString() + ' order value at ' + (minRate*100) + '–' + (maxRate*100) + '% rate (' + tierName + ' tier)';
+  resultDiv.style.display = 'block';
+}
+
+function downloadGuidebook(event) {
+  event.preventDefault();
+  const email = document.getElementById('guidebookEmail').value;
+  alert('Thank you! Our B2B Sourcing Guidebook & Supplier Checklist will be sent to ' + email + ' within 24 hours.');
+  document.getElementById('guidebookEmail').value = '';
+}
+</script>
 
 <section class="faq-section" id="faq">
   <div class="container">
