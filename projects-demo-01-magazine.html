@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects Demo 01 — Magazine Layout | CASA TRIO</title>
+<meta name="description" content="CASA TRIO Projects Page Demo 01 - Magazine Style Layout">
+<meta name="theme-color" content="#22201C">
+<link rel="icon" type="image/png" href="images/6JUjtE4tgm.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
+  --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
+  --charcoal:#22201C;--cream:#F2EDE4;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --max:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+h1,h2,h3,h4{font-weight:400}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+/* Nav */
+.nav{position:fixed;z-index:9999;top:0;left:0;right:0;padding:16px 0;color:#fff;background:linear-gradient(#111a,transparent);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(247,243,236,.96);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+.logo img{height:34px;width:auto;display:block}
+.logo .logo-onscroll{display:none}
+.nav.scrolled .logo .logo-onhero{display:none}
+.nav.scrolled .logo .logo-onscroll{display:block}
+.links{display:flex;gap:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.links a{position:relative;padding:4px 0;transition:color .2s}
+.links a:hover{color:var(--gold)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.links a:hover::after{width:100%}
+.nav-home,.nav-divider,.nav-m-start,.nav-m-wa{display:none}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:10px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+.burger{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:8px 12px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:8px;z-index:10000;position:relative}
+.burger .burger-lines{display:flex;flex-direction:column;gap:5px}
+.burger .burger-lines span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger-text{font-size:10px;letter-spacing:.14em;font-weight:500;text-transform:uppercase}
+.burger.open .burger-lines span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open .burger-lines span:nth-child(2){opacity:0}
+.burger.open .burger-lines span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Demo Banner */
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--gold);color:#fff;padding:8px 24px;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.demo-banner a{color:#fff;text-decoration:underline;margin-left:12px}
+body{padding-top:36px}
+
+/* Page Header */
+.page-header{min-height:60vh;position:relative;color:#fff;display:flex;align-items:flex-end;padding-bottom:80px}
+.page-header:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.82) 0%,rgba(18,16,14,.42) 60%,rgba(18,16,14,.15) 100%),url('images/qDm92ju0ct.webp') center/cover}
+.page-header .container{position:relative}
+.breadcrumb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.breadcrumb a{color:#c9c2b5}
+.page-header h1{font:400 clamp(48px,6.5vw,88px)/1.02 var(--serif);letter-spacing:-.03em;margin:0;max-width:900px}
+.page-header h1 em{color:var(--gold-light);font-style:italic}
+.page-header .sub{font:400 clamp(16px,1.8vw,20px)/1.5 var(--serif);color:#e0d9cc;max-width:560px;margin:18px 0 0}
+
+/* Stats Strip */
+.stats-strip{background:var(--ink);color:#fff;padding:56px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}
+.stat-item{background:var(--ink);padding:32px 28px;text-align:center}
+.stat-num{font:400 clamp(32px,3.5vw,48px)/1 var(--serif);color:var(--gold-light);margin-bottom:8px}
+.stat-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9a948a}
+
+/* Section */
+section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px}
+.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
+.display{font:400 clamp(34px,4.6vw,56px)/1.04 var(--serif);letter-spacing:-.03em;margin:0}
+.lead{max-width:520px;color:var(--muted);font-size:14px;line-height:1.7}
+
+/* Magazine Layout */
+.magazine-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.project-card{position:relative;overflow:hidden;cursor:pointer;background:#1a1815;transition:transform .4s ease,box-shadow .4s ease}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px -20px rgba(34,32,28,.35)}
+.project-card.large{grid-column:span 8;aspect-ratio:16/10}
+.project-card.small{grid-column:span 4;aspect-ratio:4/5}
+.project-card.wide{grid-column:span 12;aspect-ratio:21/9}
+.project-card.medium{grid-column:span 6;aspect-ratio:4/3}
+
+.project-card img{transition:transform 1.2s ease,opacity .4s}
+.project-card:hover img{transform:scale(1.06)}
+
+.project-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;background:linear-gradient(transparent 30%,rgba(18,16,14,.85) 70%,rgba(18,16,14,.95));color:#fff;transition:background .4s}
+.project-card:hover .project-overlay{background:linear-gradient(transparent 20%,rgba(18,16,14,.9) 60%,rgba(18,16,14,.98))}
+
+.project-number{font:400 12px var(--serif);color:var(--gold-light);letter-spacing:.2em;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.project-number::after{content:"";flex:1;height:1px;background:rgba(192,165,126,.3);max-width:60px}
+
+.project-title{font:400 clamp(24px,2.8vw,38px)/1.1 var(--serif);margin:0 0 12px;color:#fff}
+.project-card.small .project-title{font-size:22px}
+
+.project-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:16px;font-size:11px;letter-spacing:.08em;color:#cfc8ba;text-transform:uppercase}
+.project-meta span{display:flex;align-items:center;gap:6px}
+.project-meta span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold-light)}
+.project-meta span:first-child::before{display:none}
+
+.project-desc{font-size:13px;color:#a89f91;line-height:1.65;max-width:480px;margin-bottom:20px;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s}
+.project-card:hover .project-desc{opacity:1;transform:translateY(0)}
+
+.project-view{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(192,165,126,.5);padding:12px 22px;align-self:flex-start;transition:all .3s;background:transparent}
+.project-card:hover .project-view{background:var(--gold);border-color:var(--gold);color:#fff}
+.project-view svg{width:14px;height:14px;transition:transform .3s}
+.project-card:hover .project-view svg{transform:translateX(4px)}
+
+/* Style Tags */
+.style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+.style-tag{padding:10px 20px;border:1px solid var(--line);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .25s;background:transparent}
+.style-tag:hover,.style-tag.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* CTA */
+.cta-strip{background:var(--charcoal);color:var(--cream);padding:100px 0;text-align:center}
+.cta-strip h2{font:400 clamp(32px,4vw,52px)/1.1 var(--serif);max-width:700px;margin:0 auto 20px;color:var(--cream)}
+.cta-strip p{color:#a89f91;max-width:520px;margin:0 auto 36px;font-size:15px;line-height:1.7}
+.btn{display:inline-block;border:1px solid currentColor;padding:14px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:48px}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#8e7658;border-color:#8e7658}
+
+/* Footer */
+footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;margin-bottom:44px}
+.foot-brand img{height:36px;margin-bottom:16px}
+.foot-brand p{color:#9a9285;font-size:13px;max-width:320px;line-height:1.7;margin:0}
+.foot-col h4{font:400 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
+.foot-col a{display:block;font-size:13px;color:#b5ad9f;padding:5px 0;transition:color .2s}
+.foot-col a:hover{color:var(--cream)}
+.foot-col p{font-size:13px;color:#b5ad9f;margin:0 0 8px;line-height:1.6}
+.foot-cta .btn{display:block;margin-bottom:10px;width:100%;min-height:44px;font-size:10px}
+.foot-bottom{border-top:1px solid #33302a;padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-bottom small{color:#7a7468;font-size:10px;letter-spacing:.14em}
+
+/* Scroll animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1024px){
+  .links{gap:16px;font-size:10px}
+}
+@media(max-width:900px){
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);color:var(--ink);padding:16px 24px 24px;gap:0;border-bottom:1px solid var(--line);z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+  .links.open{display:flex!important}
+  .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.14em;min-height:48px;display:flex;align-items:center}
+  .links .nav-home{display:flex}
+  .links .nav-divider{display:block;border:0;border-top:1px solid var(--line);margin:6px 0;padding:0;height:0;min-height:0}
+  .links .nav-m-start{display:flex;background:var(--gold);color:#fff;border:0;justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-top:8px;padding:14px;min-height:48px}
+  .burger{display:flex}
+  .nav-cta .start-btn{display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .project-card.large,.project-card.small,.project-card.wide,.project-card.medium{grid-column:span 12}
+  .project-card.large{aspect-ratio:4/3}
+  .project-card.small{aspect-ratio:4/3}
+  .project-card.wide{aspect-ratio:16/10}
+  .project-card.medium{aspect-ratio:4/3}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .section-head{display:block}
+  .lead{margin-top:16px}
+}
+@media(max-width:640px){
+  .container{width:calc(100% - 32px)}
+  section{padding:64px 0}
+  .page-header{min-height:50vh;padding-bottom:50px}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:1px}
+  .stat-item{padding:24px 16px}
+  .magazine-grid{gap:16px}
+  .project-overlay{padding:24px}
+  .project-title{font-size:24px!important}
+  .project-desc{display:none}
+  .style-tags{gap:8px}
+  .style-tag{padding:8px 14px;font-size:10px}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .cta-strip{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  Demo 01 / 03 — Magazine Layout &nbsp;|&nbsp;
+  <a href="projects-demo-02-filter.html">View Demo 02: Filter + Masonry</a>
+  <a href="projects-demo-03-fullscreen.html">View Demo 03: Fullscreen Scroll</a>
+</div>
+
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="logo" href="index.html"><img class="logo-onhero" src="images/9ufMdUAsPU.webp" alt="CASA TRIO"><img loading="lazy" class="logo-onscroll" src="images/Myj5vOnAp6.webp" alt="CASA TRIO"></a>
+    <nav class="links" id="navlinks">
+      <a class="nav-home" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-it-works.html">How We Work</a>
+      <a href="b2b.html">B2B</a>
+      <hr class="nav-divider">
+      <a class="nav-m-start" href="contact.html">Start Your Project</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="start-btn" href="contact.html">Start Your Project</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+  </div>
+</header>
+
+<main>
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Projects &nbsp;/&nbsp; Demo 01</div>
+    <h1>Residential <em>Projects</em></h1>
+    <p class="sub">Selected residential projects showcasing our design direction and sourcing capabilities across villas, apartments and luxury residences.</p>
+  </div>
+</section>
+
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">320㎡</div>
+        <div class="stat-label">Average Project Size</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Design Studios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Selected Works</div>
+        <h2 class="display">Spaces, Not<br>Just Products.</h2>
+      </div>
+      <p class="lead">Each project represents a unique collaboration between CASA TRIO and our design partners. Browse by style to find directions that resonate with your vision.</p>
+    </div>
+
+    <div class="style-tags reveal">
+      <span class="style-tag active">All Projects</span>
+      <span class="style-tag">Dark Luxury</span>
+      <span class="style-tag">French Elegance</span>
+      <span class="style-tag">Modern Minimal</span>
+      <span class="style-tag">Villas</span>
+      <span class="style-tag">Apartments</span>
+      <span class="style-tag">Commercial</span>
+    </div>
+
+    <div class="magazine-grid">
+      <!-- Project 1: Large -->
+      <article class="project-card large reveal" onclick="openGallery(0)">
+        <img loading="lazy" src="images/Yz2NwIqDuH.webp" alt="Modern Dark Luxury Villa">
+        <div class="project-overlay">
+          <div class="project-number">01 / VILLA</div>
+          <h3 class="project-title">Modern Dark Luxury Villa</h3>
+          <div class="project-meta">
+            <span>Dubai, UAE</span>
+            <span>480㎡</span>
+            <span>Dark Luxury</span>
+            <span>2025</span>
+          </div>
+          <p class="project-desc">A full-home interior direction featuring custom wall paneling, statement lighting, and a curated material palette of dark stone, brushed brass, and rich walnut.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Project 2: Small -->
+      <article class="project-card small reveal" onclick="openGallery(1)">
+        <img loading="lazy" src="images/f2mKR2hWE8.webp" alt="Contemporary Dark Apartment">
+        <div class="project-overlay">
+          <div class="project-number">02 / APARTMENT</div>
+          <h3 class="project-title">Contemporary Dark Apartment</h3>
+          <div class="project-meta">
+            <span>Singapore</span>
+            <span>180㎡</span>
+            <span>Dark Luxury</span>
+          </div>
+          <p class="project-desc">Material palette and lighting direction for a high-rise apartment with panoramic city views.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Project 3: Small -->
+      <article class="project-card small reveal" onclick="openGallery(2)">
+        <img loading="lazy" src="images/ppHsruvUWV.webp" alt="Interior Design Direction">
+        <div class="project-overlay">
+          <div class="project-number">03 / VILLA</div>
+          <h3 class="project-title">Light Tone Interior Direction</h3>
+          <div class="project-meta">
+            <span>Kuala Lumpur</span>
+            <span>350㎡</span>
+            <span>Modern Minimal</span>
+          </div>
+          <p class="project-desc">Stone and wood composition with custom joinery for a bright, airy family villa.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Project 4: Large -->
+      <article class="project-card large reveal" onclick="openGallery(3)">
+        <img loading="lazy" src="images/case_pan_living_01.webp" alt="French Luxury Villa Pan Residence">
+        <div class="project-overlay">
+          <div class="project-number">04 / VILLA</div>
+          <h3 class="project-title">French Luxury Villa — Pan Residence</h3>
+          <div class="project-meta">
+            <span>Shanghai, China</span>
+            <span>620㎡</span>
+            <span>French Elegance</span>
+            <span>2025</span>
+          </div>
+          <p class="project-desc">A full-home direction featuring French plaster moldings, custom wall paneling, arched doorways, and a refined palette of cream, gold, and soft gray.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Project 5: Medium -->
+      <article class="project-card medium reveal" onclick="openGallery(4)">
+        <img loading="lazy" src="images/case_french_living_01.webp" alt="French Elegance Apartment">
+        <div class="project-overlay">
+          <div class="project-number">05 / APARTMENT</div>
+          <h3 class="project-title">French Elegance Apartment</h3>
+          <div class="project-meta">
+            <span>Paris, France</span>
+            <span>220㎡</span>
+            <span>French Elegance</span>
+          </div>
+          <p class="project-desc">Arched doorways, leather sofa, and custom cabinetry for a Haussmann-style apartment.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Project 6: Medium -->
+      <article class="project-card medium reveal" onclick="openGallery(5)">
+        <img loading="lazy" src="images/case_club_02.webp" alt="Luxury Club & Lounge">
+        <div class="project-overlay">
+          <div class="project-number">06 / COMMERCIAL</div>
+          <h3 class="project-title">Luxury Club & Lounge</h3>
+          <div class="project-meta">
+            <span>Hangzhou, China</span>
+            <span>850㎡</span>
+            <span>French Elegance</span>
+          </div>
+          <p class="project-desc">French ironwork, art deco lighting, and outdoor terrace for a private members clubhouse.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2 class="reveal">Like What You See?</h2>
+    <p class="reveal">Let's discuss how these design directions can be adapted to your space. Every project starts with a conversation.</p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Start Your Project</a>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Gallery Lightbox -->
+<div class="gallery-overlay" id="galleryOverlay" style="position:fixed;inset:0;z-index:10001;background:rgba(15,13,11,.95);display:none;flex-direction:column;opacity:0;transition:opacity .35s">
+  <button style="position:fixed;top:20px;right:20px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002;backdrop-filter:blur(8px)" id="galleryClose">×</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#1a1815;border-bottom:1px solid #333">
+    <span id="galleryTitle" style="font-size:13px;letter-spacing:.14em;color:#F2EDE4">Case Study</span>
+  </div>
+  <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:20px">
+    <button style="position:absolute;top:50%;transform:translateY(-50%);left:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2" id="galleryPrev">&#8249;</button>
+    <img id="galleryMain" src="" alt="" style="max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 8px 40px rgba(0,0,0,.5);transition:opacity .25s">
+    <button style="position:absolute;top:50%;transform:translateY(-50%);right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2" id="galleryNext">&#8250;</button>
+    <span id="galleryCounter" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.5)">1 / 1</span>
+  </div>
+  <div id="galleryThumbs" style="display:flex;gap:8px;padding:12px 24px 16px;background:#1a1815;overflow-x:auto;justify-content:center"></div>
+  <div style="padding:16px 24px 20px;background:#1a1815;border-top:1px solid #333;text-align:center">
+    <p id="galleryDesigner" style="margin:0;font-size:11px;letter-spacing:.1em;color:#C0A57E;text-transform:uppercase">Design by Studio</p>
+    <p style="font-size:10px;color:#6a6358;margin:4px 0 0">For promotional use only · Not for reproduction or commercial use</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img loading="lazy" src="images/9ufMdUAsPU.webp" alt="CASA TRIO">
+        <p>Premium Home & Interior Solutions from China. Your private project partner in Foshan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="selected-pieces.html">Selected Pieces</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="b2b.html">B2B Sourcing</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <h4>Contact</h4>
+        <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Start Your Project</a>
+        <p><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp +86 15017434683</a></p>
+        <p><a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>&copy; 2026 CASA TRIO. All Rights Reserved.</small>
+      <small><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Foshan · Guangdong · China</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navlinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
+});
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Style tags
+document.querySelectorAll('.style-tag').forEach(function(tag) {
+  tag.addEventListener('click', function() {
+    document.querySelectorAll('.style-tag').forEach(function(t) { t.classList.remove('active'); });
+    this.classList.add('active');
+  });
+});
+
+// Gallery data
+var galleryData = [
+  { title: 'Modern Dark Luxury Villa', designer: 'BOLON Design Studio', images: ['images/Yz2NwIqDuH.webp','images/NWsAAjOaAt.webp','images/ePoYR9EgAV.webp','images/GHmI8kNDF2.webp','images/wdaAldvycT.webp','images/Wn5PLMprXf.webp','images/UMJszjgnHU.webp','images/3WcrAUEGiv.webp'] },
+  { title: 'Contemporary Dark Apartment', designer: 'BOLON Design Studio', images: ['images/f2mKR2hWE8.webp','images/iisfk1miGs.webp','images/634NG7i3kA.webp','images/9TG6KBOkH2.webp','images/CcY3x6KiRG.webp','images/BEYOZNLtal.webp','images/aJKapx5coW.webp'] },
+  { title: 'Light Tone Interior Direction', designer: 'BOLON Design Studio', images: ['images/ppHsruvUWV.webp','images/efzKwGZNcS.webp','images/eASGnU4521.webp','images/o1tIYWsrlT.webp','images/mCxR2OMALv.webp','images/cuhwUu3QfU.webp','images/mxZTB89Av6.webp','images/6rjGzUIQBn.webp'] },
+  { title: 'French Luxury Villa — Pan Residence', designer: 'Summer Design Studio', images: ['images/case_pan_living_01.webp','images/case_pan_03.webp','images/case_pan_04.webp','images/case_pan_05.webp','images/case_pan_06.webp','images/case_pan_07.webp','images/case_pan_08.webp'] },
+  { title: 'French Elegance Apartment', designer: 'Summer Design Studio', images: ['images/case_french_living_01.webp','images/case_french_03.webp','images/case_french_04.webp','images/case_french_05.webp','images/case_french_06.webp','images/case_french_07.webp','images/case_french_08.webp'] },
+  { title: 'Luxury Club & Lounge', designer: 'Summer Design Studio', images: ['images/case_club_02.webp','images/case_club_03.webp','images/case_club_04.webp','images/case_club_05.webp','images/case_club_06.webp','images/case_club_07.webp'] }
+];
+var currentGallery = 0, currentIndex = 0;
+function openGallery(idx) {
+  currentGallery = idx; currentIndex = 0;
+  var g = galleryData[idx];
+  document.getElementById('galleryTitle').textContent = g.title;
+  document.getElementById('galleryDesigner').textContent = 'Design by ' + g.designer;
+  updateGalleryImage(); buildThumbs();
+  document.getElementById('galleryOverlay').style.display = 'flex';
+  document.getElementById('galleryOverlay').style.opacity = '1';
+  document.body.style.overflow = 'hidden';
+}
+function closeGallery() {
+  document.getElementById('galleryOverlay').style.opacity = '0';
+  setTimeout(function(){ document.getElementById('galleryOverlay').style.display = 'none'; }, 300);
+  document.body.style.overflow = '';
+}
+function updateGalleryImage() {
+  var g = galleryData[currentGallery];
+  var img = document.getElementById('galleryMain');
+  img.style.opacity = '0';
+  setTimeout(function(){ img.src = g.images[currentIndex]; img.style.opacity = '1'; }, 150);
+  document.getElementById('galleryCounter').textContent = (currentIndex + 1) + ' / ' + g.images.length;
+  document.querySelectorAll('#galleryThumbs img').forEach(function(t, i){ t.style.opacity = i === currentIndex ? '1' : '.45'; t.style.borderColor = i === currentIndex ? '#C0A57E' : 'transparent'; });
+}
+function buildThumbs() {
+  var g = galleryData[currentGallery];
+  var c = document.getElementById('galleryThumbs');
+  c.innerHTML = '';
+  g.images.forEach(function(src, i) {
+    var t = document.createElement('img');
+    t.src = src; t.style.width = '64px'; t.style.height = '44px'; t.style.objectFit = 'cover'; t.style.cursor = 'pointer'; t.style.opacity = i === 0 ? '1' : '.45'; t.style.border = '2px solid ' + (i === 0 ? '#C0A57E' : 'transparent'); t.style.borderRadius = '2px'; t.style.flexShrink = '0';
+    t.addEventListener('click', function(){ currentIndex = i; updateGalleryImage(); });
+    c.appendChild(t);
+  });
+}
+function navGallery(dir) {
+  var g = galleryData[currentGallery];
+  currentIndex = (currentIndex + dir + g.images.length) % g.images.length;
+  updateGalleryImage();
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('galleryClose').addEventListener('click', closeGallery);
+  document.getElementById('galleryOverlay').addEventListener('click', function(e){ if(e.target === this || e.target.classList.contains('gallery-stage')) closeGallery(); });
+  document.getElementById('galleryPrev').addEventListener('click', function(e){ e.stopPropagation(); navGallery(-1); });
+  document.getElementById('galleryNext').addEventListener('click', function(e){ e.stopPropagation(); navGallery(1); });
+});
+document.addEventListener('keydown', function(e) {
+  var ov = document.getElementById('galleryOverlay');
+  if(!ov || ov.style.display !== 'flex') return;
+  if(e.key === 'Escape') closeGallery();
+  if(e.key === 'ArrowLeft') navGallery(-1);
+  if(e.key === 'ArrowRight') navGallery(1);
+});
+</script>
+</body>
+</html>

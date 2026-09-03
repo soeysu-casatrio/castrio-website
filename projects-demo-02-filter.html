@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects Demo 02 — Filter + Masonry | CASA TRIO</title>
+<meta name="description" content="CASA TRIO Projects Page Demo 02 - Filter + Masonry Layout">
+<meta name="theme-color" content="#22201C">
+<link rel="icon" type="image/png" href="images/6JUjtE4tgm.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
+  --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
+  --charcoal:#22201C;--cream:#F2EDE4;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --max:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+h1,h2,h3,h4{font-weight:400}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+/* Nav */
+.nav{position:fixed;z-index:9999;top:0;left:0;right:0;padding:16px 0;color:#fff;background:linear-gradient(#111a,transparent);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(247,243,236,.96);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+.logo img{height:34px;width:auto;display:block}
+.logo .logo-onscroll{display:none}
+.nav.scrolled .logo .logo-onhero{display:none}
+.nav.scrolled .logo .logo-onscroll{display:block}
+.links{display:flex;gap:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.links a{position:relative;padding:4px 0;transition:color .2s}
+.links a:hover{color:var(--gold)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.links a:hover::after{width:100%}
+.nav-home,.nav-divider,.nav-m-start,.nav-m-wa{display:none}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:10px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+.burger{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:8px 12px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:8px;z-index:10000;position:relative}
+.burger .burger-lines{display:flex;flex-direction:column;gap:5px}
+.burger .burger-lines span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger-text{font-size:10px;letter-spacing:.14em;font-weight:500;text-transform:uppercase}
+.burger.open .burger-lines span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open .burger-lines span:nth-child(2){opacity:0}
+.burger.open .burger-lines span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Demo Banner */
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--gold);color:#fff;padding:8px 24px;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.demo-banner a{color:#fff;text-decoration:underline;margin-left:12px}
+body{padding-top:36px}
+
+/* Page Header */
+.page-header{min-height:50vh;position:relative;color:#fff;display:flex;align-items:flex-end;padding-bottom:60px}
+.page-header:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.82) 0%,rgba(18,16,14,.42) 60%,rgba(18,16,14,.15) 100%),url('images/qDm92ju0ct.webp') center/cover}
+.page-header .container{position:relative}
+.breadcrumb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.breadcrumb a{color:#c9c2b5}
+.page-header h1{font:400 clamp(44px,6vw,72px)/1.02 var(--serif);letter-spacing:-.03em;margin:0;max-width:800px}
+.page-header h1 em{color:var(--gold-light);font-style:italic}
+.page-header .sub{font:400 clamp(15px,1.6vw,18px)/1.5 var(--serif);color:#e0d9cc;max-width:520px;margin:16px 0 0}
+
+/* Filter Section */
+.filter-section{background:var(--offwhite);padding:40px 0;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.filter-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.filter-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.filter-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:10px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .25s;background:var(--paper);font-family:var(--sans)}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.filter-count{font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.filter-count strong{color:var(--ink);font-weight:600}
+
+/* Projects Section */
+.projects-section{padding:60px 0 100px}
+.masonry-grid{columns:3;column-gap:24px}
+.masonry-item{break-inside:avoid;margin-bottom:24px;position:relative;overflow:hidden;cursor:pointer;background:#1a1815;transition:transform .4s ease,box-shadow .4s ease,opacity .4s}
+.masonry-item:hover{transform:translateY(-4px);box-shadow:0 20px 50px -15px rgba(34,32,28,.3)}
+.masonry-item.hide{opacity:0;transform:scale(0.95);pointer-events:none;position:absolute;visibility:hidden}
+.masonry-img{position:relative;overflow:hidden}
+.masonry-img img{transition:transform 1s ease}
+.masonry-item:hover .masonry-img img{transform:scale(1.06)}
+.masonry-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(transparent 40%,rgba(18,16,14,.85) 80%,rgba(18,16,14,.95));color:#fff;opacity:0;transition:opacity .35s}
+.masonry-item:hover .masonry-overlay{opacity:1}
+.masonry-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px}
+.masonry-title{font:400 20px/1.2 var(--serif);margin:0 0 8px;color:#fff}
+.masonry-meta{font-size:10px;letter-spacing:.08em;color:#cfc8ba;text-transform:uppercase;display:flex;gap:12px;flex-wrap:wrap}
+.masonry-info{padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-top:0}
+.masonry-info h3{font:400 17px/1.25 var(--serif);margin:0 0 6px}
+.masonry-info p{font-size:11px;color:var(--muted);margin:0;letter-spacing:.06em;text-transform:uppercase}
+.masonry-info .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.masonry-info .meta-row span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+/* Different aspect ratios for masonry */
+.masonry-item.tall .masonry-img{aspect-ratio:3/4}
+.masonry-item.standard .masonry-img{aspect-ratio:4/3}
+.masonry-item.wide .masonry-img{aspect-ratio:16/10}
+.masonry-item.square .masonry-img{aspect-ratio:1/1}
+
+/* Project Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(18,16,14,.85);z-index:10001;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);opacity:0;transition:opacity .35s}
+.modal-overlay.open{display:flex;opacity:1}
+.modal{background:var(--offwhite);max-width:1000px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1.2fr 1fr;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.modal-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border:0;background:rgba(247,243,236,.9);color:var(--ink);font-size:24px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;line-height:1;transition:all .25s;border-radius:50%}
+.modal-close:hover{background:var(--gold);color:#fff}
+.modal-images{position:relative;min-height:500px;background:#1a1815}
+.modal-main-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.modal-thumbs{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.modal-thumb{width:60px;height:44px;object-fit:cover;cursor:pointer;opacity:.5;border:2px solid transparent;transition:all .25s;flex-shrink:0}
+.modal-thumb:hover{opacity:.8}
+.modal-thumb.active{opacity:1;border-color:var(--gold)}
+.modal-info{padding:40px 36px;overflow-y:auto}
+.modal-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.modal-info h2{font:400 30px/1.15 var(--serif);margin:0 0 20px}
+.modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.modal-spec dt{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.modal-spec dd{margin:0;font-size:14px;color:var(--ink);font-weight:500}
+.modal-desc{font-size:14px;line-height:1.75;color:var(--muted);margin:20px 0}
+.modal-cta{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.btn{display:inline-block;border:1px solid currentColor;padding:14px 24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:48px}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#8e7658;border-color:#8e7658}
+
+/* CTA */
+.cta-strip{background:var(--charcoal);color:var(--cream);padding:90px 0;text-align:center}
+.cta-strip h2{font:400 clamp(30px,3.8vw,48px)/1.1 var(--serif);max-width:680px;margin:0 auto 18px;color:var(--cream)}
+.cta-strip p{color:#a89f91;max-width:500px;margin:0 auto 32px;font-size:14px;line-height:1.7}
+
+/* Footer */
+footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;margin-bottom:44px}
+.foot-brand img{height:36px;margin-bottom:16px}
+.foot-brand p{color:#9a9285;font-size:13px;max-width:320px;line-height:1.7;margin:0}
+.foot-col h4{font:400 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 16px}
+.foot-col a{display:block;font-size:13px;color:#b5ad9f;padding:5px 0;transition:color .2s}
+.foot-col a:hover{color:var(--cream)}
+.foot-col p{font-size:13px;color:#b5ad9f;margin:0 0 8px;line-height:1.6}
+.foot-cta .btn{display:block;margin-bottom:10px;width:100%;min-height:44px;font-size:10px}
+.foot-bottom{border-top:1px solid #33302a;padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-bottom small{color:#7a7468;font-size:10px;letter-spacing:.14em}
+
+/* Scroll animations */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1024px){
+  .links{gap:16px;font-size:10px}
+  .masonry-grid{columns:2}
+}
+@media(max-width:900px){
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);color:var(--ink);padding:16px 24px 24px;gap:0;border-bottom:1px solid var(--line);z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+  .links.open{display:flex!important}
+  .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.14em;min-height:48px;display:flex;align-items:center}
+  .links .nav-home{display:flex}
+  .links .nav-divider{display:block;border:0;border-top:1px solid var(--line);margin:6px 0;padding:0;height:0;min-height:0}
+  .links .nav-m-start{display:flex;background:var(--gold);color:#fff;border:0;justify-content:center;letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-top:8px;padding:14px;min-height:48px}
+  .burger{display:flex}
+  .nav-cta .start-btn{display:none}
+  .modal{grid-template-columns:1fr;max-height:92vh}
+  .modal-images{min-height:300px;aspect-ratio:4/3}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .filter-section{padding:24px 0}
+}
+@media(max-width:640px){
+  .container{width:calc(100% - 32px)}
+  .page-header{min-height:42vh;padding-bottom:40px}
+  .masonry-grid{columns:1}
+  .filter-btn{padding:8px 14px;font-size:10px}
+  .filter-label{display:none}
+  .modal-info{padding:28px 24px}
+  .modal-specs{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .cta-strip{padding:64px 0}
+  .projects-section{padding:40px 0 64px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  Demo 02 / 03 — Filter + Masonry &nbsp;|&nbsp;
+  <a href="projects-demo-01-magazine.html">View Demo 01: Magazine</a>
+  <a href="projects-demo-03-fullscreen.html">View Demo 03: Fullscreen</a>
+</div>
+
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="logo" href="index.html"><img class="logo-onhero" src="images/9ufMdUAsPU.webp" alt="CASA TRIO"><img loading="lazy" class="logo-onscroll" src="images/Myj5vOnAp6.webp" alt="CASA TRIO"></a>
+    <nav class="links" id="navlinks">
+      <a class="nav-home" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="projects.html">Projects</a>
+      <a href="how-it-works.html">How We Work</a>
+      <a href="b2b.html">B2B</a>
+      <hr class="nav-divider">
+      <a class="nav-m-start" href="contact.html">Start Your Project</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="start-btn" href="contact.html">Start Your Project</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+  </div>
+</header>
+
+<main>
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Projects &nbsp;/&nbsp; Demo 02</div>
+    <h1>Residential <em>Projects</em></h1>
+    <p class="sub">Filter by style, property type, or location to find directions that resonate with your vision.</p>
+  </div>
+</section>
+
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-inner">
+      <div class="filter-group">
+        <span class="filter-label">Style:</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="dark">Dark Luxury</button>
+        <button class="filter-btn" data-filter="french">French Elegance</button>
+        <button class="filter-btn" data-filter="minimal">Modern Minimal</button>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Type:</span>
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="villa">Villas</button>
+        <button class="filter-btn" data-type="apartment">Apartments</button>
+        <button class="filter-btn" data-type="commercial">Commercial</button>
+      </div>
+      <div class="filter-count"><strong id="visibleCount">6</strong> projects</div>
+    </div>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="container">
+    <div class="masonry-grid" id="masonryGrid">
+      <!-- Project 1 -->
+      <article class="masonry-item tall reveal" data-style="dark" data-type="villa" onclick="openModal(0)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/Yz2NwIqDuH.webp" alt="Modern Dark Luxury Villa">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Villa · Dark Luxury · 480㎡</span>
+            <h3 class="masonry-title">Modern Dark Luxury Villa</h3>
+            <div class="masonry-meta"><span>Dubai, UAE</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>Modern Dark Luxury Villa</h3>
+          <p>Full-home direction · Custom wall paneling</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="masonry-item standard reveal" data-style="dark" data-type="apartment" onclick="openModal(1)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/f2mKR2hWE8.webp" alt="Contemporary Dark Apartment">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Apartment · Dark Luxury · 180㎡</span>
+            <h3 class="masonry-title">Contemporary Dark Apartment</h3>
+            <div class="masonry-meta"><span>Singapore</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>Contemporary Dark Apartment</h3>
+          <p>Material palette · Lighting direction</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="masonry-item wide reveal" data-style="minimal" data-type="villa" onclick="openModal(2)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/ppHsruvUWV.webp" alt="Light Tone Interior Direction">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Villa · Modern Minimal · 350㎡</span>
+            <h3 class="masonry-title">Light Tone Interior Direction</h3>
+            <div class="masonry-meta"><span>Kuala Lumpur</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>Light Tone Interior Direction</h3>
+          <p>Stone & wood · Custom joinery</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="masonry-item standard reveal" data-style="french" data-type="villa" onclick="openModal(3)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/case_pan_living_01.webp" alt="French Luxury Villa Pan Residence">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Villa · French Elegance · 620㎡</span>
+            <h3 class="masonry-title">French Luxury Villa — Pan Residence</h3>
+            <div class="masonry-meta"><span>Shanghai, China</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>French Luxury Villa — Pan Residence</h3>
+          <p>French plaster moldings · Arched doorways</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="masonry-item tall reveal" data-style="french" data-type="apartment" onclick="openModal(4)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/case_french_living_01.webp" alt="French Elegance Apartment">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Apartment · French Elegance · 220㎡</span>
+            <h3 class="masonry-title">French Elegance Apartment</h3>
+            <div class="masonry-meta"><span>Paris, France</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>French Elegance Apartment</h3>
+          <p>Leather sofa · Custom cabinetry</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="masonry-item square reveal" data-style="french" data-type="commercial" onclick="openModal(5)">
+        <div class="masonry-img">
+          <img loading="lazy" src="images/case_club_02.webp" alt="Luxury Club & Lounge">
+          <div class="masonry-overlay">
+            <span class="masonry-tag">Commercial · French Elegance · 850㎡</span>
+            <h3 class="masonry-title">Luxury Club & Lounge</h3>
+            <div class="masonry-meta"><span>Hangzhou, China</span><span>2025</span></div>
+          </div>
+        </div>
+        <div class="masonry-info">
+          <h3>Luxury Club & Lounge</h3>
+          <p>French ironwork · Art deco lighting</p>
+          <div class="meta-row"><span>View Details</span><span>→</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2 class="reveal">Find Your Direction?</h2>
+    <p class="reveal">Let's adapt these design concepts to your space. Every project starts with a conversation.</p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Start Your Project</a>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Project Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-images">
+      <img class="modal-main-img" id="modalMainImg" src="" alt="">
+      <div class="modal-thumbs" id="modalThumbs"></div>
+    </div>
+    <div class="modal-info">
+      <div class="modal-eyebrow" id="modalEyebrow">Villa · Dark Luxury</div>
+      <h2 id="modalTitle">Project Title</h2>
+      <div class="modal-specs">
+        <div class="modal-spec"><dt>Location</dt><dd id="modalLocation">—</dd></div>
+        <div class="modal-spec"><dt>Size</dt><dd id="modalSize">—</dd></div>
+        <div class="modal-spec"><dt>Style</dt><dd id="modalStyle">—</dd></div>
+        <div class="modal-spec"><dt>Year</dt><dd id="modalYear">—</dd></div>
+        <div class="modal-spec"><dt>Design Studio</dt><dd id="modalStudio">—</dd></div>
+        <div class="modal-spec"><dt>Services</dt><dd id="modalServices">—</dd></div>
+      </div>
+      <p class="modal-desc" id="modalDesc">Project description goes here.</p>
+      <div class="modal-cta">
+        <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Discuss Similar Project</a>
+        <a class="btn" href="contact.html">Request Quotation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img loading="lazy" src="images/9ufMdUAsPU.webp" alt="CASA TRIO">
+        <p>Premium Home & Interior Solutions from China. Your private project partner in Foshan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="selected-pieces.html">Selected Pieces</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="b2b.html">B2B Sourcing</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <h4>Contact</h4>
+        <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Start Your Project</a>
+        <p><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp +86 15017434683</a></p>
+        <p><a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>&copy; 2026 CASA TRIO. All Rights Reserved.</small>
+      <small><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Foshan · Guangdong · China</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navlinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
+});
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Project data
+var projectsData = [
+  {
+    title: 'Modern Dark Luxury Villa',
+    eyebrow: 'Villa · Dark Luxury',
+    location: 'Dubai, UAE',
+    size: '480㎡',
+    style: 'Dark Luxury',
+    year: '2025',
+    studio: 'BOLON Design Studio',
+    services: 'Full-home direction, Custom furniture, Wall paneling, Lighting',
+    desc: 'A full-home interior direction featuring custom wall paneling, statement lighting, and a curated material palette of dark stone, brushed brass, and rich walnut. The design balances drama with warmth, creating spaces that feel both luxurious and livable.',
+    images: ['images/Yz2NwIqDuH.webp','images/NWsAAjOaAt.webp','images/ePoYR9EgAV.webp','images/GHmI8kNDF2.webp','images/wdaAldvycT.webp','images/Wn5PLMprXf.webp','images/UMJszjgnHU.webp','images/3WcrAUEGiv.webp']
+  },
+  {
+    title: 'Contemporary Dark Apartment',
+    eyebrow: 'Apartment · Dark Luxury',
+    location: 'Singapore',
+    size: '180㎡',
+    style: 'Dark Luxury',
+    year: '2025',
+    studio: 'BOLON Design Studio',
+    services: 'Material palette, Lighting direction, Furniture selection',
+    desc: 'Material palette and lighting direction for a high-rise apartment with panoramic city views. The design uses deep tones and reflective surfaces to amplify the sense of space and frame the skyline beyond.',
+    images: ['images/f2mKR2hWE8.webp','images/iisfk1miGs.webp','images/634NG7i3kA.webp','images/9TG6KBOkH2.webp','images/CcY3x6KiRG.webp','images/BEYOZNLtal.webp','images/aJKapx5coW.webp']
+  },
+  {
+    title: 'Light Tone Interior Direction',
+    eyebrow: 'Villa · Modern Minimal',
+    location: 'Kuala Lumpur, Malaysia',
+    size: '350㎡',
+    style: 'Modern Minimal',
+    year: '2025',
+    studio: 'BOLON Design Studio',
+    services: 'Stone & wood selection, Custom joinery, Space planning',
+    desc: 'Stone and wood composition with custom joinery for a bright, airy family villa. The design emphasizes natural materials and ample daylight, creating a serene environment that connects indoor and outdoor living.',
+    images: ['images/ppHsruvUWV.webp','images/efzKwGZNcS.webp','images/eASGnU4521.webp','images/o1tIYWsrlT.webp','images/mCxR2OMALv.webp','images/cuhwUu3QfU.webp','images/mxZTB89Av6.webp','images/6rjGzUIQBn.webp']
+  },
+  {
+    title: 'French Luxury Villa — Pan Residence',
+    eyebrow: 'Villa · French Elegance',
+    location: 'Shanghai, China',
+    size: '620㎡',
+    style: 'French Elegance',
+    year: '2025',
+    studio: 'Summer Design Studio',
+    services: 'Full-home direction, French plaster moldings, Arched doorways, Custom cabinetry',
+    desc: 'A full-home direction featuring French plaster moldings, custom wall paneling, arched doorways, and a refined palette of cream, gold, and soft gray. The design pays homage to classical French elegance while maintaining contemporary comfort.',
+    images: ['images/case_pan_living_01.webp','images/case_pan_03.webp','images/case_pan_04.webp','images/case_pan_05.webp','images/case_pan_06.webp','images/case_pan_07.webp','images/case_pan_08.webp']
+  },
+  {
+    title: 'French Elegance Apartment',
+    eyebrow: 'Apartment · French Elegance',
+    location: 'Paris, France',
+    size: '220㎡',
+    style: 'French Elegance',
+    year: '2025',
+    studio: 'Summer Design Studio',
+    services: 'Arched doorways, Leather sofa, Custom cabinetry, Lighting',
+    desc: 'Arched doorways, leather sofa, and custom cabinetry for a Haussmann-style apartment. The design respects the architectural heritage of the space while introducing modern comforts and curated furnishings.',
+    images: ['images/case_french_living_01.webp','images/case_french_03.webp','images/case_french_04.webp','images/case_french_05.webp','images/case_french_06.webp','images/case_french_07.webp','images/case_french_08.webp']
+  },
+  {
+    title: 'Luxury Club & Lounge',
+    eyebrow: 'Commercial · French Elegance',
+    location: 'Hangzhou, China',
+    size: '850㎡',
+    style: 'French Elegance',
+    year: '2025',
+    studio: 'Summer Design Studio',
+    services: 'French ironwork, Art deco lighting, Outdoor terrace, Custom furniture',
+    desc: 'French ironwork, art deco lighting, and outdoor terrace for a private members clubhouse. The design creates an atmosphere of refined luxury, with spaces that transition seamlessly from intimate lounges to grand reception areas.',
+    images: ['images/case_club_02.webp','images/case_club_03.webp','images/case_club_04.webp','images/case_club_05.webp','images/case_club_06.webp','images/case_club_07.webp']
+  }
+];
+
+var currentModal = 0, currentModalImg = 0;
+
+// Filter functionality
+var activeStyle = 'all', activeType = 'all';
+document.querySelectorAll('.filter-btn[data-filter]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    activeStyle = this.dataset.filter;
+    applyFilters();
+  });
+});
+document.querySelectorAll('.filter-btn[data-type]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn[data-type]').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    activeType = this.dataset.type;
+    applyFilters();
+  });
+});
+
+function applyFilters() {
+  var items = document.querySelectorAll('.masonry-item');
+  var visible = 0;
+  items.forEach(function(item) {
+    var styleMatch = activeStyle === 'all' || item.dataset.style === activeStyle;
+    var typeMatch = activeType === 'all' || item.dataset.type === activeType;
+    if (styleMatch && typeMatch) {
+      item.classList.remove('hide');
+      visible++;
+    } else {
+      item.classList.add('hide');
+    }
+  });
+  document.getElementById('visibleCount').textContent = visible;
+}
+
+// Modal functionality
+function openModal(idx) {
+  currentModal = idx;
+  currentModalImg = 0;
+  var p = projectsData[idx];
+  document.getElementById('modalEyebrow').textContent = p.eyebrow;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalLocation').textContent = p.location;
+  document.getElementById('modalSize').textContent = p.size;
+  document.getElementById('modalStyle').textContent = p.style;
+  document.getElementById('modalYear').textContent = p.year;
+  document.getElementById('modalStudio').textContent = p.studio;
+  document.getElementById('modalServices').textContent = p.services;
+  document.getElementById('modalDesc').textContent = p.desc;
+  updateModalImage();
+  buildModalThumbs();
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function updateModalImage() {
+  var p = projectsData[currentModal];
+  document.getElementById('modalMainImg').src = p.images[currentModalImg];
+  document.querySelectorAll('.modal-thumb').forEach(function(t, i) {
+    t.classList.toggle('active', i === currentModalImg);
+  });
+}
+
+function buildModalThumbs() {
+  var p = projectsData[currentModal];
+  var c = document.getElementById('modalThumbs');
+  c.innerHTML = '';
+  p.images.forEach(function(src, i) {
+    var t = document.createElement('img');
+    t.src = src; t.className = 'modal-thumb' + (i === 0 ? ' active' : '');
+    t.addEventListener('click', function() { currentModalImg = i; updateModalImage(); });
+    c.appendChild(t);
+  });
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('modalOverlay').classList.contains('open')) {
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') { currentModalImg = (currentModalImg - 1 + projectsData[currentModal].images.length) % projectsData[currentModal].images.length; updateModalImage(); }
+    if (e.key === 'ArrowRight') { currentModalImg = (currentModalImg + 1) % projectsData[currentModal].images.length; updateModalImage(); }
+  }
+});
+</script>
+</body>
+</html>
