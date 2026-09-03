@@ -184,6 +184,18 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .foot-grid{grid-template-columns:1fr;gap:32px}
   .cta-strip{padding:64px 0}
 }
+
+/* Mobile menu scrollable */
+@media(max-width:900px){
+  .links{
+    max-height: calc(100vh - 70px)!important;
+    overflow-y: auto!important;
+    overflow-x: hidden!important;
+    -webkit-overflow-scrolling: touch!important;
+    overscroll-behavior: contain!important;
+  }
+}
+
 </style>
 </head>
 <body>

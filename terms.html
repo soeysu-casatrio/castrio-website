@@ -79,6 +79,18 @@ a { color: var(--gold); }
   .table-wrapper table { min-width: 420px; font-size: 12px; }
   th, td { padding: 7px 8px; }
 }
+
+/* Mobile menu scrollable */
+@media(max-width:900px){
+  .links{
+    max-height: calc(100vh - 70px)!important;
+    overflow-y: auto!important;
+    overflow-x: hidden!important;
+    -webkit-overflow-scrolling: touch!important;
+    overscroll-behavior: contain!important;
+  }
+}
+
 </style>
   <meta name="description" content="CASA TRIO Terms of Service. Read our service terms, design fees, commitment deposit policy, payment terms, QC, shipping, returns and intellectual property.">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>

@@ -61,6 +61,18 @@ a { color: var(--gold); }
   h2 { font-size: 17px; }
   p { font-size: 13px; }
 }
+
+/* Mobile menu scrollable */
+@media(max-width:900px){
+  .links{
+    max-height: calc(100vh - 70px)!important;
+    overflow-y: auto!important;
+    overflow-x: hidden!important;
+    -webkit-overflow-scrolling: touch!important;
+    overscroll-behavior: contain!important;
+  }
+}
+
 </style>
   <meta name="description" content="CASA TRIO Privacy Policy. Learn how we collect, use and protect your personal information when you use our website and services.">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
