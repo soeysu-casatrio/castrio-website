@@ -1204,52 +1204,44 @@ footer {
 
 <script>
 // Client type selector toggle
-
+document.addEventListener('DOMContentLoaded', function() {
+  var cards = document.querySelectorAll('.client-card');
+  var cEndSection = document.getElementById('c-end-section');
+  var bEndSection = document.getElementById('b-end-section');
+  
+  function updateCardStyles(activeType) {
+    cards.forEach(function(card) {
+      if (card.getAttribute('data-type') === activeType) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
   }
   
-  cards.forEach(card => {
+  cards.forEach(function(card) {
     card.addEventListener('click', function() {
-      const type = this.getAttribute('data-type');
+      var type = this.getAttribute('data-type');
       updateCardStyles(type);
       
       if (type === 'c-end') {
-        cEndSection.style.display = 'block';
-        bEndSection.style.display = 'none';
+        if (cEndSection) cEndSection.style.display = 'block';
+        if (bEndSection) bEndSection.style.display = 'none';
       } else {
-        cEndSection.style.display = 'none';
-        bEndSection.style.display = 'block';
+        if (cEndSection) cEndSection.style.display = 'none';
+        if (bEndSection) bEndSection.style.display = 'block';
       }
       
-      setTimeout(() => {
-        const targetSection = type === 'c-end' ? cEndSection : bEndSection;
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 150);
+      var targetSection = type === 'c-end' ? cEndSection : bEndSection;
+      if (targetSection) {
+        setTimeout(function() {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
     });
   });
   
   updateCardStyles('c-end');
-});
-      this.classList.add('active');
-      this.style.background = 'var(--gold)';
-      this.style.color = '#fff';
-      this.style.borderColor = 'var(--gold)';
-
-      // Show/hide sections
-      if (type === 'c-end') {
-        cEndSection.style.display = 'block';
-        bEndSection.style.display = 'none';
-      } else {
-        cEndSection.style.display = 'none';
-        bEndSection.style.display = 'block';
-      }
-
-      // Scroll to deposit section
-      const targetSection = type === 'c-end' ? cEndSection : bEndSection;
-      setTimeout(() => {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    });
-  });
 });
 </script>
 <script>
