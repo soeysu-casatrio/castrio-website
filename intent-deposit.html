@@ -908,6 +908,38 @@ footer {
   font-weight: 400;
 }
 
+
+/* Mobile dropdown menu */
+@media(max-width:900px){
+  .nav-dropdown .dropdown-menu{
+    position:static!important;
+    transform:none!important;
+    opacity:1!important;
+    visibility:hidden!important;
+    display:none!important;
+    box-shadow:none!important;
+    border:none!important;
+    padding:0!important;
+    background:transparent!important;
+    min-width:auto!important;
+  }
+  .nav-dropdown .dropdown-menu.open{
+    display:block!important;
+    visibility:visible!important;
+  }
+  .nav-dropdown .dropdown-menu a{
+    padding:10px 0 10px 24px!important;
+    font-size:12px!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  .nav-dropdown .dropdown-menu .dropdown-label{
+    padding:12px 0 4px 24px!important;
+  }
+  .nav-dropdown .dropdown-divider{
+    display:none!important;
+  }
+}
+
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/intent-deposit.html">
 
@@ -1309,20 +1341,43 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-// Mobile dropdown toggle
+// Nav scroll
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu - protected by DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
-    dropdownToggle.addEventListener('click', function(e) {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        var parent = this.parentElement;
-        var menu = parent.querySelector('.dropdown-menu');
-        if (menu) {
-          menu.classList.toggle('open');
-        }
-      }
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  if (burger && links) {
+    burger.addEventListener('click', function(){
+      links.classList.toggle('open');
+      burger.classList.toggle('open');
     });
-  });
+    
+    // Mobile dropdown toggle
+    document.querySelectorAll('.nav-dropdown > a').forEach(function(dropdownToggle) {
+      dropdownToggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          var parent = this.parentElement;
+          var menu = parent.querySelector('.dropdown-menu');
+          if (menu) {
+            menu.classList.toggle('open');
+          }
+        }
+      });
+    });
+    
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        burger.classList.remove('open');
+      });
+    });
+  }
 });
 </script>
 

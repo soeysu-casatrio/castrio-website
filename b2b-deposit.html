@@ -883,6 +883,38 @@ footer {
   font-size: 10px !important;
   padding: 10px 24px 6px !important;
 }
+
+/* Mobile dropdown menu */
+@media(max-width:900px){
+  .nav-dropdown .dropdown-menu{
+    position:static!important;
+    transform:none!important;
+    opacity:1!important;
+    visibility:hidden!important;
+    display:none!important;
+    box-shadow:none!important;
+    border:none!important;
+    padding:0!important;
+    background:transparent!important;
+    min-width:auto!important;
+  }
+  .nav-dropdown .dropdown-menu.open{
+    display:block!important;
+    visibility:visible!important;
+  }
+  .nav-dropdown .dropdown-menu a{
+    padding:10px 0 10px 24px!important;
+    font-size:12px!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  .nav-dropdown .dropdown-menu .dropdown-label{
+    padding:12px 0 4px 24px!important;
+  }
+  .nav-dropdown .dropdown-divider{
+    display:none!important;
+  }
+}
+
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/b2b-deposit.html">
 
