@@ -1150,6 +1150,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.querySelectorAll('#navlinks a').forEach(function(a) {
       a.addEventListener('click', function() {
+        // dropdown父链接不关闭整个菜单，由dropdown toggle处理展开/收起
+        if (a.parentElement && a.parentElement.classList.contains('nav-dropdown')) {
+          return;
+        }
         burger.classList.remove('open');
         navlinks.classList.remove('open');
       });
