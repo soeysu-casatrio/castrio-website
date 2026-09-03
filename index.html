@@ -1006,7 +1006,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       <div class="eyebrow" style="color:var(--gold)">05 — Client Voices</div>
       <h2 class="display" style="font-size:clamp(24px,3vw,32px)">What Our Clients Say.</h2>
     </div>
-    <div class="testimonial-scroll" style="display:flex;gap:20px;overflow-x:auto;padding:8px 4px 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold-light) transparent">
+    <div class="testimonial-scroll" id="testimonialScroll" style="display:flex;gap:20px;overflow-x:auto;padding:8px 4px 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold-light) transparent">
       <div class="testimonial-card" style="flex:0 0 340px;background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:4px">
         <div style="color:var(--gold);font-size:24px;font-family:var(--serif);line-height:1;margin-bottom:10px">"</div>
         <p style="font-size:13px;line-height:1.7;color:var(--charcoal);margin-bottom:16px;">Soey and her team managed our entire villa project from design to delivery. The quality exceeded our expectations, and communication was excellent throughout.</p>
@@ -1053,7 +1053,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
       </div>
     </div>
     <div style="text-align:center;margin-top:8px">
-      <p style="font-size:11px;color:var(--muted);letter-spacing:.1em">← Swipe to read more →</p>
+      <p style="font-size:11px;color:var(--muted);letter-spacing:.1em">Auto-scrolling · Hover to pause · Or swipe manually</p>
     </div>
   </div>
 </section></section>
@@ -1791,6 +1791,74 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// Testimonial Auto-Scroll Carousel
+(function() {
+  var scrollContainer = document.getElementById('testimonialScroll');
+  if (!scrollContainer) return;
+  
+  var scrollAmount = 360; // card width (340px) + gap (20px)
+  var intervalTime = 4000; // 4 seconds per card
+  var autoScrollInterval = null;
+  var isHovering = false;
+  var isUserScrolling = false;
+  var userScrollTimeout = null;
+  
+  function startAutoScroll() {
+    if (autoScrollInterval) return;
+    autoScrollInterval = setInterval(function() {
+      if (isHovering || isUserScrolling) return;
+      
+      var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      
+      // If at the end, smoothly scroll back to start
+      if (scrollContainer.scrollLeft >= maxScroll - 10) {
+        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, intervalTime);
+  }
+  
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+  
+  // Pause on mouse hover
+  scrollContainer.addEventListener('mouseenter', function() {
+    isHovering = true;
+  });
+  
+  scrollContainer.addEventListener('mouseleave', function() {
+    isHovering = false;
+  });
+  
+  // Pause when user manually scrolls (resume after 1.5s of no scrolling)
+  scrollContainer.addEventListener('scroll', function() {
+    if (isHovering) return;
+    isUserScrolling = true;
+    clearTimeout(userScrollTimeout);
+    userScrollTimeout = setTimeout(function() {
+      isUserScrolling = false;
+    }, 1500);
+  });
+  
+  // Pause when browser tab is not visible
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      stopAutoScroll();
+    } else {
+      startAutoScroll();
+    }
+  });
+  
+  // Start auto-scroll after 2 second delay
+  setTimeout(startAutoScroll, 2000);
+})();
+</script>
 
 </body>
 </html>
