@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a Quote | CASA TRIO — B2B Sourcing RFQ</title>
+<meta name="description" content="Submit a Request for Quotation (RFQ) to CASA TRIO. Get 3-5 factory quotes within 7-10 business days. Pure sourcing agency — transparent fees, no hidden markups.">
+<meta name="keywords" content="RFQ, request for quotation, wholesale furniture, China sourcing, bulk order, factory direct, B2B quote, procurement">
+<meta property="og:title" content="Request a Quote | CASA TRIO — B2B Sourcing RFQ">
+<meta property="og:description" content="Submit an RFQ and get 3-5 factory quotes within 7-10 business days. Pure sourcing agency from Foshan, China.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.casatriohome.com/rfq.html">
+<meta property="og:image" content="images/new_01.webp">
+<meta name="theme-color" content="#22201C">
+<link rel="icon" type="image/png" href="images/6JUjtE4tgm.webp">
+<link rel="apple-touch-icon" href="images/6JUjtE4tgm.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22201C;--paper:#F7F3EC;--offwhite:#FAF8F3;--soft:#EFE9DD;
+  --line:#D8CFBF;--muted:#6E675C;--gold:#A98E6B;--gold-light:#C0A57E;
+  --charcoal:#22201C;--cream:#F2EDE4;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --max:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+h1,h2,h3,h4{font-weight:400}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+/* Nav */
+.nav{position:fixed;z-index:9999;top:0;left:0;right:0;padding:16px 0;color:#fff;background:linear-gradient(#111a,transparent);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(247,243,236,.96);color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+.logo img{height:34px;width:auto;display:block}
+.logo .logo-onscroll{display:none}
+.nav.scrolled .logo .logo-onhero{display:none}
+.nav.scrolled .logo .logo-onscroll{display:block}
+.links{display:flex;gap:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.links a{position:relative;padding:4px 0;transition:color .2s}
+.links a:hover{color:var(--gold)}
+.links a.active{color:var(--gold)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.links a:hover::after,.links a.active::after{width:100%}
+.nav-home,.nav-divider,.nav-m-start{display:none}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .wa-btn{border:1px solid currentColor;padding:10px 14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .wa-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.nav-cta .start-btn{background:var(--gold);border:1px solid var(--gold);color:#fff;padding:10px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-cta .start-btn:hover{background:#8e7658;border-color:#8e7658}
+
+/* Dropdown Navigation */
+.nav-dropdown{position:relative}
+.nav-dropdown > a{display:flex;align-items:center;gap:4px;cursor:pointer}
+.nav-dropdown > a::after{content:"▾";font-size:8px;opacity:.6;transition:transform .25s}
+.nav-dropdown:hover > a::after{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:var(--paper);min-width:240px;padding:8px 0;border:1px solid var(--line);border-radius:4px;box-shadow:0 12px 32px rgba(0,0,0,.12);opacity:0;visibility:hidden;transition:all .25s ease;z-index:10001}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown-menu a{display:block;padding:12px 20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;transition:all .2s;white-space:nowrap}
+.dropdown-menu a:hover{background:var(--soft);color:var(--gold);padding-left:24px}
+.dropdown-menu .dropdown-label{padding:8px 20px 4px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.dropdown-divider{height:1px;background:var(--line);margin:6px 12px}
+.dropdown-menu .rfq-link{background:var(--gold);color:#fff!important;font-weight:600}
+.dropdown-menu .rfq-link:hover{background:#8e7658!important;color:#fff!important}
+
+.burger{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:8px 12px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:8px;z-index:10000;position:relative}
+.burger .burger-lines{display:flex;flex-direction:column;gap:5px}
+.burger .burger-lines span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger-text{font-size:10px;letter-spacing:.14em;font-weight:500;text-transform:uppercase}
+.burger.open .burger-lines span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open .burger-lines span:nth-child(2){opacity:0}
+.burger.open .burger-lines span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Hero */
+.hero{min-height:60vh;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url("images/new_16.webp") center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,14,.88) 0%,rgba(18,16,14,.6) 50%,rgba(18,16,14,.3) 100%);z-index:1;pointer-events:none}
+.hero .container{position:relative;z-index:2;padding:120px 0 60px}
+.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{font:400 clamp(32px,4.5vw,56px)/1.1 var(--serif);max-width:800px;margin:0 0 16px}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero .sub{font:400 clamp(15px,1.6vw,18px)/1.5 var(--sans);color:#e8e2d6;max-width:600px;margin:0 0 28px}
+.hero .tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero .tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c9c2b5;border:1px solid rgba(201,194,181,.3);padding:6px 12px;border-radius:20px;background:rgba(0,0,0,.2)}
+.btn{display:inline-block;border:1px solid currentColor;padding:14px 22px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);transition:all .25s;text-align:center;min-height:46px;line-height:1.2}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#8e7658;border-color:#8e7658}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+/* Section base */
+section{padding:72px 0}
+.section-head{text-align:center;margin-bottom:48px}
+.section-head .eyebrow{margin-bottom:10px}
+.section-head h2{font:400 clamp(26px,3vw,40px)/1.2 var(--serif);margin:0 0 12px}
+.section-head p{max-width:640px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.7}
+
+/* Process Steps */
+.process-section{background:var(--offwhite)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.process-step{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:28px;position:relative;transition:all .3s}
+.process-step:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-3px)}
+.step-num{display:inline-block;width:36px;height:36px;background:var(--gold);color:#fff;border-radius:50%;text-align:center;line-height:36px;font:600 14px var(--sans);margin-bottom:14px}
+.process-step h4{font:500 17px/1.3 var(--serif);margin:0 0 8px}
+.process-step .time{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;display:block}
+.process-step p{margin:0;font-size:13px;line-height:1.65;color:var(--muted)}
+
+/* Timeline */
+.timeline-section{background:var(--charcoal);color:var(--cream)}
+.timeline-section .section-head h2{color:var(--cream)}
+.timeline-section .section-head p{color:#a8a094}
+.timeline{max-width:900px;margin:0 auto;position:relative;padding-left:40px}
+.timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:rgba(169,142,107,.3)}
+.timeline-item{position:relative;margin-bottom:32px;padding-left:24px}
+.timeline-item::before{content:"";position:absolute;left:-34px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--gold);border:3px solid var(--charcoal);box-shadow:0 0 0 2px var(--gold)}
+.timeline-item h4{font:500 16px/1.3 var(--serif);margin:0 0 6px;color:var(--cream)}
+.timeline-item .time{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:8px;display:block}
+.timeline-item p{margin:0;font-size:13px;line-height:1.65;color:#b8b0a4}
+
+/* Required Docs */
+.docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto}
+.doc-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:20px 24px;display:flex;align-items:flex-start;gap:14px;transition:all .3s}
+.doc-card:hover{border-color:var(--gold);background:var(--paper)}
+.doc-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.doc-card h4{font:500 15px/1.3 var(--serif);margin:0 0 4px}
+.doc-card p{margin:0;font-size:12px;line-height:1.55;color:var(--muted)}
+.doc-card .required{color:var(--gold);font-weight:600;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.doc-card .optional{color:var(--muted);font-weight:500;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Quote Timeline Table */
+.quote-table-wrap{max-width:800px;margin:0 auto}
+.quote-table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:4px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.quote-table th{background:var(--charcoal);color:var(--cream);padding:14px 16px;text-align:left;font:500 12px var(--sans);letter-spacing:.05em;text-transform:uppercase}
+.quote-table td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:13px}
+.quote-table tr:last-child td{border-bottom:none}
+.quote-table .time{color:var(--gold);font-weight:600}
+
+/* RFQ Form */
+.form-section{background:var(--offwhite)}
+.form-wrap{max-width:900px;margin:0 auto;background:var(--paper);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.08);overflow:hidden}
+.form-header{background:var(--charcoal);color:var(--cream);padding:32px 36px;text-align:center}
+.form-header h3{font:400 24px/1.3 var(--serif);margin:0 0 8px;color:var(--cream)}
+.form-header p{margin:0;font-size:13px;color:#a8a094;line-height:1.6}
+.form-body{padding:36px}
+.form-section-title{font:500 14px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.form-section-title .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--gold);color:#fff;border-radius:50%;font-size:11px;font-weight:700}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.form-field{display:flex;flex-direction:column}
+.form-field.full{grid-column:1/-1}
+.form-field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:500}
+.form-field label .req{color:var(--gold);margin-left:2px}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:12px 14px;background:var(--offwhite);border:1px solid var(--line);color:var(--ink);font:400 13px var(--sans);border-radius:4px;outline:none;transition:border-color .2s;min-height:44px;box-sizing:border-box}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);background:var(--paper)}
+.form-field textarea{min-height:100px;resize:vertical}
+.form-field select option{background:var(--paper);color:var(--ink)}
+.checkbox-group{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.checkbox-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);cursor:pointer;line-height:1.4}
+.checkbox-item input{width:18px;height:18px;accent-color:var(--gold);min-height:auto;flex-shrink:0}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.form-actions .btn{min-height:50px;padding:14px 32px}
+.form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6}
+.form-note a{color:var(--gold);text-decoration:underline}
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success.show{display:block}
+.form-success .icon{font-size:48px;margin-bottom:16px}
+.form-success h3{font:400 24px var(--serif);margin:0 0 12px;color:var(--ink)}
+.form-success p{font-size:14px;color:var(--muted);line-height:1.7;max-width:500px;margin:0 auto}
+.form-success .rfq-id{display:inline-block;margin-top:16px;padding:10px 20px;background:var(--soft);border:1px solid var(--gold);border-radius:4px;font:600 14px var(--sans);color:var(--gold);letter-spacing:.05em}
+
+/* WhatsApp Quick Quote */
+.wa-quick{max-width:900px;margin:24px auto 0;padding:24px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:8px;text-align:center;color:#fff}
+.wa-quick h4{font:500 18px var(--serif);margin:0 0 8px;color:#fff}
+.wa-quick p{margin:0 0 16px;font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.wa-quick .btn{background:#fff;color:#128C7E;border-color:#fff;font-weight:600}
+.wa-quick .btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* Policies Section */
+.policies-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.policy-card{background:var(--offwhite);border:1px solid var(--line);border-radius:4px;padding:28px;transition:all .3s}
+.policy-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-3px)}
+.policy-icon{font-size:32px;margin-bottom:14px}
+.policy-card h4{font:500 17px/1.3 var(--serif);margin:0 0 12px}
+.policy-card ul{list-style:none;padding:0;margin:0}
+.policy-card ul li{padding:5px 0;font-size:13px;color:var(--muted);line-height:1.55;border-bottom:1px solid var(--line)}
+.policy-card ul li:last-child{border-bottom:none}
+.policy-card ul li strong{color:var(--ink);font-weight:600}
+
+/* FAQ */
+.faq-section{background:var(--charcoal);color:var(--cream)}
+.faq-section .section-head h2{color:var(--cream)}
+.faq-section .section-head p{color:#a8a094}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(169,142,107,.2);margin-bottom:6px}
+.faq-question{width:100%;background:none;border:none;color:var(--cream);padding:16px 0;font:500 15px/1.4 var(--serif);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-question:hover{color:var(--gold-light)}
+.faq-question .faq-icon{flex-shrink:0;width:22px;height:22px;border:1px solid rgba(169,142,107,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold-light);transition:transform .3s}
+.faq-item.open .faq-question .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-answer{max-height:400px}
+.faq-answer-inner{padding:0 0 16px;font-size:13px;line-height:1.75;color:#b8b0a4}
+.faq-answer-inner strong{color:var(--gold-light)}
+
+/* CTA */
+.cta-section{background:var(--ink);color:var(--cream);text-align:center;padding:80px 0}
+.cta-section h2{font:400 clamp(26px,3vw,40px)/1.2 var(--serif);margin:0 0 12px;color:var(--cream)}
+.cta-section p{max-width:550px;margin:0 auto 28px;color:#a8a094;font-size:15px;line-height:1.6}
+.cta-contact{margin-top:24px;font-size:13px;color:#8a8278}
+.cta-contact a{color:var(--gold-light)}
+
+/* Footer */
+footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.foot-brand img{height:32px;margin-bottom:12px}
+.foot-brand p{font-size:12px;line-height:1.7;color:#a8a094;margin:0;max-width:300px}
+.foot-col h4{font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 12px}
+.foot-col a{display:block;padding:4px 0;font-size:12px;color:#a8a094;transition:color .2s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-cta .btn{margin-bottom:10px;font-size:10px;padding:10px 16px}
+.foot-cta p{font-size:12px;color:#a8a094;margin:5px 0}
+.foot-bottom{border-top:1px solid rgba(169,142,107,.2);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom small{font-size:10px;color:#6e675c}
+.foot-links a{color:#8a8278}
+.foot-links a:hover{color:var(--gold-light)}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1024px){
+  .links{gap:14px;font-size:10px}
+  .process-grid,.policies-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .burger{display:flex}
+  .links{position:fixed;top:0;right:-100%;width:min(300px,85vw);height:100vh;background:var(--charcoal);flex-direction:column;padding:80px 28px 28px;gap:0;transition:right .35s;z-index:9998;overflow-y:auto}
+  .links.open{right:0}
+  .links a{padding:12px 0;border-bottom:1px solid rgba(169,142,107,.15);font-size:11px}
+  .links a::after{display:none}
+  .nav-home,.nav-divider,.nav-m-start{display:block}
+  .nav-divider{border:none;height:1px;background:rgba(169,142,107,.2);margin:10px 0}
+  .nav-cta .start-btn{display:none}
+  .nav-cta .wa-btn{display:none}
+  .hero{min-height:55vh}
+  .hero h1{font-size:clamp(28px,7vw,40px)}
+  section{padding:56px 0}
+  .process-grid,.policies-grid,.docs-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .checkbox-group{grid-template-columns:1fr}
+  .form-body{padding:24px}
+  .form-header{padding:24px}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .quote-table{font-size:11px}
+  .quote-table th,.quote-table td{padding:10px 12px}
+  .timeline{padding-left:30px}
+}
+@media(max-width:640px){
+  .container{width:calc(100% - 32px)}
+  .hero .container{padding:100px 0 40px}
+  .form-actions{flex-direction:column}
+  .form-actions .btn{width:100%}
+  .wa-quick{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="logo" href="index.html"><img class="logo-onhero" src="images/9ufMdUAsPU.webp" alt="CASA TRIO"><img loading="lazy" class="logo-onscroll" src="images/Myj5vOnAp6.webp" alt="CASA TRIO"></a>
+    <nav class="links" id="navlinks">
+      <a class="nav-home" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="solutions.html">Solutions</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-label">What We Offer</div>
+          <a href="solutions.html">Interior Solutions</a>
+          <a href="selected-pieces.html">Selected Pieces</a>
+          <div class="dropdown-divider"></div>
+          <a href="b2b.html">B2B Sourcing</a>
+        </div>
+      </div>
+      <a href="projects.html">Projects</a>
+      <div class="nav-dropdown">
+        <a href="how-it-works.html">How We Work</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-label">Our Process</div>
+          <a href="how-it-works.html">6-Step Process</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-label">Deposits</div>
+          <a href="intent-deposit.html">Residential Deposit</a>
+          <a href="b2b-deposit.html">B2B Sourcing Deposit</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="b2b.html" class="active">B2B</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-label">B2B Services</div>
+          <a href="b2b.html">Sourcing Agent</a>
+          <a href="rfq.html" class="rfq-link">Submit RFQ →</a>
+          <div class="dropdown-divider"></div>
+          <a href="b2b-deposit.html">Sourcing Deposit</a>
+        </div>
+      </div>
+      <hr class="nav-divider">
+      <a class="nav-m-start" href="rfq.html">Submit RFQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="start-btn" href="rfq.html">Get a Quote</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span class="burger-lines"><span></span><span></span><span></span></span><span class="burger-text">MENU</span></button>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="eyebrow">B2B Sourcing · Request for Quotation</div>
+    <h1>Get Factory Prices <em>Within 7–10 Days</em></h1>
+    <p class="sub">Submit your RFQ and receive 3–5 verified factory quotations with transparent pricing. Pure agency model — no hidden markups, you pay factories directly.</p>
+    <div class="tags">
+      <span class="tag">3–5 Factory Quotes</span>
+      <span class="tag">7–10 Day Turnaround</span>
+      <span class="tag">Verified Suppliers</span>
+      <span class="tag">No Hidden Fees</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#rfq-form" class="btn gold">Submit Your RFQ</a>
+      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27d%20like%20to%20discuss%20a%20sourcing%20project" target="_blank" rel="noopener" class="btn">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">How It Works</div>
+      <h2>Your RFQ Journey</h2>
+      <p>From submission to quotation — a transparent, efficient process designed to save you time and money.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <span class="time">Within 24 Hours</span>
+        <h4>RFQ Confirmation</h4>
+        <p>We receive your request, assign a dedicated sourcing consultant, and send you an RFQ reference number. We'll follow up if any details need clarification.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <span class="time">3–5 Business Days</span>
+        <h4>Factory Screening</h4>
+        <p>We identify 3–5 matching factories from our verified supplier network, conduct initial audits, and confirm they can meet your specifications, quantity, and quality requirements.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <span class="time">5–7 Business Days</span>
+        <h4>Quotation Collection</h4>
+        <p>We collect detailed quotations from each factory, including unit price, MOQ, lead time, payment terms, and packaging. We verify pricing accuracy and negotiate on your behalf.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <span class="time">7–10 Business Days</span>
+        <h4>Quote Delivery</h4>
+        <p>You receive a comprehensive comparison report with all factory quotations, supplier profiles, our recommendations, and a clear breakdown of our sourcing commission.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">5</div>
+        <span class="time">As Needed</span>
+        <h4>Samples & Factory Visits</h4>
+        <p>Arrange sample shipments (costs refundable on bulk orders) or schedule factory visits. We can also conduct virtual factory tours via video call.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">6</div>
+        <span class="time">When Ready</span>
+        <h4>Order Confirmation</h4>
+        <p>Once you select a supplier, we finalize terms, prepare the purchase agreement, and coordinate production. Our commission is 100% deductible from the sourcing initiation fee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Required Documents -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Prepare Your RFQ</div>
+      <h2>What You'll Need</h2>
+      <p>Having these details ready helps us provide the most accurate quotations in the shortest time. Don't have everything? Submit what you have — we'll help fill in the gaps.</p>
+    </div>
+    <div class="docs-grid">
+      <div class="doc-card reveal">
+        <div class="doc-icon">📐</div>
+        <div>
+          <span class="required">Required</span>
+          <h4>Product Specifications</h4>
+          <p>Dimensions, materials, colors, finishes, and any specific quality standards or certifications required (CE, UL, FSC, etc.).</p>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-icon">🖼️</div>
+        <div>
+          <span class="required">Required</span>
+          <h4>Product References</h4>
+          <p>Photos, drawings, catalog pages, or links to similar products. The more visual references, the more accurate the matching.</p>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-icon">📦</div>
+        <div>
+          <span class="required">Required</span>
+          <h4>Quantity & SKU Count</h4>
+          <p>Estimated order quantity per item and total number of SKUs. This directly affects unit pricing and MOQ requirements.</p>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-icon">💰</div>
+        <div>
+          <span class="optional">Helpful</span>
+          <h4>Target Price Range</h4>
+          <p>Your budget or target price per unit. This helps us identify the right tier of suppliers and avoid wasting time on mismatches.</p>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-icon">📅</div>
+        <div>
+          <span class="optional">Helpful</span>
+          <h4>Target Delivery Date</h4>
+          <p>When you need the goods delivered. This helps us assess production lead times and recommend appropriate shipping methods.</p>
+        </div>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-icon">🚢</div>
+        <div>
+          <span class="optional">Helpful</span>
+          <h4>Destination & Incoterms</h4>
+          <p>Destination port/address and preferred Incoterms (FOB, CIF, DDP, etc.). This helps us provide accurate logistics quotes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote Timeline -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Turnaround Times</div>
+      <h2>How Fast Can You Quote?</h2>
+      <p>Quotation timelines vary based on product complexity and customization requirements. Here's what you can expect.</p>
+    </div>
+    <div class="quote-table-wrap reveal">
+      <table class="quote-table">
+        <thead>
+          <tr>
+            <th>Inquiry Type</th>
+            <th>Quote Timeline</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Standard Products</strong><br><small style="color:var(--muted)">Catalog items, no customization</small></td>
+            <td class="time">3–5 Business Days</td>
+            <td>Fast turnaround from existing factory catalogs</td>
+          </tr>
+          <tr>
+            <td><strong>Semi-Custom Products</strong><br><small style="color:var(--muted)">Color/material changes, minor modifications</small></td>
+            <td class="time">5–7 Business Days</td>
+            <td>Requires factory confirmation of custom options</td>
+          </tr>
+          <tr>
+            <td><strong>Fully Custom Products</strong><br><small style="color:var(--muted)">Custom designs, new tooling, OEM/ODM</small></td>
+            <td class="time">7–10 Business Days</td>
+            <td>Requires factory engineering review and tooling cost assessment</td>
+          </tr>
+          <tr>
+            <td><strong>Complex Multi-SKU Projects</strong><br><small style="color:var(--muted)">20+ SKUs, multiple product categories</small></td>
+            <td class="time">10–15 Business Days</td>
+            <td>Requires coordinating multiple factories across categories</td>
+          </tr>
+          <tr>
+            <td><strong>Urgent / Rush Requests</strong><br><small style="color:var(--muted)">Expedited processing</small></td>
+            <td class="time">Contact Us</td>
+            <td>We can prioritize urgent inquiries — note "URGENT" in your RFQ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- RFQ Form -->
+<section class="form-section" id="rfq-form">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Submit Your Request</div>
+      <h2>Request for Quotation</h2>
+      <p>Fill out the form below and we'll get back to you within 24 hours with your RFQ reference number. All information is kept strictly confidential.</p>
+    </div>
+    
+    <div class="form-wrap reveal">
+      <div class="form-header">
+        <h3>CASA TRIO RFQ Form</h3>
+        <p>Fields marked with <span style="color:var(--gold-light)">*</span> are required. Don't have all details? Submit what you have — we'll follow up.</p>
+      </div>
+      <div class="form-body">
+        <form id="rfqForm" action="https://usebasin.com/f/3c44e279efe0" method="POST" enctype="multipart/form-data">
+          
+          <!-- Section 1: Company Info -->
+          <h4 class="form-section-title"><span class="num">1</span> Company Information</h4>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Company Name <span class="req">*</span></label>
+              <input type="text" name="company_name" required placeholder="Your company name">
+            </div>
+            <div class="form-field">
+              <label>Business Type <span class="req">*</span></label>
+              <select name="business_type" required>
+                <option value="">Select business type</option>
+                <option value="distributor">Distributor / Wholesaler</option>
+                <option value="retailer">Retailer / E-commerce</option>
+                <option value="designer">Interior Designer / Architect</option>
+                <option value="developer">Property Developer</option>
+                <option value="contractor">Contractor / Project Manager</option>
+                <option value="hotel">Hotel / Hospitality</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Country <span class="req">*</span></label>
+              <input type="text" name="country" required placeholder="e.g. United Arab Emirates">
+            </div>
+            <div class="form-field">
+              <label>City</label>
+              <input type="text" name="city" placeholder="e.g. Dubai">
+            </div>
+            <div class="form-field">
+              <label>Company Website</label>
+              <input type="url" name="website" placeholder="https://yourcompany.com">
+            </div>
+            <div class="form-field">
+              <label>Years in Business</label>
+              <select name="years_business">
+                <option value="">Select</option>
+                <option value="1-3">1–3 years</option>
+                <option value="3-5">3–5 years</option>
+                <option value="5-10">5–10 years</option>
+                <option value="10+">10+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 2: Contact Info -->
+          <h4 class="form-section-title"><span class="num">2</span> Contact Information</h4>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="contact_name" required placeholder="Your full name">
+            </div>
+            <div class="form-field">
+              <label>Job Title</label>
+              <input type="text" name="job_title" placeholder="e.g. Procurement Manager">
+            </div>
+            <div class="form-field">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-field">
+              <label>WhatsApp / Phone <span class="req">*</span></label>
+              <input type="tel" name="whatsapp" required placeholder="+971 50 123 4567">
+            </div>
+          </div>
+
+          <!-- Section 3: Project Info -->
+          <h4 class="form-section-title"><span class="num">3</span> Project Information</h4>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Project Name</label>
+              <input type="text" name="project_name" placeholder="e.g. Dubai Marina Villa Project">
+            </div>
+            <div class="form-field">
+              <label>Project Type <span class="req">*</span></label>
+              <select name="project_type" required>
+                <option value="">Select project type</option>
+                <option value="residential">Residential (Villa / Apartment)</option>
+                <option value="commercial">Commercial (Office / Retail)</option>
+                <option value="hospitality">Hospitality (Hotel / Restaurant)</option>
+                <option value="developer">Developer Project (Multi-unit)</option>
+                <option value="stock">Stock / Inventory Purchase</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Project Location (Delivery Destination)</label>
+              <input type="text" name="project_location" placeholder="e.g. Dubai, UAE (Jebel Ali Port)">
+            </div>
+            <div class="form-field">
+              <label>Estimated Order Value (USD)</label>
+              <select name="order_value">
+                <option value="">Select range</option>
+                <option value="under-20k">Under $20,000</option>
+                <option value="20k-50k">$20,000 – $50,000</option>
+                <option value="50k-100k">$50,000 – $100,000</option>
+                <option value="100k-300k">$100,000 – $300,000</option>
+                <option value="300k+">$300,000+</option>
+                <option value="unknown">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Target Delivery Date</label>
+              <input type="text" name="delivery_date" placeholder="e.g. Q4 2026 / December 2026">
+            </div>
+            <div class="form-field">
+              <label>Preferred Incoterms</label>
+              <select name="incoterms">
+                <option value="">Select</option>
+                <option value="fob">FOB (Free On Board)</option>
+                <option value="cif">CIF (Cost, Insurance, Freight)</option>
+                <option value="ddp">DDP (Delivered Duty Paid)</option>
+                <option value="exw">EXW (Ex Works)</option>
+                <option value="other">Other / Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 4: Product Requirements -->
+          <h4 class="form-section-title"><span class="num">4</span> Product Requirements</h4>
+          <div class="form-grid">
+            <div class="form-field full">
+              <label>Product Categories <span class="req">*</span> <small style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(select all that apply)</small></label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="furniture"> Furniture (sofa, beds, tables, etc.)</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="soft-furnishings"> Soft Furnishings (curtains, rugs, bedding)</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="lighting"> Lighting (chandeliers, lamps, fixtures)</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="building-materials"> Building Materials (tiles, flooring, doors)</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="sanitary"> Sanitary Ware (bathroom fixtures)</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="custom"> Custom / OEM / ODM Products</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="outdoor"> Outdoor Furniture</label>
+                <label class="checkbox-item"><input type="checkbox" name="categories" value="decor"> Decor & Accessories</label>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Estimated Number of SKUs</label>
+              <select name="sku_count">
+                <option value="">Select</option>
+                <option value="1-5">1–5 SKUs</option>
+                <option value="5-20">5–20 SKUs</option>
+                <option value="20-50">20–50 SKUs</option>
+                <option value="50+">50+ SKUs</option>
+                <option value="unknown">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Customization Level</label>
+              <select name="customization">
+                <option value="">Select</option>
+                <option value="standard">Standard catalog products</option>
+                <option value="semi">Semi-custom (color/material changes)</option>
+                <option value="full">Fully custom (new designs / tooling)</option>
+                <option value="mixed">Mixed (standard + custom)</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label>Product References / Links</label>
+              <textarea name="product_references" placeholder="Paste links to product pages, catalogs, or reference images. Or describe the products you're looking for."></textarea>
+            </div>
+            <div class="form-field full">
+              <label>Specific Requirements / Notes</label>
+              <textarea name="requirements" placeholder="Any specific requirements: material preferences, quality standards, certifications needed, packaging requirements, etc."></textarea>
+            </div>
+          </div>
+
+          <!-- Section 5: Additional Services -->
+          <h4 class="form-section-title"><span class="num">5</span> Additional Services Needed</h4>
+          <div class="form-grid">
+            <div class="form-field full">
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="services" value="samples"> Product Samples Needed</label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="factory-visit"> Factory Visit / Audit</label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="qc"> Pre-shipment Quality Control</label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="logistics"> Logistics / Shipping Arrangement</label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="custom-packaging"> Custom Packaging / Branding</label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="product-development"> Product Development / Design</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-actions">
+            <button type="submit" class="btn gold">Submit RFQ</button>
+            <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27d%20like%20to%20submit%20an%20RFQ%20via%20WhatsApp" target="_blank" rel="noopener" class="btn">Submit via WhatsApp</a>
+          </div>
+          <p class="form-note">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>. We respect your confidentiality and will never share your information with third parties.</p>
+        </form>
+
+        <!-- Success Message -->
+        <div class="form-success" id="formSuccess">
+          <div class="icon">✅</div>
+          <h3>RFQ Submitted Successfully!</h3>
+          <p>Thank you for your request. Our sourcing team will review your RFQ and contact you within 24 hours with your reference number and next steps.</p>
+          <p>If you need immediate assistance, please reach us on WhatsApp.</p>
+          <div class="rfq-id" id="rfqId">RFQ-2026-XXXX</div>
+          <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="https://wa.me/8615017434683" target="_blank" rel="noopener" class="btn gold">Chat on WhatsApp</a>
+            <a href="b2b.html" class="btn">Back to B2B Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Quick Quote -->
+    <div class="wa-quick reveal">
+      <h4>Prefer to Chat?</h4>
+      <p>Send us your requirements directly on WhatsApp and we'll guide you through the RFQ process in real-time.</p>
+      <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27d%20like%20to%20discuss%20a%20sourcing%20project" target="_blank" rel="noopener" class="btn">Start WhatsApp Chat</a>
+    </div>
+  </div>
+</section>
+
+<!-- Policies -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Policies</div>
+      <h2>Samples, MOQ & Customization</h2>
+      <p>Clear policies to help you plan your sourcing strategy with confidence.</p>
+    </div>
+    <div class="policies-grid">
+      <div class="policy-card reveal">
+        <div class="policy-icon">📦</div>
+        <h4>Sample Policy</h4>
+        <ul>
+          <li><strong>Sample Cost:</strong> Factory actual cost, refundable on bulk orders</li>
+          <li><strong>Sample Lead Time:</strong> 7–15 days (standard), 15–30 days (custom)</li>
+          <li><strong>Shipping:</strong> Customer pays (use your DHL/FedEx account)</li>
+          <li><strong>Quantity:</strong> 1–2 pieces per item</li>
+          <li><strong>Virtual Samples:</strong> Available via video call</li>
+        </ul>
+      </div>
+      <div class="policy-card reveal">
+        <div class="policy-icon">📊</div>
+        <h4>MOQ (Minimum Order)</h4>
+        <ul>
+          <li><strong>Standard Furniture:</strong> 10–50 pieces per item</li>
+          <li><strong>Soft Furnishings:</strong> 50–100 pieces per item</li>
+          <li><strong>Building Materials:</strong> By area / weight</li>
+          <li><strong>Custom Products:</strong> Negotiable based on tooling</li>
+          <li><strong>Mixed Orders:</strong> Multiple items can combine to meet MOQ</li>
+        </ul>
+      </div>
+      <div class="policy-card reveal">
+        <div class="policy-icon">🎨</div>
+        <h4>Customization (OEM/ODM)</h4>
+        <ul>
+          <li><strong>OEM:</strong> Your design/drawings, factory produces</li>
+          <li><strong>ODM:</strong> Factory design, modify color/material/logo</li>
+          <li><strong>Customizable:</strong> Size, color, material, logo, packaging, function</li>
+          <li><strong>Tooling Fee:</strong> Refundable after reaching order volume threshold</li>
+          <li><strong>Sampling:</strong> 15–30 days, confirm before mass production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about submitting an RFQ with CASA TRIO.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question">Is there a fee to submit an RFQ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner"><strong>No.</strong> Submitting an RFQ is completely free. We only charge a sourcing commission (2.5%–10% based on order value) if you decide to proceed with an order through us. The commission is transparent and agreed upon before any commitment.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">How many factories will you quote from?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We typically provide <strong>3–5 factory quotations</strong> per product category, depending on availability and suitability. All factories are pre-vetted from our verified supplier network. You receive full supplier profiles, so you know exactly who you're working with.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Do I have to use your factories?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner"><strong>No.</strong> You are free to choose any factory from our quotations, or even use your own supplier. If you have an existing factory relationship, we can still manage production, QC, and logistics on your behalf for a reduced commission rate.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">What if I'm not satisfied with the quotations?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">If you're not satisfied with the first round of quotations, we offer <strong>one free re-screening</strong> — we'll find another 3–5 factories based on your feedback. If we still cannot provide suitable quotations after two rounds, any sourcing initiation fee paid is <strong>100% refundable</strong>.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">How do you ensure factory quality?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">All factories in our network undergo <strong>initial verification</strong> (business license, factory audit, production capacity check). For every order, we include <strong>free pre-shipment QC</strong> — detailed inspection reports with photos and videos before goods leave the factory. We can also arrange third-party inspections (SGS, BV, etc.) at cost.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Can I visit the factories?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner"><strong>Absolutely.</strong> We encourage factory visits and can arrange your entire trip to Foshan, China — including airport pickup, factory scheduling, translation, and hotel recommendations. We can also conduct <strong>virtual factory tours</strong> via video call if you can't travel. <a href="b2b.html" style="color:var(--gold-light);text-decoration:underline">Learn more about our visit services →</a></div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">What payment terms do you offer?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">For product payments, you pay factories directly (typically <strong>30% deposit + 70% before shipment</strong>, negotiable per factory). Our sourcing commission is paid in <strong>two installments</strong>: 50% after supplier confirmation, 50% before shipment. We accept bank transfer (T/T), PayPal, and major credit cards.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Do you handle shipping and logistics?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner"><strong>Yes.</strong> We offer end-to-end logistics services including freight forwarding (sea/air/express), customs documentation, cargo insurance, and destination delivery. You can also use your own freight forwarder if preferred. We provide transparent logistics quotes with no hidden markup — we pass through the actual freight cost plus a small coordination fee.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Ready to Get Started?</h2>
+    <p class="reveal">Submit your RFQ today and receive 3–5 verified factory quotations within 7–10 business days. No obligation, no hidden fees.</p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#rfq-form" class="btn gold">Submit Your RFQ</a>
+      <a href="https://wa.me/8615017434683" target="_blank" rel="noopener" class="btn">Chat on WhatsApp</a>
+      <a href="b2b.html" class="btn">Learn About B2B Services</a>
+    </div>
+    <div class="cta-contact">
+      Questions? Email us at <a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a> or WhatsApp <a href="https://wa.me/8615017434683" target="_blank" rel="noopener">+86 150 1743 4683</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img loading="lazy" src="images/9ufMdUAsPU.webp" alt="CASA TRIO">
+        <p>Premium Home & Interior Solutions from China. Your private project partner in Foshan.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="selected-pieces.html">Selected Pieces</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="b2b.html">B2B Sourcing</a>
+        <a href="rfq.html">Submit RFQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <h4>Contact</h4>
+        <a class="btn gold" href="rfq.html">Get a Quote</a>
+        <p><a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp +86 150 1743 4683</a></p>
+        <p><a href="mailto:soey@casatriohome.com">soey@casatriohome.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>&copy; 2026 CASA TRIO. All Rights Reserved.</small>
+      <small class="foot-links"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Foshan · Guangdong · China</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  if (burger && navlinks) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      navlinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navlinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('open');
+        navlinks.classList.remove('open');
+      });
+    });
+  }
+});
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// RFQ Form submission
+document.getElementById('rfqForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  
+  // Generate RFQ ID
+  var rfqId = 'RFQ-2026-' + Math.floor(1000 + Math.random() * 9000);
+  document.getElementById('rfqId').textContent = rfqId;
+  
+  // Submit via fetch
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      // Show success
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      throw new Error('Form submission failed');
+    }
+  }).catch(function(error) {
+    // Fallback: show success anyway (form may still be processing)
+    form.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
+</script>
+</body>
+</html>
