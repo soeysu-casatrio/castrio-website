@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How It Works | CASA TRIO — Our 6-Step Interior & Furniture Sourcing Process</title>
+<title>FAQ | CASA TRIO — Frequently Asked Questions About Our Sourcing & Design Services</title>
 <meta name="description" content="Learn how CASA TRIO works: from initial consultation and commitment deposit to design, sourcing, production, quality control and final delivery. A clear 6-step process for your interior and furniture project from China.">
 <meta name="keywords" content="how it works, interior design process, furniture sourcing process, 6-step process, CASA TRIO, design consultation, production, quality control, delivery">
 <meta property="og:title" content="How It Works | CASA TRIO — Our 6-Step Interior & Furniture Sourcing Process">
@@ -846,6 +846,42 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   }
 }
 
+
+/* FAQ Section */
+.faq-section{padding:80px 0;background:var(--offwhite)}
+.faq-intro{text-align:center;margin-bottom:50px}
+.faq-intro h2{font-family:var(--serif);font-size:42px;color:var(--ink);margin-bottom:15px}
+.faq-intro p{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto}
+.faq-intro a{color:var(--gold);text-decoration:none;font-weight:500}
+.faq-list{max-width:850px;margin:0 auto}
+.faq-item{background:var(--paper);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden;transition:box-shadow 0.3s}
+.faq-item:hover{box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--sans);font-size:17px;font-weight:600;color:var(--ink);line-height:1.5}
+.faq-question:hover{color:var(--gold)}
+.faq-icon{font-size:24px;font-weight:300;color:var(--gold);transition:transform 0.3s;flex-shrink:0;margin-left:20px}
+.faq-item.active .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding:0 28px}
+.faq-item.active .faq-answer{max-height:800px;padding:0 28px 25px}
+.faq-answer p{font-size:15.5px;line-height:1.75;color:var(--muted);margin-bottom:12px}
+.faq-answer ul,.faq-answer ol{margin:10px 0 15px 20px}
+.faq-answer li{font-size:15px;line-height:1.7;color:var(--muted);margin-bottom:8px}
+.faq-answer strong{color:var(--ink);font-weight:600}
+.faq-answer a{color:var(--gold);text-decoration:none;font-weight:500}
+
+/* CTA Section */
+.cta-section{padding:80px 0;background:var(--ink);text-align:center}
+.cta-section h2{font-family:var(--serif);font-size:40px;color:var(--paper);margin-bottom:15px}
+.cta-section p{font-size:17px;color:rgba(250,248,243,0.7);max-width:550px;margin:0 auto 30px}
+.cta-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.cta-buttons .btn{padding:14px 32px;font-size:15px}
+
+@media(max-width:768px){
+  .faq-section{padding:50px 0}
+  .faq-intro h2{font-size:30px}
+  .faq-question{font-size:15px;padding:18px 20px}
+  .faq-answer p,.faq-answer li{font-size:14px}
+  .cta-section h2{font-size:28px}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
 <script>
@@ -866,8 +902,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
     <a class="logo" href="index.html"><img class="logo-onhero" src="images/9ufMdUAsPU.webp" alt="CASA TRIO"><img loading="lazy" class="logo-onscroll" src="images/Myj5vOnAp6.webp" alt="CASA TRIO"></a>
     <nav class="links" id="navlinks">
       <a class="nav-home" href="index.html">Home</a>
-      <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
+      <a href="about.html">About</a>
       <div class="nav-dropdown">
         <a href="solutions.html">Solutions</a>
         <div class="dropdown-menu">
@@ -880,7 +915,6 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
         </div>
       </div>
       <a href="projects.html">Projects</a>
-      <a href="faq.html">FAQ</a>
       <div class="nav-dropdown">
         <a href="how-it-works.html">How We Work</a>
         <div class="dropdown-menu">
@@ -906,226 +940,213 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">The CASA TRIO Way</div>
-    <h1>Turnkey Luxury Interior & Sourcing</h1>
-    <p>One accountable partner for your entire estate. We design, source, supervise production, inspect, and deliver building materials, bespoke furniture, and soft décor worldwide.</p>
+    <div class="hero-eyebrow">Help Center</div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about working with CASA TRIO — from deposits and design to production, shipping and quality control.</p>
   </div>
 </section>
 
-<section class="process-section">
-  <div class="process-container">
-
-
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/step_discovery_natural.webp" alt="Design consultation with client">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 01</div>
-          <h2 class="step-title">Full-Scope Consultation</h2>
-          <p class="step-desc">We begin with a comprehensive audit of your estate's needs across building materials, custom joinery, loose furniture, and soft furnishings. Whether starting from architectural blueprints or rough ideas, we define your turnkey roadmap.</p>
-          <div class="step-tags">
-            <span class="tag">100% Deductible Deposit</span>
-            <span class="tag">3D Renderings</span>
-            <span class="tag">3 Revision Rounds</span>
-          </div>
-          <div class="note-box" style="margin-top:20px;padding:16px 20px;background:#F7F3EC;border-left:3px solid #A98E6B;border-radius:4px;">
-            <p style="margin:0;font-size:13px;color:#6E675C;line-height:1.7;"><strong>For Full-Service Design Clients:</strong> Dedicated design fees apply prior to full execution, with up to 30% credited back upon reaching procurement thresholds.</p>
-          </div>
-        </div>
-      </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-intro">
+      <h2>Quick Answers</h2>
+      <p>Can't find what you're looking for? <a href="contact.html">Contact us directly</a> or message us on <a href="https://wa.me/8615017434683" target="_blank" rel="noopener">WhatsApp</a>.</p>
     </div>
 
+    <div class="faq-list">
 
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/step_concept_3d.webp" alt="3D interior rendering initial concept">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 02</div>
-          <h2 class="step-title">Risk-Free Concept & Design Alignment</h2>
-          <p class="step-desc">With an intent deposit, we deliver your <strong>First Concept Package</strong> — a 2D soft furnishing plan and a photorealistic 3D rendering of one main space, plus space planning and styling direction. Delivered in 5–7 business days.</p>
-          <div class="note-box">
-            <strong>For full-service design clients:</strong> Design fee is collected separately (paid in full before the full design process begins). Up to 30% design fee credit applies at agreed procurement thresholds.
-          </div>
-          <div class="step-tags" style="margin-top:16px;">
-            <span class="tag">Commitment Deposit</span>
-            <span class="tag">Initial Concept</span>
-            <span class="tag">3 Revisions</span>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Why should I pay a commitment deposit?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A complete-home project involves much more than sending a product catalogue. Our team needs to review your project, match products, communicate with factories, check specifications, calculate quantities and prepare a detailed quotation.</p>
+          <p>The commitment deposit allows us to formally start this project-level process. It is <strong>not a service fee</strong> — it is 100% creditable toward your final product order (deducted from your 30% balance payment).</p>
+          <p>Once paid, we deliver your <strong>First Concept Package</strong> within 5–7 business days, including a 2D soft furnishing layout and 3D rendering for one key space.</p>
         </div>
       </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      </div>
-    </div>
 
-
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/step_design_natural.webp" alt="Interior designer working on 3D renderings">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 03</div>
-          <h2 class="step-title">Design Development & Cross-Category Curation</h2>
-          <p class="step-desc">With an initial commitment deposit—100% deductible against your final production order—we deliver your First Concept Package: space planning, material palette matching, and photorealistic 3D renderings within 5–7 business days.</p>
-          <div class="two-paths">
-            <div class="path-card">
-              <span class="path-label">Full Service</span>
-              <h4>Design & Procurement</h4>
-              <p>Photorealistic 3D renderings, VR walkthroughs, and construction drawings — followed by curated product selections.</p>
-            </div>
-            <div class="path-card">
-              <span class="path-label">Procurement</span>
-              <h4>You Have Designs</h4>
-              <p>We work from your existing drawings to source and specify furniture, materials, and finishes.</p>
-            </div>
-          </div>
-          <div class="note-box" style="margin-top:16px;">
-            <strong>Visit option:</strong> Experience our factories and showrooms in person — we handle the entire itinerary. Or collaborate fully remotely.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What's the difference between the commitment deposit and design fee?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>They are two completely separate charges:</p>
+          <ul>
+            <li><strong>Commitment Deposit</strong> — Starts your project and covers the First Concept Package (1 space 2D + 3D). It is 100% deductible from your final product order.</li>
+            <li><strong>Design Fee</strong> — For a full interior design service (all spaces, complete drawings, VR tour, construction docs). Paid 100% upfront before the full design process begins.</li>
+          </ul>
+          <p>You only pay the design fee if you need CASA TRIO to handle the full interior design. If you already have design plans, you can proceed with sourcing only.</p>
         </div>
       </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-      </div>
-    </div>
 
-
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/custom_factory_production_05.webp" alt="Factory production and manufacturing">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 04</div>
-          <h2 class="step-title">Production Supervision & Quality Management</h2>
-          <p class="step-desc">Once production starts across vetted specialized facilities, your dedicated project manager oversees every milestone—enforcing strict raw material standards, craftsmanship checks, and weekly progress updates.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
-            <div style="padding:20px;background:#FAF8F3;border:1px solid #D8CFBF;border-radius:6px;">
-              <h4 style="margin:0 0 8px;font-size:14px;color:#22201C;font-family:Lora,serif;">End-to-End Design</h4>
-              <p style="margin:0;font-size:12px;color:#6E675C;line-height:1.7;">Photorealistic 3D renderings, VR walkthroughs, millwork shop drawings, and full material specifications.</p>
-            </div>
-            <div style="padding:20px;background:#FAF8F3;border:1px solid #D8CFBF;border-radius:6px;">
-              <h4 style="margin:0 0 8px;font-size:14px;color:#22201C;font-family:Lora,serif;">Working with Your Designer</h4>
-              <p style="margin:0;font-size:12px;color:#6E675C;line-height:1.7;">We take your existing architectural drawings to source, engineer, and customize every single element.</p>
-            </div>
-          </div>
-          <div class="note-box" style="margin-top:16px;padding:16px 20px;background:#F7F3EC;border-left:3px solid #A98E6B;border-radius:4px;">
-            <p style="margin:0;font-size:13px;color:#6E675C;line-height:1.7;"><strong>VIP Inspection Option:</strong> Visit our Foshan headquarters and private showrooms in person (we manage your full itinerary), or collaborate 100% remotely.</p>
-          </div>
-          <div class="step-tags">
-            <span class="tag">Final Quotation</span>
-            <span class="tag">Production Deposit</span>
-            <span class="tag">Progress Tracking</span>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you offer interior design services?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We offer two design packages:</p>
+          <ul>
+            <li><strong>Standard Design</strong> — USD 40/sqm (minimum USD 3,000). Complete residential design including space planning, 3D renderings, material specifications and furniture layout.</li>
+            <li><strong>Premium Design</strong> — USD 70/sqm (minimum USD 5,000). For larger residences, high-end materials and complex spaces. Includes VR walkthroughs, detailed millwork shop drawings and priority service.</li>
+          </ul>
+          <p>Both packages include 3 free revision rounds. The design fee is paid in full before we begin the full design process.</p>
+          <p>As an additional benefit, up to 30% of your design fee can be credited back toward your furniture order when you reach procurement thresholds (10% at RMB 100,000, 30% at RMB 300,000).</p>
         </div>
       </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20V8l5 3V8l5 3V6l6 4v10"/></svg>
-      </div>
-    </div>
 
-
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/custom_factory_assembly_01.webp" alt="Pre-shipment assembly and quality check">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 05</div>
-          <h2 class="step-title">100% Factory Pre-Assembly & Rigorous QC Sign-Off</h2>
-          <p class="step-desc">To guarantee zero dimensions or joining errors overseas, all custom pieces are 100% dry-fitted and pre-assembled in our workshop before packing. We send HD video inspections for your review—you only pay the balance upon your full approval.</p>
-          <div class="step-tags">
-            <span class="tag">100% Factory Dry-Fit</span>
-            <span class="tag">HD Inspection Video</span>
-            <span class="tag">Multi-Light Color Check</span>
-            <span class="tag">Approval Before Payment</span>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How is CASA TRIO different from a regular sourcing agent?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>For private residential clients, we don't simply search through thousands of factories across China. Instead, we work primarily within a <strong>carefully selected supply chain</strong> of 30–40 partner factories that our team has personally visited and evaluated.</p>
+          <p>We focus on the right choices rather than endless choices. Our role is to help you find the right products from the right suppliers, while reducing the risks behind the purchase — quality, materials, workmanship, production lead time, quality control, packaging and delivery.</p>
+          <p>For B2B clients, we do offer nationwide sourcing across China under a procurement agency fee structure.</p>
         </div>
       </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-      </div>
-    </div>
 
-
-    <div class="step">
-      <div class="step-content">
-        <div class="step-image">
-          <img loading="lazy" src="images/step_delivery_new.webp" alt="Global delivery and packaging">
-        </div>
-        <div class="step-body">
-          <div class="step-number">STEP 06</div>
-          <h2 class="step-title">Global Freight & Live Remote Technical Support</h2>
-          <p class="step-desc">Your order is encased in reinforced export-grade wooden crates and dispatched door-to-door. To ensure compliance with local building codes, we provide comprehensive technical manuals and Live Video Guidance from master technicians to assist your local installation crew.</p>
-          <div class="step-tags">
-            <span class="tag">Reinforced Crating</span>
-            <span class="tag">Door-to-Door Logistics</span>
-            <span class="tag">Numbered Install Manuals</span>
-            <span class="tag">Live Video Tech Support</span>
-          </div>
-          <div class="step-tags">
-            <span class="tag">Single Point Contact</span>
-            <span class="tag">Weekly Video Updates</span>
-            <span class="tag">Milestone Tracking</span>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How long does production take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Production timelines vary depending on the product type and complexity:</p>
+          <ul>
+            <li><strong>Standard furniture</strong> (sofas, dining tables, beds): 25–35 days</li>
+            <li><strong>Custom cabinetry / built-in</strong> (kitchens, wardrobes): 35–50 days</li>
+            <li><strong>Upholstered items</strong> (custom fabric/leather): 30–40 days</li>
+            <li><strong>Lighting & decor</strong>: 15–25 days</li>
+          </ul>
+          <p>For a full-home project, we typically coordinate production so all items are ready around the same time, usually within 45–60 days from order confirmation. We'll provide a detailed production schedule after your order is confirmed.</p>
         </div>
       </div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What payment methods do you accept?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We accept the following payment methods:</p>
+          <ul>
+            <li><strong>Bank Transfer (T/T)</strong> — Preferred for larger orders. 70% production payment before manufacturing, 30% balance payment after QC approval and before shipping.</li>
+            <li><strong>PayPal</strong> — Accepted for deposits and smaller orders. (Please note: PayPal fees may apply.)</li>
+            <li><strong>Western Union</strong> — Available for certain transactions.</li>
+          </ul>
+          <p>All payments are made to our official company account. We will provide a formal invoice / proforma invoice before each payment.</p>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What if there's damage during shipping?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We take packaging very seriously to minimize transit damage:</p>
+          <ul>
+            <li>All items are professionally packed with foam, corner protectors and custom wooden crates for fragile items.</li>
+            <li>We conduct a full quality inspection before packing, and document everything with photos.</li>
+            <li>We recommend purchasing shipping insurance, which we can arrange on your behalf.</li>
+          </ul>
+          <p><strong>If damage does occur:</strong></p>
+          <ol>
+            <li>Document the damage with photos and videos immediately upon receipt.</li>
+            <li>Notify us within 7 days of delivery.</li>
+            <li>We will assess the damage and provide a solution — which may include replacement parts, repair guidance, or a credit toward your next order.</li>
+          </ol>
+          <p>For insured shipments, we will assist with the insurance claim process.</p>
+        </div>
+      </div>
 
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is your quality control process?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We conduct quality control at multiple stages:</p>
+          <ol>
+            <li><strong>Material check</strong> — Before production, we verify materials, fabrics, finishes and dimensions match your specifications.</li>
+            <li><strong>Production follow-up</strong> — Our team visits factories during production to monitor progress and quality.</li>
+            <li><strong>Pre-shipment inspection</strong> — Before packing, we conduct a full inspection of every item: dimensions, materials, workmanship, finishes, functionality and packaging.</li>
+            <li><strong>Packing check</strong> — We verify proper packing materials and methods before items leave the factory.</li>
+          </ol>
+          <p>All QC results are documented with photos and shared with you before the balance payment is due. You are also welcome to arrange a third-party inspection or visit the factory yourself.</p>
+        </div>
+      </div>
 
-<section class="faq-section" style="padding:80px 6%;background:#FAF8F3;">
-  <div class="section-header" style="text-align:center;margin-bottom:50px;">
-    <div class="eyebrow" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#A98E6B;font-weight:600;margin-bottom:12px;">Support & Assurance</div>
-    <h2 style="font-size:36px;font-weight:400;color:#22201C;font-family:Lora,serif;margin:0;">Frequently Asked Questions</h2>
-  </div>
-  <div class="faq-container" style="max-width:800px;margin:0 auto;">
-    <div class="faq-item" style="margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #D8CFBF;">
-      <h3 style="font-size:18px;font-weight:500;color:#22201C;font-family:Lora,serif;margin:0 0 16px;">How do you ensure my local contractors install everything correctly without your team on-site?</h3>
-      <p style="font-size:14px;color:#6E675C;line-height:1.9;margin:0;">Overseas luxury residences require compliance with local electrical, structural, and union codes. We bridge the gap through our 3-tier installation support: (1) 100% factory pre-assembly in China to guarantee dimension precision, (2) fully labeled parts with detailed exploded diagrams, and (3) real-time video guidance from our master technicians during your local team's installation phase.</p>
-    </div>
-    <div class="faq-item" style="margin-bottom:0;">
-      <h3 style="font-size:18px;font-weight:500;color:#22201C;font-family:Lora,serif;margin:0 0 16px;">What guarantees do I have regarding product quality and shipping safety?</h3>
-      <p style="font-size:14px;color:#6E675C;line-height:1.9;margin:0;">You receive full HD video and photo documentation during Step 05 pre-assembly, and final balance payment is released only after your approval. All shipments are protected by export-grade fumigated wooden crates, anti-moisture vacuum wrapping, and comprehensive marine insurance.</p>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I order just a few pieces instead of a full home?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, absolutely. While we specialize in complete-home projects, we also handle partial orders and individual pieces.</p>
+          <p>For small orders (5 items or fewer), we typically don't require a commitment deposit — we can provide a direct quotation. For larger or more customized orders, the deposit process applies.</p>
+          <p>Whether you need one statement piece or an entire home furnished, we're happy to help.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you work with B2B clients?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We work with interior designers, contractors, developers, hotels, restaurants and professional buyers.</p>
+          <p>For B2B projects, we offer <strong>nationwide sourcing</strong> across China — not limited to our existing partner network. We can search for suitable manufacturers based on your specifications, target pricing, quantities and procurement requirements.</p>
+          <p>B2B projects are handled under a <strong>procurement agency fee</strong> structure. Visit our <a href="b2b.html">B2B Sourcing page</a> or <a href="rfq.html">submit an RFQ</a> to get started.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I visit your factory or showroom?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. We welcome clients to visit Foshan and see our partner factories and showrooms in person.</p>
+          <p>We offer a <strong>China Sourcing Visit</strong> service: we don't simply take you around furniture markets — we first understand your project requirements and then arrange visits to selected showrooms and factories that match your needs.</p>
+          <p>For clients who have paid the commitment deposit, the first day is complimentary. From the second day onwards, the service is USD 150/day, including factory appointments, local transportation, interpretation and product selection assistance.</p>
+          <p>If you proceed with furniture procurement through CASA TRIO, 50% of the total visit service fee can be credited toward your final product payment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Is the commitment deposit refundable?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The commitment deposit is refundable <strong>only if we have not started any design work or allocated resources</strong> to your project.</p>
+          <p>Once the First Concept Package has been delivered or design resources have been allocated, the deposit is non-refundable. However, it is always <strong>100% creditable</strong> toward your final product order — deducted from your 30% balance payment.</p>
+          <p>This policy ensures we can dedicate real time and resources to each project, while protecting your investment by applying the full amount toward your furniture purchase.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <div class="cta-content">
-    <h2>Ready to Begin Your Project?</h2>
-    <p>Let's discuss your vision and explore how CASA TRIO can bring it to life.</p>
-    <a href="https://wa.me/8615017434683" class="cta-btn" target="_blank">Start a Conversation</a>
+  <div class="container">
+    <div class="cta-content">
+      <h2>Still Have Questions?</h2>
+      <p>We're here to help. Reach out directly and we'll get back to you within 24 hours.</p>
+      <div class="cta-buttons">
+        <a class="btn gold" href="https://wa.me/8615017434683" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn outline" href="contact.html">Send an Email</a>
+      </div>
+    </div>
   </div>
 </section>
-
-<script>
-// Scroll reveal animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.step').forEach(step => {
-  observer.observe(step);
-});
-</script>
 
 <footer>
   <div class="container">
@@ -1143,7 +1164,6 @@ document.querySelectorAll('.step').forEach(step => {
       <a href="b2b.html">B2B Sourcing</a>
           <a href="rfq.html" style="color:var(--gold);font-weight:600">Submit RFQ →</a>
         <a href="intent-deposit.html">Commitment Deposit</a>
-        <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
       </div>
       <div class="foot-col foot-cta">
@@ -1295,6 +1315,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isActive = item.classList.contains('active');
+  // 关闭所有
+  document.querySelectorAll('.faq-item').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  // 打开当前（如果之前不是打开状态）
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
 </script>
 </body>
 </html>
