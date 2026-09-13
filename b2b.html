@@ -641,14 +641,26 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
     </div>
     
     <!-- 资料下载入口 -->
-    <div class="download-section" style="max-width:700px;margin:0 auto;padding:32px;background:linear-gradient(135deg,var(--gold) 0%,#8e7658 100%);border-radius:8px;text-align:center;">
-      <h3 style="font:400 22px var(--serif);color:#fff;margin:0 0 8px;">Download B2B Sourcing Guidebook</h3>
-      <p style="font-size:14px;color:rgba(255,255,255,.9);margin:0 0 20px;line-height:1.6;">Get our complete Supplier Checklist & Factory Evaluation Guide. Learn how we vet factories, negotiate prices, and ensure quality.</p>
-      <form onsubmit="downloadGuidebook(event); return false;" style="display:flex;gap:12px;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
-        <input type="email" id="guidebookEmail" required placeholder="Your business email" style="flex:1;min-width:200px;padding:12px 16px;border:none;border-radius:4px;font-size:14px;background:rgba(255,255,255,.95);color:var(--charcoal);">
-        <button type="submit" style="padding:12px 24px;background:var(--charcoal);color:#fff;border:none;border-radius:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .25s;" onmouseover="this.style.background='#1a1815'" onmouseout="this.style.background='var(--charcoal)'">Download Free</button>
+    <div class="download-section" style="max-width:700px;margin:0 auto;padding:36px 32px;background:linear-gradient(135deg,var(--gold) 0%,#8e7658 100%);border-radius:8px;text-align:center;">
+      <h3 style="font:400 24px var(--serif);color:#fff;margin:0 0 8px;">Download B2B Sourcing Guide</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,.92);margin:0 0 24px;line-height:1.6;">14-page guide covering our nationwide sourcing process, quality control, pricing model, factory network and project experience.</p>
+      
+      <!-- 邮箱表单 -->
+      <form id="guidebookForm" action="https://usebasin.com/f/3c44e279efe0" method="POST" style="display:flex;gap:12px;max-width:520px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+        <input type="hidden" name="_subject" value="B2B Sourcing Guide Download Request">
+        <input type="hidden" name="source" value="B2B Page - Guidebook Download">
+        <input type="email" id="guidebookEmail" name="email" required placeholder="Your business email" style="flex:1;min-width:220px;padding:13px 18px;border:none;border-radius:4px;font-size:14px;background:rgba(255,255,255,.95);color:var(--charcoal);">
+        <button type="submit" id="guidebookBtn" style="padding:13px 28px;background:var(--charcoal);color:#fff;border:none;border-radius:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .25s;white-space:nowrap;">Download Free</button>
       </form>
-      <p style="font-size:11px;color:rgba(255,255,255,.7);margin:12px 0 0;">We respect your privacy. No spam, ever.</p>
+      
+      <!-- 下载成功区域（默认隐藏） -->
+      <div id="guidebookSuccess" style="display:none;margin-top:20px;padding:24px;background:rgba(255,255,255,.15);border-radius:6px;">
+        <p style="font-size:16px;color:#fff;margin:0 0 6px;font-weight:600;">Thank you! Your download is ready.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.85);margin:0 0 16px;">We've also sent a copy to your email for future reference.</p>
+        <a href="/downloads/CASA_TRIO_B2B_Sourcing_Guide.pdf" download style="display:inline-block;padding:12px 28px;background:#fff;color:var(--charcoal);border:none;border-radius:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s;" onmouseover="this.style.background='rgba(255,255,255,.9)'" onmouseout="this.style.background='#fff'">Download PDF (5.3MB)</a>
+      </div>
+      
+      <p style="font-size:11px;color:rgba(255,255,255,.7);margin:14px 0 0;">We respect your privacy. No spam, ever.</p>
     </div>
   </div>
 </section>
@@ -688,10 +700,50 @@ function calculateCommission() {
 
 function downloadGuidebook(event) {
   event.preventDefault();
-  const email = document.getElementById('guidebookEmail').value;
-  alert('Thank you! Our B2B Sourcing Guidebook & Supplier Checklist will be sent to ' + email + ' within 24 hours.');
-  document.getElementById('guidebookEmail').value = '';
+  var form = document.getElementById('guidebookForm');
+  var btn = document.getElementById('guidebookBtn');
+  var origText = btn.textContent;
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {'Accept': 'application/json'}
+  }).then(function(res){
+    return res.json().then(function(data){
+      if(res.ok && (data.success === true || data.success === 'true')){
+        // 提交成功：隐藏表单，显示下载按钮
+        form.style.display = 'none';
+        document.getElementById('guidebookSuccess').style.display = 'block';
+        // Google Analytics 追踪
+        if(typeof gtag === 'function'){
+          gtag('event', 'guidebook_download', {
+            'event_category': 'B2B',
+            'event_label': 'B2B Sourcing Guide Download'
+          });
+        }
+      } else {
+        btn.textContent = origText;
+        btn.disabled = false;
+        alert('Submission failed. Please try again or message us on WhatsApp.');
+      }
+    });
+  }).catch(function(){
+    btn.textContent = origText;
+    btn.disabled = false;
+    alert('Network error. Please check your connection or message us on WhatsApp.');
+  });
 }
+
+// 绑定表单提交
+document.addEventListener('DOMContentLoaded', function(){
+  var form = document.getElementById('guidebookForm');
+  if(form){
+    form.addEventListener('submit', downloadGuidebook);
+  }
+});
 </script>
 
 <section class="faq-section" id="faq">
