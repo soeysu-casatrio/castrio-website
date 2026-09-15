@@ -305,6 +305,41 @@ body {
   border-color: var(--gold-light);
 }
 
+/* Dual payment buttons */
+.pay-btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+.pay-btn-row .pay-btn {
+  margin-top: 0;
+  flex: 1;
+  padding: 12px 8px;
+  font-size: 10px;
+}
+.paypal-btn {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: #fff !important;
+}
+.paypal-btn:hover {
+  background: var(--gold-light) !important;
+  border-color: var(--gold-light) !important;
+}
+.outline-btn {
+  background: transparent !important;
+  border: 1px solid var(--line) !important;
+  color: var(--muted) !important;
+}
+.outline-btn:hover {
+  background: var(--soft) !important;
+  border-color: var(--muted) !important;
+  color: var(--ink) !important;
+}
+@media (max-width: 600px) {
+  .pay-btn-row { flex-direction: column; }
+}
+
 /* Note */
 .deposit-note {
   text-align: center;
@@ -1151,7 +1186,10 @@ footer {
           <div class="amount">500 <span>USD</span></div>
         </div>
         <p class="desc">Perfect for apartments and small homes. Includes First Concept Package — 1× 2D soft furnishing plan + 1× 3D rendering of a main space, with space planning and styling direction.</p>
-        <a href="#" class="pay-btn" onclick="openModal('Under 150m²', '300', '500'); return false;">Pay Deposit</a>
+        <div class="pay-btn-row">
+          <a href="https://www.paypal.com/ncp/payment/GGXZZX77EG89G" target="_blank" rel="noopener" class="pay-btn paypal-btn">Pay $300 via PayPal</a>
+          <a href="#" class="pay-btn outline-btn" onclick="openModal('Under 150m²', '300', '500'); return false;">Pay $500 / Other Tier</a>
+        </div>
       </div>
 
 
