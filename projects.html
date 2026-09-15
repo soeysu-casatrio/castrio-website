@@ -185,6 +185,19 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   .cta-strip{padding:64px 0}
 }
 
+/* Inspiration Grid */
+.inspiration-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.insp-card{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;border-radius:4px;background:var(--offwhite)}
+.insp-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.insp-card:hover img{transform:scale(1.05)}
+.insp-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);opacity:0;transition:opacity .3s}
+.insp-card:hover .insp-overlay{opacity:1}
+.insp-cat{display:block;font-size:10px;letter-spacing:.12em;color:var(--gold-light);margin-bottom:4px}
+.insp-overlay h4{font-family:var(--font-serif);font-size:18px;color:#fff;line-height:1.3}
+.insp-card.hidden{display:none}
+@media(max-width:900px){.inspiration-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(max-width:640px){.inspiration-grid{grid-template-columns:1fr;gap:16px}.still-row{grid-template-columns:1fr 1fr 1fr;gap:8px}}
+
 /* Mobile menu scrollable */
 @media(max-width:900px){
   .links{
@@ -263,231 +276,138 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 </section>
 
 
+
+<!-- Built Project Gallery -->
 <section>
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">Completed · Real Photography</div>
-        <h2 class="display">Built &amp;<br>Delivered.</h2>
+        <div class="eyebrow">Built Project Gallery</div>
+        <h2 class="display">Real Projects.<br>Real Results.</h2>
       </div>
-      <p class="lead">Real residences we've sourced, customized and delivered. These are not 3D renderings — every image is photographed on site after installation, showcasing our custom joinery, material selection and quality control in actual homes.</p>
+      <p class="lead">Watch how our completed projects come to life. Every video is shot on site after installation &mdash; not 3D renderings.</p>
     </div>
 
-    <div class="magazine-grid">
-      <!-- Completed Project 1: Large -->
-      <article class="project-card large reveal" onclick="openGallery(6)">
-        <img loading="lazy" src="images/completed_foshan_living_01.webp" alt="Foshan High-Rise Penthouse — Modern Minimalist">
-        <div class="project-overlay">
-          <div class="project-number">01 / PENTHOUSE · COMPLETED</div>
-          <h3 class="project-title">Foshan High-Rise Penthouse</h3>
-          <div class="project-meta">
-            <span>280㎡</span>
-            <span>Modern Minimalist</span>
-            <span>2026</span>
-          </div>
-          <p class="project-desc">A full custom joinery project featuring micro-cement walls, wood veneer paneling, stone feature walls, herringbone flooring and floor-to-ceiling windows with river and city views. CASA TRIO scope: custom joinery design &amp; production, material sourcing, and quality control.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </article>
+    <div class="reveal" style="margin-bottom:28px;border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+      <video controls preload="metadata" poster="images/completed_foshan_living_01.webp" style="width:100%;display:block;max-height:600px;object-fit:cover">
+        <source src="images/penthouse_walkthrough.mp4" type="video/mp4">
+      </video>
+    </div>
 
-      <!-- Completed Project 2: Small -->
-      <article class="project-card small reveal" onclick="openGallery(6)">
-        <img loading="lazy" src="images/completed_foshan_closet_01.webp" alt="Walk-in Closet — Custom Joinery">
-        <div class="project-overlay">
-          <div class="project-number">02 / WALK-IN CLOSET</div>
-          <h3 class="project-title">Custom Walk-in Closet</h3>
-          <div class="project-meta">
-            <span>Micro-cement + Glass</span>
-            <span>Custom Joinery</span>
-          </div>
-          <p class="project-desc">Floor-to-ceiling custom cabinetry with micro-cement doors, smoked glass panels and integrated lighting.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </article>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+      <div>
+        <h3 style="font-family:var(--font-serif);font-size:22px;margin-bottom:4px">Foshan High-Rise Penthouse</h3>
+        <p style="color:var(--muted);font-size:14px">280&sup2;m &middot; Modern Minimalist &middot; Completed 2026</p>
+      </div>
+      <a href="javascript:void(0)" onclick="openGallery(6)" style="color:var(--gold);text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap">View Full Gallery &rarr;</a>
+    </div>
 
-      <!-- Completed Project 3: Wide -->
-      <article class="project-card wide reveal" onclick="openGallery(6)">
-        <img loading="lazy" src="images/completed_foshan_study_01.webp" alt="Study Room — Full Wall Bookshelf">
-        <div class="project-overlay">
-          <div class="project-number">03 / STUDY</div>
-          <h3 class="project-title">Full-Wall Study &amp; Desk</h3>
-          <div class="project-meta">
-            <span>Black Oak Veneer</span>
-            <span>Custom Joinery</span>
-          </div>
-          <p class="project-desc">A full-wall bookshelf with floating desk in black oak veneer, designed around the panoramic window view.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </article>
-
-      <!-- Lvdaohu Villa -->
-      <article class="project-card large reveal" onclick="openGallery(9)">
-        <img loading="lazy" src="images/villa_lvdaohu_01.jpg" alt="Lvdaohu Villa — Modern Oriental">
-        <div class="project-overlay">
-          <div class="project-number">04 / VILLA · NEAR COMPLETION</div>
-          <h3 class="project-title">Lvdaohu Villa</h3>
-          <div class="project-meta">
-            <span>Modern Oriental</span>
-            <span>Custom Joinery & FF&E</span>
-          </div>
-          <p class="project-desc">A five-story private villa near completion, featuring warm wood joinery, natural stone, courtyard gardens and a sculptural stair. Design in collaboration with MuMa Studio.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </article>
-
-      <!-- 145㎡ Apartment -->
-      <article class="project-card large reveal" onclick="openGallery(10)">
-        <img loading="lazy" src="images/apt145_living_01.jpg" alt="145㎡ Apartment — Modern Urban">
-        <div class="project-overlay">
-          <div class="project-number">05 / APARTMENT · COMPLETED</div>
-          <h3 class="project-title">145㎡ Urban Apartment</h3>
-          <div class="project-meta">
-            <span>145㎡ · 4 Bedrooms</span>
-            <span>Modern Urban</span>
-          </div>
-          <p class="project-desc">A completed four-bedroom apartment featuring dark wood joinery, grey marble floors, a full-wall TV system, home office and panoramic city views. CASA TRIO scope: custom joinery, furniture and FF&E.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </article>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="still-row">
+      <img loading="lazy" src="images/completed_foshan_living_01.webp" alt="Living Room" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;cursor:pointer" onclick="openGallery(6)">
+      <img loading="lazy" src="images/completed_foshan_closet_01.webp" alt="Walk-in Closet" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;cursor:pointer" onclick="openGallery(6)">
+      <img loading="lazy" src="images/completed_foshan_study_01.webp" alt="Study Room" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;cursor:pointer" onclick="openGallery(6)">
     </div>
   </div>
 </section>
 
+<!-- Design Inspiration -->
 <section style="background:var(--offwhite)">
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">Design Concepts · 3D Renderings</div>
+        <div class="eyebrow">Design Inspiration</div>
         <h2 class="display">Spaces, Not<br>Just Products.</h2>
       </div>
-      <p class="lead">Design directions and 3D concept renderings from our collaboration with design partners. These showcase the style and material direction we can bring to your project before production begins.</p>
+      <p class="lead">Design directions and material inspiration from our projects and partner studios. Filter by style or space type.</p>
     </div>
 
-    <div class="magazine-grid">
-      <!-- Project 1: Large -->
-      <article class="project-card large reveal" onclick="openGallery(0)">
-        <img loading="lazy" src="images/Yz2NwIqDuH.webp" alt="Modern Dark Luxury Villa">
-        <div class="project-overlay">
-          <div class="project-number">01 / VILLA</div>
-          <h3 class="project-title">Modern Dark Luxury Villa</h3>
-          <div class="project-meta">
-            <span>480㎡</span>
-            <span>Dark Luxury</span>
-            <span>2025</span>
-          </div>
-          <p class="project-desc">A full-home interior direction featuring custom wall paneling, statement lighting, and a curated material palette of dark stone, brushed brass, and rich walnut.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    <div class="style-tags reveal" style="margin-bottom:40px">
+      <span class="style-tag active" data-filter="all">All</span>
+      <span class="style-tag" data-filter="villa">Villa</span>
+      <span class="style-tag" data-filter="apartment">Apartment</span>
+      <span class="style-tag" data-filter="living">Living</span>
+      <span class="style-tag" data-filter="dining">Dining</span>
+      <span class="style-tag" data-filter="bedroom">Bedroom</span>
+      <span class="style-tag" data-filter="bathroom">Bathroom</span>
+      <span class="style-tag" data-filter="luxury">Luxury</span>
+      <span class="style-tag" data-filter="minimal">Minimal</span>
+    </div>
+
+    <div class="inspiration-grid" id="inspirationGrid">
+      <article class="insp-card reveal" data-tags="luxury living" onclick="openGallery(0)">
+        <img loading="lazy" src="images/Yz2NwIqDuH.webp" alt="Dark Luxury Living">
+        <div class="insp-overlay">
+          <span class="insp-cat">VILLA &middot; LUXURY</span>
+          <h4>Dark Luxury Living</h4>
         </div>
       </article>
-
-      <!-- Project 2: Small -->
-      <article class="project-card small reveal" onclick="openGallery(1)">
+      <article class="insp-card reveal" data-tags="luxury apartment" onclick="openGallery(1)">
         <img loading="lazy" src="images/f2mKR2hWE8.webp" alt="Contemporary Dark Apartment">
-        <div class="project-overlay">
-          <div class="project-number">02 / APARTMENT</div>
-          <h3 class="project-title">Contemporary Dark Apartment</h3>
-          <div class="project-meta">
-            <span>180㎡</span>
-            <span>Dark Luxury</span>
-          </div>
-          <p class="project-desc">Material palette and lighting direction for a high-rise apartment with panoramic city views.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="insp-overlay">
+          <span class="insp-cat">APARTMENT &middot; DARK LUXURY</span>
+          <h4>Contemporary Dark Apartment</h4>
         </div>
       </article>
-
-      <!-- Project 3: Small -->
-      <article class="project-card small reveal" onclick="openGallery(2)">
-        <img loading="lazy" src="images/ppHsruvUWV.webp" alt="Interior Design Direction">
-        <div class="project-overlay">
-          <div class="project-number">03 / VILLA</div>
-          <h3 class="project-title">Light Tone Interior Direction</h3>
-          <div class="project-meta">
-            <span>350㎡</span>
-            <span>Modern Minimal</span>
-          </div>
-          <p class="project-desc">Stone and wood composition with custom joinery for a bright, airy family villa.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <article class="insp-card reveal" data-tags="minimal apartment" onclick="openGallery(2)">
+        <img loading="lazy" src="images/ppHsruvUWV.webp" alt="Light Tone Interior">
+        <div class="insp-overlay">
+          <span class="insp-cat">INTERIOR &middot; LIGHT TONE</span>
+          <h4>Light Tone Interior</h4>
         </div>
       </article>
-
-      <!-- Project 4: Large -->
-      <article class="project-card large reveal" onclick="openGallery(3)">
-        <img loading="lazy" src="images/case_pan_living_01.webp" alt="French Luxury Villa Pan Residence">
-        <div class="project-overlay">
-          <div class="project-number">04 / VILLA</div>
-          <h3 class="project-title">French Luxury Villa — Pan Residence</h3>
-          <div class="project-meta">
-            <span>620㎡</span>
-            <span>French Elegance</span>
-            <span>2025</span>
-          </div>
-          <p class="project-desc">A full-home direction featuring French plaster moldings, custom wall paneling, arched doorways, and a refined palette of cream, gold, and soft gray.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <article class="insp-card reveal" data-tags="luxury villa" onclick="openGallery(3)">
+        <img loading="lazy" src="images/case_pan_living_01.webp" alt="French Luxury Villa">
+        <div class="insp-overlay">
+          <span class="insp-cat">VILLA &middot; FRENCH</span>
+          <h4>French Luxury Villa</h4>
         </div>
       </article>
-
-      <!-- Project 5: Medium -->
-      <article class="project-card medium reveal" onclick="openGallery(4)">
+      <article class="insp-card reveal" data-tags="luxury apartment" onclick="openGallery(4)">
         <img loading="lazy" src="images/case_french_living_01.webp" alt="French Elegance Apartment">
-        <div class="project-overlay">
-          <div class="project-number">05 / APARTMENT</div>
-          <h3 class="project-title">French Elegance Apartment</h3>
-          <div class="project-meta">
-            <span>220㎡</span>
-            <span>French Elegance</span>
-          </div>
-          <p class="project-desc">Arched doorways, leather sofa, and custom cabinetry for a Haussmann-style apartment.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="insp-overlay">
+          <span class="insp-cat">APARTMENT &middot; FRENCH</span>
+          <h4>French Elegance Apartment</h4>
         </div>
       </article>
-
-      <!-- Project 6: Medium -->
-      <article class="project-card medium reveal" onclick="openGallery(5)">
+      <article class="insp-card reveal" data-tags="dining luxury" onclick="openGallery(5)">
         <img loading="lazy" src="images/case_club_02.webp" alt="Luxury Club & Lounge">
-        <div class="project-overlay">
-          <div class="project-number">06 / COMMERCIAL</div>
-          <h3 class="project-title">Luxury Club & Lounge</h3>
-          <div class="project-meta">
-            <span>850㎡</span>
-            <span>French Elegance</span>
-          </div>
-          <p class="project-desc">French ironwork, art deco lighting, and outdoor terrace for a private members clubhouse.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="insp-overlay">
+          <span class="insp-cat">COMMERCIAL &middot; LOUNGE</span>
+          <h4>Luxury Club &amp; Lounge</h4>
         </div>
       </article>
-
-      <!-- Bathroom Material Direction -->
-      <article class="project-card medium reveal" onclick="openGallery(7)">
-        <img loading="lazy" src="images/bathroom_direction_03.jpg" alt="Bathroom Material Direction — Natural Wood & Rattan">
-        <div class="project-overlay">
-          <div class="project-number">07 / BATHROOM</div>
-          <h3 class="project-title">Bathroom Material Direction</h3>
-          <div class="project-meta">
-            <span>Wood + Rattan + Stone</span>
-            <span>Material Inspiration</span>
-          </div>
-          <p class="project-desc">Warm oak veneer, natural rattan and matte stone surfaces — a bathroom direction combining tactile materials with clean, minimalist lines.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <article class="insp-card reveal" data-tags="villa" onclick="openGallery(9)">
+        <img loading="lazy" src="images/villa_lvdaohu_01.jpg" alt="Lvdaohu Villa">
+        <div class="insp-overlay">
+          <span class="insp-cat">VILLA &middot; MODERN ORIENTAL</span>
+          <h4>Lvdaohu Villa</h4>
         </div>
       </article>
-
-      <!-- Living & Dining Material Direction -->
-      <article class="project-card large reveal" onclick="openGallery(8)">
-        <img loading="lazy" src="images/living_direction_01.jpg" alt="Modern Living & Dining — Sea View">
-        <div class="project-overlay">
-          <div class="project-number">08 / LIVING & DINING</div>
-          <h3 class="project-title">Modern Living &amp; Dining Direction</h3>
-          <div class="project-meta">
-            <span>Warm Minimalist</span>
-            <span>Material Inspiration</span>
-          </div>
-          <p class="project-desc">A warm, minimalist open-plan living and dining direction with sculptural furniture, stone feature walls and floor-to-ceiling sea views.</p>
-          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      <article class="insp-card reveal" data-tags="apartment minimal" onclick="openGallery(10)">
+        <img loading="lazy" src="images/apt145_living_01.jpg" alt="145sqm Urban Apartment">
+        <div class="insp-overlay">
+          <span class="insp-cat">APARTMENT &middot; MODERN URBAN</span>
+          <h4>145sqm Urban Apartment</h4>
+        </div>
+      </article>
+      <article class="insp-card reveal" data-tags="bathroom" onclick="openGallery(7)">
+        <img loading="lazy" src="images/bathroom_direction_03.jpg" alt="Bathroom Material Direction">
+        <div class="insp-overlay">
+          <span class="insp-cat">BATHROOM &middot; MATERIAL</span>
+          <h4>Bathroom Direction</h4>
+        </div>
+      </article>
+      <article class="insp-card reveal" data-tags="living dining" onclick="openGallery(8)">
+        <img loading="lazy" src="images/living_direction_01.jpg" alt="Living & Dining Direction">
+        <div class="insp-overlay">
+          <span class="insp-cat">LIVING &amp; DINING &middot; MATERIAL</span>
+          <h4>Living &amp; Dining Direction</h4>
         </div>
       </article>
     </div>
   </div>
 </section>
+
 
 <section class="cta-strip">
   <div class="container">
@@ -624,6 +544,23 @@ var galleryData = [
   { title: '145㎡ Urban Apartment — Completed', designer: 'CASA TRIO Custom Joinery & FF&E', images: ['images/apt145_living_01.jpg','images/apt145_dining_01.jpg','images/apt145_tvwall_01.jpg','images/apt145_study_01.jpg','images/apt145_master_01.jpg','images/apt145_bedroom2_01.jpg'] }
 ];
 var currentGallery = 0, currentIndex = 0;
+
+// Filter tags
+document.querySelectorAll('.style-tag').forEach(function(tag){
+  tag.addEventListener('click', function(){
+    document.querySelectorAll('.style-tag').forEach(function(t){t.classList.remove('active')});
+    this.classList.add('active');
+    var filter = this.getAttribute('data-filter');
+    document.querySelectorAll('.insp-card').forEach(function(card){
+      if(filter === 'all' || card.getAttribute('data-tags').indexOf(filter) > -1){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
 function openGallery(idx) {
   currentGallery = idx; currentIndex = 0;
   var g = galleryData[idx];
