@@ -334,6 +334,21 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
           <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </article>
+
+      <!-- 145㎡ Apartment -->
+      <article class="project-card large reveal" onclick="openGallery(10)">
+        <img loading="lazy" src="images/apt145_living_01.jpg" alt="145㎡ Apartment — Modern Urban">
+        <div class="project-overlay">
+          <div class="project-number">05 / APARTMENT · COMPLETED</div>
+          <h3 class="project-title">145㎡ Urban Apartment</h3>
+          <div class="project-meta">
+            <span>145㎡ · 4 Bedrooms</span>
+            <span>Modern Urban</span>
+          </div>
+          <p class="project-desc">A completed four-bedroom apartment featuring dark wood joinery, grey marble floors, a full-wall TV system, home office and panoramic city views. CASA TRIO scope: custom joinery, furniture and FF&E.</p>
+          <span class="project-view">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -605,7 +620,8 @@ var galleryData = [
   { title: 'Foshan High-Rise Penthouse — Completed', designer: 'CASA TRIO Custom Joinery · Real Photos', images: ['images/completed_foshan_living_01.webp','images/completed_foshan_living_02.webp','images/completed_foshan_kitchen_01.webp','images/completed_foshan_kitchen_02.webp','images/completed_foshan_closet_01.webp','images/completed_foshan_study_01.webp','images/completed_foshan_bedroom_01.webp','images/completed_foshan_bedroom_02.webp','images/completed_foshan_bathroom_01.webp','images/completed_foshan_bathroom_02.webp','images/completed_foshan_laundry_01.webp'] },
   { title: 'Bathroom Material Direction', designer: 'Material Inspiration · Wood & Rattan', images: ['images/bathroom_direction_03.jpg','images/bathroom_direction_01.jpg','images/bathroom_direction_02.jpg'] },
   { title: 'Modern Living & Dining Direction', designer: 'Material Inspiration · Warm Minimalist', images: ['images/living_direction_01.jpg','images/living_direction_02.jpg','images/living_direction_03.jpg','images/living_direction_04.jpg'] },
-  { title: 'Lvdaohu Villa — Near Completion', designer: 'Design by MuMa Studio · Custom Joinery & FF&E', images: ['images/villa_lvdaohu_01.jpg','images/villa_lvdaohu_02.jpg','images/villa_lvdaohu_03.jpg','images/villa_lvdaohu_04.jpg','images/villa_lvdaohu_05.jpg','images/villa_lvdaohu_06.jpg'] }
+  { title: 'Lvdaohu Villa — Near Completion', designer: 'Design by MuMa Studio · Custom Joinery & FF&E', images: ['images/villa_lvdaohu_01.jpg','images/villa_lvdaohu_02.jpg','images/villa_lvdaohu_03.jpg','images/villa_lvdaohu_04.jpg','images/villa_lvdaohu_05.jpg','images/villa_lvdaohu_06.jpg'] },
+  { title: '145㎡ Urban Apartment — Completed', designer: 'CASA TRIO Custom Joinery & FF&E', images: ['images/apt145_living_01.jpg','images/apt145_dining_01.jpg','images/apt145_tvwall_01.jpg','images/apt145_study_01.jpg','images/apt145_master_01.jpg','images/apt145_bedroom2_01.jpg'] }
 ];
 var currentGallery = 0, currentIndex = 0;
 function openGallery(idx) {
