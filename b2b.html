@@ -376,6 +376,9 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
 .foot-social a:hover svg {
   fill: #fff;
 }
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr !important; }
+}
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/b2b.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
@@ -646,7 +649,7 @@ footer{background:var(--charcoal);color:var(--cream);padding:48px 0 20px}
     <div class="calculator-section" style="max-width:700px;margin:0 auto 40px;padding:32px;background:var(--charcoal);border-radius:8px;">
       <h3 style="text-align:center;font:400 22px var(--serif);color:var(--cream);margin:0 0 8px;">Calculate Your Sourcing Cost</h3>
       <p style="text-align:center;font-size:13px;color:#a8a094;margin:0 0 24px;">Enter your estimated order value to see our transparent commission</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
         <div>
           <label style="display:block;font-size:11px;color:#a8a094;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;">Order Value (USD)</label>
           <input type="number" id="orderValue" placeholder="e.g. 50000" style="width:100%;padding:12px 16px;border:1px solid #4a4540;border-radius:4px;font-size:14px;background:#2a2724;color:var(--cream);box-sizing:border-box;" oninput="calculateCommission()">

@@ -1076,6 +1076,9 @@ footer {
 .foot-social a:hover svg {
   fill: #fff;
 }
+@media (max-width: 600px) {
+  .three-col { grid-template-columns: 1fr !important; }
+}
 </style>
   <link rel="canonical" href="https://www.casatriohome.com/intent-deposit.html">
 
@@ -1555,7 +1558,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <span style="font-size:11px;font-weight:700;color:#2E77BC;letter-spacing:.02em;">AMEX</span>
         <span style="font-size:14px;font-weight:700;color:#003087;letter-spacing:-.02em;">PayPal</span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;">
+      <div class="three-col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;">
         <div>
           <div style="font-size:11px;font-weight:700;color:#22201C;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">100% Credited</div>
           <div style="font-size:10px;color:#6E675C;line-height:1.5;">Every dollar fully credited toward your final 30% balance</div>
