@@ -651,6 +651,13 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .foot-social a:hover svg {
   fill: #fff;
 }
+#turnkey-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) {
+  #turnkey-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; }
+}
+@media (max-width: 600px) {
+  #turnkey-grid { grid-template-columns: 1fr !important; gap: 16px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65DKM46DH7"></script>
 <script>
@@ -736,7 +743,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       <h2 style="font-size:36px;font-weight:400;color:#22201C;font-family:Lora,serif;margin:0 0 16px;">4 Steps to Your Complete Interior</h2>
       <p style="font-size:15px;color:#6E675C;max-width:600px;margin:0 auto;line-height:1.8;">A structured, transparent process that eliminates the stress of cross-border sourcing — from concept to installation.</p>
     </div>
-    <div class="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+    <div class="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;" id="turnkey-grid">
       <!-- Step 1 -->
       <div class="process-step" style="text-align:center;padding:30px 20px;background:#fff;border:1px solid #D8CFBF;border-radius:8px;position:relative;">
         <div style="width:50px;height:50px;background:#A98E6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;margin:0 auto 20px;font-family:Lora,serif;">01</div>
