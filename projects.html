@@ -669,6 +669,64 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
+<section class="testimonials" style="background:var(--soft);padding:60px 0">
+  <div class="container">
+    <div class="head reveal" style="text-align:center;margin-bottom:32px">
+      <div class="eyebrow" style="color:var(--gold)">Client Voices</div>
+      <h2 class="display" style="font-size:clamp(24px,3vw,32px)">What Our Clients Say.</h2>
+    </div>
+    <div class="testimonial-scroll" id="testimonialScroll" style="display:flex;gap:20px;overflow-x:auto;padding:8px 4px 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold-light) transparent">
+      <div class="testimonial-card" style="flex:0 0 340px;background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:4px">
+        <div style="color:var(--gold);font-size:24px;font-family:var(--serif);line-height:1;margin-bottom:10px">"</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--charcoal);margin-bottom:16px;">Soey and her team managed our entire villa project from design to delivery. The quality exceeded our expectations, and communication was excellent throughout.</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600">MA</div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--charcoal)">Client from UAE</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:.1em">Villa · Dubai · 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="flex:0 0 340px;background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:4px">
+        <div style="color:var(--gold);font-size:24px;font-family:var(--serif);line-height:1;margin-bottom:10px">"</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--charcoal);margin-bottom:16px;">We were nervous about ordering furniture from China without seeing it first. CASA TRIO sent detailed photos and videos at every stage, and the final delivery was perfect.</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600">PH</div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--charcoal)">Client from Philippines</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:.1em">Apartment · Manila · 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="flex:0 0 340px;background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:4px">
+        <div style="color:var(--gold);font-size:24px;font-family:var(--serif);line-height:1;margin-bottom:10px">"</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--charcoal);margin-bottom:16px;">As a B2B buyer, I appreciate their transparent sourcing model. They found us three great factories, compared pricing honestly, and we paid the factory directly. QC saved us significant time.</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600">KZ</div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--charcoal)">B2B Client from Kazakhstan</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:.1em">Bulk Sourcing · Almaty · 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="flex:0 0 340px;background:var(--paper);padding:28px 24px;border:1px solid var(--line);border-radius:4px">
+        <div style="color:var(--gold);font-size:24px;font-family:var(--serif);line-height:1;margin-bottom:10px">"</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--charcoal);margin-bottom:16px;">The 3D renderings helped us visualize the space before ordering. Soey was patient with our many revisions and the final result matched the design perfectly. End-to-end service was stress-free.</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600">SA</div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--charcoal)">Client from Saudi Arabia</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:.1em">Full Home Design · Riyadh · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <p style="font-size:11px;color:var(--muted);letter-spacing:.1em">Auto-scrolling · Hover to pause · Or swipe manually</p>
+    </div>
+  </div>
+</section>
+
 <section class="cta-strip">
   <div class="container">
     <h2 class="reveal">Planning a Similar Project?</h2>
@@ -893,6 +951,74 @@ function acceptCookies(){
   localStorage.setItem("cookiesAccepted","true");
   document.getElementById("cookieBanner").style.display="none";
 }
+</script>
+<script>
+// Testimonial Auto-Scroll Carousel
+(function() {
+  var scrollContainer = document.getElementById('testimonialScroll');
+  if (!scrollContainer) return;
+  
+  var scrollAmount = 360; // card width (340px) + gap (20px)
+  var intervalTime = 4000; // 4 seconds per card
+  var autoScrollInterval = null;
+  var isHovering = false;
+  var isUserScrolling = false;
+  var userScrollTimeout = null;
+  
+  function startAutoScroll() {
+    if (autoScrollInterval) return;
+    autoScrollInterval = setInterval(function() {
+      if (isHovering || isUserScrolling) return;
+      
+      var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      
+      // If at the end, smoothly scroll back to start
+      if (scrollContainer.scrollLeft >= maxScroll - 10) {
+        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, intervalTime);
+  }
+  
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+  
+  // Pause on mouse hover
+  scrollContainer.addEventListener('mouseenter', function() {
+    isHovering = true;
+  });
+  
+  scrollContainer.addEventListener('mouseleave', function() {
+    isHovering = false;
+  });
+  
+  // Pause when user manually scrolls (resume after 1.5s of no scrolling)
+  scrollContainer.addEventListener('scroll', function() {
+    if (isHovering) return;
+    isUserScrolling = true;
+    clearTimeout(userScrollTimeout);
+    userScrollTimeout = setTimeout(function() {
+      isUserScrolling = false;
+    }, 1500);
+  });
+  
+  // Pause when browser tab is not visible
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      stopAutoScroll();
+    } else {
+      startAutoScroll();
+    }
+  });
+  
+  // Start auto-scroll after 2 second delay
+  setTimeout(startAutoScroll, 2000);
+})();
 </script>
 </body>
 </html>
