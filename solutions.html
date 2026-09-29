@@ -469,6 +469,9 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .two-col.reverse > *{direction:ltr}
 .two-col-img{aspect-ratio:4/3;overflow:hidden;border-radius:2px}
 .two-col-img img{width:100%;height:100%;object-fit:cover}
+.thumb-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
+.thumb-row img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;cursor:pointer;transition:opacity .25s}
+.thumb-row img:hover{opacity:.85}
 /* Stats strip */
 .stats{background:var(--ink);color:#fff;padding:72px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
@@ -837,7 +840,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
-      <div class="two-col-img"><img loading="lazy" src="images/showroom_dining_01.webp" alt="Furniture and soft furnishing"></div>
+      <div>
+        <div class="two-col-img"><img loading="lazy" src="images/showroom_dining_01.webp" alt="Furniture and soft furnishing showroom"></div>
+        <div class="thumb-row">
+          <img loading="lazy" src="images/showroom_living_01.webp" alt="Living room furniture display">
+          <img loading="lazy" src="images/furniture_showroom_01.webp" alt="Sofa and seating showroom">
+          <img loading="lazy" src="images/completed_foshan_living_01.webp" alt="Completed residential living room project">
+        </div>
+      </div>
       <div>
         <span class="num">01</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Furniture &amp; Soft Furnishing</h2>
@@ -859,7 +869,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="padding:80px 0">
   <div class="container">
     <div class="two-col reverse reveal">
-      <div class="two-col-img"><img loading="lazy" src="images/custom_factory_production_01.webp" alt="Custom furniture production and craftsmanship"></div>
+      <div>
+        <div class="two-col-img"><img loading="lazy" src="images/custom_factory_production_01.webp" alt="Custom furniture production and craftsmanship"></div>
+        <div class="thumb-row">
+          <img loading="lazy" src="images/custom_builtin_01.webp" alt="Custom built-in cabinetry detail">
+          <img loading="lazy" src="images/completed_foshan_kitchen_01.webp" alt="Completed custom kitchen installation">
+          <img loading="lazy" src="images/completed_foshan_closet_01.webp" alt="Completed walk-in closet project">
+        </div>
+      </div>
       <div>
         <span class="num">02</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Custom &amp; Built-in</h2>
@@ -881,7 +898,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
-      <div class="two-col-img"><img loading="lazy" src="images/colorful_windows.webp" alt="Building materials - windows and doors"></div>
+      <div>
+        <div class="two-col-img"><img loading="lazy" src="images/colorful_windows.webp" alt="Building materials - windows and doors"></div>
+        <div class="thumb-row">
+          <img loading="lazy" src="images/material_wood_stone_samples.webp" alt="Wood and stone material samples">
+          <img loading="lazy" src="images/showroom_materials.webp" alt="Material selection showroom display">
+          <img loading="lazy" src="images/material_fabric_samples.webp" alt="Fabric and material swatches">
+        </div>
+      </div>
       <div>
         <span class="num">03</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Building Materials</h2>
@@ -903,7 +927,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="padding:80px 0">
   <div class="container">
     <div class="two-col reverse reveal">
-      <div class="two-col-img"><img loading="lazy" src="images/bathroom_showroom_04.webp" alt="Premium bathroom showroom display"></div>
+      <div>
+        <div class="two-col-img"><img loading="lazy" src="images/bathroom_showroom_04.webp" alt="Premium bathroom showroom display"></div>
+        <div class="thumb-row">
+          <img loading="lazy" src="images/completed_foshan_bathroom_01.webp" alt="Completed bathroom renovation project">
+          <img loading="lazy" src="images/completed_foshan_bathroom_02.webp" alt="Completed bathroom vanity and fixtures">
+          <img loading="lazy" src="images/bathroom_direction_01.webp" alt="Bathroom design material direction">
+        </div>
+      </div>
       <div>
         <span class="num">04</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Bathroom &amp; Sanitary</h2>
@@ -925,7 +956,14 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
-      <div class="two-col-img"><img loading="lazy" src="images/new_16.webp" alt="Design support - material selection"></div>
+      <div>
+        <div class="two-col-img"><img loading="lazy" src="images/new_16.webp" alt="Design support - material selection"></div>
+        <div class="thumb-row">
+          <img loading="lazy" src="images/step_concept_3d.webp" alt="3D interior design rendering">
+          <img loading="lazy" src="images/approach_fabric.webp" alt="Fabric and material selection process">
+          <img loading="lazy" src="images/approach_material.webp" alt="Material board and finish direction">
+        </div>
+      </div>
       <div>
         <span class="num">05</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Design & Coordination</h2>
