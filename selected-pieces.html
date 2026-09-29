@@ -1040,25 +1040,52 @@ if(location.hash && location.hash.indexOf('#piece-') === 0){
 }
 </script>
 <script>
-
-// CASA TRIO Conversion Tracking
+// CASA TRIO Conversion Tracking v2
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // 1. Track WhatsApp clicks
+  var pagePath = window.location.pathname;
+
+  // Helper: detect CTA location (hero / header / content / footer)
+  function getCtaLocation(el) {
+    if (el.closest('header')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    if (el.closest('[class*="hero"]') || el.closest('[class*="page-header"]')) return 'hero';
+    return 'content';
+  }
+
+  // 1. Track WhatsApp clicks (+ cta_location)
   document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(link) {
     link.addEventListener('click', function() {
       var linkText = this.textContent.trim() || 'WhatsApp Link';
-      var pagePath = window.location.pathname;
       gtag('event', 'whatsapp_click', {
         'event_category': 'Contact',
         'event_label': linkText + ' | ' + pagePath,
-        'page_path': pagePath
+        'page_path': pagePath,
+        'page_location': pagePath,
+        'cta_location': getCtaLocation(this)
       });
     });
   });
 
-  // 2. Track CTA button clicks (Start Your Project, Get Started, etc.)
-  var ctaKeywords = ['start your project', 'get started', 'start on whatsapp', 'learn more', 
+  // 2. Start Your Project (primary CTA conversion event)
+  var startKeywords = ['start your project', 'start on whatsapp'];
+  document.querySelectorAll('a, button').forEach(function(el) {
+    var text = el.textContent.trim().toLowerCase();
+    var isStart = startKeywords.some(function(k) { return text.indexOf(k) !== -1; });
+    if (isStart) {
+      el.addEventListener('click', function() {
+        gtag('event', 'start_project_click', {
+          'event_category': 'CTA',
+          'event_label': this.textContent.trim() + ' | ' + pagePath,
+          'button_text': this.textContent.trim(),
+          'page_path': pagePath,
+          'cta_location': getCtaLocation(this)
+        });
+      });
+    }
+  });
+
+  // 3. Generic CTA clicks (fallback analytics layer)
+  var ctaKeywords = ['start your project', 'get started', 'start on whatsapp', 'learn more',
                       'contact us', 'book a', 'request', 'pay', 'commitment deposit'];
   document.querySelectorAll('a, button').forEach(function(el) {
     var text = el.textContent.trim().toLowerCase();
@@ -1069,45 +1096,57 @@ document.addEventListener('DOMContentLoaded', function() {
       el.addEventListener('click', function() {
         gtag('event', 'cta_click', {
           'event_category': 'CTA',
-          'event_label': this.textContent.trim() + ' | ' + window.location.pathname,
+          'event_label': this.textContent.trim() + ' | ' + pagePath,
           'button_text': this.textContent.trim(),
-          'page_path': window.location.pathname
+          'page_path': pagePath
         });
       });
     }
   });
 
-  // 3. Track email clicks
+  // 4. Track email clicks
   document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
     link.addEventListener('click', function() {
       gtag('event', 'email_click', {
         'event_category': 'Contact',
         'event_label': this.href,
-        'page_path': window.location.pathname
+        'page_path': pagePath
       });
     });
   });
 
-  // 4. Track form submissions
+  // 5. Lead form submissions -> generate_lead (+ form_submit fallback)
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', function() {
+      var leadType = '';
+      var hidden = form.querySelector('input[name="lead_type"]');
+      if (hidden) leadType = hidden.value;
+      if (leadType) {
+        gtag('event', 'generate_lead', {
+          'event_category': 'Form',
+          'event_label': (form.id || 'form') + ' | ' + pagePath,
+          'lead_type': leadType,
+          'page_path': pagePath,
+          'page_location': pagePath
+        });
+      }
       gtag('event', 'form_submit', {
         'event_category': 'Form',
         'event_label': form.id || form.name || 'Unnamed Form',
-        'page_path': window.location.pathname
+        'page_path': pagePath
       });
     });
   });
 
-  // 5. Track scroll depth (25%, 50%, 75%, 100%)
+  // 6. Track scroll depth (25%, 50%, 75%, 100%)
   var scrollDepths = [25, 50, 75, 100];
   var scrollTracked = {};
-  
+
   window.addEventListener('scroll', function() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     var scrollPercent = Math.round((scrollTop / docHeight) * 100);
-    
+
     scrollDepths.forEach(function(depth) {
       if (scrollPercent >= depth && !scrollTracked[depth]) {
         scrollTracked[depth] = true;
@@ -1115,28 +1154,28 @@ document.addEventListener('DOMContentLoaded', function() {
           'event_category': 'Engagement',
           'event_label': depth + '%',
           'scroll_percent': depth,
-          'page_path': window.location.pathname
+          'page_path': pagePath
         });
       }
     });
   });
 
-  // 6. Track outbound links (external links)
+  // 7. Track outbound links (external links)
   document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-    if (!link.href.includes(window.location.hostname) && 
-        !link.href.includes('wa.me') && 
+    if (!link.href.includes(window.location.hostname) &&
+        !link.href.includes('wa.me') &&
         !link.href.includes('whatsapp')) {
       link.addEventListener('click', function() {
         gtag('event', 'outbound_click', {
           'event_category': 'Outbound',
           'event_label': this.href,
-          'page_path': window.location.pathname
+          'page_path': pagePath
         });
       });
     }
   });
 
-  // 7. Track deposit / payment link clicks (PayPal NCP)
+  // 8. Track deposit / payment link clicks (PayPal NCP)
   document.querySelectorAll('a[href*="paypal.com"]').forEach(function(link) {
     link.addEventListener('click', function() {
       var btnText = this.textContent.trim() || 'Deposit';
@@ -1144,15 +1183,36 @@ document.addEventListener('DOMContentLoaded', function() {
       var numAmount = parseFloat(amount) || 0;
       gtag('event', 'begin_checkout', {
         'event_category': 'Deposit',
-        'event_label': btnText + ' | ' + window.location.pathname,
+        'event_label': btnText + ' | ' + pagePath,
         'currency': 'USD',
         'value': numAmount,
-        'page_path': window.location.pathname
+        'page_path': pagePath
       });
     });
   });
-});
 
+  // 9. Page-level view events (routed by pathname)
+  if (pagePath.indexOf('b2b') !== -1) {
+    gtag('event', 'view_b2b', { 'page_path': pagePath, 'page_location': pagePath });
+  }
+  if (pagePath.indexOf('solutions') !== -1) {
+    gtag('event', 'view_residential', { 'page_path': pagePath, 'page_location': pagePath });
+  }
+  if (pagePath.indexOf('projects') !== -1) {
+    gtag('event', 'view_project', { 'page_path': pagePath, 'page_location': pagePath });
+    // Project gallery / card opens
+    document.querySelectorAll('[onclick*="openGallery"], .insp-card, .still-row img').forEach(function(el) {
+      el.addEventListener('click', function() {
+        gtag('event', 'view_project', {
+          'event_category': 'Projects',
+          'event_label': (this.getAttribute('onclick') || 'gallery') + ' | ' + pagePath,
+          'page_path': pagePath,
+          'page_location': pagePath
+        });
+      });
+    });
+  }
+});
 </script>
 <script>
 // Mobile dropdown toggle
