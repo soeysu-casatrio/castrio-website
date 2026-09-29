@@ -477,26 +477,17 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
 .carousel-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);transition:background .3s}
 .carousel-dots span.active{background:#fff}
-/* Sample Box interactive */
-.sample-box{position:relative;width:100%;max-width:420px;margin:0 auto;perspective:1400px;cursor:pointer;-webkit-user-select:none;user-select:none}
-.sample-box-body{position:relative;background:linear-gradient(165deg,#332d27 0%,#211d19 55%,#16130f 100%);border:1px solid rgba(192,165,126,.5);border-radius:16px;overflow:hidden;box-shadow:0 22px 48px rgba(0,0,0,.4);min-height:330px;padding:14px}
-.sample-box-inner{position:relative;border:1px solid rgba(192,165,126,.28);border-radius:10px;padding:14px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
-.sample-box-lid{position:absolute;top:0;left:0;right:0;z-index:4;background:linear-gradient(150deg,#40392f 0%,#2a251f 60%,#191510 100%);border:1px solid rgba(205,178,135,.65);border-radius:16px;padding:34px 26px;transform-origin:top center;transition:transform .8s cubic-bezier(.55,.06,.2,.98);box-shadow:0 14px 30px rgba(0,0,0,.45);will-change:transform}
-.sample-box.open .sample-box-lid{transform:rotateX(-118deg);box-shadow:0 0 0 rgba(0,0,0,0)}
-.sample-box-lid .sb-brand{display:block;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#C0A57E;font-weight:600;margin-bottom:16px}
-.sample-box-lid .sb-title{display:block;font:400 26px/1.25 'Lora',serif;color:#F7F3EC;margin-bottom:10px}
-.sample-box-lid .sb-sub{display:block;font-size:12px;line-height:1.7;color:#D8CFBF;margin-bottom:18px}
-.sample-box-lid .sb-open-hint{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:#A98E6B;padding:10px 18px;border-radius:4px;font-weight:600}
-.sample-box-lid .sb-open-hint::after{content:'';width:0;height:0;border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent}
-.sample-box-inner .sb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;opacity:0;transform:translateY(14px);transition:opacity .6s ease .35s,transform .6s ease .35s}
-.sample-box.open .sb-grid{opacity:1;transform:translateY(0)}
-.sb-item{position:relative;border-radius:8px;overflow:hidden;background:#0e0c0a;border:1px solid rgba(192,165,126,.3);cursor:zoom-in;transition:transform .25s,box-shadow .25s}
-.sb-item:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.5)}
-.sb-item img{width:100%;height:78px;object-fit:cover;display:block}
-.sb-item span{display:block;padding:7px 6px 8px;font-size:10.5px;letter-spacing:.04em;color:#EDE6D8;text-align:center;line-height:1.4}
-.sb-item em{display:block;font-style:normal;font-size:9px;color:#B7AB97;margin-top:2px}
-.sample-box-inner .sb-note{font-size:12px;color:#C9BEAB;line-height:1.7;margin:0;opacity:0;transition:opacity .6s ease .5s;text-align:center}
-.sample-box.open .sb-note{opacity:1}
+/* 3D Sample Box stage */
+.box3d-wrap{position:relative;width:100%}
+#box3d-stage{position:relative;width:100%;height:420px;border-radius:16px;overflow:hidden;background:radial-gradient(120% 120% at 50% 18%,#3a342c 0%,#211c17 55%,#120f0c 100%);border:1px solid rgba(205,178,135,.35);box-shadow:0 24px 50px rgba(0,0,0,.45);cursor:grab;touch-action:none}
+#box3d-stage.dragging{cursor:grabbing}
+.box3d-ui{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;background:linear-gradient(180deg,transparent,rgba(12,10,8,.72))}
+.box3d-hint{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#C9BEAB;font-weight:500}
+.box3d-open{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:#A98E6B;border:1px solid #A98E6B;padding:12px 22px;border-radius:5px;font-weight:600;cursor:pointer;transition:all .25s}
+.box3d-open:hover{background:#8e7658;border-color:#8e7658}
+.box3d-open::after{content:'';width:0;height:0;border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .3s}
+.box3d-open.is-open::after{transform:rotate(90deg)}
+@media (max-width:560px){#box3d-stage{height:340px}.box3d-ui{padding:12px 14px}.box3d-open{padding:10px 16px;font-size:10px}}
 /* Sample lightbox */
 .sb-lightbox{position:fixed;inset:0;z-index:99998;background:rgba(12,10,8,.92);display:flex;align-items:center;justify-content:center;padding:5vh 4vw;opacity:0;pointer-events:none;transition:opacity .3s}
 .sb-lightbox.show{opacity:1;pointer-events:auto}
@@ -507,7 +498,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .sb-lightbox .sb-lb-meta p{font-size:12.5px;color:#C9BEAB;line-height:1.7;margin:0}
 .sb-lightbox .sb-lb-close{position:absolute;top:18px;right:22px;color:#fff;font-size:34px;line-height:1;cursor:pointer;background:none;border:0;opacity:.85}
 .sb-lightbox .sb-lb-close:hover{opacity:1}
-@media (max-width:560px){.sample-box-lid{padding:26px 20px}.sample-box-lid .sb-title{font-size:22px}.sb-item img{height:68px}}
+@media (max-width:560px){#box3d-stage{height:340px}}
 /* Stats strip */
 .stats{background:var(--ink);color:#fff;padding:72px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
@@ -709,6 +700,7 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/9ufMdUAsPU.webp">
+  <script src="js/three.min.js" defer></script>
 </head>
 <body>
 <header class="nav" id="nav">
@@ -769,26 +761,12 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
       <p style="font-size:14px;color:#D8CFBF;line-height:1.8;margin:0 0 24px;">Select genuine leather, porcelain slab, wood veneer, and metal finish samples. We'll curate a personalized sample box and ship it to your door — so you can approve materials in person before production.</p>
       <a href="https://wa.me/8615017434683?text=Hi%20CASA%20TRIO%2C%20I%27d%20like%20to%20request%20a%20luxury%20material%20sample%20box.%20Could%20you%20help%20me%20select%20samples%3F" target="_blank" rel="noopener" style="display:inline-block;padding:16px 32px;background:#A98E6B;color:#fff;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;border-radius:4px;transition:all .25s;">Ordering Material Samples</a>
     </div>
-    <div style="flex-shrink:0;width:100%;max-width:420px;">
-      <div class="sample-box" id="sampleBox" role="button" tabindex="0" aria-label="Open the luxury material sample box">
-        <div class="sample-box-body">
-          <div class="sample-box-inner">
-            <div class="sb-grid" id="sbGrid">
-              <div class="sb-item" data-name="Genuine Leather" data-desc="Full-grain hides in curated colors — the touch of a true premium sofa and headboard."><img loading="lazy" src="images/material_leather_samples.webp" alt="Genuine leather samples"><span>Genuine Leather<em>Full-grain hide</em></span></div>
-              <div class="sb-item" data-name="Porcelain Slab" data-desc="Large-format porcelain for tabletops and surfaces — scratch and heat resistant."><img loading="lazy" src="images/showroom_materials.webp" alt="Porcelain slab samples"><span>Porcelain Slab<em>Surface &amp; top</em></span></div>
-              <div class="sb-item" data-name="Wood Veneer" data-desc="Walnut, oak and smoked finishes — matched veneer for doors, panels and cabinetry."><img loading="lazy" src="images/material_wood_stone_samples.webp" alt="Wood veneer samples"><span>Wood Veneer<em>Walnut · Oak</em></span></div>
-              <div class="sb-item" data-name="Metal Finish" data-desc="Brushed brass, black and chrome — handles, trims and accents that complete the look."><img loading="lazy" src="images/materials_showroom_new_04.webp" alt="Metal finish samples"><span>Metal Finish<em>Brass · Chrome</em></span></div>
-              <div class="sb-item" data-name="Fabric &amp; Boucle" data-desc="Performance fabrics and boucle weaves for sofas, chairs and cushions."><img loading="lazy" src="images/material_fabric_samples.webp" alt="Fabric samples"><span>Fabric &amp; Boucle<em>Performance weave</em></span></div>
-              <div class="sb-item" data-name="Stone &amp; Wall Panels" data-desc="Travertine, marble-look slabs and architectural wall panels for feature walls."><img loading="lazy" src="images/materials_showroom_new_05.webp" alt="Stone and wall panel samples"><span>Stone &amp; Wall Panels<em>Feature walls</em></span></div>
-            </div>
-            <p class="sb-note">Each box is curated for your project and shipped to your door — approve materials in person before production.</p>
-          </div>
-        </div>
-        <div class="sample-box-lid">
-          <span class="sb-brand">CASA TRIO</span>
-          <span class="sb-title">Luxury Material<br>Sample Box</span>
-          <span class="sb-sub">Genuine leather · Porcelain slab · Wood veneer · Metal finish — feel the real thing before you commit.</span>
-          <span class="sb-open-hint">Click to open</span>
+    <div style="flex-shrink:0;width:100%;max-width:520px;">
+      <div class="box3d-wrap">
+        <div id="box3d-stage" aria-label="3D material sample box — drag to rotate, click to open"></div>
+        <div class="box3d-ui">
+          <span class="box3d-hint" id="box3dHint">Drag to rotate</span>
+          <button class="box3d-open" id="box3dOpen" type="button">Click to Open</button>
         </div>
       </div>
       <div class="sb-lightbox" id="sbLightbox">
@@ -1354,31 +1332,261 @@ document.querySelectorAll('.carousel').forEach(function(carousel) {
     dots[current].classList.add('active');
   }, 3500);
 });
-// Sample box open/close + lightbox
+// 3D Sample Box (Three.js)
 (function() {
-  var box = document.getElementById('sampleBox');
+  var stage = document.getElementById('box3d-stage');
+  if (!stage) return;
+  var boot = function() {
+  if (!window.THREE) { setTimeout(boot, 120); return; }
+  var openBtn = document.getElementById('box3dOpen');
+  var hint = document.getElementById('box3dHint');
   var lightbox = document.getElementById('sbLightbox');
   var lbImg = document.getElementById('sbLbImg');
   var lbName = document.getElementById('sbLbName');
   var lbDesc = document.getElementById('sbLbDesc');
-  if (!box) return;
-  var toggle = function(e) {
-    if (e && e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
-    box.classList.toggle('open');
-  };
-  box.addEventListener('click', toggle);
-  box.addEventListener('keydown', toggle);
-  document.querySelectorAll('.sb-item').forEach(function(item) {
-    item.addEventListener('click', function(e) {
-      e.stopPropagation();
-      lbImg.src = item.querySelector('img').src;
-      lbImg.alt = item.querySelector('img').alt;
-      lbName.textContent = item.getAttribute('data-name');
-      lbDesc.textContent = item.getAttribute('data-desc');
-      lightbox.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    });
+
+  var MATERIALS = [
+    { img: 'images/material_leather_samples.webp',    name: 'Genuine Leather',   desc: 'Full-grain hides in curated colors — the touch of a true premium sofa and headboard.' },
+    { img: 'images/showroom_materials.webp',         name: 'Porcelain Slab',    desc: 'Large-format porcelain for tabletops and surfaces — scratch and heat resistant.' },
+    { img: 'images/material_wood_stone_samples.webp',name: 'Wood Veneer',       desc: 'Walnut, oak and smoked finishes — matched veneer for doors, panels and cabinetry.' },
+    { img: 'images/materials_showroom_new_04.webp',  name: 'Metal Finish',      desc: 'Brushed brass, black and chrome — handles, trims and accents that complete the look.' },
+    { img: 'images/material_fabric_samples.webp',    name: 'Fabric & Boucle',   desc: 'Performance fabrics and boucle weaves for sofas, chairs and cushions.' },
+    { img: 'images/materials_showroom_new_05.webp',  name: 'Stone & Wall Panels', desc: 'Travertine, marble-look slabs and architectural wall panels for feature walls.' }
+  ];
+
+  function makeCanvas(w, h, fn) {
+    var c = document.createElement('canvas'); c.width = w; c.height = h;
+    fn(c.getContext('2d'), w, h);
+    return new THREE.CanvasTexture(c);
+  }
+  // Leather outer texture
+  var leatherTex = makeCanvas(256, 256, function(ctx, w, h) {
+    ctx.fillStyle = '#4a3a2b'; ctx.fillRect(0, 0, w, h);
+    for (var i = 0; i < 2600; i++) {
+      var v = 40 + Math.random() * 70;
+      ctx.fillStyle = 'rgba(' + v + ',' + (v - 8) + ',' + (v - 18) + ',0.55)';
+      var x = Math.random() * w, y = Math.random() * h;
+      ctx.fillRect(x, y, 1.4, 1.4);
+    }
+    ctx.strokeStyle = 'rgba(0,0,0,0.28)'; ctx.lineWidth = 1;
+    for (var j = 0; j < 26; j++) {
+      var sx = Math.random() * w, sy = Math.random() * h, ang = Math.random() * Math.PI, len = 6 + Math.random() * 20;
+      ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + Math.cos(ang) * len, sy + Math.sin(ang) * len); ctx.stroke();
+    }
   });
+  // Gold inner lining texture
+  var liningTex = makeCanvas(256, 256, function(ctx, w, h) {
+    var g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#b89a6c'); g.addColorStop(0.5, '#a3865a'); g.addColorStop(1, '#8e7658');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.lineWidth = 1;
+    for (var i = 0; i < w; i += 4) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, h); ctx.stroke(); }
+    for (var j = 0; j < h; j += 4) { ctx.beginPath(); ctx.moveTo(0, j); ctx.lineTo(w, j); ctx.stroke(); }
+  });
+  // Lid top branding texture
+  var lidTex = makeCanvas(1024, 512, function(ctx, w, h) {
+    ctx.fillStyle = '#3a2d20'; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = '#c9a86a'; ctx.lineWidth = 10;
+    ctx.strokeRect(34, 34, w - 68, h - 68);
+    ctx.fillStyle = '#c9a86a'; ctx.font = '600 58px Georgia, "Times New Roman", serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('C A S A   T R I O', w / 2, 190);
+    ctx.fillStyle = '#efe6d5'; ctx.font = '420 44px Georgia, serif';
+    ctx.fillText('Luxury Material Sample Box', w / 2, 320);
+  });
+  // Table top texture
+  var baseTex = makeCanvas(256, 256, function(ctx, w, h) {
+    ctx.fillStyle = '#171310'; ctx.fillRect(0, 0, w, h);
+    for (var i = 0; i < 900; i++) {
+      var v = 18 + Math.random() * 22;
+      ctx.fillStyle = 'rgba(' + v + ',' + (v - 2) + ',' + (v - 4) + ',0.5)';
+      ctx.fillRect(Math.random() * w, Math.random() * h, 2, 2);
+    }
+  });
+
+  // Scene
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(38, stage.clientWidth / stage.clientHeight, 0.1, 100);
+  camera.position.set(4.4, 3.2, 6.0);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(stage.clientWidth, stage.clientHeight);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  stage.appendChild(renderer.domElement);
+
+  // Lights
+  var amb = new THREE.AmbientLight(0xfff2e0, 0.65);
+  scene.add(amb);
+  var dir = new THREE.DirectionalLight(0xffffff, 1.0);
+  dir.position.set(4, 7, 5); dir.castShadow = true;
+  dir.shadow.mapSize.width = 1024; dir.shadow.mapSize.height = 1024;
+  scene.add(dir);
+  var fill = new THREE.DirectionalLight(0xc9a86a, 0.35);
+  fill.position.set(-5, 2, -3);
+  scene.add(fill);
+  var rim = new THREE.PointLight(0xc9a86a, 0.5, 12);
+  rim.position.set(0, 3.2, -2.4);
+  scene.add(rim);
+
+  var D = new THREE.MeshStandardMaterial({ map: leatherTex, roughness: 0.6, metalness: 0.05 });
+  var G = new THREE.MeshStandardMaterial({ map: liningTex, roughness: 0.5, metalness: 0.25 });
+
+  var boxGroup = new THREE.Group();
+  scene.add(boxGroup);
+
+  // Base table
+  var table = new THREE.Mesh(
+    new THREE.CylinderGeometry(3.1, 3.2, 0.14, 48),
+    new THREE.MeshStandardMaterial({ map: baseTex, roughness: 0.85 })
+  );
+  table.position.y = -0.82; table.receiveShadow = true;
+  boxGroup.add(table);
+
+  // Open box: bottom + 4 walls, leather outside / gold inside
+  var wallT = 0.1, W = 2.6, H = 1.35, Dp = 2.6;
+  var bottom = new THREE.Mesh(new THREE.BoxGeometry(W, wallT, Dp), [D, D, G, D, D, D]);
+  bottom.position.y = 0.05; bottom.castShadow = true; bottom.receiveShadow = true;
+  boxGroup.add(bottom);
+  var front = new THREE.Mesh(new THREE.BoxGeometry(W, H, wallT), [D, D, D, D, D, G]);
+  front.position.set(0, H / 2 + wallT / 2, Dp / 2 - wallT / 2);
+  front.castShadow = true; boxGroup.add(front);
+  var back = new THREE.Mesh(new THREE.BoxGeometry(W, H, wallT), [D, D, D, D, G, D]);
+  back.position.set(0, H / 2 + wallT / 2, -Dp / 2 + wallT / 2);
+  back.castShadow = true; boxGroup.add(back);
+  var left = new THREE.Mesh(new THREE.BoxGeometry(wallT, H, Dp), [D, G, D, D, D, D]);
+  left.position.set(-W / 2 + wallT / 2, H / 2 + wallT / 2, 0);
+  left.castShadow = true; boxGroup.add(left);
+  var right = new THREE.Mesh(new THREE.BoxGeometry(wallT, H, Dp), [G, D, D, D, D, D]);
+  right.position.set(W / 2 - wallT / 2, H / 2 + wallT / 2, 0);
+  right.castShadow = true; boxGroup.add(right);
+  // Gold rim around opening
+  var rimMat = new THREE.MeshStandardMaterial({ color: 0xc9a86a, roughness: 0.32, metalness: 0.75 });
+  function rimBar(w, d, x, z) {
+    var m = new THREE.Mesh(new THREE.BoxGeometry(w, 0.07, d), rimMat);
+    m.position.set(x, H + wallT, z); boxGroup.add(m);
+  }
+  rimBar(W, 0.14, 0, Dp / 2 - 0.02); rimBar(W, 0.14, 0, -Dp / 2 + 0.02);
+  rimBar(0.14, Dp - 0.14, W / 2 - 0.02, 0); rimBar(0.14, Dp - 0.14, -W / 2 + 0.02, 0);
+
+  // Lid (hinged at back)
+  var lidPivot = new THREE.Group();
+  lidPivot.position.set(0, H + wallT, -Dp / 2);
+  boxGroup.add(lidPivot);
+  var lid = new THREE.Mesh(
+    new THREE.BoxGeometry(W, wallT, Dp),
+    [D, D, new THREE.MeshStandardMaterial({ map: lidTex, roughness: 0.55 }), G, D, D]
+  );
+  lid.position.set(0, 0, Dp / 2);
+  lid.castShadow = true;
+  lidPivot.add(lid);
+
+  // Gold clasp
+  var clasp = new THREE.Mesh(
+    new THREE.BoxGeometry(0.5, 0.14, 0.12),
+    new THREE.MeshStandardMaterial({ color: 0xd8b878, roughness: 0.25, metalness: 0.9 })
+  );
+  clasp.position.set(0, -0.06, Dp / 2 - 0.05);
+  lidPivot.add(clasp);
+
+  // Inner sample tiles (2 rows x 3 cols)
+  var sampleMeshes = [];
+  var loader = new THREE.TextureLoader();
+  var tilePos = [];
+  var xs = [-0.7, 0, 0.7], zs = [-0.32, 0.42];
+  for (var r = 0; r < zs.length; r++) {
+    for (var c = 0; c < xs.length; c++) {
+      var idx = r * 3 + c;
+      var m = MATERIALS[idx];
+      var tileTex = loader.load(m.img);
+      tileTex.anisotropy = 4;
+      var tileMat = [
+        new THREE.MeshStandardMaterial({ color: 0x2a2119, roughness: 0.7 }),
+        new THREE.MeshStandardMaterial({ color: 0x2a2119, roughness: 0.7 }),
+        new THREE.MeshStandardMaterial({ map: tileTex, roughness: 0.62 }),
+        new THREE.MeshStandardMaterial({ color: 0x1f1811, roughness: 0.8 }),
+        new THREE.MeshStandardMaterial({ color: 0x2a2119, roughness: 0.7 }),
+        new THREE.MeshStandardMaterial({ color: 0x2a2119, roughness: 0.7 })
+      ];
+      var tile = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.1, 0.62), tileMat);
+      tile.position.set(xs[c], 0.13, zs[r]);
+      tile.castShadow = true;
+      boxGroup.add(tile);
+      sampleMeshes.push({ mesh: tile, data: m });
+    }
+  }
+
+  // Interaction: drag to rotate
+  var thetaY = 0.6, phiX = 0.32;
+  var targetTheta = thetaY, targetPhi = phiX;
+  var dragging = false, moved = false, startX = 0, startY = 0, sx = 0, sy = 0;
+  stage.addEventListener('pointerdown', function(e) {
+    dragging = true; moved = false;
+    startX = e.clientX; startY = e.clientY;
+    sx = startX; sy = startY;
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', function(e) {
+    if (!dragging) return;
+    var dx = e.clientX - startX, dy = e.clientY - startY;
+    if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
+    targetTheta = thetaY + dx * 0.008;
+    targetPhi = Math.max(-0.25, Math.min(1.35, phiX + dy * 0.006));
+  });
+  var up = function(e) {
+    if (!dragging) return;
+    dragging = false;
+    thetaY = targetTheta; phiX = targetPhi;
+    if (!moved) pick(e);
+  };
+  stage.addEventListener('pointerup', up);
+  stage.addEventListener('pointercancel', function() { dragging = false; });
+
+  // Open/close
+  var isOpen = false, lidAngle = 0, lidTarget = 0;
+  var camTargetZ = 6.0, camCurrentZ = 6.0;
+  var openHint = function() {
+    hint.textContent = isOpen ? 'Drag · Click a tile to inspect' : 'Drag to rotate';
+  };
+  openBtn.addEventListener('click', function() {
+    isOpen = !isOpen;
+    lidTarget = isOpen ? -2.05 : 0;
+    if (isOpen) {
+      camTargetZ = 4.4;
+      if (!dragging) { targetPhi = 1.15; targetTheta = thetaY; }
+    } else {
+      camTargetZ = 6.0;
+      if (!dragging) { targetPhi = 0.32; }
+    }
+    openBtn.classList.toggle('is-open', isOpen);
+    openHint();
+  });
+
+  // Click detection on tiles
+  var raycaster = new THREE.Raycaster();
+  var pointer = new THREE.Vector2();
+  var pick = function(e) {
+    var rect = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    var meshes = sampleMeshes.map(function(o) { return o.mesh; });
+    var hits = raycaster.intersectObjects(meshes, false);
+    if (hits.length) {
+      var hit = sampleMeshes.filter(function(o) { return o.mesh === hits[0].object; })[0];
+      if (hit) {
+        lbImg.src = hit.data.img;
+        lbImg.alt = hit.data.name;
+        lbName.textContent = hit.data.name;
+        lbDesc.textContent = hit.data.desc;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  };
+
+  // Lightbox close
   var closeLb = function() {
     lightbox.classList.remove('show');
     document.body.style.overflow = '';
@@ -1390,6 +1598,61 @@ document.querySelectorAll('.carousel').forEach(function(carousel) {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLb();
   });
+
+  // Resize
+  var resize = function() {
+    var w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  };
+  window.addEventListener('resize', resize);
+
+  // Animate
+  var autoSpin = true;
+  var camPos = new THREE.Vector3().copy(camera.position);
+  var interiorTarget = new THREE.Vector3(1.8, 3.0, 3.0);
+  function computeCamPos() {
+    return new THREE.Vector3(
+      Math.sin(thetaY) * camCurrentZ * Math.cos(phiX),
+      3.2 - Math.sin(phiX) * 2.1,
+      Math.cos(thetaY) * camCurrentZ * Math.cos(phiX)
+    );
+  }
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!dragging) {
+      thetaY = targetTheta; phiX = targetPhi;
+      if (autoSpin && !isOpen) { thetaY += 0.0035; targetTheta = thetaY; }
+    }
+    lidAngle += (lidTarget - lidAngle) * 0.09;
+    lidPivot.rotation.x = lidAngle;
+    camCurrentZ += (camTargetZ - camCurrentZ) * 0.05;
+    var desired = (isOpen && !dragging) ? interiorTarget : computeCamPos();
+    camPos.lerp(desired, 0.07);
+    camera.position.copy(camPos);
+    camera.lookAt(0, isOpen ? 0.45 : 0.55, 0);
+    renderer.render(scene, camera);
+  }
+
+  // Lazy init on scroll into view
+  var started = false;
+  var start = function() {
+    if (started) return;
+    started = true;
+    resize();
+    animate();
+    setTimeout(openHint, 600);
+  };
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) { if (en.isIntersecting) { start(); io.disconnect(); } });
+    }, { rootMargin: '200px' });
+    io.observe(stage);
+  } else { start(); }
+  };
+  if (document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot);
 })();
 </script>
 <!-- Cookie Consent Banner -->
