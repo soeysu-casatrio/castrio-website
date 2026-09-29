@@ -471,6 +471,12 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 .two-col-img img{width:100%;height:100%;object-fit:cover}
 .img-scroll{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;margin-top:10px;scrollbar-width:thin}
 .img-scroll img{flex:0 0 100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;scroll-snap-align:start}
+.carousel{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+.carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.carousel img.active{opacity:1}
+.carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.carousel-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);transition:background .3s}
+.carousel-dots span.active{background:#fff}
 /* Stats strip */
 .stats{background:var(--ink);color:#fff;padding:72px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
@@ -839,7 +845,16 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="background:var(--offwhite);padding:80px 0">
   <div class="container">
     <div class="two-col reveal">
-      <div class="img-scroll" style="margin-top:0"><img loading="lazy" src="images/showroom_dining_01.webp" alt="Furniture and soft furnishing showroom"><img loading="lazy" src="images/showroom_living_01.webp" alt="Living room furniture display"><img loading="lazy" src="images/furniture_showroom_01.webp" alt="Sofa and seating showroom"><img loading="lazy" src="images/completed_foshan_living_01.webp" alt="Completed residential living room project"></div>
+      <div class="carousel">
+        <img loading="eager" src="images/furniture_showroom_new_01.webp" alt="Furniture showroom living area with white sectional sofas" class="active">
+        <img loading="lazy" src="images/furniture_showroom_new_02.webp" alt="Modern furniture showroom display">
+        <img loading="lazy" src="images/furniture_showroom_new_03.webp" alt="Showroom sofa and seating display">
+        <img loading="lazy" src="images/furniture_showroom_new_04.webp" alt="Furniture showroom detail view">
+        <img loading="lazy" src="images/furniture_showroom_new_05.webp" alt="Curated furniture showroom corner">
+        <div class="carousel-dots">
+          <span class="active"></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
       <div>
         <span class="num">01</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Furniture &amp; Soft Furnishing</h2>
@@ -861,7 +876,18 @@ footer{background:#1a1815;color:var(--cream);padding:64px 0 36px}
 <section style="padding:80px 0">
   <div class="container">
     <div class="two-col reverse reveal">
-      <div class="img-scroll" style="margin-top:0"><img loading="lazy" src="images/custom_factory_production_01.webp" alt="Custom furniture production and craftsmanship"><img loading="lazy" src="images/custom_builtin_01.webp" alt="Custom built-in cabinetry detail"><img loading="lazy" src="images/completed_foshan_kitchen_01.webp" alt="Completed custom kitchen installation"><img loading="lazy" src="images/completed_foshan_closet_01.webp" alt="Completed walk-in closet project"></div>
+      <div class="carousel">
+        <img loading="eager" src="images/custom_showroom_new_01.webp" alt="Custom built-in wardrobe and cabinetry showroom" class="active">
+        <img loading="lazy" src="images/custom_showroom_new_02.webp" alt="Custom furniture detail and craftsmanship">
+        <img loading="lazy" src="images/custom_showroom_new_03.webp" alt="Custom kitchen and cabinetry display">
+        <img loading="lazy" src="images/custom_showroom_new_04.webp" alt="Built-in storage and joinery showroom">
+        <img loading="lazy" src="images/custom_showroom_new_05.webp" alt="Custom wardrobe interior detail">
+        <img loading="lazy" src="images/custom_showroom_new_06.webp" alt="Custom furniture showroom wide view">
+        <img loading="lazy" src="images/custom_showroom_new_07.webp" alt="Custom cabinetry and storage solution">
+        <div class="carousel-dots">
+          <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
       <div>
         <span class="num">02</span>
         <h2 style="font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:0 0 16px">Custom &amp; Built-in</h2>
@@ -1266,6 +1292,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+});
+</script>
+<script>
+// Auto-rotating carousel
+document.querySelectorAll('.carousel').forEach(function(carousel) {
+  var imgs = carousel.querySelectorAll('img');
+  var dots = carousel.querySelectorAll('.carousel-dots span');
+  var current = 0;
+  setInterval(function() {
+    imgs[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add('active');
+    dots[current].classList.add('active');
+  }, 3500);
 });
 </script>
 <!-- Cookie Consent Banner -->
