@@ -465,32 +465,36 @@ document.addEventListener('DOMContentLoaded', function() {
       gtag('event', 'email_click', {
         'event_category': 'Contact',
         'event_label': this.href,
-        'page_path': pagePath
-      },
-        'transport_type': 'beacon');
+        'page_path': pagePath,
+        'transport_type': 'beacon'
+      });
     });
   });
 
-  // 5. Lead form submissions -> generate_lead (+ form_submit fallback)
+  // 5. Track attempts separately from confirmed form delivery
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', function() {
       var leadType = '';
       var hidden = form.querySelector('input[name="lead_type"]');
       if (hidden) leadType = hidden.value;
-      if (leadType) {
-        gtag('event', 'generate_lead', {
-          'event_category': 'Form',
-          'event_label': (form.id || 'form') + ' | ' + pagePath,
-          'lead_type': leadType,
-          'page_path': pagePath,
-          'page_location': pagePath
-        });
-      }
+
       gtag('event', 'form_submit', {
         'event_category': 'Form',
         'event_label': form.id || form.name || 'Unnamed Form',
         'page_path': pagePath
       });
+    });
+  });
+
+  document.addEventListener('casatrio:lead-success', function(event) {
+    var form = event.target;
+    var hidden = form.querySelector('input[name="lead_type"]');
+    gtag('event', 'generate_lead', {
+      'event_category': 'Form',
+      'event_label': (form.id || 'form') + ' | ' + pagePath,
+      'lead_type': hidden ? hidden.value : 'inquiry',
+      'page_path': pagePath,
+      'page_location': window.location.href
     });
   });
 
@@ -834,7 +838,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <h3>RFQ Submitted Successfully!</h3>
           <p>Thank you for your request. Our sourcing team will review your RFQ and contact you within 24 hours with your reference number and next steps.</p>
           <p>If you need immediate assistance, please reach us on WhatsApp.</p>
-          <div class="rfq-id" id="rfqId">RFQ-2026-XXXX</div>
           <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
             <a href="https://wa.me/8615017434683" target="_blank" rel="noopener" class="btn gold">Chat on WhatsApp</a>
             <a href="b2b.html" class="btn">Back to B2B Services</a>
@@ -1076,34 +1079,33 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 
-// RFQ Form submission
+// RFQ Form submission: show success only after confirmed delivery.
 document.getElementById('rfqForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var form = this;
-  
-  // Generate RFQ ID
-  var rfqId = 'RFQ-2026-' + Math.floor(1000 + Math.random() * 9000);
-  document.getElementById('rfqId').textContent = rfqId;
-  
-  // Submit via fetch
+  var btn = form.querySelector('button[type="submit"]');
+  if (btn.disabled) return;
+  var originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
   fetch(form.action, {
     method: 'POST',
     body: new FormData(form),
     headers: { 'Accept': 'application/json' }
   }).then(function(response) {
-    if (response.ok) {
-      // Show success
+    return response.json().then(function(data) {
+      if (!response.ok || !(data.success === true || data.success === 'true')) {
+        throw new Error('Submission was not confirmed');
+      }
+      form.dispatchEvent(new CustomEvent('casatrio:lead-success', { bubbles: true }));
       form.style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
       document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      throw new Error('Form submission failed');
-    }
-  }).catch(function(error) {
-    // Fallback: show success anyway (form may still be processing)
-    form.style.display = 'none';
-    document.getElementById('formSuccess').classList.add('show');
-    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = originalText;
+    alert('We could not confirm delivery. Please try again or contact us on WhatsApp.');
   });
 });
 </script>

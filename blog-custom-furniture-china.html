@@ -157,32 +157,36 @@ document.addEventListener('DOMContentLoaded', function() {
       gtag('event', 'email_click', {
         'event_category': 'Contact',
         'event_label': this.href,
-        'page_path': pagePath
-      },
-        'transport_type': 'beacon');
+        'page_path': pagePath,
+        'transport_type': 'beacon'
+      });
     });
   });
 
-  // 5. Lead form submissions -> generate_lead (+ form_submit fallback)
+  // 5. Track attempts separately from confirmed form delivery
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', function() {
       var leadType = '';
       var hidden = form.querySelector('input[name="lead_type"]');
       if (hidden) leadType = hidden.value;
-      if (leadType) {
-        gtag('event', 'generate_lead', {
-          'event_category': 'Form',
-          'event_label': (form.id || 'form') + ' | ' + pagePath,
-          'lead_type': leadType,
-          'page_path': pagePath,
-          'page_location': pagePath
-        });
-      }
+
       gtag('event', 'form_submit', {
         'event_category': 'Form',
         'event_label': form.id || form.name || 'Unnamed Form',
         'page_path': pagePath
       });
+    });
+  });
+
+  document.addEventListener('casatrio:lead-success', function(event) {
+    var form = event.target;
+    var hidden = form.querySelector('input[name="lead_type"]');
+    gtag('event', 'generate_lead', {
+      'event_category': 'Form',
+      'event_label': (form.id || 'form') + ' | ' + pagePath,
+      'lead_type': hidden ? hidden.value : 'inquiry',
+      'page_path': pagePath,
+      'page_location': window.location.href
     });
   });
 
