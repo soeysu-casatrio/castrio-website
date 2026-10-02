@@ -1,2 +1,3 @@
 /robots.txt   /images/robots.txt   200
 /sitemap.xml  /images/sitemap.xml   200
+/x-test-redirect  /about.html  302
